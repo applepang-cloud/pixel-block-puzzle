@@ -144,10 +144,10 @@ canvas{display:block}
 
 <div class="ov" id="start-ov">
   <h1>PIXEL BLOCK</h1><h2>PUZZLE v2.0</h2>
-  <p>아래 블럭을 끌어다 줄을 완성하세요!<br>완성된 줄 블럭이 상단 벨트를 돕니다.<br>블럭은 3바퀴를 돌며 같은 색 픽셀을 발사하고,<br>못 맞추면 대기열로 들어갑니다.<br>레벨 1~10에 도전하세요!</p>
+  <p>아래 블럭을 끌어다 줄을 완성하세요!<br>완성된 줄 블럭이 상단 벨트를 돕니다.<br>블럭은 3바퀴를 돌며 같은 색 픽셀을 발사하고,<br>못 맞추면 대기열로 들어갑니다.<br>레벨 1~20에 도전하세요!</p>
   <button id="cont-btn" onclick="G.continueGame()">이어하기 (레벨 <span id="cont-lv">1</span>)</button>
   <button class="sec" onclick="G.newGame()">새로하기</button>
-  <button class="sec" onclick="G.viewRoom()" style="background:linear-gradient(135deg,#a55eea,#8854d0)">내 방 보기</button>
+  <button class="sec" onclick="G.viewRoom()" style="background:linear-gradient(135deg,#a55eea,#8854d0)">방 구경하기</button>
 </div>
 <div class="ov hide" id="clr-ov">
   <h2 id="clr-t">CLEAR!</h2><p id="clr-m"></p><button id="nxt">NEXT</button>
@@ -165,7 +165,7 @@ canvas{display:block}
   </div>
 </div>
 <div class="ov hide" id="room-ov">
-  <h2>💗 내 방 꾸미기</h2>
+  <h2 id="room-title">💗 내 방 꾸미기</h2>
   <div id="room-box"></div>
   <p id="room-msg"></p>
   <button id="room-next">다음 ▸</button>
@@ -206,7 +206,17 @@ const STORY=[
   "혹시 그도 나를…? 불안세포가 서성인다.",
   "고백 전야, 모든 세포가 긴장 모드.",
   "\"좋아해요\" 떨리는 한마디를 건넸다.",
-  "그가 웃으며 손을 잡았다 — 사랑이 시작됐다 ♥"
+  "그가 웃으며 손을 잡았다 — 사랑이 시작됐다 ♥",
+  "첫 데이트 성공! 행복세포가 춤을 춘다.",
+  "그의 집에 처음 초대받았다 — 긴장세포 비상!",
+  "둘이 함께 고른 소파, 거실이 환해졌다.",
+  "그가 키우는 강아지와도 친해졌어 🐶",
+  "함께 듣는 노래, 추억세포가 쌓여간다.",
+  "주말엔 같이 게임 한 판 — 승부욕세포 발동!",
+  "그를 위한 깜짝 케이크, 설렘이 가득.",
+  "작은 선물에 그가 활짝 웃었다.",
+  "\"우리 오래 함께하자\" — 약속의 반지 💍",
+  "둘이 만든 따뜻한 보금자리, 사랑은 계속된다 ♥"
 ];
 
 // 대화 (얼굴 + 대사) — 레벨 시작(intro)/클리어(outro)
@@ -223,7 +233,17 @@ const DIALOG=[
   {intro:[H('😟','혹시 나만 좋아하는 걸까?')], outro:[H('😔','그의 마음을 모르겠어.')]},
   {intro:[H('😬','내일은… 진심을 말할 거야.')], outro:[H('😌','후… 심호흡. 할 수 있어.')]},
   {intro:[H('😳','지금이야. 용기 내!')], outro:[H('🥹','\"좋아해요.\" 말해버렸어!')]},
-  {intro:[M('😊','사실… 나도 계속 그랬어요.')], outro:[M('😍','우리, 사귈래요?'),H('🥰','응!')]}
+  {intro:[M('😊','사실… 나도 계속 그랬어요.')], outro:[M('😍','우리, 사귈래요?'),H('🥰','응!')]},
+  {intro:[H('🥰','드디어 첫 데이트! 뭐 입지?')], outro:[M('😊','오늘 정말 즐거웠어요.')]},
+  {intro:[H('😳','그의 집에 초대받았어… 떨려!')], outro:[H('😅','어디 앉지? 어색해 죽겠어.')]},
+  {intro:[M('😄','같이 소파 고르러 갈래요?')], outro:[H('🥰','우리 취향이 비슷하네!')]},
+  {intro:[H('🐶','강아지가 너무 귀여워!')], outro:[M('😊','얘도 누나 좋아하나 봐요.')]},
+  {intro:[H('🎶','이 노래, 우리 노래로 하자.')], outro:[H('😌','이 순간을 오래 기억하고 싶어.')]},
+  {intro:[M('😏','게임 한 판 어때요? 자신 있어요?')], outro:[H('😆','내가 이겼지롱!')]},
+  {intro:[H('🎂','깜짝 케이크 준비 완료!')], outro:[M('🥹','이런 거 처음 받아봐요…')]},
+  {intro:[H('🎁','작은 선물 하나 준비했어.')], outro:[M('😍','평생 간직할게요.')]},
+  {intro:[M('😳','잠깐… 할 말이 있어요.')], outro:[M('💍','우리 오래 함께해요.'),H('🥹','응, 당연하지!')]},
+  {intro:[H('🏡','우리 둘만의 공간이 생겼어!')], outro:[H('🥰','사랑하는 사람과 함께라서 행복해.'),M('😊','앞으로도 쭉 함께해요 ♥')]}
 ];
 
 // 방 꾸미기 아이템 (레벨 1개 클리어마다 1개)
@@ -235,6 +255,17 @@ const ROOM_POS=[
   {x:18,y:70},{x:80,y:42},{x:50,y:24},{x:34,y:74},{x:64,y:70},
   {x:88,y:72},{x:12,y:34},{x:46,y:82},{x:72,y:20},{x:26,y:30}
 ];
+// 남친 집 꾸미기 아이템 (레벨 11~20)
+const BF_ROOM_ITEMS=[
+  {e:'🎮',n:'게임기'},{e:'📺',n:'대형 TV'},{e:'🛋️',n:'2인용 소파'},{e:'🐶',n:'강아지'},{e:'🎸',n:'기타'},
+  {e:'🖥️',n:'게이밍 PC'},{e:'🎂',n:'케이크'},{e:'🎁',n:'선물 상자'},{e:'💍',n:'커플 반지'},{e:'🏡',n:'우리 보금자리'}
+];
+// 방 정의: 0=내 방(레벨 1~10), 1=남친 집(레벨 11~20). 위치는 공용 레이아웃 재사용.
+const ROOMS=[
+  {title:'💗 내 방 꾸미기',   items:ROOM_ITEMS,    pos:ROOM_POS},
+  {title:'💙 남친 집 꾸미기', items:BF_ROOM_ITEMS, pos:ROOM_POS}
+];
+const LV_MAX=20;
 
 // ========== AUDIO ==========
 const SFX=(()=>{
@@ -372,7 +403,56 @@ function mkLv(n){
     {r:12,c:13,d:[
       "...CCCCCCC...","..CCYYYYYCC..",".CCBBBBBBBCC.","CCBBBBBBBBBCC",
       ".CPPPPPPPPPC.","..CPPPPPPPC..","...CRRRRRC...","....CRRRC....",
-      ".....CGC.....","......C......",".............","............."]}
+      ".....CGC.....","......C......",".............","............."]},
+    // L11: His house (남친 집)
+    {r:11,c:13,d:[
+      "......R......",".....RRR.....","....RRRRR....","...RRRRRRR...",
+      "..RRRRRRRRR..","..OOOOOOOOO..","..OOYYOOYYO..","..OOYYOOYYO..",
+      "..OOOOKKOOO..","..OOOOKKOOO..","..OOOOKKOOO.."]},
+    // L12: Two hearts (그녀+그)
+    {r:7,c:13,d:[
+      ".............","..N.N...B.B..",".NNNNN.BBBBB.",".NNNNN.BBBBB.",
+      "..NNN...BBB..","...N.....B...","............."]},
+    // L13: Coffee cup (데이트)
+    {r:11,c:13,d:[
+      ".....OOO.....","..WWWWWWWWW..","..WOOOOOOOW..","..WWWWWWWWW..",
+      "..WWWWWWWWKK.","..WWWWWWWWKK.","..WWWWWWWWKK.","..WWWWWWWWW..",
+      "...WWWWWWW...","..CCCCCCCCC..","............."]},
+    // L14: Dog (그의 강아지)
+    {r:12,c:13,d:[
+      ".OO.......OO.","OOOO.....OOOO","OOOOOOOOOOOOO","OOKKOOOOOKKOO",
+      "OOKKOOOOOKKOO","OOOOOOOOOOOOO","OOOWWWWWWWOOO","OOOWWKKKWWOOO",
+      "OOOWWWWWWWOOO",".OOOWWWWWOOO.","..OOOOOOOOO..","...OOOOOOO..."]},
+    // L15: Guitar (함께 듣는 노래)
+    {r:14,c:12,d:[
+      ".....KK.....",".....KK.....",".....KK.....",".....KK.....",
+      ".....KK.....","....OOOO....","...OOOOOO...","..OOOKKOOO..",
+      "..OOKKKKOO..","..OOKKKKOO..","..OOOKKOOO..","...OOOOOO...",
+      "....OOOO....","............"]},
+    // L16: Game controller -> 6 colors
+    {r:8,c:14,d:[
+      ".KKKKKKKKKKKK.","KKKKKKKKKKKKKK","KKWKKKKKKKRYKK","KWWWKKKKKKGBKK",
+      "KKWKKKKKKKRYKK","KKKKKKKKKKKKKK",".KKK......KKK.",".KK........KK."]},
+    // L17: Cake (깜짝 케이크)
+    {r:11,c:13,d:[
+      "....O.O.O....","....Y.Y.Y....","..NNNNNNNNN..",".NNNNNNNNNNN.",
+      ".OOOOOOOOOOO.",".OOOOOOOOOOO.",".NNNNNNNNNNN.",".OOOOOOOOOOO.",
+      ".OOOOOOOOOOO.","WWWWWWWWWWWWW","............."]},
+    // L18: Gift box (선물)
+    {r:11,c:12,d:[
+      "....Y..Y....","...YY..YY...","....YYYY....","RRRRRYYRRRRR",
+      "RRRRRYYRRRRR","RRRRRYYRRRRR","RRRRRYYRRRRR","RRRRRYYRRRRR",
+      "RRRRRYYRRRRR","RRRRRYYRRRRR","............"]},
+    // L19: Ring (약속의 반지)
+    {r:12,c:12,d:[
+      "....CCCC....","...CCCCCC...","....CCCC....",".....CC.....",
+      "....YYYY....","..YYYYYYYY..",".YYY....YYY.","YYY......YYY",
+      "YYY......YYY",".YYY....YYY.","..YYYYYYYY..","...YYYYYY..."]},
+    // L20: Finale heart (사랑은 계속된다)
+    {r:12,c:13,d:[
+      "N.RRR...RRR.N",".RRRRR.RRRRR.","RRRRRRRRRRRRR","RRRRRRRRRRRRR",
+      "RRRRWWWWWRRRR","RRRWWWWWWWRRR",".RRWWWWWWWRR.","..RRWWWWWRR..",
+      "...RRWWWRR...","....RRWRR....",".....RRR.....","......R......"]}
   ];
   const l=lvs[n-1]; const g=[];
   for(let r=0;r<l.r;r++){const row=[];const s=(l.d[r]||'').padEnd(l.c,'.');
@@ -461,21 +541,21 @@ function buildTrack(){
 
 // ========== START / PROGRESS ==========
 function loadProgress(){
-  try{ const v=parseInt(localStorage.getItem('pbp_lv')); if(v>=1&&v<=10) return v; }catch(e){}
+  try{ const v=parseInt(localStorage.getItem('pbp_lv')); if(v>=1&&v<=LV_MAX) return v; }catch(e){}
   return G.savedLevel||1;
 }
 function saveProgress(lv){
-  lv=Math.max(1,Math.min(10,lv));
+  lv=Math.max(1,Math.min(LV_MAX,lv));
   G.savedLevel=lv;
   try{ localStorage.setItem('pbp_lv',String(lv)); }catch(e){}
   const el=$('cont-lv'); if(el) el.textContent=lv;
 }
 G.continueGame=function(){ G.start(G.savedLevel||1); };
 G.newGame=function(){ saveProgress(1); G.start(1); };
-G.viewRoom=function(){ hide('start-ov'); openRoom(-1, ()=>{ show('start-ov'); }); };
+G.viewRoom=function(){ hide('start-ov'); openRoom(0, ()=>{ show('start-ov'); }); };
 
 // ---- unlocked decorations ----
-function loadUnlocked(){ try{const v=parseInt(localStorage.getItem('pbp_unlocked'));if(v>=0&&v<=10)return v;}catch(e){} return G.unlocked||0; }
+function loadUnlocked(){ try{const v=parseInt(localStorage.getItem('pbp_unlocked'));if(v>=0&&v<=LV_MAX)return v;}catch(e){} return G.unlocked||0; }
 function saveUnlocked(){ try{localStorage.setItem('pbp_unlocked',String(G.unlocked||0));}catch(e){} }
 
 // ---- dialogue ----
@@ -496,23 +576,31 @@ function advanceDlg(){
   else renderDlg();
 }
 
-// ---- room ----
-function renderRoom(newIdx){
+// ---- room (0=내 방 / 1=남친 집) ----
+function roomOf(lv){ return lv>10?1:0; }
+function renderRoom(roomIdx,newIdx){
+  const room=ROOMS[roomIdx];
   const box=$('room-box'); box.innerHTML='';
-  const n=G.unlocked||0;
-  for(let i=0;i<n&&i<ROOM_ITEMS.length;i++){
+  const n=Math.max(0,Math.min(room.items.length,(G.unlocked||0)-roomIdx*10));
+  for(let i=0;i<n;i++){
     const sp=document.createElement('div'); sp.className='room-item'+(i===newIdx?' newp':'');
-    sp.textContent=ROOM_ITEMS[i].e;
-    sp.style.left=ROOM_POS[i].x+'%'; sp.style.top=ROOM_POS[i].y+'%';
+    sp.textContent=room.items[i].e;
+    sp.style.left=room.pos[i].x+'%'; sp.style.top=room.pos[i].y+'%';
     box.appendChild(sp);
   }
 }
-function openRoom(newIdx,onDone){
+function openRoom(clearedLv,onDone){
+  // clearedLv: 방금 깬 레벨(1~20)이면 새 가구 강조, 0이면 구경 모드
+  let roomIdx,newIdx;
+  if(clearedLv>=1){ roomIdx=roomOf(clearedLv); newIdx=(clearedLv-1)%10; }
+  else { roomIdx=(G.unlocked||0)>10?1:0; newIdx=-1; }
+  const room=ROOMS[roomIdx];
   show('room-ov');
-  renderRoom(newIdx);
-  if(newIdx>=0&&newIdx<ROOM_ITEMS.length) $('room-msg').textContent='새 가구를 얻었어요: '+ROOM_ITEMS[newIdx].e+' '+ROOM_ITEMS[newIdx].n+'!';
+  $('room-title').textContent=room.title;
+  renderRoom(roomIdx,newIdx);
+  if(newIdx>=0) $('room-msg').textContent='새 가구를 얻었어요: '+room.items[newIdx].e+' '+room.items[newIdx].n+'!';
   else $('room-msg').textContent=(G.unlocked? '지금까지 '+G.unlocked+'개의 가구를 모았어요.' : '레벨을 깨서 방을 꾸며보세요!');
-  const nb=$('room-next'); nb.textContent = (newIdx>=0&&G.lv>=10)?'완료 ▸':'다음 ▸';
+  const nb=$('room-next'); nb.textContent=(clearedLv>=1&&G.lv>=LV_MAX)?'완료 ▸':'다음 ▸';
   nb.onclick=()=>{ hide('room-ov'); onDone&&onDone(); };
 }
 
@@ -1178,8 +1266,8 @@ function checkWin(){
     const dl=DIALOG[clearedLv-1]||{};
     showDialogue(dl.outro||[], ()=>{
       G.unlocked=Math.max(G.unlocked||0, clearedLv); saveUnlocked();
-      openRoom(clearedLv-1, ()=>{
-        if(clearedLv<10){ saveProgress(clearedLv+1); G.start(clearedLv+1); }
+      openRoom(clearedLv, ()=>{
+        if(clearedLv<LV_MAX){ saveProgress(clearedLv+1); G.start(clearedLv+1); }
         else { saveProgress(1); show('start-ov'); }
       });
     });
