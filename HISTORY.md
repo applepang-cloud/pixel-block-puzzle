@@ -1,0 +1,49 @@
+# 버전 히스토리 🕰️
+
+이 게임의 주요 버전은 git **태그(tag)** 로 기록되어 있습니다. 언제든지 아래 방법으로 예전 버전을 보거나 복원할 수 있습니다.
+
+## 버전 목록
+
+| 버전 | 내용 |
+|------|------|
+| `v1.0` | 첫 완성판 — 레벨 10개, 벨트 발사, 스토리, 내 방 꾸미기 |
+| `v2.0` | 레벨 20개로 확장, 남친 집 꾸미기 추가 |
+| `v2.1` | 비주얼 대폭 강화(파티클·컨페티·타자기 대화·BGM 개선), 대기열을 상단/하단 보드 사이 가로 바로 이동, 9:16(1080×1920) 비율 고정 |
+
+전체 변경 내역은 `git log --oneline` 또는 GitHub의 [Commits 페이지](https://github.com/applepang-cloud/pixel-block-puzzle/commits/main)에서 볼 수 있습니다.
+
+## 예전 버전 구경하기 (임시로 돌아가 보기)
+
+```powershell
+git checkout v2.0      # v2.0 시점의 파일로 전환 (구경만)
+# pixel_block_puzzle.html 을 브라우저로 열어 플레이해 보기
+git checkout main      # 다시 최신 버전으로 복귀
+```
+
+> 이 방법은 **구경만** 하는 것이라 아무것도 망가지지 않습니다. `git checkout main` 으로 언제든 돌아옵니다.
+
+## 예전 버전으로 완전히 복원하기
+
+최신 코드를 버리고 예전 버전을 다시 최신으로 만들고 싶을 때:
+
+```powershell
+# 예: v2.0 시절의 게임 파일을 가져와서 새 커밋으로 저장
+git checkout v2.0 -- pixel_block_puzzle.html
+git commit -m "restore: v2.0 버전으로 복원"
+git push origin main
+```
+
+이 방법은 히스토리를 지우지 않고 "복원했다"는 기록을 새로 남기므로 가장 안전합니다. 복원한 뒤에도 언제든 다시 v2.1로 되돌릴 수 있습니다.
+
+## GitHub 웹에서 받기
+
+GitHub 저장소의 **Tags** 탭( Code 버튼 옆 branch 선택 → Tags )에서 원하는 버전을 고른 뒤, 초록색 **Code → Download ZIP** 으로 그 시점의 파일을 통째로 내려받을 수도 있습니다.
+
+## 새 버전을 태그로 남기기
+
+앞으로 큰 변경을 마치면 이렇게 태그를 추가하세요:
+
+```powershell
+git tag -a v2.2 -m "버전 설명"
+git push origin v2.2
+```
