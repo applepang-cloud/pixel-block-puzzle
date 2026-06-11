@@ -729,7 +729,7 @@ G.goHome=function(){
   G.on=false; G.dying=false;
   G.beltRunners=[]; G.bullets=[]; G.waiting=[]; G.clears=[]; G.particles=[]; G.hitFx=[]; G.drag=null;
   $('drag-layer').innerHTML='';
-  renderBelt(); SFX.stopMusic();
+  renderBelt(); SFX.stopMusic(); stopVoice();
   show('start-ov'); HOME.refresh();
 };
 G.viewRoom=function(){ hide('start-ov'); openRoom(0, ()=>{ show('start-ov'); }); };
@@ -743,10 +743,24 @@ function loadPaint(){ try{const o=JSON.parse(localStorage.getItem('pbp_paint')||
 function savePaint(){ try{localStorage.setItem('pbp_paint',JSON.stringify(G.paint||{}));}catch(e){} }
 function addPaint(k){ if(!G.paint) G.paint={}; G.paint[k]=(G.paint[k]||0)+1; savePaint(); }
 
+// ---- dialogue voice (pre-generated neural TTS clips in voice/) ----
+const VOICE={cur:null};
+function playVoice(key,idx){
+  stopVoice();
+  if(!key||(SFX.isMuted&&SFX.isMuted())) return;
+  try{
+    const a=new Audio('voice/'+key+idx+'.mp3');
+    a.volume=0.95;
+    VOICE.cur=a;
+    a.play().catch(()=>{}); // missing file or blocked autoplay: stay silent
+  }catch(e){}
+}
+function stopVoice(){ if(VOICE.cur){ try{VOICE.cur.pause();}catch(e){} VOICE.cur=null; } }
+
 // ---- dialogue ----
-function showDialogue(lines,onDone){
+function showDialogue(lines,onDone,key){
   if(!lines||!lines.length){ onDone&&onDone(); return; }
-  G.dlg={lines,i:0,onDone};
+  G.dlg={lines,i:0,onDone,key};
   show('dlg-ov'); renderDlg();
 }
 function renderDlg(){
@@ -755,6 +769,7 @@ function renderDlg(){
   $('dlg-img').src=FACE_IMG[ln.who]||FACE_IMG.H;
   $('dlg-emo').textContent=ln.face||'';
   $('dlg-name').textContent=ln.name;
+  playVoice(G.dlg.key,G.dlg.i);
   // typewriter effect: characters appear one by one
   const el=$('dlg-text');
   if(G.dlg.timer) clearInterval(G.dlg.timer);
@@ -774,7 +789,7 @@ function advanceDlg(){
     return;
   }
   G.dlg.i++;
-  if(G.dlg.i>=G.dlg.lines.length){ hide('dlg-ov'); const cb=G.dlg.onDone; G.dlg=null; cb&&cb(); }
+  if(G.dlg.i>=G.dlg.lines.length){ stopVoice(); hide('dlg-ov'); const cb=G.dlg.onDone; G.dlg=null; cb&&cb(); }
   else renderDlg();
 }
 
@@ -811,7 +826,7 @@ G.start=function(lv){
   saveProgress(lv);
   G.lv=lv; G.score=0; G.on=false;
   G.belt=[]; G.beltRunners=[]; G.waiting=[]; G.bullets=[]; G.clears=[]; G.particles=[]; G.hitFx=[]; G.drag=null; G.beltDirty=false;
-  if(G.dlg&&G.dlg.timer) clearInterval(G.dlg.timer); G.dlg=null;
+  if(G.dlg&&G.dlg.timer) clearInterval(G.dlg.timer); G.dlg=null; stopVoice();
   G.dying=false; G.slowmo=1;
   G.woodQuota = lv>=3 ? (3+(Math.random()<0.5?1:0)) : (lv===2 ? 2 : 0); G.sinceWood=0;
   $('belt-col').classList.remove('belt-full-flash');
@@ -835,7 +850,7 @@ G.start=function(lv){
   drawTop(); drawBot();
   // intro dialogue -> then play
   const dl=DIALOG[lv-1]||{};
-  showDialogue(dl.intro||[], ()=>{ G.on=true; raf(); });
+  showDialogue(dl.intro||[], ()=>{ G.on=true; raf(); }, 'L'+lv+'i');
 };
 
 // ========== LOOP ==========
@@ -1539,7 +1554,7 @@ function checkWin(){
         if(clearedLv<LV_MAX){ saveProgress(clearedLv+1); G.start(clearedLv+1); }
         else { saveProgress(1); show('start-ov'); HOME.refresh(); }
       });
-    });
+    }, 'L'+clearedLv+'o');
   },650);
 }
 
@@ -1586,6 +1601,7 @@ $('pause-btn').addEventListener('click',()=>{ G.pause(); });
 $('mute-btn').addEventListener('click',()=>{
   SFX.init();
   const m=SFX.toggleMute();
+  if(m) stopVoice();
   $('mute-btn').textContent=m?'🔇':'🔊';
 });
 
