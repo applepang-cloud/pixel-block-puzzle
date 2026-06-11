@@ -38,13 +38,14 @@ canvas{display:block}
   transition:opacity .3s}
 #top-wrap{flex:0 0 auto;position:relative}
 #top-cv{display:block}
-#belt-col{flex:0 0 auto;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:7px;padding:2px 8px}
-#belt-cap{color:rgba(255,255,255,.42);font-size:10px;text-align:center;line-height:1.15;white-space:nowrap}
-#belt-bar{display:flex;flex-direction:row;align-items:center;gap:3px}
-.bs{border-radius:4px;background:rgba(255,255,255,.03);
-  border:1px dashed rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;
+#belt-col{flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:3px 8px;
+  background:linear-gradient(180deg,rgba(255,143,199,.12),rgba(255,143,199,.04));
+  border-top:1px solid rgba(255,143,199,.28);border-bottom:1px solid rgba(255,143,199,.28)}
+#belt-bar{display:flex;flex-direction:row;align-items:center;gap:4px}
+.bs{border-radius:50%;background:rgba(255,143,199,.06);
+  border:1px dashed rgba(255,143,199,.35);display:flex;align-items:center;justify-content:center;
   font-weight:900;font-family:'Lilita One';transition:all .2s}
-.bs.on{border:1px solid rgba(255,255,255,.25);box-shadow:0 0 6px rgba(255,255,255,.12)}
+.bs.on{border:1px solid rgba(255,255,255,.45);box-shadow:0 0 8px rgba(255,255,255,.2)}
 .dv{height:1px;margin:3px 20px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);flex:0 0 auto}
 
 #bot-wrap{flex:0 0 auto;position:relative;display:flex;justify-content:center}
@@ -152,7 +153,6 @@ canvas{display:block}
     <div id="top-wrap"><canvas id="top-cv"></canvas></div>
   </div>
   <div id="belt-col">
-    <div id="belt-cap">대기 <span id="bc">0</span>/10</div>
     <div id="belt-bar"></div>
   </div>
   <div class="dv"></div>
@@ -514,8 +514,8 @@ function resize(){
   const dvH=7;
 
   // ---- horizontal waiting bar between top and bottom boards ----
-  // 10 slots in a row: fit within W minus caption(~70px), gaps and padding
-  let slot=Math.floor((W-70-9*3-16)/10);
+  // 10 slots in a row: fit within W minus gaps and padding
+  let slot=Math.floor((W-9*4-16)/10);
   slot=Math.max(16,Math.min(slot,32));
   G.beltSlot=slot;
   const beltH=slot+10;
@@ -956,7 +956,6 @@ function renderBelt(){
     }
     bar.appendChild(d);
   }
-  $('bc').textContent=list.length;
 }
 
 // ========== PIECES ==========
