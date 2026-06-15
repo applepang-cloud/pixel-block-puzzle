@@ -292,7 +292,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v3.8</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v4.0</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -538,7 +538,7 @@ const ROOMS=[
   {title:'🏡 펫 하우스 꾸미기', items:PET_ROOM_ITEMS, pos:ROOM_POS},
   {title:'🌟 우리들의 무대 꾸미기', items:STAGE_ROOM_ITEMS, pos:ROOM_POS}
 ];
-const LV_MAX=50;
+const LV_MAX=200;
 
 // ========== PIXEL COLORING DESIGNS (from number-coloring PDFs) ==========
 // digit grids; pal maps each digit to a game palette color key ('0' = background)
@@ -696,6 +696,160 @@ const SHAPES=[
 ];
 
 const BC=10,BR=6;
+
+const LV_EXTRA=[
+{r:9,c:13,d:["...GGGGGGG...","..GGGGGGGGG..",".GGCGCGCGCGG.","BBBBBBBBBBBBB","PPPPPPPPPPPPP","KKKKKKKKKKKKK","GGGGGGGGGGGGG",".GGGGGGGGGGG.","..GGGGGGGGG.."]},
+{r:9,c:11,d:["...CCCCC...","..CCCCCCC..","..CBCBCBC..","..CCCCCCC..","...PPPPP...","...PPPPP...","....PPP....","....PPP....",".....P....."]},
+{r:9,c:13,d:["...BBBBBBB...","..BBBBBBBBB..",".BBB.....BBB.","BBB..PPP..BBB","BBB..PPP..BBB","BBB..PPP..BBB",".BBB.....BBB.","..BBBBBBBBB..","...BBBBBBB..."]},
+{r:11,c:11,d:["...P.P.P...","....PPP....","..NNNNNNN..",".NNNNNNNNN.","NNNRNNNRNNN","NNNNNNNNNNN",".NNNRNNNNN.","..NNNNNNN..","...NNNNN...","....NNN....",".....N....."]},
+{r:13,c:13,d:["......C......",".....CCC.....","....CCGCC....","...CCGYGCC...","..CCGYOYGCC..",".CCGYOROYGCC.","CCGYORRROYGCC",".CCGYOROYGCC.","..CCGYOYGCC..","...CCGYGCC...","....CCGCC....",".....CCC.....","......C......"]},
+{r:9,c:11,d:["....R......","...RRR.....","..RRRRR.OO.",".RRRRRRR...","..YYYYY....","..GYGYG....","..GGGGG....","..GGGGG....","...GGG....."]},
+{r:9,c:13,d:[".O.........O.","OOO.......OOO",".OOO.YYY.OOO.","..OOYYYYYOO..","...OYYYYYO...","..OOYYYYYOO..",".OOO.YYY.OOO.","OOO.......OOO",".O.........O."]},
+{r:9,c:13,d:[".YY.....YY...","YYYYY.YYYYY..","YYYYYYYYYYY..","YYYYYYYYYYY..",".YYYYYYYYY...","..YYYYYYY....","...YYYYY.....","....YYY......",".....Y......."]},
+{r:9,c:13,d:["......G......","......G......",".....GGG.....","GGGGGGGGGGGGG",".GGGGGGGGGGG.","..GGGGGGGGG..","...GGGGGGG...","..GGGG.GGGG..",".GGG.....GGG."]},
+{r:14,c:14,d:["....PPPPPP....","..PPBBBBBBPP..",".PBBCCCCCCBBP.",".PBCCGGGGCCBP.","PBCCGGYYGGCCBP","PBCGGYYYYGGCBP","PBCGYYOOYYGCBP","PBCGYYOOYYGCBP","PBCGGYYYYGGCBP","PBCCGGYYGGCCBP",".PBCCGGGGCCBP.",".PBBCCCCCCBBP.","..PPBBBBBBPP..","....PPPPPP...."]},
+{r:10,c:11,d:["..B...B....",".BBB.BBB...",".BBBBBBB.P.","..BPBPB....",".BBBPBBB...",".BBBBBBB...","..B.N.B....","....N......","...NNN.....","....N......"]},
+{r:10,c:13,d:[".....PP......",".....PP......","..NNNNNNNNN..",".NNNNNNNNNNN.","NNKNNNKNNNKNN","NNNNNNNNNNNNN","NKKNKKKNKKKNN","NNNNNNNNNNNNN",".NNNNNNNNNNN.","..NNNNNNNNN.."]},
+{r:9,c:11,d:["..NNNNN....",".NNNNNNN...","NNKNNNKNN..","NNKNNNKNN..","NNNNNNNNN..","NNNRNNNNN..","NNNNNNNNN..","NNNNNNNNN..","N.NN.NN.N.."]},
+{r:9,c:13,d:["KK.........KK","KKK.K...K.KKK","KKKKKK.KKKKKK","KKKKKKKKKKKKK","KKRKKKKKRKKKK","KKKKKKKKKKKKK",".KKKKKKKKKKK.","..KK.KKK.KK..","...K..K..K..."]},
+{r:15,c:15,d:["....PNYGCBP....","...PNYGCBPNY...","..PNYGCBPNYGC..",".PNYGCBPNYGCBP.","PNYGCBPNYGCBPNY","NYGCBPNYGCBPNYG","YGCBPNYGCBPNYGC","GCBPNYGCBPNYGCB","CBPNYGCBPNYGCBP","BPNYGCBPNYGCBPN","PNYGCBPNYGCBPNY",".YGCBPNYGCBPNY.","..CBPNYGCBPNY..","...PNYGCBPNY...","....YGCBPNY...."]},
+{r:7,c:13,d:["...YYYYY.....","..YYYYYYY....",".YYYYYYYYY...","GGGGGGGGGGGGG",".YYYYYYYYY.G.","..YYYYYYY....","...YYYYY....."]},
+{r:8,c:13,d:["....GGGGG....","...GGGGGGG...","..G.G.G.G.G..",".CCCCCCCCCCC.","CCCCCCCCCCCCC",".C.BB.BB.BB.C","..CCCCCCCCC..","...B..B..B..."]},
+{r:7,c:13,d:["C.....C.....C","CC...CCC...CC","CCC.CCCCC.CCC","CCCCCCCCCCCCC","CCBCCCPCCCNCC","CCCCCCCCCCCCC","BBBBBBBBBBBBB"]},
+{r:7,c:11,d:[".BBBBBBB...","BBBBBBBBB..","BBPPPPPBB..",".BPPPPPB...","..BPPPB....","...BPB.....","....B......"]},
+{r:15,c:15,d:["GGGCCCCCCCCCBBB","GGGGCCCCCCCBBBB","GGGGGCCCCCBBBBB","GGGGGCCCCCBBBBB","GGGGGGCCCBBBBBB","GGGGGGCCCBBBBBB","GGGGGGGCBBBBBBB","GGGGGGGPPPPPPPP","RRRRRRRNPPPPPPP","RRRRRRNNNPPPPPP","RRRRRRNNNPPPPPP","RRRRRNNNNNPPPPP","RRRRRNNNNNPPPPP","RRRRNNNNNNNPPPP","RRRNNNNNNNNNPPP"]},
+{r:9,c:13,d:["..NNNNNNN....",".NNNNNNNNNN..","NNNNNNNNNNNNN",".NNNNNNNNNN..","....RR.......","...RR........","..RRRRR......","....RR.......","...RR........"]},
+{r:9,c:13,d:["RR.........RR","RRR.......RRR","RRRRRRRRRRRRR","RRKKRRRRRKKRR","RRKKRRRRRKKRR","RRRRRORRRRRRR","RRYRYRYRYRYRR",".RRRRRRRRRRR.","..RRRRRRRRR.."]},
+{r:9,c:11,d:["...OOOOO...","..OOOOOOO..",".OOKOOOKOO.",".OOOYOYOOO.",".OOOYYYOOO.","OOOOOOOOOOO","OOOOOOOOOOO",".OOOOOOOOO.","..Y.....Y.."]},
+{r:9,c:13,d:["....YYYYY....","..YYYYYYYYY..",".YYYYYYYYYYY.","YYYYYYYYYYYYY","YYKKYYYYYKKYY","YYKKYYYYYKKYY","YYYYYYYYYYYYY","YYYGGYYYGGYYY","YYYYYYYYYYYYY"]},
+{r:16,c:16,d:[".......NR.......","......NNRR......",".....NRROOC.....","....NNRROOCC....","...NRROOCCBBP...","..NNRROOCCBBPP..",".NRROOCCBBPPNNR.","NNRROOCCBBPPNNRR","RROOCCBBPPNNRROO",".ROOCCBBPPNNRRO.","..CCBBPPNNRROO..","...CBBPPNNRRO...","....PPNNRROO....",".....PNNRRO.....","......RROO......",".......RO......."]},
+{r:8,c:13,d:["C.C.C.C.C.C.C","CCCCCCCCCCCCC","CCCCCCCCCCCCC","CCKCCCKCCCKCC","CCCCCCCCCCCCC","CCCCCKKCCCCCC","CCCCCKKCCCCCC","CCCCCKKCCCCCC"]},
+{r:9,c:13,d:["...PPPPPPP...","..PPPPPPPPP..",".PPNPNPNPNPP.","RRRRRRRRRRRRR","OOOOOOOOOOOOO","KKKKKKKKKKKKK","PPPPPPPPPPPPP",".PPPPPPPPPPP.","..PPPPPPPPP.."]},
+{r:9,c:11,d:["...NNNNN...","..NNNNNNN..","..NRNRNRN..","..NNNNNNN..","...OOOOO...","...OOOOO...","....OOO....","....OOO....",".....O....."]},
+{r:9,c:13,d:["...RRRRRRR...","..RRRRRRRRR..",".RRR.....RRR.","RRR..OOO..RRR","RRR..OOO..RRR","RRR..OOO..RRR",".RRR.....RRR.","..RRRRRRRRR..","...RRRRRRR..."]},
+{r:13,c:13,d:[".....PBP.....","...NPBYBPN...","..NPBYOYBPN..",".NPBYOROYBPN.",".PBYORNROYBP.","PBYORNPNROYBP","BYORNPBPNROYB","PBYORNPNROYBP",".PBYORNROYBP.",".NPBYOROYBPN.","..NPBYOYBPN..","...NPBYBPN...",".....PBP....."]},
+{r:9,c:13,d:["YYYYYYYYYYYYY","GGGGGGGGGGGGG","CCCCCCCCCCCCC","CCKCCCKCCKCCC","CCCCCCCCCCCCC","CCCKCCCCCKCCC",".CCCCCCCCCCC.","..CCCCCCCCC..","...CCCCCCC..."]},
+{r:9,c:11,d:["....G......","...GGG.....","..GGGGG.CC.",".GGGGGGG...","..BBBBB....","..PBPBP....","..PPPPP....","..PPPPP....","...PPP....."]},
+{r:9,c:13,d:[".C.........C.","CCC.......CCC",".CCC.BBB.CCC.","..CCBBBBBCC..","...CBBBBBC...","..CCBBBBBCC..",".CCC.BBB.CCC.","CCC.......CCC",".C.........C."]},
+{r:9,c:13,d:[".BB.....BB...","BBBBB.BBBBB..","BBBBBBBBBBB..","BBBBBBBBBBB..",".BBBBBBBBB...","..BBBBBBB....","...BBBBB.....","....BBB......",".....B......."]},
+{r:14,c:14,d:["...RNPGGPNR...","..RNPGYYGPNR..",".RNPGYYYYGPNR.","RNPGYYOOYYGPNR","NPGYYORROYYGPN","PGYYORNNROYYGP","GYYORNPPNROYYG","GYYORNPPNROYYG","PGYYORNNROYYGP","NPGYYORROYYGPN","RNPGYYOOYYGPNR",".RNPGYYYYGPNR.","..RNPGYYGPNR..","...RNPGGPNR..."]},
+{r:10,c:12,d:["..NNNNNNNN..",".NNNNNNNNNN.","NNNNNNNNNNNN","NNKKNNNNKKNN","NNKKNNNNKKNN","NNNNNNNNNNNN","NKNNNNNNNNKN","NNKKKKKKKKNN",".NNKKKKKKNN.","..NNNNNNNN.."]},
+{r:10,c:11,d:["..R...R....",".RRR.RRR...",".RRRRRRR.O.","..ROROR....",".RRRORRR...",".RRRRRRR...","..R.Y.R....","....Y......","...YYY.....","....Y......"]},
+{r:10,c:13,d:[".....OO......",".....OO......","..YYYYYYYYY..",".YYYYYYYYYYY.","YYKYYYKYYYKYY","YYYYYYYYYYYYY","YKKYKKKYKKKYY","YYYYYYYYYYYYY",".YYYYYYYYYYY.","..YYYYYYYYY.."]},
+{r:9,c:11,d:["..YYYYY....",".YYYYYYY...","YYKYYYKYY..","YYKYYYKYY..","YYYYYYYYY..","YYYGYYYYY..","YYYYYYYYY..","YYYYYYYYY..","Y.YY.YY.Y.."]},
+{r:15,c:15,d:["RRNNCCCCCCCNNRR","RNNCCGGGGGCCNNR","NNCGGGYYYGGGCNN","NCGGYYYYYYYGGCN","CCGYYOOOOOYYGCC","CGGYOORRROOYGGC","CGYYORRNRROYYGC","CGYYORNNNROYYGC","CGYYORRNRROYYGC","CGGYOORRROOYGGC","CCGYYOOOOOYYGCC","NCGGYYYYYYYGGCN","NNCGGGYYYGGGCNN","RNNCCGGGGGCCNNR","RRNNCCCCCCCNNRR"]},
+{r:11,c:11,d:["....C......","...CCC.....","..CCCCC....","..CBBBC....","..CCCCC....","..CCCCC....","..PCCCP....",".PPCCCPP...",".P.NNN.P...","...NNN.....","...N.N....."]},
+{r:7,c:13,d:["...BBBBB.....","..BBBBBBB....",".BBBBBBBBB...","PPPPPPPPPPPPP",".BBBBBBBBB.P.","..BBBBBBB....","...BBBBB....."]},
+{r:8,c:13,d:["....PPPPP....","...PPPPPPP...","..P.P.P.P.P..",".NNNNNNNNNNN.","NNNNNNNNNNNNN",".N.RR.RR.RR.N","..NNNNNNNNN..","...R..R..R..."]},
+{r:7,c:13,d:["N.....N.....N","NN...NNN...NN","NNN.NNNNN.NNN","NNNNNNNNNNNNN","NNRNNNONNNYNN","NNNNNNNNNNNNN","RRRRRRRRRRRRR"]},
+{r:15,c:15,d:[".......O.......","......OYG......",".....OYGCB.....","....OYGCBRO....","...OYGCBROYG...","..OYGCBROYGCB..",".OYGCBROYGCBRO.","OYGCBROYGCBROYG",".GCBROYGCBROYG.","..BROYGCBROYG..","...OYGCBROYG...","....GCBROYG....",".....BROYG.....","......OYG......",".......G......."]},
+{r:6,c:13,d:[".............","KKKKKKKKKKKKK","KOOOKKKOOOKK.","KOOOKKKOOOKK.","KOOOKKKOOOKK.",".KKK.K.KKK..."]},
+{r:9,c:13,d:["..YYYYYYY....",".YYYYYYYYYY..","YYYYYYYYYYYYY",".YYYYYYYYYY..","....GG.......","...GG........","..GGGGG......","....GG.......","...GG........"]},
+{r:9,c:13,d:["GG.........GG","GGG.......GGG","GGGGGGGGGGGGG","GGKKGGGGGKKGG","GGKKGGGGGKKGG","GGGGGCGGGGGGG","GGBGBGBGBGBGG",".GGGGGGGGGGG.","..GGGGGGGGG.."]},
+{r:9,c:11,d:["...CCCCC...","..CCCCCCC..",".CCKCCCKCC.",".CCCBCBCCC.",".CCCBBBCCC.","CCCCCCCCCCC","CCCCCCCCCCC",".CCCCCCCCC.","..B.....B.."]},
+{r:16,c:16,d:[".....YYYYYY.....","...OYYYYYYYYG...","..OOOYYYYYYGGG..",".OOOOYYYYYYGGGG.",".OOOOOYYYYGGGGG.","OOOOOOOYYGGGGGGG","OOOOOOOYYGGGGGGG","OOOOOOOOGGGGGGGG","PPPPPPPPCCCCCCCC","PPPPPPPBBCCCCCCC","PPPPPPPBBCCCCCCC",".PPPPPBBBBCCCCC.",".PPPPBBBBBBCCCC.","..PPPBBBBBBCCC..","...PBBBBBBBBC...",".....BBBBBB....."]},
+{r:9,c:11,d:["...PPPPP...","..PPPPPPP..",".PPPPPPPPP.","PPPNPPPNPPP","PPPPPPPPPPP","PPNPPPPPNPP","PPPPPPPPPPP",".PPPPPPPPP.","..PPPPPPP.."]},
+{r:8,c:13,d:["N.N.N.N.N.N.N","NNNNNNNNNNNNN","NNNNNNNNNNNNN","NNKNNNKNNNKNN","NNNNNNNNNNNNN","NNNNNKKNNNNNN","NNNNNKKNNNNNN","NNNNNKKNNNNNN"]},
+{r:9,c:13,d:["...OOOOOOO...","..OOOOOOOOO..",".OOYOYOYOYOO.","GGGGGGGGGGGGG","CCCCCCCCCCCCC","KKKKKKKKKKKKK","OOOOOOOOOOOOO",".OOOOOOOOOOO.","..OOOOOOOOO.."]},
+{r:9,c:11,d:["...YYYYY...","..YYYYYYY..","..YGYGYGY..","..YYYYYYY..","...CCCCC...","...CCCCC...","....CCC....","....CCC....",".....C....."]},
+{r:13,c:13,d:["....CCBBP....","...GCCBBPP...","..CCBBPPNNY..",".GCCBBPPNNYY.","CCBBPPNNYYGGC","CCBBPPNNYYGGC","BBPPNNYYGGCCB","BBPPNNYYGGCCB","PPNNYYGGCCBBP",".PNNYYGGCCBB.","..YYGGCCBBP..","...YGGCCBB...","....CCBBP...."]},
+{r:11,c:11,d:["...C.C.C...","....CCC....","..BBBBBBB..",".BBBBBBBBB.","BBBPBBBPBBB","BBBBBBBBBBB",".BBBPBBBBB.","..BBBBBBB..","...BBBBB...","....BBB....",".....B....."]},
+{r:9,c:13,d:["BBBBBBBBBBBBB","PPPPPPPPPPPPP","NNNNNNNNNNNNN","NNKNNNKNNKNNN","NNNNNNNNNNNNN","NNNKNNNNNKNNN",".NNNNNNNNNNN.","..NNNNNNNNN..","...NNNNNNN..."]},
+{r:9,c:11,d:["....P......","...PPP.....","..PPPPP.NN.",".PPPPPPP...","..RRRRR....","..ORORO....","..OOOOO....","..OOOOO....","...OOO....."]},
+{r:9,c:13,d:[".N.........N.","NNN.......NNN",".NNN.RRR.NNN.","..NNRRRRRNN..","...NRRRRRN...","..NNRRRRRNN..",".NNN.RRR.NNN.","NNN.......NNN",".N.........N."]},
+{r:14,c:14,d:["CGRNPBCCBPNRGC","GRNPBCGGCBPNRG","RNPBCGRRGCBPNR","NPBCGRNNRGCBPN","PBCGRNPPNRGCBP","BCGRNPBBPNRGCB","CGRNPBCCBPNRGC","CGRNPBCCBPNRGC","BCGRNPBBPNRGCB","PBCGRNPPNRGCBP","NPBCGRNNRGCBPN","RNPBCGRRGCBPNR","GRNPBCGGCBPNRG","CGRNPBCCBPNRGC"]},
+{r:9,c:13,d:["......O......","......O......",".....OOO.....","OOOOOOOOOOOOO",".OOOOOOOOOOO.","..OOOOOOOOO..","...OOOOOOO...","..OOOO.OOOO..",".OOO.....OOO."]},
+{r:10,c:12,d:["..YYYYYYYY..",".YYYYYYYYYY.","YYYYYYYYYYYY","YYKKYYYYKKYY","YYKKYYYYKKYY","YYYYYYYYYYYY","YKYYYYYYYYKY","YYKKKKKKKKYY",".YYKKKKKKYY.","..YYYYYYYY.."]},
+{r:10,c:11,d:["..G...G....",".GGG.GGG...",".GGGGGGG.C.","..GCGCG....",".GGGCGGG...",".GGGGGGG...","..G.B.G....","....B......","...BBB.....","....B......"]},
+{r:10,c:13,d:[".....CC......",".....CC......","..BBBBBBBBB..",".BBBBBBBBBBB.","BBKBBBKBBBKBB","BBBBBBBBBBBBB","BKKBKKKBKKKBB","BBBBBBBBBBBBB",".BBBBBBBBBBB.","..BBBBBBBBB.."]},
+{r:15,c:15,d:[".......O.......","......ORO......",".....ORRRO.....","....ORRNRRO....","...ORRNPNRRO...","..ORRNPBPNRRO..",".ORRNPBCBPNRRO.","ORRNPBCCCBPNRRO",".ORRNPBCBPNRRO.","..ORRNPBPNRRO..","...ORRNPNRRO...","....ORRNRRO....",".....ORRRO.....","......ORO......",".......O......."]},
+{r:9,c:13,d:["KK.........KK","KKK.K...K.KKK","KKKKKK.KKKKKK","KKKKKKKKKKKKK","KKPKKKKKPKKKK","KKKKKKKKKKKKK",".KKKKKKKKKKK.","..KK.KKK.KK..","...K..K..K..."]},
+{r:11,c:11,d:["....N......","...NNN.....","..NNNNN....","..NRRRN....","..NNNNN....","..NNNNN....","..ONNNO....",".OONNNOO...",".O.YYY.O...","...YYY.....","...Y.Y....."]},
+{r:7,c:13,d:["...RRRRR.....","..RRRRRRR....",".RRRRRRRRR...","OOOOOOOOOOOOO",".RRRRRRRRR.O.","..RRRRRRR....","...RRRRR....."]},
+{r:8,c:13,d:["....OOOOO....","...OOOOOOO...","..O.O.O.O.O..",".YYYYYYYYYYY.","YYYYYYYYYYYYY",".Y.GG.GG.GG.Y","..YYYYYYYYY..","...G..G..G..."]},
+{r:15,c:15,d:["......YYY......","...YYOOOOOYY...","..YOOORRROOOY..",".YOORRRRRRROOY.",".YORRNNNNNRROY.",".OORNNPPPNNROO.","YORRNPPBPPNRROY","YORRNPBBBPNRROY","YORRNPPBPPNRROY",".OORNNPPPNNROO.",".YORRNNNNNRROY.",".YOORRRRRRROOY.","..YOOORRROOOY..","...YYOOOOOYY...","......YYY......"]},
+{r:7,c:11,d:[".GGGGGGG...","GGGGGGGGG..","GGCCCCCGG..",".GCCCCCG...","..GCCCG....","...GCG.....","....G......"]},
+{r:6,c:13,d:[".............","KKKKKKKKKKKKK","KCCCKKKCCCKK.","KCCCKKKCCCKK.","KCCCKKKCCCKK.",".KKK.K.KKK..."]},
+{r:9,c:13,d:["..BBBBBBB....",".BBBBBBBBBB..","BBBBBBBBBBBBB",".BBBBBBBBBB..","....PP.......","...PP........","..PPPPP......","....PP.......","...PP........"]},
+{r:9,c:13,d:["PP.........PP","PPP.......PPP","PPPPPPPPPPPPP","PPKKPPPPPKKPP","PPKKPPPPPKKPP","PPPPPNPPPPPPP","PPRPRPRPRPRPP",".PPPPPPPPPPP.","..PPPPPPPPP.."]},
+{r:16,c:16,d:["....YGPNROYG....","...YGPNROYGPN...","..YGPNROYGPNRO..",".YGPNROYGPNROYG.","YGPNROYGPNROYGPN","GPNROYGPNROYGPNR","PNROYGPNROYGPNRO","NROYGPNROYGPNROY","ROYGPNROYGPNROYG","OYGPNROYGPNROYGP","YGPNROYGPNROYGPN","GPNROYGPNROYGPNR",".NROYGPNROYGPNR.","..OYGPNROYGPNR..","...GPNROYGPNR...","....NROYGPNR...."]},
+{r:9,c:13,d:["....RRRRR....","..RRRRRRRRR..",".RRRRRRRRRRR.","RRRRRRRRRRRRR","RRKKRRRRRKKRR","RRKKRRRRRKKRR","RRRRRRRRRRRRR","RRROORRROORRR","RRRRRRRRRRRRR"]},
+{r:9,c:11,d:["...OOOOO...","..OOOOOOO..",".OOOOOOOOO.","OOOYOOOYOOO","OOOOOOOOOOO","OOYOOOOOYOO","OOOOOOOOOOO",".OOOOOOOOO.","..OOOOOOO.."]},
+{r:8,c:13,d:["Y.Y.Y.Y.Y.Y.Y","YYYYYYYYYYYYY","YYYYYYYYYYYYY","YYKYYYKYYYKYY","YYYYYYYYYYYYY","YYYYYKKYYYYYY","YYYYYKKYYYYYY","YYYYYKKYYYYYY"]},
+{r:9,c:13,d:["...CCCCCCC...","..CCCCCCCCC..",".CCBCBCBCBCC.","PPPPPPPPPPPPP","NNNNNNNNNNNNN","KKKKKKKKKKKKK","CCCCCCCCCCCCC",".CCCCCCCCCCC.","..CCCCCCCCC.."]},
+{r:13,c:13,d:["NNNRRRRRRROOO","NNNNRRRRROOOO","NNNNRRRRROOOO","NNNNNRRROOOOO","NNNNNRRROOOOO","NNNNNNROOOOOO","NNNNNNYYYYYYY","CCCCCCGYYYYYY","CCCCCGGGYYYYY","CCCCCGGGYYYYY","CCCCGGGGGYYYY","CCCCGGGGGYYYY","CCCGGGGGGGYYY"]},
+{r:9,c:13,d:["...PPPPPPP...","..PPPPPPPPP..",".PPP.....PPP.","PPP..NNN..PPP","PPP..NNN..PPP","PPP..NNN..PPP",".PPP.....PPP.","..PPPPPPPPP..","...PPPPPPP..."]},
+{r:11,c:11,d:["...N.N.N...","....NNN....","..RRRRRRR..",".RRRRRRRRR.","RRRORRRORRR","RRRRRRRRRRR",".RRRORRRRR.","..RRRRRRR..","...RRRRR...","....RRR....",".....R....."]},
+{r:9,c:13,d:["RRRRRRRRRRRRR","OOOOOOOOOOOOO","YYYYYYYYYYYYY","YYKYYYKYYKYYY","YYYYYYYYYYYYY","YYYKYYYYYKYYY",".YYYYYYYYYYY.","..YYYYYYYYY..","...YYYYYYY..."]},
+{r:9,c:11,d:["....O......","...OOO.....","..OOOOO.YY.",".OOOOOOO...","..GGGGG....","..CGCGC....","..CCCCC....","..CCCCC....","...CCC....."]},
+{r:14,c:14,d:["......GG......",".....YGGC.....","....GGCCBB....","...YGGCCBBR...","..GGCCBBRROO..",".YGGCCBBRROOY.","GGCCBBRROOYYGG","GGCCBBRROOYYGG",".CBBRROOYYGGC.","..BBRROOYYGG..","...ROOYYGGC...","....OOYYGG....",".....YGGC.....","......GG......"]},
+{r:9,c:13,d:[".GG.....GG...","GGGGG.GGGGG..","GGGGGGGGGGG..","GGGGGGGGGGG..",".GGGGGGGGG...","..GGGGGGG....","...GGGGG.....","....GGG......",".....G......."]},
+{r:9,c:13,d:["......C......","......C......",".....CCC.....","CCCCCCCCCCCCC",".CCCCCCCCCCC.","..CCCCCCCCC..","...CCCCCCC...","..CCCC.CCCC..",".CCC.....CCC."]},
+{r:10,c:12,d:["..BBBBBBBB..",".BBBBBBBBBB.","BBBBBBBBBBBB","BBKKBBBBKKBB","BBKKBBBBKKBB","BBBBBBBBBBBB","BKBBBBBBBBKB","BBKKKKKKKKBB",".BBKKKKKKBB.","..BBBBBBBB.."]},
+{r:10,c:11,d:["..P...P....",".PPP.PPP...",".PPPPPPP.N.","..PNPNP....",".PPPNPPP...",".PPPPPPP...","..P.R.P....","....R......","...RRR.....","....R......"]},
+{r:15,c:15,d:["......GYG......","...BCGYOYGCB...","..BCGYOPOYGCB..",".BCGYOPBPOYGCB.",".CGYOPBCBPOYGC.",".GYOPBCGCBPOYG.","GYOPBCGYGCBPOYG","YOPBCGYOYGCBPOY","GYOPBCGYGCBPOYG",".GYOPBCGCBPOYG.",".CGYOPBCBPOYGC.",".BCGYOPBPOYGCB.","..BCGYOPOYGCB..","...BCGYOYGCB...","......GYG......"]},
+{r:9,c:11,d:["..RRRRR....",".RRRRRRR...","RRKRRRKRR..","RRKRRRKRR..","RRRRRRRRR..","RRRORRRRR..","RRRRRRRRR..","RRRRRRRRR..","R.RR.RR.R.."]},
+{r:9,c:13,d:["KK.........KK","KKK.K...K.KKK","KKKKKK.KKKKKK","KKKKKKKKKKKKK","KKOKKKKKOKKKK","KKKKKKKKKKKKK",".KKKKKKKKKKK.","..KK.KKK.KK..","...K..K..K..."]},
+{r:11,c:11,d:["....Y......","...YYY.....","..YYYYY....","..YGGGY....","..YYYYY....","..YYYYY....","..CYYYC....",".CCYYYCC...",".C.BBB.C...","...BBB.....","...B.B....."]},
+{r:7,c:13,d:["...GGGGG.....","..GGGGGGG....",".GGGGGGGGG...","CCCCCCCCCCCCC",".GGGGGGGGG.C.","..GGGGGGG....","...GGGGG....."]},
+{r:15,c:15,d:["....CGYNYGC....","...CGYNPNYGC...","..CGYNPPPNYGC..",".CGYNPPBPPNYGC.","CGYNPPBCBPPNYGC","GYNPPBCGCBPPNYG","YNPPBCGYGCBPPNY","NPPBCGYYYGCBPPN","YNPPBCGYGCBPPNY","GYNPPBCGCBPPNYG","CGYNPPBCBPPNYGC",".CGYNPPBPPNYGC.","..CGYNPPPNYGC..","...CGYNPNYGC...","....CGYNYGC...."]},
+{r:7,c:13,d:["B.....B.....B","BB...BBB...BB","BBB.BBBBB.BBB","BBBBBBBBBBBBB","BBPBBBNBBBRBB","BBBBBBBBBBBBB","PPPPPPPPPPPPP"]},
+{r:7,c:11,d:[".PPPPPPP...","PPPPPPPPP..","PPNNNNNPP..",".PNNNNNP...","..PNNNP....","...PNP.....","....P......"]},
+{r:6,c:13,d:[".............","KKKKKKKKKKKKK","KNNNKKKNNNKK.","KNNNKKKNNNKK.","KNNNKKKNNNKK.",".KKK.K.KKK..."]},
+{r:9,c:13,d:["..RRRRRRR....",".RRRRRRRRRR..","RRRRRRRRRRRRR",".RRRRRRRRRR..","....OO.......","...OO........","..OOOOO......","....OO.......","...OO........"]},
+{r:16,c:16,d:["BCCGGGRRRRGGGCCB","CCGGRRRRRRRRGGCC","CGRRRNNNNNNRRRGC","GGRNNPPPPPPNNRGG","GRRNPPBBBBPPNRRG","GRNPPBBCCBBPPNRG","RRNPBBCCCCBBPNRR","RRNPBCCGGCCBPNRR","RRNPBCCGGCCBPNRR","RRNPBBCCCCBBPNRR","GRNPPBBCCBBPPNRG","GRRNPPBBBBPPNRRG","GGRNNPPPPPPNNRGG","CGRRRNNNNNNRRRGC","CCGGRRRRRRRRGGCC","BCCGGGRRRRGGGCCB"]},
+{r:9,c:11,d:["...YYYYY...","..YYYYYYY..",".YYKYYYKYY.",".YYYGYGYYY.",".YYYGGGYYY.","YYYYYYYYYYY","YYYYYYYYYYY",".YYYYYYYYY.","..G.....G.."]},
+{r:9,c:13,d:["....GGGGG....","..GGGGGGGGG..",".GGGGGGGGGGG.","GGGGGGGGGGGGG","GGKKGGGGGKKGG","GGKKGGGGGKKGG","GGGGGGGGGGGGG","GGGCCGGGCCGGG","GGGGGGGGGGGGG"]},
+{r:9,c:11,d:["...CCCCC...","..CCCCCCC..",".CCCCCCCCC.","CCCBCCCBCCC","CCCCCCCCCCC","CCBCCCCCBCC","CCCCCCCCCCC",".CCCCCCCCC.","..CCCCCCC.."]},
+{r:8,c:13,d:["B.B.B.B.B.B.B","BBBBBBBBBBBBB","BBBBBBBBBBBBB","BBKBBBKBBBKBB","BBBBBBBBBBBBB","BBBBBKKBBBBBB","BBBBBKKBBBBBB","BBBBBKKBBBBBB"]},
+{r:13,c:13,d:["......C......",".....CBP.....","....CBPNR....","...CBPNROC...","..CBPNROCBP..",".CBPNROCBPNR.","CBPNROCBPNROC",".PNROCBPNROC.","..ROCBPNROC..","...CBPNROC...","....PNROC....",".....ROC.....","......C......"]},
+{r:9,c:11,d:["...RRRRR...","..RRRRRRR..","..ROROROR..","..RRRRRRR..","...YYYYY...","...YYYYY...","....YYY....","....YYY....",".....Y....."]},
+{r:9,c:13,d:["...OOOOOOO...","..OOOOOOOOO..",".OOO.....OOO.","OOO..YYY..OOO","OOO..YYY..OOO","OOO..YYY..OOO",".OOO.....OOO.","..OOOOOOOOO..","...OOOOOOO..."]},
+{r:11,c:11,d:["...Y.Y.Y...","....YYY....","..GGGGGGG..",".GGGGGGGGG.","GGGCGGGCGGG","GGGGGGGGGGG",".GGGCGGGGG.","..GGGGGGG..","...GGGGG...","....GGG....",".....G....."]},
+{r:9,c:13,d:["GGGGGGGGGGGGG","CCCCCCCCCCCCC","BBBBBBBBBBBBB","BBKBBBKBBKBBB","BBBBBBBBBBBBB","BBBKBBBBBKBBB",".BBBBBBBBBBB.","..BBBBBBBBB..","...BBBBBBB..."]},
+{r:14,c:14,d:["....PPPPPP....","..BBPPPPPPNN..",".BBBPPPPPPNNN.",".BBBBPPPPNNNN.","BBBBBBPPNNNNNN","BBBBBBPPNNNNNN","BBBBBBBNNNNNNN","YYYYYYYRRRRRRR","YYYYYYOORRRRRR","YYYYYYOORRRRRR",".YYYYOOOORRRR.",".YYYOOOOOORRR.","..YYOOOOOORR..","....OOOOOO...."]},
+{r:9,c:13,d:[".B.........B.","BBB.......BBB",".BBB.PPP.BBB.","..BBPPPPPBB..","...BPPPPPB...","..BBPPPPPBB..",".BBB.PPP.BBB.","BBB.......BBB",".B.........B."]},
+{r:9,c:13,d:[".PP.....PP...","PPPPP.PPPPP..","PPPPPPPPPPP..","PPPPPPPPPPP..",".PPPPPPPPP...","..PPPPPPP....","...PPPPP.....","....PPP......",".....P......."]},
+{r:9,c:13,d:["......N......","......N......",".....NNN.....","NNNNNNNNNNNNN",".NNNNNNNNNNN.","..NNNNNNNNN..","...NNNNNNN...","..NNNN.NNNN..",".NNN.....NNN."]},
+{r:10,c:12,d:["..RRRRRRRR..",".RRRRRRRRRR.","RRRRRRRRRRRR","RRKKRRRRKKRR","RRKKRRRRKKRR","RRRRRRRRRRRR","RKRRRRRRRRKR","RRKKKKKKKKRR",".RRKKKKKKRR.","..RRRRRRRR.."]},
+{r:15,c:15,d:["....RROOYYG....","...NRROOYYGG...","..RROOYYGGPPN..",".NRROOYYGGPPNN.","RROOYYGGPPNNRRO","RROOYYGGPPNNRRO","OOYYGGPPNNRROOY","OOYYGGPPNNRROOY","YYGGPPNNRROOYYG","YYGGPPNNRROOYYG","GGPPNNRROOYYGGP",".GPPNNRROOYYGG.","..NNRROOYYGGP..","...NRROOYYGG...","....OOYYGGP...."]},
+{r:10,c:13,d:[".....YY......",".....YY......","..GGGGGGGGG..",".GGGGGGGGGGG.","GGKGGGKGGGKGG","GGGGGGGGGGGGG","GKKGKKKGKKKGG","GGGGGGGGGGGGG",".GGGGGGGGGGG.","..GGGGGGGGG.."]},
+{r:9,c:11,d:["..GGGGG....",".GGGGGGG...","GGKGGGKGG..","GGKGGGKGG..","GGGGGGGGG..","GGGCGGGGG..","GGGGGGGGG..","GGGGGGGGG..","G.GG.GG.G.."]},
+{r:9,c:13,d:["KK.........KK","KKK.K...K.KKK","KKKKKK.KKKKKK","KKKKKKKKKKKKK","KKCKKKKKCKKKK","KKKKKKKKKKKKK",".KKKKKKKKKKK.","..KK.KKK.KK..","...K..K..K..."]},
+{r:11,c:11,d:["....B......","...BBB.....","..BBBBB....","..BPPPB....","..BBBBB....","..BBBBB....","..NBBBN....",".NNBBBNN...",".N.RRR.N...","...RRR.....","...R.R....."]},
+{r:15,c:15,d:["ORNCGYOROYGCNRO","RNCGYORNROYGCNR","NCGYORNCNROYGCN","CGYORNCGCNROYGC","GYORNCGYGCNROYG","YORNCGYOYGCNROY","ORNCGYOROYGCNRO","RNCGYORNROYGCNR","ORNCGYOROYGCNRO","YORNCGYOYGCNROY","GYORNCGYGCNROYG","CGYORNCGCNROYGC","NCGYORNCNROYGCN","RNCGYORNROYGCNR","ORNCGYOROYGCNRO"]},
+{r:8,c:13,d:["....NNNNN....","...NNNNNNN...","..N.N.N.N.N..",".RRRRRRRRRRR.","RRRRRRRRRRRRR",".R.OO.OO.OO.R","..RRRRRRRRR..","...O..O..O..."]},
+{r:7,c:13,d:["R.....R.....R","RR...RRR...RR","RRR.RRRRR.RRR","RRRRRRRRRRRRR","RRORRRYRRRGRR","RRRRRRRRRRRRR","OOOOOOOOOOOOO"]},
+{r:7,c:11,d:[".OOOOOOO...","OOOOOOOOO..","OOYYYYYOO..",".OYYYYYO...","..OYYYO....","...OYO.....","....O......"]},
+{r:6,c:13,d:[".............","KKKKKKKKKKKKK","KYYYKKKYYYKK.","KYYYKKKYYYKK.","KYYYKKKYYYKK.",".KKK.K.KKK..."]},
+{r:16,c:16,d:[".......RR.......","......RBBR......",".....RBCCBR.....","....RBCCCCBR....","...RBCCGGCCBR...","..RBCCGYYGCCBR..",".RBCCGYOOYGCCBR.","RBCCGYORROYGCCBR","RBCCGYORROYGCCBR",".RBCCGYOOYGCCBR.","..RBCCGYYGCCBR..","...RBCCGGCCBR...","....RBCCCCBR....",".....RBCCBR.....","......RBBR......",".......RR......."]},
+{r:9,c:13,d:["CC.........CC","CCC.......CCC","CCCCCCCCCCCCC","CCKKCCCCCKKCC","CCKKCCCCCKKCC","CCCCCBCCCCCCC","CCPCPCPCPCPCC",".CCCCCCCCCCC.","..CCCCCCCCC.."]},
+{r:9,c:11,d:["...BBBBB...","..BBBBBBB..",".BBKBBBKBB.",".BBBPBPBBB.",".BBBPPPBBB.","BBBBBBBBBBB","BBBBBBBBBBB",".BBBBBBBBB.","..P.....P.."]},
+{r:9,c:13,d:["....PPPPP....","..PPPPPPPPP..",".PPPPPPPPPPP.","PPPPPPPPPPPPP","PPKKPPPPPKKPP","PPKKPPPPPKKPP","PPPPPPPPPPPPP","PPPNNPPPNNPPP","PPPPPPPPPPPPP"]},
+{r:9,c:11,d:["...NNNNN...","..NNNNNNN..",".NNNNNNNNN.","NNNRNNNRNNN","NNNNNNNNNNN","NNRNNNNNRNN","NNNNNNNNNNN",".NNNNNNNNN.","..NNNNNNN.."]},
+{r:13,c:13,d:[".....BBB.....","...BBCCCBB...","..BCCCCCCCB..",".BCCGGGGGCCB.",".BCGGYYYGGCB.","BCCGYYOYYGCCB","BCCGYOOOYGCCB","BCCGYYOYYGCCB",".BCGGYYYGGCB.",".BCCGGGGGCCB.","..BCCCCCCCB..","...BBCCCBB...",".....BBB....."]},
+{r:9,c:13,d:["...YYYYYYY...","..YYYYYYYYY..",".YYGYGYGYGYY.","CCCCCCCCCCCCC","BBBBBBBBBBBBB","KKKKKKKKKKKKK","YYYYYYYYYYYYY",".YYYYYYYYYYY.","..YYYYYYYYY.."]},
+{r:9,c:11,d:["...GGGGG...","..GGGGGGG..","..GCGCGCG..","..GGGGGGG..","...BBBBB...","...BBBBB...","....BBB....","....BBB....",".....B....."]},
+{r:9,c:13,d:["...CCCCCCC...","..CCCCCCCCC..",".CCC.....CCC.","CCC..BBB..CCC","CCC..BBB..CCC","CCC..BBB..CCC",".CCC.....CCC.","..CCCCCCCCC..","...CCCCCCC..."]},
+{r:11,c:11,d:["...B.B.B...","....BBB....","..PPPPPPP..",".PPPPPPPPP.","PPPNPPPNPPP","PPPPPPPPPPP",".PPPNPPPPP.","..PPPPPPP..","...PPPPP...","....PPP....",".....P....."]},
+{r:14,c:14,d:["...BPNYGCBP...","..BPNYGCBPNY..",".BPNYGCBPNYGC.","BPNYGCBPNYGCBP","PNYGCBPNYGCBPN","NYGCBPNYGCBPNY","YGCBPNYGCBPNYG","GCBPNYGCBPNYGC","CBPNYGCBPNYGCB","BPNYGCBPNYGCBP","PNYGCBPNYGCBPN",".YGCBPNYGCBPN.","..CBPNYGCBPN..","...PNYGCBPN..."]},
+{r:9,c:11,d:["....N......","...NNN.....","..NNNNN.RR.",".NNNNNNN...","..OOOOO....","..YOYOY....","..YYYYY....","..YYYYY....","...YYY....."]},
+{r:9,c:13,d:[".R.........R.","RRR.......RRR",".RRR.OOO.RRR.","..RROOOOORR..","...ROOOOOR...","..RROOOOORR..",".RRR.OOO.RRR.","RRR.......RRR",".R.........R."]},
+{r:9,c:13,d:[".OO.....OO...","OOOOO.OOOOO..","OOOOOOOOOOO..","OOOOOOOOOOO..",".OOOOOOOOO...","..OOOOOOO....","...OOOOO.....","....OOO......",".....O......."]},
+{r:9,c:13,d:["......Y......","......Y......",".....YYY.....","YYYYYYYYYYYYY",".YYYYYYYYYYY.","..YYYYYYYYY..","...YYYYYYY...","..YYYY.YYYY..",".YYY.....YYY."]},
+{r:15,c:15,d:["GGGCCCCCCCCCBBB","GGGGCCCCCCCBBBB","GGGGGCCCCCBBBBB","GGGGGCCCCCBBBBB","GGGGGGCCCBBBBBB","GGGGGGCCCBBBBBB","GGGGGGGCBBBBBBB","GGGGGGGPPPPPPPP","RRRRRRRNPPPPPPP","RRRRRRNNNPPPPPP","RRRRRRNNNPPPPPP","RRRRRNNNNNPPPPP","RRRRRNNNNNPPPPP","RRRRNNNNNNNPPPP","RRRNNNNNNNNNPPP"]},
+{r:10,c:11,d:["..C...C....",".CCC.CCC...",".CCCCCCC.B.","..CBCBC....",".CCCBCCC...",".CCCCCCC...","..C.P.C....","....P......","...PPP.....","....P......"]},
+{r:10,c:13,d:[".....BB......",".....BB......","..PPPPPPPPP..",".PPPPPPPPPPP.","PPKPPPKPPPKPP","PPPPPPPPPPPPP","PKKPKKKPKKKPP","PPPPPPPPPPPPP",".PPPPPPPPPPP.","..PPPPPPPPP.."]},
+{r:9,c:11,d:["..PPPPP....",".PPPPPPP...","PPKPPPKPP..","PPKPPPKPP..","PPPPPPPPP..","PPPNPPPPP..","PPPPPPPPP..","PPPPPPPPP..","P.PP.PP.P.."]},
+{r:9,c:13,d:["KK.........KK","KKK.K...K.KKK","KKKKKK.KKKKKK","KKKKKKKKKKKKK","KKNKKKKKNKKKK","KKKKKKKKKKKKK",".KKKKKKKKKKK.","..KK.KKK.KK..","...K..K..K..."]},
+{r:15,c:15,d:[".......N.......","......NNR......",".....NRROO.....","....NNRROOC....","...NRROOCCBB...","..NNRROOCCBBP..",".NRROOCCBBPPNN.","NNRROOCCBBPPNNR",".ROOCCBBPPNNRR.","..OOCCBBPPNNR..","...CBBPPNNRR...","....BBPPNNR....",".....PNNRR.....","......NNR......",".......R......."]},
+{r:7,c:13,d:["...OOOOO.....","..OOOOOOO....",".OOOOOOOOO...","YYYYYYYYYYYYY",".OOOOOOOOO.Y.","..OOOOOOO....","...OOOOO....."]},
+{r:8,c:13,d:["....YYYYY....","...YYYYYYY...","..Y.Y.Y.Y.Y..",".GGGGGGGGGGG.","GGGGGGGGGGGGG",".G.CC.CC.CC.G","..GGGGGGGGG..","...C..C..C..."]},
+{r:7,c:13,d:["G.....G.....G","GG...GGG...GG","GGG.GGGGG.GGG","GGGGGGGGGGGGG","GGCGGGBGGGPGG","GGGGGGGGGGGGG","CCCCCCCCCCCCC"]},
+{r:7,c:11,d:[".CCCCCCC...","CCCCCCCCC..","CCBBBBBCC..",".CBBBBBC...","..CBBBC....","...CBC.....","....C......"]},
+{r:16,c:16,d:[".....ORNNRO.....","...YORNPPNROY...","..YORNPBBPNROY..",".YORNPBYYBPNROY.",".ORNPBYOOYBPNRO.","ORNPBYORROYBPNRO","RNPBYORNNROYBPNR","NPBYORNPPNROYBPN","NPBYORNPPNROYBPN","RNPBYORNNROYBPNR","ORNPBYORROYBPNRO",".ORNPBYOOYBPNRO.",".YORNPBYYBPNROY.","..YORNPBBPNROY..","...YORNPPNROY...",".....ORNNRO....."]},
+];
+const STORY_EXTRA=["🍔 맛있는 햄버거 완성!","🍦 시원한 아이스크림!","🍩 달콤한 도넛 한 입","🍓 빨간 딸기가 주렁주렁","💥 보스 스테이지! 색을 다 맞춰봐","🧁 깜찍한 컵케이크","🍬 알록달록 사탕","💗 사랑을 가득 담아","⭐ 반짝반짝 작은 별","💥 보스 스테이지! 색을 다 맞춰봐","🌸 활짝 핀 꽃","🎃 으스스 호박등","👻 깜짝! 유령이다","🦇 밤하늘의 박쥐","💥 보스 스테이지! 색을 다 맞춰봐","🪐 신비한 행성","🛸 미확인 비행물체","👑 빛나는 왕관","💎 영롱한 보석","💥 보스 스테이지! 색을 다 맞춰봐","⚡ 번쩍 번개구름","🐱 귀여운 고양이","🐤 삐악삐악 아기새","🟢 말랑말랑 슬라임","💥 보스 스테이지! 색을 다 맞춰봐","🏰 멋진 성","🍔 맛있는 햄버거 완성!","🍦 시원한 아이스크림!","🍩 달콤한 도넛 한 입","💥 보스 스테이지! 색을 다 맞춰봐","🍉 한여름 수박 파티","🧁 깜찍한 컵케이크","🍬 알록달록 사탕","💗 사랑을 가득 담아","💥 보스 스테이지! 색을 다 맞춰봐","😄 웃는 얼굴이 최고","🌸 활짝 핀 꽃","🎃 으스스 호박등","👻 깜짝! 유령이다","💥 보스 스테이지! 색을 다 맞춰봐","🚀 우주로 발사!","🪐 신비한 행성","🛸 미확인 비행물체","👑 빛나는 왕관","💥 보스 스테이지! 색을 다 맞춰봐","🕶️ 멋쟁이 선글라스","⚡ 번쩍 번개구름","🐱 귀여운 고양이","🐤 삐악삐악 아기새","💥 보스 스테이지! 색을 다 맞춰봐","🥚 무엇이 태어날까","🏰 멋진 성","🍔 맛있는 햄버거 완성!","🍦 시원한 아이스크림!","💥 보스 스테이지! 색을 다 맞춰봐","🍓 빨간 딸기가 주렁주렁","🍉 한여름 수박 파티","🧁 깜찍한 컵케이크","🍬 알록달록 사탕","💥 보스 스테이지! 색을 다 맞춰봐","⭐ 반짝반짝 작은 별","😄 웃는 얼굴이 최고","🌸 활짝 핀 꽃","🎃 으스스 호박등","💥 보스 스테이지! 색을 다 맞춰봐","🦇 밤하늘의 박쥐","🚀 우주로 발사!","🪐 신비한 행성","🛸 미확인 비행물체","💥 보스 스테이지! 색을 다 맞춰봐","💎 영롱한 보석","🕶️ 멋쟁이 선글라스","⚡ 번쩍 번개구름","🐱 귀여운 고양이","💥 보스 스테이지! 색을 다 맞춰봐","🟢 말랑말랑 슬라임","🥚 무엇이 태어날까","🏰 멋진 성","🍔 맛있는 햄버거 완성!","💥 보스 스테이지! 색을 다 맞춰봐","🍩 달콤한 도넛 한 입","🍓 빨간 딸기가 주렁주렁","🍉 한여름 수박 파티","🧁 깜찍한 컵케이크","💥 보스 스테이지! 색을 다 맞춰봐","💗 사랑을 가득 담아","⭐ 반짝반짝 작은 별","😄 웃는 얼굴이 최고","🌸 활짝 핀 꽃","💥 보스 스테이지! 색을 다 맞춰봐","👻 깜짝! 유령이다","🦇 밤하늘의 박쥐","🚀 우주로 발사!","🪐 신비한 행성","💥 보스 스테이지! 색을 다 맞춰봐","👑 빛나는 왕관","💎 영롱한 보석","🕶️ 멋쟁이 선글라스","⚡ 번쩍 번개구름","💥 보스 스테이지! 색을 다 맞춰봐","🐤 삐악삐악 아기새","🟢 말랑말랑 슬라임","🥚 무엇이 태어날까","🏰 멋진 성","💥 보스 스테이지! 색을 다 맞춰봐","🍦 시원한 아이스크림!","🍩 달콤한 도넛 한 입","🍓 빨간 딸기가 주렁주렁","🍉 한여름 수박 파티","💥 보스 스테이지! 색을 다 맞춰봐","🍬 알록달록 사탕","💗 사랑을 가득 담아","⭐ 반짝반짝 작은 별","😄 웃는 얼굴이 최고","💥 보스 스테이지! 색을 다 맞춰봐","🎃 으스스 호박등","👻 깜짝! 유령이다","🦇 밤하늘의 박쥐","🚀 우주로 발사!","💥 보스 스테이지! 색을 다 맞춰봐","🛸 미확인 비행물체","👑 빛나는 왕관","💎 영롱한 보석","🕶️ 멋쟁이 선글라스","💥 보스 스테이지! 색을 다 맞춰봐","🐱 귀여운 고양이","🐤 삐악삐악 아기새","🟢 말랑말랑 슬라임","🥚 무엇이 태어날까","💥 보스 스테이지! 색을 다 맞춰봐","🍔 맛있는 햄버거 완성!","🍦 시원한 아이스크림!","🍩 달콤한 도넛 한 입","🍓 빨간 딸기가 주렁주렁","💥 보스 스테이지! 색을 다 맞춰봐","🧁 깜찍한 컵케이크","🍬 알록달록 사탕","💗 사랑을 가득 담아","⭐ 반짝반짝 작은 별","💥 보스 스테이지! 색을 다 맞춰봐","🌸 활짝 핀 꽃","🎃 으스스 호박등","👻 깜짝! 유령이다","🦇 밤하늘의 박쥐","💥 보스 스테이지! 색을 다 맞춰봐","🪐 신비한 행성","🛸 미확인 비행물체","👑 빛나는 왕관","💎 영롱한 보석","💥 보스 스테이지! 색을 다 맞춰봐"];
 
 function mkLv(n){
   const lvs=[
@@ -963,7 +1117,7 @@ function mkLv(n){
       ".CGYNPBCGYNPBC.","..YNPBCGYNPBC..","...PBCGYNPBC...","....CGYNPBC....",
       ".....YNPBC.....","......PBC......",".......C......."]}
   ];
-  const l=lvs[n-1]; const g=[];
+  const l=(n<=50?lvs[n-1]:LV_EXTRA[n-51]); const g=[];
   for(let r=0;r<l.r;r++){const row=[];const s=(l.d[r]||'').padEnd(l.c,'.');
     for(let c=0;c<l.c;c++) row.push(s[c]==='.'?null:s[c]); g.push(row);}
   return {rows:l.r,cols:l.c,data:g};
@@ -1353,7 +1507,7 @@ G.start=function(lv,free){
   if(typeof HOME!=='undefined') HOME.exit();
   $('lv').textContent='레벨 '+lv;
   $('sc').textContent='0';
-  { const st=$('story'); if(st){ st.textContent='💭 '+(STORY[lv-1]||''); st.style.opacity='0'; setTimeout(()=>st.style.opacity='1',50); } }
+  { const st=$('story'); if(st){ st.textContent='💭 '+(STORY[lv-1]||(typeof STORY_EXTRA!=='undefined'?STORY_EXTRA[lv-51]:'')||''); st.style.opacity='0'; setTimeout(()=>st.style.opacity='1',50); } }
   const l=mkLv(lv);
   G.pxR=l.rows; G.pxC=l.cols;
   G.px=l.data.map(r=>[...r]);
