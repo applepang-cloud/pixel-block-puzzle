@@ -157,8 +157,29 @@ canvas{display:block}
   filter:drop-shadow(0 2px 5px rgba(0,0,0,.85))}
 #home-title h1{font-size:19px;margin-bottom:0}
 #home-title h2{font-size:13px;margin-bottom:0}
+#home-actions{display:flex;flex-direction:column;align-items:center;gap:11px;pointer-events:none}
 #play-btn{font-size:20px;padding:12px 44px;box-shadow:0 5px 18px rgba(0,114,255,.55),0 3px 10px rgba(0,0,0,.5)}
-#play-btn small{font-size:12px;opacity:.85;font-family:'Noto Sans KR'}
+#play-btn small,#free-btn small{font-size:12px;opacity:.85;font-family:'Noto Sans KR'}
+#free-btn{font-size:18px;padding:10px 34px;background:linear-gradient(135deg,#a55eea,#8854d0);
+  box-shadow:0 5px 16px rgba(136,84,208,.5),0 3px 10px rgba(0,0,0,.5)}
+/* ---- map select ---- */
+#sel-ov{background:rgba(12,8,26,.96);justify-content:flex-start;padding-top:54px}
+#sel-close{position:absolute;top:12px;right:12px;width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.14);color:#fff;font-size:18px;font-family:sans-serif;
+  cursor:pointer;padding:0;margin:0;box-shadow:none}
+#sel-close:active{transform:scale(.92)}
+#sel-title{font-size:20px;margin-bottom:12px}
+#sel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;width:94%;max-width:460px;
+  overflow-y:auto;padding:4px 4px 24px;align-content:start}
+.sel-tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;
+  padding:5px 4px 4px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;
+  transition:transform .12s,background .15s}
+.sel-tile:active{transform:scale(.93)}
+.sel-tile:hover{background:rgba(255,255,255,.13)}
+.sel-tile canvas{width:100%;height:auto;image-rendering:pixelated;display:block}
+.sel-tile .sl{font-family:'Lilita One';font-size:12px;color:#fff;line-height:1}
+.sel-tile.clr{border-color:rgba(255,215,0,.6)}
+.sel-tile.clr .sl{color:#ffd700}
 #start-ov.pal #home-ui{display:none}
 #pal-btn{position:absolute;right:14px;top:50%;z-index:3;width:62px;height:54px;
   border:none;border-radius:14px;background:rgba(255,255,255,.10);cursor:pointer;
@@ -210,8 +231,11 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v3.3</h2></div>
-      <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v3.4</h2></div>
+      <div id="home-actions">
+        <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
+        <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
+      </div>
     </div>
     <button id="pal-btn" title="픽셀 컬러링"><canvas id="pal-icon" width="48" height="36"></canvas></button>
     <button id="home-close">✕</button>
@@ -223,9 +247,14 @@ canvas{display:block}
 <div class="ov hide" id="clr-ov">
   <h2 id="clr-t">CLEAR!</h2><p id="clr-m"></p><button id="nxt">NEXT</button>
 </div>
+<div class="ov hide" id="sel-ov">
+  <button id="sel-close" onclick="G.closeSelect()">✕</button>
+  <h2 id="sel-title">맵 골라하기</h2>
+  <div id="sel-grid"></div>
+</div>
 <div class="ov hide" id="go-ov">
   <h2>GAME OVER</h2><p id="go-m">벨트가 가득 찼습니다!</p>
-  <button onclick="G.start(G.lv)">다시하기</button><button class="sec" onclick="G.newGame()">새로하기</button>
+  <button onclick="G.retry()">다시하기</button><button class="sec" onclick="G.goHome()">홈으로</button>
 </div>
 <div class="ov hide" id="pause-ov">
   <button id="pause-close" onclick="G.resume()">✕</button>
@@ -956,16 +985,51 @@ G.newGame=function(){ saveProgress(1); G.start(1); };
 // ---- pause menu ----
 G.pause=function(){ if(!G.on||G.dying||G.paused) return; G.paused=true; show('pause-ov'); };
 G.resume=function(){ if(!G.paused) return; G.paused=false; hide('pause-ov'); raf(); };
-G.restartLv=function(){ G.paused=false; hide('pause-ov'); G.start(G.lv); };
-G.goHome=function(){
+G.restartLv=function(){ G.paused=false; hide('pause-ov'); G.start(G.lv,G.free); };
+G.retry=function(){ G.start(G.lv,G.free); };
+function quitToOverlays(){
   G.paused=false; hide('pause-ov');
   G.on=false; G.dying=false;
   G.beltRunners=[]; G.bullets=[]; G.waiting=[]; G.clears=[]; G.particles=[]; G.hitFx=[]; G.drag=null;
   $('drag-layer').innerHTML='';
   renderBelt(); SFX.stopMusic(); stopVoice();
+}
+G.goHome=function(){ const wasFree=G.free; G.free=false; quitToOverlays();
   show('start-ov'); HOME.refresh();
+  if(wasFree) G.openSelect();   // from a freely-picked map, go back to the map list
 };
 G.viewRoom=function(){ hide('start-ov'); openRoom(0, ()=>{ show('start-ov'); }); };
+
+// ---- map select (FREE mode: pick any of the LV_MAX levels) ----
+function drawLevelPreview(cv,lv){
+  const l=mkLv(lv), R=l.rows, C=l.cols, s=4;
+  cv.width=C*s; cv.height=R*s;
+  const ctx=cv.getContext('2d');
+  for(let r=0;r<R;r++)for(let c=0;c<C;c++){
+    const v=l.data[r][c]; if(!v||v==='!') continue;
+    ctx.fillStyle=hex[v]||'#888'; ctx.fillRect(c*s,r*s,s,s);
+  }
+}
+let selBuilt=false;
+function buildSelectGrid(){
+  const grid=$('sel-grid'); grid.innerHTML='';
+  for(let lv=1;lv<=LV_MAX;lv++){
+    const t=document.createElement('div'); t.className='sel-tile'+((G.unlocked||0)>=lv?' clr':'');
+    const cv=document.createElement('canvas'); drawLevelPreview(cv,lv);
+    const lab=document.createElement('div'); lab.className='sl';
+    lab.textContent=((G.unlocked||0)>=lv?'✓':'')+lv;
+    t.append(cv,lab);
+    t.addEventListener('click',()=>{ G.closeSelect(); G.start(lv,true); });
+    grid.appendChild(t);
+  }
+  selBuilt=true;
+}
+G.openSelect=function(){
+  if(!$('start-ov').classList.contains('hide')){} // home is showing behind; fine
+  buildSelectGrid(); // rebuild each open so cleared marks stay fresh
+  show('sel-ov'); vibe(10);
+};
+G.closeSelect=function(){ hide('sel-ov'); };
 
 // ---- unlocked decorations ----
 function loadUnlocked(){ try{const v=parseInt(localStorage.getItem('pbp_unlocked'));if(v>=0&&v<=LV_MAX)return v;}catch(e){} return G.unlocked||0; }
@@ -1054,9 +1118,10 @@ function openRoom(clearedLv,onDone){
   nb.onclick=()=>{ hide('room-ov'); onDone&&onDone(); };
 }
 
-G.start=function(lv){
+G.start=function(lv,free){
   SFX.init(); SFX.resume(); SFX.startMusic();
-  saveProgress(lv);
+  G.free=!!free;
+  if(!G.free) saveProgress(lv);   // free play (map select) doesn't move main progress
   G.lv=lv; G.score=0; G.on=false;
   G.belt=[]; G.beltRunners=[]; G.waiting=[]; G.bullets=[]; G.clears=[]; G.particles=[]; G.hitFx=[]; G.drag=null; G.beltDirty=false;
   if(G.dlg&&G.dlg.timer) clearInterval(G.dlg.timer); G.dlg=null; stopVoice();
@@ -1784,7 +1849,8 @@ function checkWin(){
     showDialogue(dl.outro||[], ()=>{
       G.unlocked=Math.max(G.unlocked||0, clearedLv); saveUnlocked();
       openRoom(clearedLv, ()=>{
-        if(clearedLv<LV_MAX){ saveProgress(clearedLv+1); G.start(clearedLv+1); }
+        if(G.free){ G.free=false; SFX.stopMusic(); show('start-ov'); HOME.refresh(); G.openSelect(); }
+        else if(clearedLv<LV_MAX){ saveProgress(clearedLv+1); G.start(clearedLv+1); }
         else { saveProgress(1); show('start-ov'); HOME.refresh(); }
       });
     }, 'L'+clearedLv+'o');
