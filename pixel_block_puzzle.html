@@ -122,6 +122,7 @@ canvas{display:block}
 .ov button:active{transform:scale(.95)}
 .ov .sec{background:linear-gradient(135deg,#ff6b6b,#ee5a24);box-shadow:0 3px 12px rgba(238,90,36,.35)}
 .ov.hide{display:none}
+.hide{display:none!important}
 #go-ov h2{color:#ff6b6b}
 
 /* ---- dialogue (visual-novel) ---- */
@@ -291,7 +292,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v3.7</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v3.8</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -1139,7 +1140,7 @@ function savePaint(){ try{localStorage.setItem('pbp_paint',JSON.stringify(G.pain
 function addPaint(k){ if(!G.paint) G.paint={}; G.paint[k]=(G.paint[k]||0)+1; savePaint(); }
 
 // ---- coins (earned via clear roulette, spent on items) ----
-function loadCoins(){ try{const v=parseInt(localStorage.getItem('pbp_coins')); if(v>=0) return v;}catch(e){} return 500; }
+function loadCoins(){ try{const v=parseInt(localStorage.getItem('pbp_coins')); if(v>=0) return v;}catch(e){} return 1000; }
 function saveCoins(){ try{localStorage.setItem('pbp_coins',String(G.coins||0));}catch(e){} }
 function updateCoins(){ const el=$('cn'); if(el) el.textContent=G.coins||0; renderItemBar(); }
 function addCoins(n){ G.coins=(G.coins||0)+n; saveCoins(); updateCoins();
