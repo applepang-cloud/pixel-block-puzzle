@@ -210,7 +210,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v3.0</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v3.3</h2></div>
       <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
     </div>
     <button id="pal-btn" title="픽셀 컬러링"><canvas id="pal-icon" width="48" height="36"></canvas></button>
@@ -299,7 +299,31 @@ const STORY=[
   "길고양이도 우리 가족이 됐다 🐱",
   "베란다에 작은 새 둥지가 생겼어 🐦",
   "비 오는 날엔 둘이 영화 마라톤 🎬",
-  "너는 언제나 나의 영웅이야 🦸"
+  "너는 언제나 나의 영웅이야 🦸",
+  "토끼처럼 폴짝, 봄나들이 가는 길 🐰",
+  "곰 인형을 닮은 그가 날 꼭 안아줬다 🐻",
+  "함께 모은 돼지 저금통이 가득 찼어 🐷",
+  "여우비 내리던 날의 첫 우산 데이트 🦊",
+  "산책길의 새 친구, 시바견 콩이 🐕",
+  "느긋한 불독처럼 게으른 일요일 🐶",
+  "점박이 강아지와 공원 한 바퀴 🐾",
+  "미용실 다녀온 푸들처럼 뽀송한 기분 🐩",
+  "까만 고양이가 행운을 물고 왔어 🐱",
+  "낮잠 자는 고양이 옆에서 함께 졸기 😴",
+  "리본 단 아기고양이가 우리 집에 🎀",
+  "호랑이 무늬 고양이는 사실 겁쟁이 🐯",
+  "삐악삐악, 마당에 병아리가 태어났어 🐤",
+  "밤을 지키는 부엉이처럼 깊은 대화 🦉",
+  "연못의 오리 가족을 구경하는 오후 🦆",
+  "아쿠아리움 펭귄 앞에서 손 잡고 🐧",
+  "팝콘 가득 안고 영화관 맨 앞줄 🍿",
+  "우리의 추억을 필름처럼 돌려본다 🎞️",
+  "소파에 붙어 드라마 정주행하는 밤 📺",
+  "3D 영화 속으로 함께 빠져들었어 🥽",
+  "가면을 써도 너인 걸 난 알아 🦸",
+  "번개처럼 빠르게 네게 달려갈게 ⚡",
+  "무슨 일이 와도 내가 널 지킬게 🛡️",
+  "우리 사랑은 영원한 해피엔딩 👑"
 ];
 
 // 대화 (얼굴 + 대사) — 레벨 시작(intro)/클리어(outro)
@@ -334,7 +358,31 @@ const DIALOG=[
   {intro:[H('🐱','앗, 길고양이가 따라와!')], outro:[H('😊','너도 이제 우리 식구야.')]},
   {intro:[H('🐦','베란다에 새가 둥지를 틀었어!')], outro:[M('😄','작은 손님들이 생겼네요.')]},
   {intro:[M('🎬','비도 오는데 영화나 볼까요?')], outro:[H('😆','팝콘은 내가 쏜다!')]},
-  {intro:[H('🦸','넌 나의 슈퍼히어로야.')], outro:[M('😊','네 곁이라면 난 늘 강해져요.'),H('🥹','앞으로도 함께야 ♥')]}
+  {intro:[H('🦸','넌 나의 슈퍼히어로야.')], outro:[M('😊','네 곁이라면 난 늘 강해져요.'),H('🥹','앞으로도 함께야 ♥')]},
+  {intro:[H('🐰','토끼 보러 가자, 빨리빨리!')], outro:[M('😊','너 진짜 토끼 같아, 깡총깡총.')]},
+  {intro:[M('🐻','곰돌이 인형, 너 닮아서 샀어.')], outro:[H('🥰','그럼 매일 안고 잘래.')]},
+  {intro:[H('🐷','저금통 열어보자, 두근두근!')], outro:[M('😄','여행 경비 완성이다!')]},
+  {intro:[H('🌂','우산 같이 쓸래? 비 와.')], outro:[H('😳','어깨가… 자꾸 닿네.')]},
+  {intro:[M('🐕','콩이가 너만 보면 꼬리 흔들어.')], outro:[H('😆','내가 더 좋은가 봐!')]},
+  {intro:[H('😴','오늘은 그냥 뒹굴자.')], outro:[M('🐶','불독처럼 늘어져도 좋아.')]},
+  {intro:[H('🐾','점박이 따라 뛰자!')], outro:[H('😊','강아지 덕에 매일이 산책이야.')]},
+  {intro:[M('✂️','미용실 다녀왔어. 어때?')], outro:[H('🥰','뽀송뽀송, 안고 싶다.')]},
+  {intro:[H('🐱','까만 고양이다, 행운일까?')], outro:[M('😊','너를 만난 게 내 행운이야.')]},
+  {intro:[H('😴','쉿, 고양이 잔다…')], outro:[H('😌','우리도 같이 졸자.')]},
+  {intro:[M('🎀','리본 달아줬어, 공주님 고양이.')], outro:[H('🥹','너무 귀여워서 눈물 나.')]},
+  {intro:[H('🐯','호랑이 무늬인데 겁쟁이래.')], outro:[M('😄','너 닮았네, 무서운 척만.')]},
+  {intro:[H('🐤','삐악! 병아리가 태어났어!')], outro:[M('😊','우리가 키워보자.')]},
+  {intro:[M('🦉','밤새 얘기해도 안 질려.')], outro:[H('🥰','네 목소리가 자장가 같아.')]},
+  {intro:[H('🦆','오리 가족 좀 봐, 줄 맞춰 가!')], outro:[H('😊','우리도 저렇게 나란히.')]},
+  {intro:[M('🐧','펭귄은 평생 한 짝만 사랑한대.')], outro:[H('🥹','우리처럼?')]},
+  {intro:[H('🍿','팝콘은 큰 사이즈지!')], outro:[M('😆','맨 앞줄은 목 아파…')]},
+  {intro:[H('🎞️','우리 사진들 영상으로 만들었어.')], outro:[M('🥹','다 보물 같은 순간이야.')]},
+  {intro:[M('📺','오늘 밤도 정주행 각이다.')], outro:[H('😴','한 편만… 하다 밤샜네.')]},
+  {intro:[H('🥽','3D 안경 써! 튀어나온다!')], outro:[H('😆','나도 모르게 손 뻗었어.')]},
+  {intro:[M('🦸','내가 네 히어로가 되어줄게.')], outro:[H('🥰','가면 써도 딱 알아보겠어.')]},
+  {intro:[H('⚡','부르면 번개처럼 달려와 줘.')], outro:[M('😊','어디든 0.1초 만에 갈게.')]},
+  {intro:[M('🛡️','무슨 일이 와도 내가 막을게.')], outro:[H('🥹','네 곁이 제일 안전해.')]},
+  {intro:[H('👑','우리, 오래오래 행복하자.')], outro:[M('😍','영원히 너의 곁에서.'),H('🥰','해피엔딩 ♥')]}
 ];
 
 // 방 꾸미기 아이템 (레벨 1개 클리어마다 1개)
@@ -351,18 +399,33 @@ const BF_ROOM_ITEMS=[
   {e:'🎮',n:'게임기'},{e:'📺',n:'대형 TV'},{e:'🛋️',n:'2인용 소파'},{e:'🐶',n:'강아지'},{e:'🎸',n:'기타'},
   {e:'🖥️',n:'게이밍 PC'},{e:'🎂',n:'케이크'},{e:'🎁',n:'선물 상자'},{e:'💍',n:'커플 반지'},{e:'🏡',n:'우리 보금자리'}
 ];
-// 우리 가족 꾸미기 아이템 (레벨 21~26)
+// 우리 가족 꾸미기 아이템 (레벨 21~30)
 const FAMILY_ROOM_ITEMS=[
   {e:'🐼',n:'판다 인형'},{e:'🐶',n:'강아지'},{e:'🐱',n:'고양이'},
-  {e:'🐦',n:'새장'},{e:'🍿',n:'홈시어터'},{e:'🦸',n:'히어로 피규어'}
+  {e:'🐦',n:'새장'},{e:'🍿',n:'홈시어터'},{e:'🦸',n:'히어로 피규어'},
+  {e:'🐰',n:'토끼 인형'},{e:'🐻',n:'곰 인형'},{e:'🐷',n:'돼지 저금통'},{e:'🦊',n:'여우 쿠션'}
 ];
-// 방 정의: 0=내 방(1~10), 1=남친 집(11~20), 2=우리 가족(21~26). 위치는 공용 레이아웃 재사용.
+// 펫 하우스 아이템 (레벨 31~40)
+const PET_ROOM_ITEMS=[
+  {e:'🐕',n:'시바견'},{e:'🦴',n:'강아지 뼈'},{e:'🐩',n:'푸들'},{e:'🏆',n:'애견 트로피'},
+  {e:'🐈',n:'고양이'},{e:'🧶',n:'털실 공'},{e:'🎀',n:'리본 장식'},{e:'🐯',n:'호랑이 인형'},
+  {e:'🐤',n:'병아리'},{e:'🦉',n:'부엉이 시계'}
+];
+// 우리들의 무대 아이템 (레벨 41~50)
+const STAGE_ROOM_ITEMS=[
+  {e:'🦆',n:'오리 인형'},{e:'🐧',n:'펭귄 인형'},{e:'🍿',n:'팝콘 머신'},{e:'🎬',n:'클래퍼보드'},
+  {e:'📺',n:'대형 TV'},{e:'🎞️',n:'필름 액자'},{e:'🦸',n:'히어로 포스터'},{e:'⚡',n:'네온 번개'},
+  {e:'🛡️',n:'방패 장식'},{e:'👑',n:'왕관'}
+];
+// 방 정의: 10레벨마다 한 방. 위치는 공용 레이아웃 재사용.
 const ROOMS=[
   {title:'💗 내 방 꾸미기',   items:ROOM_ITEMS,    pos:ROOM_POS},
   {title:'💙 남친 집 꾸미기', items:BF_ROOM_ITEMS, pos:ROOM_POS},
-  {title:'🐾 우리 가족 꾸미기', items:FAMILY_ROOM_ITEMS, pos:ROOM_POS}
+  {title:'🐾 우리 가족 꾸미기', items:FAMILY_ROOM_ITEMS, pos:ROOM_POS},
+  {title:'🏡 펫 하우스 꾸미기', items:PET_ROOM_ITEMS, pos:ROOM_POS},
+  {title:'🌟 우리들의 무대 꾸미기', items:STAGE_ROOM_ITEMS, pos:ROOM_POS}
 ];
-const LV_MAX=26;
+const LV_MAX=50;
 
 // ========== PIXEL COLORING DESIGNS (from number-coloring PDFs) ==========
 // digit grids; pal maps each digit to a game palette color key ('0' = background)
@@ -657,7 +720,128 @@ function mkLv(n){
       "RRRRRRRRRRRRR","RBBBBBBBBBBBR","RBBBBBYBBBBBR","RBBBBYYYBBBBR",
       "RBBBYYYYYBBBR","RBYYYYYYYYYBR","RBBYYYYYYYBBR","RBBBYYYYYBBBR",
       "RBBBYYYYYBBBR","RBBYYYBYYYBBR",".RBYYBBBYYBR.","..RBBBBBBBR..",
-      "...RRRRRRR..."]}
+      "...RRRRRRR..."]},
+    // L27: Rabbit (동물)
+    {r:12,c:13,d:[
+      "..WW.....WW..","..WNW...WNW..","..WNW...WNW..","..WNW...WNW..",
+      "..WWW...WWW..","..WWWWWWWWW..",".WWWWWWWWWWW.",".WWKWWWWWKWW.",
+      ".WWWWWNWWWWW.",".WWWWWWWWWWW.","..WWWWWWWWW..","...WWWWWWW..."]},
+    // L28: Bear (동물)
+    {r:12,c:13,d:[
+      "OOO.......OOO","OOOO.....OOOO","OOOOO...OOOOO","OOOOOOOOOOOOO",
+      "OOOKOOOOOKOOO","OOOOOOOOOOOOO","OOOOWWWWWOOOO","OOOWWWKWWWOOO",
+      "OOOWWWWWWWOOO","OOOOWWWWWOOOO",".OOOOOOOOOOO.","..OOOOOOOOO.."]},
+    // L29: Pig (동물)
+    {r:11,c:13,d:[
+      "NN.........NN","NNN.......NNN",".NNNNNNNNNNN.","NNNNNNNNNNNNN",
+      "NNNKNNNNNKNNN","NNNNNNNNNNNNN","NNNNPPPPPNNNN","NNNNPKPKPNNNN",
+      "NNNNPPPPPNNNN",".NNNNNNNNNNN.","..NNNNNNNNN.."]},
+    // L30: Fox (동물)
+    {r:12,c:13,d:[
+      "KK.........KK","OOO.......OOO","OOOO.....OOOO","OOOOOOOOOOOOO",
+      "OOOKOOOOOKOOO","OOWWOOOOOWWOO","OWWWWWWWWWWWO",".WWWWWKWWWWW.",
+      "..WWWWWWWWW..","...WWWWWWW...","....WWWWW....",".....WWW....."]},
+    // L31: Shiba dog (강아지)
+    {r:12,c:13,d:[
+      "OO.........OO","OOO.......OOO","OOOO.....OOOO","OOOOOOOOOOOOO",
+      "OOKKOOOOOKKOO","OOOOOOOOOOOOO","OWWWWWWWWWWWO","OWWWWWKWWWWWO",
+      "OWWWWWWWWWWWO","OOWWWWWWWWWOO",".OOWWWWWWWOO.","..OOOOOOOOO.."]},
+    // L32: Bulldog (강아지)
+    {r:11,c:13,d:[
+      ".OOOOOOOOOOO.","OOOOOOOOOOOOO","OOOOOOOOOOOOO","OOKKOOOOOKKOO",
+      "OOOOOOOOOOOOO","OWWWWWWWWWWWO","OWWWWKKKWWWWO","OWWWKWWWKWWWO",
+      "OWWWWWWWWWWWO","OOWWWWWWWWWOO",".OOOOOOOOOOO."]},
+    // L33: Dalmatian (강아지)
+    {r:11,c:13,d:[
+      "KKK.......KKK","KKKK.....KKKK",".WWWWWWWWWWW.","WWWKWWWWWWWWW",
+      "WWWWWWWWKWWWW","WWKWWWWWWWWWW","WWWKWWWWWKWWW","WWWWWWWWWWWKW",
+      "WWWWWKKKWWWWW",".WWWKWWWWWWW.","..WWWWWWWWW.."]},
+    // L34: Poodle (강아지)
+    {r:11,c:13,d:[
+      "...NN...NN...","..NNNN.NNNN..","..NNNNNNNNN..",".NNNNNNNNNNN.",
+      "NNNNNNNNNNNNN","NNNKNNNNNKNNN","NNNNNNNNNNNNN","NNNNNKKKNNNNN",
+      ".NNNNNNNNNNN.","..NNN...NNN..",".NNNN...NNNN."]},
+    // L35: Black cat (고양이)
+    {r:11,c:13,d:[
+      "KK.........KK","KKK.......KKK","KKKKK...KKKKK","KKKKKKKKKKKKK",
+      "KKKKKKKKKKKKK","KKYYKKKKKYYKK","KKYYKKKKKYYKK","KKKKKKNKKKKKK",
+      "KKKKKKKKKKKKK",".KKKKKKKKKKK.","..KKKKKKKKK.."]},
+    // L36: Sleeping cat (고양이)
+    {r:10,c:13,d:[
+      ".OO.....OO...",".OOO...OOO...","..OOOOOOOOO..",".OOOOOOOOOOO.",
+      "OOKKOOOOOKKOO","OOOOOONOOOOOO","OOOOOOOOOOOOO","OOOOOOOOOOOOO",
+      ".OOOOOOOOOOO.","..OOOOOOOOO.."]},
+    // L37: Kitten with bow (고양이)
+    {r:10,c:13,d:[
+      ".WW.NNNNN.WW.",".WWW.NNN.WWW.",".WWWWWWWWWWW.","WWWWWWWWWWWWW",
+      "WWKKWWWWWKKWW","WWWWWWWWWWWWW","WWWWWWNWWWWWW","WWWWKWWWKWWWW",
+      ".WWWWWWWWWWW.","..WWWWWWWWW.."]},
+    // L38: Tabby tiger cat (고양이)
+    {r:11,c:13,d:[
+      "OO.........OO","OOO.......OOO","OOKOOKOKOOKOO","OOOOOOOOOOOOO",
+      "OOKKOOOOOKKOO","OOOOOOOOOOOOO","OOOOWWWWWOOOO","OOOWWWNWWWOOO",
+      "OOOWWWWWWWOOO",".OOOOOOOOOOO.","..OOOOOOOOO.."]},
+    // L39: Chick (새)
+    {r:12,c:13,d:[
+      "....YYYYY....","...YYYYYYY...","..YYYYYYYYY..","..YYKYYYKYY..",
+      "..YYYOOOYYY..","..YYYYYYYYY..",".YYYYYYYYYYY.","YYYYYYYYYYYYY",
+      "YYYYYYYYYYYYY",".YYYYYYYYYYY.","..YYYYYYYYY..","...O.....O..."]},
+    // L40: Owl (새)
+    {r:12,c:13,d:[
+      "OOO.......OOO","OOOOOOOOOOOOO","OWWWOOOOOWWWO","OWKWOOOOOWKWO",
+      "OWWWOYYYOWWWO","OOOOOYYYOOOOO","OOOOOOOOOOOOO","OOOOOOOOOOOOO",
+      "OKOOOOOOOOOKO","OOKOOOOOOOKOO",".OOOOOOOOOOO.","..OOOOOOOOO.."]},
+    // L41: Duck (새)
+    {r:12,c:13,d:[
+      "....YYYY.....","...YYYYYY....","..YYKYYYYY...",".OOYYYYYYY...",
+      "OOOOYYYYYY...",".OOYYYYYYYY..","..YYYYYYYYYY.","..YYYYYYYYYY.",
+      ".YYYYYYYYYYYY",".YYYYYYYYYYY.","..YYYYYYYYY..","...OO...OO..."]},
+    // L42: Penguin (새)
+    {r:13,c:13,d:[
+      "...KKKKKKK...","..KKKKKKKKK..","..KKKKKKKKK..","..KKWWWWWKK..",
+      "..KWKWWWKWK..","..KWWWOWWWK..",".KKWWWWWWWKK.","KKKWWWWWWWKKK",
+      "KKKWWWWWWWKKK","KKKWWWWWWWKKK",".KKWWWWWWWKK.","..KK.....KK..",
+      ".OOO.....OOO."]},
+    // L43: Popcorn (영화·TV)
+    {r:10,c:13,d:[
+      "..Y.YY.YY....",".YYYYYYYYYYY.","YYYYYYYYYYYYY",".RWRWRWRWRWR.",
+      ".RWRWRWRWRWR.",".RWRWRWRWRWR.",".RWRWRWRWRWR.",".RWRWRWRWRWR.",
+      "..RWRWRWRWR..","...RRRRRRR..."]},
+    // L44: Film reel (영화·TV)
+    {r:11,c:13,d:[
+      "...KKKKKKK...",".KKKKKKKKKKK.","KKKWWKKKWWKKK","KKWWWKKKWWWKK",
+      "KKKKKWWWKKKKK","KKKKWWWWWKKKK","KKKKKWWWKKKKK","KKWWWKKKWWWKK",
+      "KKKWWKKKWWKKK",".KKKKKKKKKKK.","...KKKKKKK..."]},
+    // L45: Retro TV (영화·TV)
+    {r:11,c:13,d:[
+      "...K.....K...","....K...K....",".....K.K.....","..OOOOOOOOO..",
+      ".OOOOOOOOOOO.",".OCCCCCCCCCO.",".OCCCCCCCCCO.",".OCCCCCCCCCO.",
+      ".OCCCCCCCCCO.",".OOOOOOOOOOO.","..O.......O.."]},
+    // L46: 3D glasses (영화·TV)
+    {r:9,c:13,d:[
+      ".KKKKKKKKKKK.","KRRRRRKBBBBBK","KRRRRRKBBBBBK","KRRRRRKBBBBBK",
+      "KRRRRRKBBBBBK","KRRRRRKBBBBBK",".KKKKKKKKKKK.","K...........K",
+      ".K.........K."]},
+    // L47: Hero mask (슈퍼히어로)
+    {r:8,c:13,d:[
+      "BBBB.....BBBB","BBBBBB.BBBBBB","BBBBBBBBBBBBB","BWWWBBBBBWWWB",
+      "BWWWBBBBBWWWB","BBBBBBBBBBBBB",".BBBBBBBBBBB.","..BBBBBBBBB.."]},
+    // L48: Lightning bolt (슈퍼히어로)
+    {r:10,c:13,d:[
+      "BBBBBBBBYYYBB","BBBBBBBYYYBBB","BBBBBBYYYBBBB","BBBBBYYYBBBBB",
+      "BBBBYYYYYYBBB","BBBBBBBYYYBBB","BBBBBBYYYBBBB","BBBBBYYYBBBBB",
+      "BBBBYYYBBBBBB","BBBYYYBBBBBBB"]},
+    // L49: Shield (슈퍼히어로)
+    {r:13,c:13,d:[
+      "RRRRRRRRRRRRR","RBBBBBWBBBBBR","RBBBBBWBBBBBR","RBBBBBWBBBBBR",
+      "RBBBBBWBBBBBR","RWWWWWWWWWWWR","RBBBBBWBBBBBR","RBBBBBWBBBBBR",
+      ".RBBBWBWBBBR.","..RBBBWBBBR..","...RBBWBBR...","....RBBBR....",
+      ".....RRR....."]},
+    // L50: Crown finale (슈퍼히어로)
+    {r:9,c:13,d:[
+      "Y.....Y.....Y","YY...YYY...YY","YYY.YYYYY.YYY","YYYYYYYYYYYYY",
+      "YYYYYYYYYYYYY","YYRYYYRYYYRYY","YYYYYYYYYYYYY","RRRRRRRRRRRRR",
+      "RRRRRRRRRRRRR"]}
   ];
   const l=lvs[n-1]; const g=[];
   for(let r=0;r<l.r;r++){const row=[];const s=(l.d[r]||'').padEnd(l.c,'.');
