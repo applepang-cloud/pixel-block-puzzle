@@ -293,7 +293,13 @@ const STORY=[
   "그를 위한 깜짝 케이크, 설렘이 가득.",
   "작은 선물에 그가 활짝 웃었다.",
   "\"우리 오래 함께하자\" — 약속의 반지 💍",
-  "둘이 만든 따뜻한 보금자리, 사랑은 계속된다 ♥"
+  "둘이 만든 따뜻한 보금자리, 사랑은 계속된다 ♥",
+  "둘이 동물원 데이트! 판다 앞에서 찰칵 📷",
+  "보호소에서 강아지를 입양했어 🐶",
+  "길고양이도 우리 가족이 됐다 🐱",
+  "베란다에 작은 새 둥지가 생겼어 🐦",
+  "비 오는 날엔 둘이 영화 마라톤 🎬",
+  "너는 언제나 나의 영웅이야 🦸"
 ];
 
 // 대화 (얼굴 + 대사) — 레벨 시작(intro)/클리어(outro)
@@ -322,7 +328,13 @@ const DIALOG=[
   {intro:[H('🎂','깜짝 케이크 준비 완료!')], outro:[M('🥹','이런 거 처음 받아봐요…')]},
   {intro:[H('🎁','작은 선물 하나 준비했어.')], outro:[M('😍','평생 간직할게요.')]},
   {intro:[M('😳','잠깐… 할 말이 있어요.')], outro:[M('💍','우리 오래 함께해요.'),H('🥹','응, 당연하지!')]},
-  {intro:[H('🏡','우리 둘만의 공간이 생겼어!')], outro:[H('🥰','사랑하는 사람과 함께라서 행복해.'),M('😊','앞으로도 쭉 함께해요 ♥')]}
+  {intro:[H('🏡','우리 둘만의 공간이 생겼어!')], outro:[H('🥰','사랑하는 사람과 함께라서 행복해.'),M('😊','앞으로도 쭉 함께해요 ♥')]},
+  {intro:[H('🐼','우와, 판다다! 같이 사진 찍자!')], outro:[M('📷','오늘 사진 진짜 잘 나왔어요.')]},
+  {intro:[M('🐶','이 강아지… 우리가 키울까요?')], outro:[H('🥰','우리 가족이 한 명 더 늘었어!')]},
+  {intro:[H('🐱','앗, 길고양이가 따라와!')], outro:[H('😊','너도 이제 우리 식구야.')]},
+  {intro:[H('🐦','베란다에 새가 둥지를 틀었어!')], outro:[M('😄','작은 손님들이 생겼네요.')]},
+  {intro:[M('🎬','비도 오는데 영화나 볼까요?')], outro:[H('😆','팝콘은 내가 쏜다!')]},
+  {intro:[H('🦸','넌 나의 슈퍼히어로야.')], outro:[M('😊','네 곁이라면 난 늘 강해져요.'),H('🥹','앞으로도 함께야 ♥')]}
 ];
 
 // 방 꾸미기 아이템 (레벨 1개 클리어마다 1개)
@@ -339,12 +351,18 @@ const BF_ROOM_ITEMS=[
   {e:'🎮',n:'게임기'},{e:'📺',n:'대형 TV'},{e:'🛋️',n:'2인용 소파'},{e:'🐶',n:'강아지'},{e:'🎸',n:'기타'},
   {e:'🖥️',n:'게이밍 PC'},{e:'🎂',n:'케이크'},{e:'🎁',n:'선물 상자'},{e:'💍',n:'커플 반지'},{e:'🏡',n:'우리 보금자리'}
 ];
-// 방 정의: 0=내 방(레벨 1~10), 1=남친 집(레벨 11~20). 위치는 공용 레이아웃 재사용.
+// 우리 가족 꾸미기 아이템 (레벨 21~26)
+const FAMILY_ROOM_ITEMS=[
+  {e:'🐼',n:'판다 인형'},{e:'🐶',n:'강아지'},{e:'🐱',n:'고양이'},
+  {e:'🐦',n:'새장'},{e:'🍿',n:'홈시어터'},{e:'🦸',n:'히어로 피규어'}
+];
+// 방 정의: 0=내 방(1~10), 1=남친 집(11~20), 2=우리 가족(21~26). 위치는 공용 레이아웃 재사용.
 const ROOMS=[
   {title:'💗 내 방 꾸미기',   items:ROOM_ITEMS,    pos:ROOM_POS},
-  {title:'💙 남친 집 꾸미기', items:BF_ROOM_ITEMS, pos:ROOM_POS}
+  {title:'💙 남친 집 꾸미기', items:BF_ROOM_ITEMS, pos:ROOM_POS},
+  {title:'🐾 우리 가족 꾸미기', items:FAMILY_ROOM_ITEMS, pos:ROOM_POS}
 ];
-const LV_MAX=20;
+const LV_MAX=26;
 
 // ========== PIXEL COLORING DESIGNS (from number-coloring PDFs) ==========
 // digit grids; pal maps each digit to a game palette color key ('0' = background)
@@ -608,7 +626,38 @@ function mkLv(n){
     {r:12,c:13,d:[
       "N.RRR...RRR.N",".RRRRR.RRRRR.","RRRRRRRRRRRRR","RRRRRRRRRRRRR",
       "RRRRWWWWWRRRR","RRRWWWWWWWRRR",".RRWWWWWWWRR.","..RRWWWWWRR..",
-      "...RRWWWRR...","....RRWRR....",".....RRR.....","......R......"]}
+      "...RRWWWRR...","....RRWRR....",".....RRR.....","......R......"]},
+    // L21: Panda (동물) — prohama 스타일 픽셀 도안
+    {r:12,c:13,d:[
+      "KKK.......KKK","KKKK.....KKKK",".WWWWWWWWWWW.","WWWWWWWWWWWWW",
+      "WWKKWWWWWKKWW","WWKKWWWWWKKWW","WWWWWWWWWWWWW","WNWWWKWWWWNWW",
+      "WWWWKKKWWWWWW","WWWWWKWWWWWWW",".WWWWWWWWWWW.","..WWWWWWWWW.."]},
+    // L22: Dog (강아지)
+    {r:12,c:13,d:[
+      "OOO.......OOO","OOOO.....OOOO","OOOOO...OOOOO","OOOWWWWWWWOOO",
+      "OOWWWWWWWWWOO","OWWKWWWWWKWWO","OWWKWWWWWKWWO","OWWWWWKWWWWWO",
+      "OWWWWKKKWWWWO","OOWWWNNNWWWOO",".OOWWWWWWWOO.","..OOOOOOOOO.."]},
+    // L23: Cat (고양이)
+    {r:12,c:13,d:[
+      "YY.........YY","YYY.......YYY","YYYYY...YYYYY","YYYYYYYYYYYYY",
+      "YYYYYYYYYYYYY","YYKKYYYYYKKYY","YYKKYYYYYKKYY","YYYYYYNYYYYYY",
+      "YYYYWWWWWYYYY","YYYWWWWWWWYYY",".YYYYYYYYYYY.","..YYYYYYYYY.."]},
+    // L24: Bird (새) — 알록달록 앵무새
+    {r:12,c:13,d:[
+      "....RRRR.....","...RRRRRR....","..RRRRRRRR...","..RRKRRRRR...",
+      ".YYRRRRRRRR..","YYYRRRRRRBBB.",".YYRRRRRBBBB.","..RRWWWWRBBB.",
+      "..RRWWWWRRR..","...RWWWWR....","...RR..RR....","..RR....RR..."]},
+    // L25: Clapperboard (영화·TV)
+    {r:11,c:12,d:[
+      "WKWKWKWKWKWK","KWKWKWKWKWKW","KKKKKKKKKKKK","KKKKKKKKKKKK",
+      "KWWKWWKWWKWK","KWWKWWKWWKWK","KKKKKKKKKKKK","KWWWWWWWWWWK",
+      "KWWWWWWWWWWK","KWWWWWWWWWWK","KKKKKKKKKKKK"]},
+    // L26: Hero star emblem (슈퍼히어로)
+    {r:13,c:13,d:[
+      "RRRRRRRRRRRRR","RBBBBBBBBBBBR","RBBBBBYBBBBBR","RBBBBYYYBBBBR",
+      "RBBBYYYYYBBBR","RBYYYYYYYYYBR","RBBYYYYYYYBBR","RBBBYYYYYBBBR",
+      "RBBBYYYYYBBBR","RBBYYYBYYYBBR",".RBYYBBBYYBR.","..RBBBBBBBR..",
+      "...RRRRRRR..."]}
   ];
   const l=lvs[n-1]; const g=[];
   for(let r=0;r<l.r;r++){const row=[];const s=(l.d[r]||'').padEnd(l.c,'.');
@@ -794,7 +843,7 @@ function advanceDlg(){
 }
 
 // ---- room (0=내 방 / 1=남친 집) ----
-function roomOf(lv){ return lv>10?1:0; }
+function roomOf(lv){ return Math.min(ROOMS.length-1, Math.floor((lv-1)/10)); }
 function renderRoom(roomIdx,newIdx){
   const room=ROOMS[roomIdx];
   const box=$('room-box'); box.innerHTML='';
@@ -810,7 +859,7 @@ function openRoom(clearedLv,onDone){
   // clearedLv: 방금 깬 레벨(1~20)이면 새 가구 강조, 0이면 구경 모드
   let roomIdx,newIdx;
   if(clearedLv>=1){ roomIdx=roomOf(clearedLv); newIdx=(clearedLv-1)%10; }
-  else { roomIdx=(G.unlocked||0)>10?1:0; newIdx=-1; }
+  else { roomIdx=roomOf(Math.max(1,G.unlocked||1)); newIdx=-1; }
   const room=ROOMS[roomIdx];
   show('room-ov');
   $('room-title').textContent=room.title;
