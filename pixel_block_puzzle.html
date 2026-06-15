@@ -55,6 +55,49 @@ canvas{display:block}
   border:1px solid rgba(255,255,255,.1);cursor:grab;touch-action:none;
   display:flex;align-items:center;justify-content:center}
 .tp.used{background:transparent;border:1px dashed rgba(255,255,255,.06);pointer-events:none}
+.sc.coin span{color:#ffd54a}
+.sc .cdot{font-size:13px}
+/* ---- item bar ---- */
+#item-bar{display:flex;justify-content:center;gap:7px;flex:0 0 auto;padding:5px 8px;
+  background:rgba(0,0,0,.32);border-top:1px solid rgba(255,255,255,.07)}
+.item{flex:1 1 0;max-width:92px;min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);
+  border-radius:10px;color:#fff;cursor:pointer;padding:5px 2px 4px;display:flex;flex-direction:column;
+  align-items:center;gap:1px;line-height:1.05;transition:transform .1s,background .15s}
+.item:active{transform:scale(.93)}
+.item .ii{font-size:17px}
+.item .il{font-size:9.5px;opacity:.92;white-space:nowrap}
+.item .ip{font-size:10px;font-family:'Lilita One';color:#ffd54a;display:flex;align-items:center;gap:1px}
+.item .ip::after{content:'🪙';font-size:8px}
+.item:disabled,.item.off{opacity:.4;cursor:default;pointer-events:none}
+.item.armed{background:rgba(255,90,90,.3);border-color:#ff5a5a;box-shadow:0 0 10px rgba(255,90,90,.6)}
+.item.flash{animation:itFlash .4s ease}
+@keyframes itFlash{50%{background:rgba(120,220,150,.5);transform:scale(1.06)}}
+#item-bar{position:relative;z-index:1}
+/* ---- roulette ---- */
+#roul-ov h2{font-size:26px;margin-bottom:4px}
+#roul-wheel{font-family:'Lilita One';font-size:46px;color:#ffd54a;margin:14px 0 18px;
+  text-shadow:0 3px 10px rgba(0,0,0,.6);min-height:54px}
+#roul-stop{font-family:'Lilita One';font-size:22px;padding:12px 50px;border:none;border-radius:24px;
+  background:linear-gradient(135deg,#ff6b6b,#ee5a24);color:#fff;cursor:pointer;
+  box-shadow:0 4px 14px rgba(238,90,36,.5)}
+#roul-stop:active{transform:scale(.95)}
+#roul-won{font-family:'Lilita One';font-size:30px;color:#ffd54a;margin-bottom:14px}
+#roul-claim{display:flex;flex-direction:column;align-items:center;gap:9px}
+/* ---- fake ad ---- */
+#ad-ov{background:rgba(0,0,0,.92)}
+#ad-box{width:90%;max-width:380px;background:#fff;border-radius:16px;overflow:hidden;position:relative;
+  box-shadow:0 10px 40px rgba(0,0,0,.6)}
+#ad-tag{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.55);color:#ffd54a;font-size:10px;
+  padding:2px 7px;border-radius:6px;font-family:'Lilita One'}
+#ad-content{padding:34px 20px 22px;text-align:center;background:linear-gradient(160deg,#6a5cff,#a55eea 60%,#ff6bcb)}
+#ad-emoji{font-size:64px;margin-bottom:8px}
+#ad-title{font-family:'Lilita One';font-size:24px;color:#fff;margin-bottom:8px;text-shadow:0 2px 6px rgba(0,0,0,.3)}
+#ad-desc{color:#fff;font-size:14px;line-height:1.6;margin-bottom:16px}
+#ad-cta{display:inline-block;background:#ffd54a;color:#2a1f4d;font-family:'Lilita One';font-size:18px;
+  padding:10px 28px;border-radius:24px;box-shadow:0 4px 0 #c9a417}
+#ad-close{width:100%;border:none;padding:13px;font-size:15px;font-family:'Noto Sans KR';font-weight:700;
+  background:#eee;color:#333;cursor:pointer}
+#ad-close:disabled{color:#999;cursor:default}
 
 .ov{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.88);
   display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100}
@@ -212,8 +255,9 @@ canvas{display:block}
   <div id="hud">
     <div class="lv" id="lv">Level 1</div>
     <div class="right-hud">
-      <button id="mute-btn" title="음소거">🔊</button>
+      <div class="sc coin"><span class="cdot">🪙</span><span id="cn">0</span></div>
       <div class="sc"><div class="dot"></div><span id="sc">0</span></div>
+      <button id="mute-btn" title="음소거">🔊</button>
       <button id="pause-btn" title="일시정지">⏸</button>
     </div>
   </div>
@@ -227,11 +271,17 @@ canvas{display:block}
   <div class="dv"></div>
   <div id="bot-wrap"><canvas id="bot-cv"></canvas></div>
   <div id="tray"></div>
+  <div id="item-bar">
+    <button class="item" id="it-queue" onclick="G.itemQueue()"><span class="ii">🧺➕</span><span class="il">대기+1</span><span class="ip">300</span></button>
+    <button class="item" id="it-single" onclick="G.itemSingle()"><span class="ii">▪️</span><span class="il">1칸으로</span><span class="ip">200</span></button>
+    <button class="item" id="it-refresh" onclick="G.itemRefresh()"><span class="ii">🔄</span><span class="il">새 블록</span><span class="ip">100</span></button>
+    <button class="item" id="it-bomb" onclick="G.itemBomb()"><span class="ii">💣</span><span class="il">2×2 폭탄</span><span class="ip">100</span></button>
+  </div>
   <div id="death-fx"></div>
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v3.5</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v3.6</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -246,6 +296,29 @@ canvas{display:block}
 <div id="fly-layer"></div>
 <div class="ov hide" id="clr-ov">
   <h2 id="clr-t">CLEAR!</h2><p id="clr-m"></p><button id="nxt">NEXT</button>
+</div>
+<div class="ov hide" id="roul-ov">
+  <h2>🎰 행운 룰렛</h2>
+  <p>스탑을 눌러 코인을 획득하세요!</p>
+  <div id="roul-wheel"><span id="roul-val">0</span> 🪙</div>
+  <button id="roul-stop" onclick="G.roulStop()">STOP!</button>
+  <div id="roul-claim" class="hide">
+    <div id="roul-won">+0 🪙</div>
+    <button id="roul-ad" class="sec" onclick="G.roulAd()">📺 광고 보고 2배 받기</button>
+    <button id="roul-get" onclick="G.roulGet()">받기 ▸</button>
+  </div>
+</div>
+<div class="ov hide" id="ad-ov">
+  <div id="ad-box">
+    <div id="ad-tag">AD · 광고</div>
+    <div id="ad-content">
+      <div id="ad-emoji">🧩✨</div>
+      <div id="ad-title">픽셀 블록 퍼즐 PRO</div>
+      <div id="ad-desc">지금 다운로드하고<br>무료 코인 1000개 받기!</div>
+      <div id="ad-cta">⬇ 무료 설치</div>
+    </div>
+    <button id="ad-close" onclick="G.adClose()" disabled>닫기 <span id="ad-timer">(5)</span></button>
+  </div>
 </div>
 <div class="ov hide" id="sel-ov">
   <button id="sel-close" onclick="G.closeSelect()">✕</button>
@@ -689,12 +762,12 @@ function mkLv(n){
       ".OO.......OO.","OOOO.....OOOO","OOOOOOOOOOOOO","OOKKOOOOOKKOO",
       "OOKKOOOOOKKOO","OOOOOOOOOOOOO","OOOWWWWWWWOOO","OOOWWKKKWWOOO",
       "OOOWWWWWWWOOO",".OOOWWWWWOOO.","..OOOOOOOOO..","...OOOOOOO..."]},
-    // L15: Guitar (함께 듣는 노래)
-    {r:14,c:12,d:[
-      ".....KK.....",".....KK.....",".....KK.....",".....KK.....",
-      ".....KK.....","....OOOO....","...OOOOOO...","..OOOKKOOO..",
-      "..OOKKKKOO..","..OOKKKKOO..","..OOOKKOOO..","...OOOOOO...",
-      "....OOOO....","............"]},
+    // L15: HARD 무지개 보석 (보스)
+    {r:15,c:15,d:[
+      ".......B.......","......BBB......",".....BBCBB.....","....BBCGCBB....",
+      "...BBCGYGCBB...","..BBCGYOYGCBB..",".BBCGYOROYGCBB.","BBCGYORRROYGCBB",
+      ".BBCGYOROYGCBB.","..BBCGYOYGCBB..","...BBCGYGCBB...","....BBCGCBB....",
+      ".....BBCBB.....","......BBB......",".......B......."]},
     // L16: Game controller -> 6 colors
     {r:8,c:14,d:[
       ".KKKKKKKKKKKK.","KKKKKKKKKKKKKK","KKWKKKKKKKRYKK","KWWWKKKKKKGBKK",
@@ -714,11 +787,12 @@ function mkLv(n){
       "....CCCC....","...CCCCCC...","....CCCC....",".....CC.....",
       "....YYYY....","..YYYYYYYY..",".YYY....YYY.","YYY......YYY",
       "YYY......YYY",".YYY....YYY.","..YYYYYYYY..","...YYYYYY..."]},
-    // L20: Finale heart (사랑은 계속된다)
-    {r:12,c:13,d:[
-      "N.RRR...RRR.N",".RRRRR.RRRRR.","RRRRRRRRRRRRR","RRRRRRRRRRRRR",
-      "RRRRWWWWWRRRR","RRRWWWWWWWRRR",".RRWWWWWWWRR.","..RRWWWWWRR..",
-      "...RRWWWRR...","....RRWRR....",".....RRR.....","......R......"]},
+    // L20: HARD 오로라 오브 (보스)
+    {r:15,c:15,d:[
+      "......BBB......","...BBCCCCCBB...","..BCCCYYYCCCB..",".BCCYYYYYYYCCB.",
+      ".BCYYRRRRRYYCB.",".CCYRRNNNRRYCC.","BCYYRNNPNNRYYCB","BCYYRNPPPNRYYCB",
+      "BCYYRNNPNNRYYCB",".CCYRRNNNRRYCC.",".BCYYRRRRRYYCB.",".BCCYYYYYYYCCB.",
+      "..BCCCYYYCCCB..","...BBCCCCCBB...","......BBB......"]},
     // L21: Panda (동물) — prohama 스타일 픽셀 도안
     {r:12,c:13,d:[
       "KKK.......KKK","KKKK.....KKKK",".WWWWWWWWWWW.","WWWWWWWWWWWWW",
@@ -739,11 +813,12 @@ function mkLv(n){
       "....RRRR.....","...RRRRRR....","..RRRRRRRR...","..RRKRRRRR...",
       ".YYRRRRRRRR..","YYYRRRRRRBBB.",".YYRRRRRBBBB.","..RRWWWWRBBB.",
       "..RRWWWWRRR..","...RWWWWR....","...RR..RR....","..RR....RR..."]},
-    // L25: Clapperboard (영화·TV)
-    {r:11,c:12,d:[
-      "WKWKWKWKWKWK","KWKWKWKWKWKW","KKKKKKKKKKKK","KKKKKKKKKKKK",
-      "KWWKWWKWWKWK","KWWKWWKWWKWK","KKKKKKKKKKKK","KWWWWWWWWWWK",
-      "KWWWWWWWWWWK","KWWWWWWWWWWK","KKKKKKKKKKKK"]},
+    // L25: HARD 프리즘 타일 (보스)
+    {r:14,c:14,d:[
+      "CBPNROCBPNROCB","BPNROCBPNROCBP","PNROCBPNROCBPN","NROCBPNROCBPNR",
+      "ROCBPNROCBPNRO","OCBPNROCBPNROC","CBPNROCBPNROCB","BPNROCBPNROCBP",
+      "PNROCBPNROCBPN","NROCBPNROCBPNR","ROCBPNROCBPNRO","OCBPNROCBPNROC",
+      "CBPNROCBPNROCB","BPNROCBPNROCBP"]},
     // L26: Hero star emblem (슈퍼히어로)
     {r:13,c:13,d:[
       "RRRRRRRRRRRRR","RBBBBBBBBBBBR","RBBBBBYBBBBBR","RBBBBYYYBBBBR",
@@ -765,11 +840,12 @@ function mkLv(n){
       "NN.........NN","NNN.......NNN",".NNNNNNNNNNN.","NNNNNNNNNNNNN",
       "NNNKNNNNNKNNN","NNNNNNNNNNNNN","NNNNPPPPPNNNN","NNNNPKPKPNNNN",
       "NNNNPPPPPNNNN",".NNNNNNNNNNN.","..NNNNNNNNN.."]},
-    // L30: Fox (동물)
-    {r:12,c:13,d:[
-      "KK.........KK","OOO.......OOO","OOOO.....OOOO","OOOOOOOOOOOOO",
-      "OOOKOOOOOKOOO","OOWWOOOOOWWOO","OWWWWWWWWWWWO",".WWWWWKWWWWW.",
-      "..WWWWWWWWW..","...WWWWWWW...","....WWWWW....",".....WWW....."]},
+    // L30: HARD 크리스탈 코어 (보스)
+    {r:15,c:15,d:[
+      "....GYYRYYG....","...GYYRPRYYG...","..GYYRPBPRYYG..",".GYYRPBBBPRYYG.",
+      "GYYRPBBCBBPRYYG","YYRPBBCGCBBPRYY","YRPBBCGYGCBBPRY","RPBBCGYYYGCBBPR",
+      "YRPBBCGYGCBBPRY","YYRPBBCGCBBPRYY","GYYRPBBCBBPRYYG",".GYYRPBBBPRYYG.",
+      "..GYYRPBPRYYG..","...GYYRPRYYG...","....GYYRYYG...."]},
     // L31: Shiba dog (강아지)
     {r:12,c:13,d:[
       "OO.........OO","OOO.......OOO","OOOO.....OOOO","OOOOOOOOOOOOO",
@@ -790,11 +866,12 @@ function mkLv(n){
       "...NN...NN...","..NNNN.NNNN..","..NNNNNNNNN..",".NNNNNNNNNNN.",
       "NNNNNNNNNNNNN","NNNKNNNNNKNNN","NNNNNNNNNNNNN","NNNNNKKKNNNNN",
       ".NNNNNNNNNNN.","..NNN...NNN..",".NNNN...NNNN."]},
-    // L35: Black cat (고양이)
-    {r:11,c:13,d:[
-      "KK.........KK","KKK.......KKK","KKKKK...KKKKK","KKKKKKKKKKKKK",
-      "KKKKKKKKKKKKK","KKYYKKKKKYYKK","KKYYKKKKKYYKK","KKKKKKNKKKKKK",
-      "KKKKKKKKKKKKK",".KKKKKKKKKKK.","..KKKKKKKKK.."]},
+    // L35: HARD 레인보우 휠 (보스)
+    {r:15,c:15,d:[
+      ".......Y.......","......YYY......",".....YYYYY.....","....RYYYYYG....",
+      "...RRRYYYGGG...","..RRRRYYYGGGG..",".RRRRRRYGGGGGG.","RRRRRRRCCCCCCCC",
+      ".PPPPPPBCCCCCC.","..PPPPBBBCCCC..","...PPPBBBCCC...","....PBBBBBC....",
+      ".....BBBBB.....","......BBB......",".......B......."]},
     // L36: Sleeping cat (고양이)
     {r:10,c:13,d:[
       ".OO.....OO...",".OOO...OOO...","..OOOOOOOOO..",".OOOOOOOOOOO.",
@@ -815,11 +892,12 @@ function mkLv(n){
       "....YYYYY....","...YYYYYYY...","..YYYYYYYYY..","..YYKYYYKYY..",
       "..YYYOOOYYY..","..YYYYYYYYY..",".YYYYYYYYYYY.","YYYYYYYYYYYYY",
       "YYYYYYYYYYYYY",".YYYYYYYYYYY.","..YYYYYYYYY..","...O.....O..."]},
-    // L40: Owl (새)
-    {r:12,c:13,d:[
-      "OOO.......OOO","OOOOOOOOOOOOO","OWWWOOOOOWWWO","OWKWOOOOOWKWO",
-      "OWWWOYYYOWWWO","OOOOOYYYOOOOO","OOOOOOOOOOOOO","OOOOOOOOOOOOO",
-      "OKOOOOOOOOOKO","OOKOOOOOOOKOO",".OOOOOOOOOOO.","..OOOOOOOOO.."]},
+    // L40: HARD 스펙트럼 선 (보스)
+    {r:15,c:15,d:[
+      "......YYY......","...OYYYYYYYG...","..OOOYYYYYGGG..",".OOOOYYYYYGGGG.",
+      ".OOOOOYYYGGGGG.",".OOOOOYYYGGGGG.","OOOOOOOYGGGGGGG","OOOOOOOCCCCCCCC",
+      "NNNNNNNPCCCCCCC",".NNNNNPPPCCCCC.",".NNNNNPPPCCCCC.",".NNNNPPPPPCCCC.",
+      "..NNNPPPPPCCC..","...NPPPPPPPC...","......PPP......"]},
     // L41: Duck (새)
     {r:12,c:13,d:[
       "....YYYY.....","...YYYYYY....","..YYKYYYYY...",".OOYYYYYYY...",
@@ -841,11 +919,12 @@ function mkLv(n){
       "...KKKKKKK...",".KKKKKKKKKKK.","KKKWWKKKWWKKK","KKWWWKKKWWWKK",
       "KKKKKWWWKKKKK","KKKKWWWWWKKKK","KKKKKWWWKKKKK","KKWWWKKKWWWKK",
       "KKKWWKKKWWKKK",".KKKKKKKKKKK.","...KKKKKKK..."]},
-    // L45: Retro TV (영화·TV)
-    {r:11,c:13,d:[
-      "...K.....K...","....K...K....",".....K.K.....","..OOOOOOOOO..",
-      ".OOOOOOOOOOO.",".OCCCCCCCCCO.",".OCCCCCCCCCO.",".OCCCCCCCCCO.",
-      ".OCCCCCCCCCO.",".OOOOOOOOOOO.","..O.......O.."]},
+    // L45: HARD 캔디 도트 (보스)
+    {r:14,c:14,d:[
+      ".....GYYO.....","...CGGYYOOR...","..GGYYOORRBB..",".CGGYYOORRBBC.",
+      ".GYYOORRBBCCG.","GGYYOORRBBCCGG","YYOORRBBCCGGYY","YYOORRBBCCGGYY",
+      "OORRBBCCGGYYOO",".ORRBBCCGGYYO.",".RBBCCGGYYOOR.","..BBCCGGYYOO..",
+      "...CGGYYOOR...",".....GYYO....."]},
     // L46: 3D glasses (영화·TV)
     {r:9,c:13,d:[
       ".KKKKKKKKKKK.","KRRRRRKBBBBBK","KRRRRRKBBBBBK","KRRRRRKBBBBBK",
@@ -866,11 +945,12 @@ function mkLv(n){
       "RBBBBBWBBBBBR","RWWWWWWWWWWWR","RBBBBBWBBBBBR","RBBBBBWBBBBBR",
       ".RBBBWBWBBBR.","..RBBBWBBBR..","...RBBWBBR...","....RBBBR....",
       ".....RRR....."]},
-    // L50: Crown finale (슈퍼히어로)
-    {r:9,c:13,d:[
-      "Y.....Y.....Y","YY...YYY...YY","YYY.YYYYY.YYY","YYYYYYYYYYYYY",
-      "YYYYYYYYYYYYY","YYRYYYRYYYRYY","YYYYYYYYYYYYY","RRRRRRRRRRRRR",
-      "RRRRRRRRRRRRR"]}
+    // L50: HARD 무지개 다이아 (보스 피날레)
+    {r:15,c:15,d:[
+      ".......P.......","......PBC......",".....PBCGY.....","....PBCGYNP....",
+      "...PBCGYNPBC...","..PBCGYNPBCGY..",".PBCGYNPBCGYNP.","PBCGYNPBCGYNPBC",
+      ".CGYNPBCGYNPBC.","..YNPBCGYNPBC..","...PBCGYNPBC...","....CGYNPBC....",
+      ".....YNPBC.....","......PBC......",".......C......."]}
   ];
   const l=lvs[n-1]; const g=[];
   for(let r=0;r<l.r;r++){const row=[];const s=(l.d[r]||'').padEnd(l.c,'.');
@@ -904,7 +984,8 @@ function resize(){
 
   const hudH=44;
   const storyH=22;
-  const trayH=Math.max(56,Math.min(Math.round(H*0.105),78));
+  const trayH=Math.max(52,Math.min(Math.round(H*0.095),72));
+  const itemH=64;
   const dvH=7;
 
   // ---- horizontal waiting bar between top and bottom boards ----
@@ -916,7 +997,7 @@ function resize(){
   $('belt-col').style.width=W+'px';
   $('belt-col').style.height=beltH+'px';
 
-  let remaining=H-hudH-storyH-trayH-dvH-beltH;
+  let remaining=H-hudH-storyH-trayH-itemH-dvH-beltH;
 
   // ---- bottom block board (10 wide x 6 tall) ----
   let bkSz=Math.floor((W-16)/BC);
@@ -983,8 +1064,8 @@ G.continueGame=function(){ G.start(G.savedLevel||1); };
 G.newGame=function(){ saveProgress(1); G.start(1); };
 
 // ---- pause menu ----
-G.pause=function(){ if(!G.on||G.dying||G.paused) return; G.paused=true; show('pause-ov'); };
-G.resume=function(){ if(!G.paused) return; G.paused=false; hide('pause-ov'); raf(); };
+G.pause=function(){ if(!G.on||G.dying||G.paused) return; G.paused=true; show('pause-ov'); renderItemBar(); };
+G.resume=function(){ if(!G.paused) return; G.paused=false; hide('pause-ov'); raf(); renderItemBar(); };
 G.restartLv=function(){ G.paused=false; hide('pause-ov'); G.start(G.lv,G.free); };
 G.retry=function(){ G.start(G.lv,G.free); };
 function quitToOverlays(){
@@ -1045,6 +1126,104 @@ function saveUnlocked(){ try{localStorage.setItem('pbp_unlocked',String(G.unlock
 function loadPaint(){ try{const o=JSON.parse(localStorage.getItem('pbp_paint')||'{}'); if(o&&typeof o==='object') return o;}catch(e){} return {}; }
 function savePaint(){ try{localStorage.setItem('pbp_paint',JSON.stringify(G.paint||{}));}catch(e){} }
 function addPaint(k){ if(!G.paint) G.paint={}; G.paint[k]=(G.paint[k]||0)+1; savePaint(); }
+
+// ---- coins (earned via clear roulette, spent on items) ----
+function loadCoins(){ try{const v=parseInt(localStorage.getItem('pbp_coins')); if(v>=0) return v;}catch(e){} return 500; }
+function saveCoins(){ try{localStorage.setItem('pbp_coins',String(G.coins||0));}catch(e){} }
+function updateCoins(){ const el=$('cn'); if(el) el.textContent=G.coins||0; renderItemBar(); }
+function addCoins(n){ G.coins=(G.coins||0)+n; saveCoins(); updateCoins();
+  const el=$('cn'); if(el){ el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); } }
+function spendCoins(n){ if((G.coins||0)<n) return false; G.coins-=n; saveCoins(); updateCoins(); return true; }
+
+// ---- items ----
+const ITEM_COST={queue:300,single:200,refresh:100,bomb:100};
+function gameActive(){ return G.on && !G.paused && !G.dying; }
+function renderItemBar(){
+  const active=gameActive(), coins=G.coins||0;
+  const set=(id,key)=>{ const b=$(id); if(!b) return;
+    b.classList.toggle('off', !active || coins<ITEM_COST[key]); };
+  set('it-queue','queue'); set('it-single','single'); set('it-refresh','refresh'); set('it-bomb','bomb');
+  const bb=$('it-bomb'); if(bb) bb.classList.toggle('armed', !!G.bombArmed);
+}
+function flashItem(id){ const b=$(id); if(!b) return; b.classList.remove('flash'); void b.offsetWidth; b.classList.add('flash'); }
+G.itemQueue=function(){ if(!gameActive()||!spendCoins(ITEM_COST.queue)) return;
+  G.waitCap=(G.waitCap||10)+1; renderBelt(); flashItem('it-queue'); vibe(12); };
+G.itemSingle=function(){ if(!gameActive()) return;
+  if(!G.pieces.some(p=>p)) return; if(!spendCoins(ITEM_COST.single)) return;
+  G.pieces=G.pieces.map(p=>p?Object.assign({},p,{shape:[[0,0]]}):p);
+  renderTray(); checkDeadlock(); flashItem('it-single'); vibe(12); };
+G.itemRefresh=function(){ if(!gameActive()||!spendCoins(ITEM_COST.refresh)) return;
+  genPcs(); flashItem('it-refresh'); vibe(12); };
+G.itemBomb=function(){ if(!gameActive()||G.bombArmed) return; if(!spendCoins(ITEM_COST.bomb)) return;
+  G.bombArmed=true; renderItemBar(); flashItem('it-bomb'); vibe(12); };
+function placeBomb(ex,ey){
+  if(!G.bombArmed) return;
+  const rect=bcv.getBoundingClientRect(), s=G.bkSz;
+  const cx=(ex-rect.left)*(G.bW/rect.width), cy=(ey-rect.top)*(G.bH/rect.height);
+  let bc=Math.floor((cx-G.bOX)/s), br=Math.floor((cy-G.bOY)/s);
+  bc=Math.max(0,Math.min(BC-2,bc)); br=Math.max(0,Math.min(BR-2,br));
+  for(let dr=0;dr<2;dr++)for(let dc=0;dc<2;dc++){
+    const r=br+dr,c=bc+dc, cell=G.bk[r][c];
+    const px=G.bOX+c*s+s/2, py=G.bOY+r*s+s/2;
+    const col=cell?(cell.wood?'#b5793a':(cell.bomb?'#ff7043':(cell.color?hex[cell.color]:'#fff'))):'#ffae42';
+    spawnFragments(px,py,col,9);
+    G.bk[r][c]=null;
+  }
+  G.bombArmed=false; renderItemBar();
+  SFX.boom(); shakeBomb(); vibe([0,80,40,120]);
+  drawBot(); raf();
+}
+
+// ---- clear roulette (+ fake-ad 2x) ----
+const ROUL_VALUES=[50,80,100,120,150,200,250,300,400,500];
+function openRoulette(onDone){
+  G.roul={done:onDone,spin:null,idx:0,reward:0,timer:null};
+  hide('roul-claim'); show('roul-stop');
+  show('roul-ov');
+  $('roul-val').textContent='0';
+  let i=0;
+  G.roul.timer=setInterval(()=>{
+    i=(i+1)%ROUL_VALUES.length; G.roul.idx=i;
+    $('roul-val').textContent=ROUL_VALUES[i];
+  },80);
+}
+G.roulStop=function(){
+  if(!G.roul||!G.roul.timer) return;
+  clearInterval(G.roul.timer); G.roul.timer=null;
+  const reward=ROUL_VALUES[G.roul.idx]; G.roul.reward=reward;
+  SFX.win(); vibe(40);
+  hide('roul-stop');
+  $('roul-won').textContent='+'+reward+' 🪙';
+  show('roul-claim');
+};
+function finishRoul(mult){
+  const reward=(G.roul?G.roul.reward:0)*mult;
+  addCoins(reward);
+  hide('roul-ov');
+  const cb=G.roul&&G.roul.done; G.roul=null;
+  cb&&cb();
+}
+G.roulGet=function(){ finishRoul(1); };
+G.roulAd=function(){ openAd(()=>finishRoul(2)); };
+
+function openAd(onClose){
+  G.adCb=onClose;
+  const btn=$('ad-close'); btn.disabled=true;
+  let t=5; $('ad-timer').textContent='('+t+')';
+  show('ad-ov');
+  if(G.adTimer) clearInterval(G.adTimer);
+  G.adTimer=setInterval(()=>{
+    t--;
+    if(t<=0){ clearInterval(G.adTimer); G.adTimer=null; btn.disabled=false; $('ad-timer').textContent=''; }
+    else $('ad-timer').textContent='('+t+')';
+  },1000);
+}
+G.adClose=function(){
+  if($('ad-close').disabled) return;
+  if(G.adTimer){ clearInterval(G.adTimer); G.adTimer=null; }
+  hide('ad-ov');
+  const cb=G.adCb; G.adCb=null; cb&&cb();
+};
 
 // ---- dialogue voice (pre-generated neural TTS clips in voice/) ----
 const VOICE={cur:null};
@@ -1132,6 +1311,7 @@ G.start=function(lv,free){
   G.belt=[]; G.beltRunners=[]; G.waiting=[]; G.bullets=[]; G.clears=[]; G.particles=[]; G.hitFx=[]; G.drag=null; G.beltDirty=false;
   if(G.dlg&&G.dlg.timer) clearInterval(G.dlg.timer); G.dlg=null; stopVoice();
   G.dying=false; G.slowmo=1;
+  G.waitCap=10; G.bombArmed=false;
   G.woodQuota = lv>=3 ? (3+(Math.random()<0.5?1:0)) : (lv===2 ? 2 : 0); G.sinceWood=0;
   $('belt-col').classList.remove('belt-full-flash');
   $('wrap').classList.remove('shake');
@@ -1154,7 +1334,8 @@ G.start=function(lv,free){
   drawTop(); drawBot();
   // intro dialogue -> then play
   const dl=DIALOG[lv-1]||{};
-  showDialogue(dl.intro||[], ()=>{ G.on=true; raf(); }, 'L'+lv+'i');
+  showDialogue(dl.intro||[], ()=>{ G.on=true; raf(); renderItemBar(); }, 'L'+lv+'i');
+  renderItemBar();
 };
 
 // ========== LOOP ==========
@@ -1417,9 +1598,12 @@ function drawPieceCell(ctx,x,y,sz,p){
 // ========== BELT UI ==========
 function renderBelt(){
   const bar=$('belt-bar');bar.innerHTML='';
-  const sz=G.beltSlot||24;
+  const cap=G.waitCap||10;
+  const cw=$('belt-col').clientWidth||G.bW||360;
+  let sz=Math.floor((cw-4*(cap-1)-18)/cap);
+  sz=Math.max(14,Math.min(sz,G.beltSlot||32));
   const list=G.waiting;
-  for(let i=0;i<10;i++){
+  for(let i=0;i<cap;i++){
     const d=document.createElement('div');d.className='bs';
     d.style.width=sz+'px';d.style.height=sz+'px';d.style.fontSize=Math.max(9,Math.floor(sz*0.42))+'px';
     const b=list[i];
@@ -1605,6 +1789,8 @@ if(hasPointer){
   document.addEventListener('mousemove',e=>{ if(G.drag)onMove(e.clientX,e.clientY); });
   document.addEventListener('mouseup',endDrag);
 }
+// 2x2 bomb item: tap the bottom board to detonate
+bcv.addEventListener('pointerdown',e=>{ if(G.bombArmed){ e.preventDefault(); placeBomb(e.clientX,e.clientY); } });
 
 function canPlace(p,br,bc){
   for(const[dr,dc] of p.shape){
@@ -1854,10 +2040,12 @@ function checkWin(){
     const dl=DIALOG[clearedLv-1]||{};
     showDialogue(dl.outro||[], ()=>{
       G.unlocked=Math.max(G.unlocked||0, clearedLv); saveUnlocked();
-      openRoom(clearedLv, ()=>{
-        if(G.free){ G.free=false; SFX.stopMusic(); show('start-ov'); HOME.refresh(); G.openSelect(); }
-        else if(clearedLv<LV_MAX){ saveProgress(clearedLv+1); G.start(clearedLv+1); }
-        else { saveProgress(1); show('start-ov'); HOME.refresh(); }
+      openRoulette(()=>{
+        openRoom(clearedLv, ()=>{
+          if(G.free){ G.free=false; SFX.stopMusic(); show('start-ov'); HOME.refresh(); G.openSelect(); }
+          else if(clearedLv<LV_MAX){ saveProgress(clearedLv+1); G.start(clearedLv+1); }
+          else { saveProgress(1); show('start-ov'); HOME.refresh(); }
+        });
       });
     }, 'L'+clearedLv+'o');
   },650);
@@ -1873,10 +2061,10 @@ function checkDeadlock(){
   if(G.pieces.some(p=>p) && !anyMove()) gameOver('space');
 }
 
-function checkWaitingFull(){ if(G.waiting.length>=10) gameOver('belt'); }
+function checkWaitingFull(){ if(G.waiting.length>=(G.waitCap||10)) gameOver('belt'); }
 function gameOver(reason){
   if(!G.on) return;
-  G.on=false; G.dying=true; G.slowmo=0.1;
+  G.on=false; G.dying=true; G.slowmo=0.1; G.bombArmed=false; renderItemBar();
   $('go-m').textContent = reason==='space' ? '블럭을 놓을 곳이 없습니다!' : '대기열이 가득 찼습니다!';
   if(reason!=='space') $('belt-col').classList.add('belt-full-flash');
   $('wrap').classList.add('shake');
@@ -2145,6 +2333,7 @@ const HOME=(()=>{
 G.savedLevel=loadProgress();
 G.unlocked=loadUnlocked();
 G.paint=loadPaint();
+G.coins=loadCoins(); updateCoins();
 { const el=$('cont-lv'); if(el) el.textContent=G.savedLevel; }
 $('dlg-ov').addEventListener('click',()=>vibe(10));
 $('dlg-ov').addEventListener('click',advanceDlg);
