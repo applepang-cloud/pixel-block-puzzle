@@ -158,6 +158,63 @@ canvas{display:block}
   box-shadow:inset 0 0 90px 22px rgba(255,20,50,0.55);border:3px solid rgba(255,50,70,0.85);border-radius:inherit}
 #death-fx.on{animation:deathPulse .42s ease-in-out infinite}
 @keyframes deathPulse{0%,100%{opacity:.2}50%{opacity:.9}}
+
+/* ===== COMBO system ===== */
+#story{position:relative}
+#combo-tag{position:absolute;right:8px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:5px;
+  font-family:'Lilita One';font-size:12px;color:#fff;padding:1px 7px;border-radius:11px;
+  background:rgba(0,0,0,.35);overflow:hidden}
+#combo-gauge{position:relative;width:34px;height:7px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
+#combo-gauge i{position:absolute;left:0;top:0;bottom:0;width:0%;border-radius:4px;
+  background:linear-gradient(90deg,#00e0ff,#ffe000);transition:width .25s}
+#combo-lbl{white-space:nowrap}
+/* shine sweep on the tag */
+#combo-tag::after{content:'';position:absolute;top:0;left:-60%;width:50%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-20deg);opacity:0}
+#combo-tag.lit::after{animation:cShine .7s ease-out}
+@keyframes cShine{0%{left:-60%;opacity:0}25%{opacity:1}100%{left:130%;opacity:0}}
+/* level looks */
+#combo-tag.c3{background:rgba(0,180,255,.5);box-shadow:0 0 10px rgba(0,200,255,.8)}
+#combo-tag.c3 #combo-gauge i{background:linear-gradient(90deg,#36e3ff,#9cffff)}
+#combo-tag.c4{background:rgba(255,110,20,.55);box-shadow:0 0 12px rgba(255,120,20,.9);animation:cFire .5s ease-in-out infinite alternate}
+#combo-tag.c4 #combo-gauge i{background:linear-gradient(90deg,#ffd000,#ff3d00)}
+@keyframes cFire{from{box-shadow:0 0 8px rgba(255,90,0,.7)}to{box-shadow:0 0 18px 3px rgba(255,160,0,1)}}
+#combo-tag.c5{background:rgba(150,80,255,.55);box-shadow:0 0 14px rgba(180,120,255,1);animation:cBolt .4s steps(2) infinite}
+#combo-tag.c5 #combo-gauge i{background:linear-gradient(90deg,#b388ff,#ffe600,#7df9ff)}
+@keyframes cBolt{0%,100%{filter:brightness(1)}50%{filter:brightness(2)}}
+#combo-tag.c5 #combo-lbl::before{content:'⚡';margin-right:2px}
+#combo-tag.c4 #combo-lbl::before{content:'🔥';margin-right:2px}
+
+/* floating COMBO! popup */
+.combopop{position:fixed;left:50%;transform:translateX(-50%);z-index:95;font-family:'Lilita One';
+  font-size:34px;font-weight:900;pointer-events:none;
+  background:linear-gradient(90deg,#ff4757,#ffd93d,#2ed573,#1e90ff,#c44dff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  text-shadow:0 2px 8px rgba(0,0,0,.4);animation:comboPop 1s ease-out forwards}
+@keyframes comboPop{0%{opacity:0;transform:translateX(-50%) scale(.4)}
+  20%{opacity:1;transform:translateX(-50%) scale(1.25)}
+  35%{transform:translateX(-50%) scale(1)}100%{opacity:0;transform:translateX(-50%) scale(1.1) translateY(-30px)}}
+
+/* full-screen flash on combo>=3 */
+#screen-flash{position:absolute;inset:0;pointer-events:none;z-index:70;opacity:0;background:#fff;border-radius:inherit}
+#screen-flash.go{animation:scrFlash .5s ease-out}
+@keyframes scrFlash{0%{opacity:.0}15%{opacity:.55}100%{opacity:0}}
+
+/* board background tint per combo level (on #wrap) */
+#wrap.cb3{background:linear-gradient(180deg,#0e2740 0%,#123a5e 50%,#0e2740 100%)!important}
+#wrap.cb4{background:linear-gradient(180deg,#3a1405 0%,#5e2410 50%,#3a1405 100%)!important}
+#wrap.cb5{background:linear-gradient(180deg,#2a0e45 0%,#451270 50%,#2a0e45 100%)!important}
+#wrap.cbCycle{animation:cbCycle 1.2s linear infinite}
+@keyframes cbCycle{0%{background:#123a5e}33%{background:#5e2410}66%{background:#451270}100%{background:#123a5e}}
+
+/* board outline effect overlay */
+#combo-fx{position:absolute;inset:0;pointer-events:none;z-index:41;opacity:0;border-radius:inherit;border:4px solid transparent}
+#combo-fx.fx3{animation:fx3 .8s ease-out}
+@keyframes fx3{0%{opacity:0;box-shadow:inset 0 0 0 0 rgba(80,210,255,0)}30%{opacity:1;box-shadow:inset 0 0 40px 6px rgba(80,210,255,.9);border-color:#7df9ff}100%{opacity:0}}
+#combo-fx.fx4{animation:fx4 .9s ease-out}
+@keyframes fx4{0%{opacity:0}25%{opacity:1;box-shadow:inset 0 0 50px 10px rgba(255,120,20,.95);border-color:#ff7a00}60%{box-shadow:inset 0 0 30px 6px rgba(255,200,0,.8);border-color:#ffd000}100%{opacity:0}}
+#combo-fx.fx5{animation:fx5 .9s steps(3)}
+@keyframes fx5{0%{opacity:0}20%{opacity:1;box-shadow:inset 0 0 50px 10px rgba(180,120,255,1);border-color:#b388ff}50%{opacity:1;box-shadow:inset 0 0 60px 14px rgba(255,255,255,.95);border-color:#ffe600}80%{opacity:1;box-shadow:inset 0 0 40px 8px rgba(125,249,255,.9);border-color:#7df9ff}100%{opacity:0}}
 @keyframes shake{
   0%,100%{transform:translate(0,0) rotate(0)}
   15%{transform:translate(-7px,4px) rotate(-0.7deg)}
@@ -274,7 +331,7 @@ canvas{display:block}
       <button id="pause-btn" title="일시정지">⏸</button>
     </div>
   </div>
-  <div id="story">💭</div>
+  <div id="story"><span id="story-txt">💭</span><span id="combo-tag" class="hide"><span id="combo-gauge"><i></i></span><span id="combo-lbl">COMBO</span></span></div>
   <div id="mid">
     <div id="top-wrap"><canvas id="top-cv"></canvas></div>
   </div>
@@ -291,10 +348,12 @@ canvas{display:block}
     <button class="item" id="it-bomb" onclick="G.itemBomb()"><span class="ii">💣</span><span class="il">2×2 폭탄</span><span class="ip">100</span></button>
   </div>
   <div id="death-fx"></div>
+  <div id="combo-fx"></div>
+  <div id="screen-flash"></div>
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v5.1</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v5.2</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -2405,6 +2464,7 @@ G.start=function(lv,free){
   if(G.dlg&&G.dlg.timer) clearInterval(G.dlg.timer); G.dlg=null; stopVoice();
   G.dying=false; G.slowmo=1;
   G.waitCap=10; G.bombArmed=false; G.bombDown=false; G.bombCell=null; hide('bomb-guide');
+  resetCombo();
   G.woodQuota = lv>=3 ? (3+(Math.random()<0.5?1:0)) : (lv===2 ? 2 : 0); G.sinceWood=0;
   $('belt-col').classList.remove('belt-full-flash');
   $('wrap').classList.remove('shake');
@@ -2415,7 +2475,7 @@ G.start=function(lv,free){
   if(typeof HOME!=='undefined') HOME.exit();
   $('lv').textContent='레벨 '+lv;
   $('sc').textContent='0';
-  { const st=$('story'); if(st){ st.textContent='💭 '+(STORYALL[lv-1]||''); st.style.opacity='0'; setTimeout(()=>st.style.opacity='1',50); } }
+  { const st=$('story-txt'); if(st){ st.textContent='💭 '+(STORYALL[lv-1]||''); st.style.opacity='0'; setTimeout(()=>st.style.opacity='1',50); } }
   const l=mkLv(lv);
   G.pxR=l.rows; G.pxC=l.cols;
   G.px=l.data.map(r=>[...r]);
@@ -2442,14 +2502,14 @@ G.loadLevelJSON=function(obj){
   G.belt=[];G.beltRunners=[];G.waiting=[];G.bullets=[];G.clears=[];G.particles=[];G.hitFx=[];G.drag=null;G.beltDirty=false;
   if(G.dlg&&G.dlg.timer) clearInterval(G.dlg.timer); G.dlg=null; stopVoice();
   G.dying=false;G.slowmo=1;G.waitCap=10;G.bombArmed=false;G.bombDown=false;G.bombCell=null;hide('bomb-guide');
-  G.woodQuota=0;G.sinceWood=0;
+  G.woodQuota=0;G.sinceWood=0; resetCombo();
   $('belt-col').classList.remove('belt-full-flash');$('wrap').classList.remove('shake');$('death-fx').classList.remove('on');
   $('drag-layer').innerHTML='';G.paused=false;
   hide('start-ov');hide('clr-ov');hide('go-ov');hide('room-ov');hide('dlg-ov');hide('pause-ov');
   if(typeof HOME!=='undefined') HOME.exit();
   $('lv').textContent=obj.name?String(obj.name):('레벨 '+G.lv);
   $('sc').textContent='0';
-  { const st=$('story'); if(st){ st.textContent='💭 '+(obj.story||''); st.style.opacity='0'; setTimeout(()=>st.style.opacity='1',50);} }
+  { const st=$('story-txt'); if(st){ st.textContent='💭 '+(obj.story||''); st.style.opacity='0'; setTimeout(()=>st.style.opacity='1',50);} }
   const grid=obj.grid, cols=obj.cols||(grid[0]?grid[0].length:0), rows=obj.rows||grid.length;
   G.pxR=rows; G.pxC=cols; G.px=[];
   for(let r=0;r<rows;r++){ const s=(grid[r]||'').padEnd(cols,'.'); const row=[];
@@ -2915,7 +2975,8 @@ function endDrag(){
   G.drag=null;
   $('drag-layer').innerHTML=''; dragCanvas=null;
   if(placed){
-    checkLines();
+    const cleared=checkLines();
+    if(cleared>0) onCombo(); else resetCombo();
     if(G.pieces.every(p=>!p)) genPcs();
     else renderTray();
     checkDeadlock();
@@ -3112,7 +3173,7 @@ function checkLines(){
   let rows=[],cols=[];
   for(let r=0;r<BR;r++){let f=true;for(let c=0;c<BC;c++)if(!G.bk[r][c]){f=false;break;}if(f)rows.push(r);}
   for(let c=0;c<BC;c++){let f=true;for(let r=0;r<BR;r++)if(!G.bk[r][c]){f=false;break;}if(f)cols.push(c);}
-  if(!rows.length&&!cols.length) return;
+  if(!rows.length&&!cols.length) return 0;
   const seen=new Set(), cells=[];
   for(const r of rows) for(let c=0;c<BC;c++){const k=r+','+c;if(!seen.has(k)){seen.add(k);cells.push({r,c});}}
   for(const c of cols) for(let r=0;r<BR;r++){const k=r+','+c;if(!seen.has(k)){seen.add(k);cells.push({r,c});}}
@@ -3169,6 +3230,56 @@ function checkLines(){
   if(G.beltDirty){G.beltDirty=false;renderBelt();}
   checkWaitingFull();
   raf();
+  return nLines;
+}
+
+// ========== COMBO ==========
+function fxPulse(id,cls,dur){ const e=$(id); if(!e) return; e.classList.remove(cls); void e.offsetWidth; e.classList.add(cls); setTimeout(()=>e.classList.remove(cls),dur); }
+function comboTagUpdate(){
+  const tag=$('combo-tag'); if(!tag) return;
+  if((G.combo||0)<1){ tag.classList.add('hide'); return; }
+  tag.classList.remove('hide','c3','c4','c5');
+  $('combo-lbl').textContent='콤보 '+G.combo;
+  const i=$('combo-gauge').querySelector('i'); if(i) i.style.width=Math.min(100,(((G.combo-1)%5)+1)/5*100)+'%';
+  if(G.combo>=5) tag.classList.add('c5'); else if(G.combo===4) tag.classList.add('c4'); else if(G.combo===3) tag.classList.add('c3');
+  tag.classList.remove('lit'); void tag.offsetWidth; tag.classList.add('lit');
+}
+// fly a bomb from the board to a waiting slot and destroy one waiting block
+function comboBomb(){
+  if(!G.waiting.length) return;
+  const slots=$('belt-bar').children, el=slots[0];
+  const dest=el?elCenter(el):{x:window.innerWidth/2,y:90};
+  const wr=bcv.getBoundingClientRect(), sx=wr.left+wr.width/2, sy=wr.top+wr.height*0.4;
+  flyTo(sx,sy,dest.x,dest.y,null);                 // visual flair (best-effort)
+  // actual destruction on a reliable timer (not tied to rAF)
+  setTimeout(()=>{
+    burstAt(dest.x,dest.y,'💥');
+    if(G.waiting.length){ G.waiting.splice(0,1); renderBelt(); }
+    SFX.boom(); vibe(40); checkWaitingFull();
+  },650);
+}
+function onCombo(){
+  G.combo=(G.combo||0)+1;
+  comboTagUpdate();
+  const pop=document.createElement('div'); pop.className='combopop';
+  pop.textContent=(G.combo>=3?'COMBO! ':'콤보 ')+G.combo;
+  const wr=$('wrap').getBoundingClientRect();
+  pop.style.left=(wr.left+wr.width/2)+'px'; pop.style.top=(wr.top+wr.height*0.30)+'px';
+  $('fly-layer').appendChild(pop); setTimeout(()=>pop.remove(),1000);
+  vibe(18);
+  const c=G.combo;
+  if(c>=3){
+    fxPulse('screen-flash','go',520);
+    const w=$('wrap'); w.classList.remove('cb3','cb4','cb5','cbCycle');
+    if(c>=5) w.classList.add('cb5','cbCycle'); else if(c===4) w.classList.add('cb4'); else w.classList.add('cb3');
+    fxPulse('combo-fx', c>=5?'fx5':(c===4?'fx4':'fx3'), 950);
+    comboBomb();   // combo 3+: one bomb per combo destroys a waiting block
+  }
+}
+function resetCombo(){
+  G.combo=0;
+  const t=$('combo-tag'); if(t){ t.classList.add('hide'); t.classList.remove('c3','c4','c5','lit'); }
+  const w=$('wrap'); if(w) w.classList.remove('cb3','cb4','cb5','cbCycle');
 }
 
 // ========== WIN/LOSE ==========
@@ -3212,7 +3323,7 @@ function checkDeadlock(){
 function checkWaitingFull(){ if(G.waiting.length>=(G.waitCap||10)) gameOver('belt'); }
 function gameOver(reason){
   if(!G.on) return;
-  G.on=false; G.dying=true; G.slowmo=0.1; cancelBomb();
+  G.on=false; G.dying=true; G.slowmo=0.1; cancelBomb(); resetCombo();
   $('go-m').textContent = reason==='space' ? '블럭을 놓을 곳이 없습니다!' : '대기열이 가득 찼습니다!';
   if(reason!=='space') $('belt-col').classList.add('belt-full-flash');
   $('wrap').classList.add('shake');
