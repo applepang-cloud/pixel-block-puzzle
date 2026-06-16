@@ -335,14 +335,24 @@ canvas{display:block}
 .sel-tile.clr{border-color:rgba(255,215,0,.6)}
 .sel-tile.clr .sl{color:#ffd700}
 #start-ov.pal #home-ui{display:none}
-#pal-btn{position:absolute;right:14px;top:50%;z-index:3;width:62px;height:54px;
-  border:none;border-radius:14px;background:rgba(255,255,255,.10);cursor:pointer;
-  box-shadow:0 3px 10px rgba(0,0,0,.45);padding:6px 7px;margin:0;
-  transform:translateY(-50%);transition:background .2s}
+#pal-launch{position:absolute;right:10px;top:50%;transform:translateY(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:4px}
+#room-launch{position:absolute;left:10px;top:50%;transform:translateY(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:4px}
+.launch-lbl{font-family:'Lilita One';font-size:11px;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.7)}
+#pal-btn{width:62px;height:54px;border:none;border-radius:14px;background:rgba(255,255,255,.10);cursor:pointer;
+  box-shadow:0 3px 10px rgba(0,0,0,.45);padding:6px 7px;margin:0;transition:background .2s}
 #pal-btn:hover{background:rgba(255,255,255,.18)}
-#pal-btn:active{transform:translateY(-50%) scale(.93)}
+#pal-btn:active{transform:scale(.93)}
 #pal-btn canvas{image-rendering:pixelated;display:block}
-#start-ov.pal #pal-btn{display:none}
+#room-btn{width:56px;height:54px;border:none;border-radius:14px;background:rgba(255,255,255,.10);cursor:pointer;
+  font-size:30px;box-shadow:0 3px 10px rgba(0,0,0,.45);padding:0;margin:0}
+#room-btn:active{transform:scale(.93)}
+#start-ov.pal #pal-launch,#start-ov.pal #room-launch{display:none}
+#pal-top{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:3;display:none;
+  font-family:'Lilita One';font-size:16px;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.6);white-space:nowrap}
+#start-ov.pal #pal-top{display:block}
+#pal-bottom{position:absolute;left:50%;transform:translateX(-50%);bottom:76px;z-index:3;display:none;
+  font-size:11px;color:rgba(255,255,255,.85);background:rgba(0,0,0,.45);padding:3px 12px;border-radius:10px;white-space:nowrap}
+#start-ov.pal #pal-bottom{display:block}
 #home-settings{position:absolute;top:12px;left:12px;z-index:3;display:flex;gap:7px}
 #home-settings button{width:40px;height:40px;border:none;border-radius:50%;background:rgba(255,255,255,.12);
   font-size:18px;cursor:pointer;padding:0;box-shadow:0 2px 8px rgba(0,0,0,.4)}
@@ -354,10 +364,32 @@ canvas{display:block}
   font-size:19px;font-family:sans-serif;cursor:pointer;display:none;padding:0;margin:0;box-shadow:none}
 #home-close:active{transform:scale(.92)}
 #start-ov.pal #home-close{display:block}
-#color-bar{position:absolute;right:10px;bottom:14px;max-width:80%;z-index:3;display:none;
-  gap:6px;overflow-x:auto;padding:7px 9px;background:rgba(0,0,0,.5);
+#color-bar{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;max-width:94%;z-index:3;display:none;
+  gap:6px;align-items:center;padding:7px 9px;background:rgba(0,0,0,.5);
   border-radius:14px;border:1px solid rgba(255,255,255,.16)}
 #start-ov.pal #color-bar{display:flex}
+#color-scroll{display:flex;gap:6px;overflow-x:auto}
+#eraser-chip{flex:0 0 auto;width:46px;height:54px;border-radius:10px;border:2px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.08);font-size:24px;cursor:pointer;padding:0}
+#eraser-chip.selc{border-color:#fff;background:rgba(255,90,90,.3);box-shadow:0 0 10px rgba(255,120,120,.6)}
+/* room list */
+#roomlist-close{position:absolute;top:12px;right:12px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:18px;cursor:pointer;padding:0;border:none}
+#roomlist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:94%;max-width:460px;max-height:70vh;overflow-y:auto;padding:6px}
+.rl-tile{aspect-ratio:1;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;font-size:30px;position:relative}
+.rl-tile .rl-n{font-size:10px;color:#fff;font-family:'Noto Sans KR';text-align:center;padding:0 2px;line-height:1.1}
+.rl-tile.locked{opacity:.5;cursor:default}
+.rl-tile.locked::after{content:'🔒';position:absolute;font-size:26px}
+.rl-tile.locked .rl-em{opacity:.25}
+/* art preview */
+#art-preview{justify-content:center}
+#art-preview canvas{image-rendering:pixelated;background:rgba(255,255,255,.06);border-radius:10px;max-width:86%;max-height:60vh}
+/* gesture hint */
+#pal-hint{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);z-index:4;pointer-events:none;
+  font-family:'Lilita One';color:#fff;font-size:18px;text-align:center;text-shadow:0 2px 8px rgba(0,0,0,.8);
+  background:rgba(0,0,0,.4);padding:14px 22px;border-radius:16px;animation:hintPulse 1s ease-in-out infinite}
+@keyframes hintPulse{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}}
+#pal-hint .hint-ico{font-size:40px;display:block;margin-bottom:6px}
 .cchip{flex:0 0 auto;width:44px;height:54px;border-radius:10px;border:2px solid rgba(255,255,255,.18);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
   cursor:pointer;background:rgba(255,255,255,.05);transition:all .15s}
@@ -400,22 +432,36 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v6.1</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v6.2</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
         <button id="auto-btn" onclick="G.openAuto()">AUTO ⚙ <small>자동 테스트</small></button>
       </div>
     </div>
-    <button id="pal-btn" title="픽셀 컬러링"><canvas id="pal-icon" width="48" height="36"></canvas></button>
+    <div id="pal-launch"><button id="pal-btn" title="픽셀 컬러링"><canvas id="pal-icon" width="48" height="36"></canvas></button><span class="launch-lbl">픽셀 컬러링</span></div>
+    <div id="room-launch"><button id="room-btn" onclick="G.openRoomList()" title="방 꾸미기">🏠</button><span class="launch-lbl">방 꾸미기</span></div>
     <div id="home-settings">
       <button id="snd-btn" onclick="G.toggleSound()" title="사운드">🔊</button>
       <button id="vib-btn" onclick="G.toggleVibe()" title="진동">📳</button>
     </div>
+    <div id="pal-top">🎨 픽셀을 컬러로 채워보세요!</div>
     <button id="home-close">✕</button>
-    <div id="color-bar"></div>
+    <div id="pal-bottom">플레이로 획득한 색상만큼 색칠 할 수 있어요.</div>
+    <div id="color-bar"><button id="eraser-chip" title="지우개">🧽</button><div id="color-scroll"></div></div>
   </div>
 </div>
+<div class="ov hide" id="roomlist-ov">
+  <button id="roomlist-close" onclick="G.closeRoomList()">✕</button>
+  <h2>🏠 방 꾸미기</h2>
+  <div id="roomlist-grid"></div>
+</div>
+<div class="ov hide" id="art-preview" onclick="G.closeArtPreview()">
+  <h2 id="art-preview-name">완성 미리보기</h2>
+  <canvas id="art-preview-cv"></canvas>
+  <p style="color:rgba(255,255,255,.6);font-size:12px">화면을 누르면 닫혀요</p>
+</div>
+<div id="pal-hint" class="hide"></div>
 <div id="drag-layer"></div>
 <div id="fly-layer"></div>
 <div class="ov hide" id="clr-ov">
@@ -802,7 +848,27 @@ const ART=[
   '00122344100000144322100','00111341000000014332100','01000110110000014432100',
   '10000000001000011411100','10000000001000100100110','01001100010001000000001',
   '00110011100001000000001','00000000000001000000010','00000000000000100001100',
-  '00000000000000011110000']}
+  '00000000000000011110000']},
+ {n:'하트',pal:{'2':'R','3':'N'},g:[
+  '022000220','222232222','222222222','022222220','002222200','000222000','000020000']},
+ {n:'별',pal:{'1':'K','2':'Y','3':'O'},g:[
+  '000010000','000121000','000222000','111222111','122222221','012222210','001202100','012000210']},
+ {n:'물고기',pal:{'1':'K','2':'C','3':'B'},g:[
+  '000011000','001221130','012222113','122222221','012222113','001221130','000011000']},
+ {n:'꽃',pal:{'1':'N','2':'Y','3':'G'},g:[
+  '0110110','1112111','1122211','0112110','0013100','0033300','0013100']},
+ {n:'나비',pal:{'1':'K','2':'P','3':'C'},g:[
+  '220010022','222111222','223121322','002111200','223121322','222111222','220010022']},
+ {n:'버섯',pal:{'1':'K','2':'R','3':'W'},g:[
+  '0011100','0122210','1222221','1232321','0011100','0013100','0013100']},
+ {n:'유령',pal:{'1':'W','2':'K','3':'N'},g:[
+  '0111110','1111111','1221221','1221221','1111111','1131311','1010101']},
+ {n:'왕관',pal:{'1':'Y','2':'R','3':'O'},g:[
+  '100010001','110111011','111111111','121131211','111111111','333333333']},
+ {n:'선물',pal:{'1':'Y','2':'R','3':'O'},g:[
+  '0001100','0011110','2221222','2221222','2221222','2221222']},
+ {n:'로켓',pal:{'1':'W','2':'R','3':'O'},g:[
+  '0010','0110','0210','0110','3113','0330','0300']}
 ];
 
 // ========== AUDIO ==========
@@ -3306,6 +3372,27 @@ G.toSelect=function(){ G.free=false; quitToOverlays();   // pause menu: back to 
   show('start-ov'); HOME.refresh(); G.openSelect();
 };
 G.viewRoom=function(){ hide('start-ov'); openRoom(0, ()=>{ show('start-ov'); }); };
+G.closeArtPreview=function(){ const e=$('art-preview'); if(e) e.classList.add('hide'); };
+G.openRoomList=function(){ buildRoomList(); show('roomlist-ov'); };
+G.closeRoomList=function(){ hide('roomlist-ov'); };
+function buildRoomList(){
+  const grid=$('roomlist-grid'); if(!grid) return; grid.innerHTML='';
+  ROOMS.forEach((rm,ri)=>{
+    const unlocked=(G.unlocked||0)>=ri*10+1;
+    const parts=rm.title.split(' '); const em=parts[0]||'🏠';
+    const nm=rm.title.replace(' 꾸미기','').replace(/^\S+\s*/,'');
+    const t=document.createElement('div'); t.className='rl-tile'+(unlocked?'':' locked');
+    t.innerHTML='<span class="rl-em">'+em+'</span><span class="rl-n">'+nm+'</span>';
+    if(unlocked) t.onclick=()=>{ hide('roomlist-ov'); viewRoomIdx(ri); };
+    grid.appendChild(t);
+  });
+}
+function viewRoomIdx(ri){
+  show('room-ov'); $('room-title').textContent=ROOMS[ri].title; renderRoom(ri,-1);
+  const got=Math.max(0,Math.min(ROOMS[ri].items.length,(G.unlocked||0)-ri*10));
+  $('room-msg').textContent = got ? ('이 방에 '+got+'개의 가구를 모았어요.') : '아직 가구가 없어요.';
+  const nb=$('room-next'); nb.textContent='닫기 ▸'; nb.onclick=()=>{ hide('room-ov'); show('roomlist-ov'); };
+}
 
 // ---- map select (FREE mode: pick any of the LV_MAX levels) ----
 function drawLevelPreview(cv,lv){
@@ -4682,7 +4769,8 @@ const HOME=(()=>{
   const CELL=14, SLOT_W=25*CELL+90, SLOT_H=22*CELL+110;
   const cv=$('map-cv'), ctx=cv.getContext('2d');
   const view={x:0,y:0,s:1};
-  let mode='home', sel=null, rafId=0, painted=[], layouts=[];
+  let mode='home', sel=null, rafId=0, painted=[], layouts=[], hist=[], hintT=null;
+  const BTN=22; // per-art tool button size (world units)
   // portrait map: 2 columns x 5 rows
   const worldW=2*SLOT_W, worldH=5*SLOT_H;
 
@@ -4695,6 +4783,7 @@ const HOME=(()=>{
         return row.map((ch,c)=>(hex[ch]&&a.g[r][c]!=='0')?ch:null);
       });
     });
+    hist=ART.map(()=>[]);   // per-art undo stacks
   }
   function saveArt(){
     try{localStorage.setItem('pbp_art',JSON.stringify(
@@ -4703,7 +4792,15 @@ const HOME=(()=>{
   function build(){
     layouts=ART.map((a,i)=>{
       const col=i%2,row=(i/2)|0,w=a.g[0].length*CELL,h=a.g.length*CELL;
-      return {a,i,x:col*SLOT_W+(SLOT_W-w)/2,y:row*SLOT_H+(SLOT_H-h)/2,w,h};
+      const x=col*SLOT_W+(SLOT_W-w)/2, y=row*SLOT_H+(SLOT_H-h)/2;
+      // tool buttons: reset & undo top-left above board, preview top-right
+      const by=y-BTN-6;
+      const btns=[
+        {k:'reset',x:x,        y:by,w:BTN,h:BTN,ic:'↺'},
+        {k:'undo', x:x+BTN+4,  y:by,w:BTN,h:BTN,ic:'⤺'},
+        {k:'prev', x:x+w-BTN,  y:by,w:BTN,h:BTN,ic:'🔍'}
+      ];
+      return {a,i,x,y,w,h,btns};
     });
   }
   function fitView(){
@@ -4753,14 +4850,24 @@ const HOME=(()=>{
       ctx.font=`15px 'Noto Sans KR',sans-serif`; ctx.textAlign='center'; ctx.textBaseline='middle';
       ctx.fillStyle=done?'#ffd700':'rgba(255,255,255,0.65)';
       ctx.fillText(L.a.n+(done?' ✓ 완성!':''),L.x+L.w/2,L.y+L.h+26);
+      // tool buttons (reset / undo / preview)
+      for(const b of L.btns){
+        ctx.fillStyle='rgba(255,255,255,0.14)'; ctx.beginPath(); ctx.roundRect(b.x,b.y,b.w,b.h,5); ctx.fill();
+        ctx.fillStyle='#fff'; ctx.font=`${Math.floor(BTN*0.7)}px sans-serif`; ctx.textAlign='center'; ctx.textBaseline='middle';
+        ctx.fillText(b.ic, b.x+b.w/2, b.y+b.h/2+1);
+      }
     }
     ctx.restore();
   }
   function loop(t){ draw(t); rafId=requestAnimationFrame(loop); }
 
   // ---- color bar ----
+  function updateSel(){
+    const er=$('eraser-chip'); if(er) er.classList.toggle('selc', sel==='ERASE');
+    const bar=$('color-scroll'); if(bar)[...bar.children].forEach((d,idx)=>d.classList.toggle('selc', sel===CK[idx]));
+  }
   function renderBar(){
-    const bar=$('color-bar'); bar.innerHTML='';
+    const bar=$('color-scroll'); if(!bar) return; bar.innerHTML='';
     for(const k of CK){
       const n=(G.paint&&G.paint[k])||0;
       const d=document.createElement('div');
@@ -4768,32 +4875,65 @@ const HOME=(()=>{
       const sw=document.createElement('div'); sw.className='sw'; sw.style.background=hex[k];
       const ct=document.createElement('div'); ct.className='ct'; ct.textContent=n;
       d.append(sw,ct);
-      d.addEventListener('click',()=>{
-        if(sel===k){ sel=null; }
-        else if(n>0){ sel=k; vibe(10); }
-        renderBar();
-      });
+      d.addEventListener('click',()=>{ if(n>0){ sel=k; vibe(10); updateSel(); } });
       bar.appendChild(d);
     }
+    updateSel();
   }
 
-  // ---- painting ----
-  function tapPaint(cx,cy){
-    if(!sel||((G.paint&&G.paint[sel])||0)<=0) return;
+  // ---- painting (unified economy: paint/erase refund & consume) ----
+  function applyPaint(i,r,c,after){
+    const P=painted[i], before=P[r][c];
+    if(before===after) return false;
+    if(after && (G.paint[after]||0)<=0) return false;
+    if(before) G.paint[before]=(G.paint[before]||0)+1;     // refund the color leaving the cell -> back to palette
+    if(after)  G.paint[after]=(G.paint[after]||0)-1;
+    P[r][c]=after; hist[i].push({r,c,before,after});
+    savePaint(); saveArt(); return true;
+  }
+  function undoArt(i){ const st=hist[i]; if(!st||!st.length) return;
+    const m=st.pop(), P=painted[i];
+    if(m.after)  G.paint[m.after]=(G.paint[m.after]||0)+1;
+    if(m.before) G.paint[m.before]=Math.max(0,(G.paint[m.before]||0)-1);
+    P[m.r][m.c]=m.before; savePaint(); saveArt(); renderBar(); vibe(8);
+  }
+  function resetArt(i){ const P=painted[i];
+    for(let r=0;r<P.length;r++)for(let c=0;c<P[r].length;c++){ if(P[r][c]){ G.paint[P[r][c]]=(G.paint[P[r][c]]||0)+1; P[r][c]=null; } }
+    hist[i]=[]; savePaint(); saveArt(); renderBar(); vibe(14);
+  }
+  function previewArt(i){ const a=ART[i], g=a.g, pv=$('art-preview-cv'), cs=14;
+    pv.width=g[0].length*cs; pv.height=g.length*cs;
+    const x=pv.getContext('2d'); x.clearRect(0,0,pv.width,pv.height);
+    for(let r=0;r<g.length;r++)for(let c=0;c<g[r].length;c++){ const d=g[r][c]; if(d==='0')continue; x.fillStyle=hex[a.pal[d]]||'#888'; x.fillRect(c*cs,r*cs,cs,cs); }
+    $('art-preview-name').textContent=a.n+' 완성 미리보기';
+    $('art-preview').classList.remove('hide'); vibe(8);
+  }
+  function handleTap(cx,cy){
     const rect=cv.getBoundingClientRect();
     const wx=view.x+(cx-rect.left)/view.s, wy=view.y+(cy-rect.top)/view.s;
+    for(const L of layouts) for(const b of L.btns){               // tool buttons first
+      if(wx>=b.x&&wy>=b.y&&wx<b.x+b.w&&wy<b.y+b.h){
+        if(b.k==='reset') resetArt(L.i); else if(b.k==='undo') undoArt(L.i); else previewArt(L.i);
+        return;
+      } }
+    if(sel==null) return;
     for(const L of layouts){
       if(wx<L.x||wy<L.y||wx>=L.x+L.w||wy>=L.y+L.h) continue;
       const c=((wx-L.x)/CELL)|0, r=((wy-L.y)/CELL)|0;
       const d=L.a.g[r]&&L.a.g[r][c]; if(!d||d==='0') return;
-      const P=painted[L.i];
-      if(P[r][c]===sel) return;          // same color already there
-      P[r][c]=sel; G.paint[sel]--; savePaint(); saveArt();
-      SFX.init(); SFX.resume(); SFX.place(); vibe(12);
-      if((G.paint[sel]||0)<=0) sel=null; // ran out of this paint
-      renderBar();
+      if(applyPaint(L.i,r,c, sel==='ERASE'?null:sel)){ SFX.init();SFX.resume();SFX.place();vibe(10); renderBar(); }
       return;
     }
+  }
+  // ---- gesture idle hints ----
+  function clearHint(){ if(hintT){clearTimeout(hintT);hintT=null;} const h=$('pal-hint'); if(h)h.classList.add('hide'); }
+  function scheduleHints(){ clearHint(); if(mode!=='pal') return;
+    hintT=setTimeout(()=>{ if(mode!=='pal')return; const h=$('pal-hint');
+      h.innerHTML='<span class="hint-ico">🤏 ↔</span>두 손가락으로 확대·축소'; h.classList.remove('hide');
+      hintT=setTimeout(()=>{ if(mode!=='pal')return;
+        h.innerHTML='<span class="hint-ico">👆 ↔</span>드래그해서 화면 이동';
+      },1000);
+    },1000);
   }
 
   // ---- pan / zoom / pinch ----
@@ -4805,6 +4945,7 @@ const HOME=(()=>{
     panRef=null;
   }
   cv.addEventListener('pointerdown',e=>{
+    if(mode==='pal') scheduleHints();
     try{ cv.setPointerCapture(e.pointerId); }catch(err){}
     ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
     moved=0;
@@ -4836,7 +4977,8 @@ const HOME=(()=>{
     pinchRef=null;
     if(ptrs.size===1){ const p=[...ptrs.values()][0]; panRef={px:p.x,py:p.y,vx:view.x,vy:view.y}; }
     else panRef=null;
-    if(wasTap&&mode==='pal') tapPaint(e.clientX,e.clientY);
+    if(wasTap&&mode==='pal') handleTap(e.clientX,e.clientY);
+    if(mode==='pal') scheduleHints();
   }
   cv.addEventListener('pointerup',ptrEnd);
   cv.addEventListener('pointercancel',ptrEnd);
@@ -4852,18 +4994,21 @@ const HOME=(()=>{
 
   // ---- mode switching ----
   function openPal(){
-    mode='pal'; sel=null;
+    mode='pal';
+    sel = CK.find(k=>(G.paint&&(G.paint[k]||0)>0)) || null;   // first owned color pre-selected
     $('start-ov').classList.add('pal');
     renderBar();
     if(!rafId) rafId=requestAnimationFrame(loop);
-    vibe(12);
+    scheduleHints(); vibe(12);
   }
   function closePal(){
-    mode='home'; sel=null;
+    mode='home'; sel=null; clearHint(); $('art-preview').classList.add('hide');
     $('start-ov').classList.remove('pal');
     if(rafId){ cancelAnimationFrame(rafId); rafId=0; }
     draw();
   }
+  // eraser chip (fixed, doesn't scroll with colors)
+  { const er=$('eraser-chip'); if(er) er.addEventListener('click',()=>{ sel='ERASE'; vibe(10); updateSel(); }); }
   $('pal-btn').addEventListener('click',openPal);
   $('home-close').addEventListener('click',closePal);
 
