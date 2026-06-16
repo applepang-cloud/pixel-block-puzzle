@@ -394,7 +394,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v5.9</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v6.0</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -472,6 +472,7 @@ canvas{display:block}
   <button id="pause-close" onclick="G.resume()">✕</button>
   <h2>일시정지</h2>
   <button onclick="G.restartLv()">다시하기 ↻</button>
+  <button class="sec hide" id="pause-select" onclick="G.toSelect()">맵 선택 ▦</button>
   <button class="sec" onclick="G.goHome()">홈으로 🏠</button>
 </div>
 <div class="ov hide" id="dlg-ov">
@@ -3267,7 +3268,7 @@ G.continueGame=function(){ G.start(G.savedLevel||1); };
 G.newGame=function(){ saveProgress(1); G.start(1); };
 
 // ---- pause menu ----
-G.pause=function(){ if(!G.on||G.dying||G.paused) return; G.paused=true; cancelBomb(); show('pause-ov'); renderItemBar(); };
+G.pause=function(){ if(!G.on||G.dying||G.paused) return; G.paused=true; cancelBomb(); $('pause-select').classList.toggle('hide',!G.free); show('pause-ov'); renderItemBar(); };
 G.resume=function(){ if(!G.paused) return; G.paused=false; hide('pause-ov'); raf(); renderItemBar(); };
 G.restartLv=function(){ G.paused=false; hide('pause-ov'); G.start(G.lv,G.free); };
 G.retry=function(){ G.start(G.lv,G.free); };
@@ -3285,9 +3286,11 @@ function quitToOverlays(){
   $('belt-col').classList.remove('belt-full-flash');
   renderBelt(); SFX.stopMusic(); stopVoice();
 }
-G.goHome=function(){ const wasFree=G.free; G.free=false; quitToOverlays();
-  show('start-ov'); HOME.refresh();
-  if(wasFree) G.openSelect();   // from a freely-picked map, go back to the map list
+G.goHome=function(){ G.free=false; quitToOverlays();
+  show('start-ov'); HOME.refresh();          // always to the home screen
+};
+G.toSelect=function(){ G.free=false; quitToOverlays();   // pause menu: back to map-select
+  show('start-ov'); HOME.refresh(); G.openSelect();
 };
 G.viewRoom=function(){ hide('start-ov'); openRoom(0, ()=>{ show('start-ov'); }); };
 
@@ -3601,9 +3604,10 @@ let prevT=0, running=false;
 function raf(){if(!running){running=true;prevT=performance.now();requestAnimationFrame(tick);}}
 function tick(t){
   const dt=Math.min(t-prevT,50); prevT=t;
-  if(!(G.auto&&G.auto.on)) update(dt);          // auto-test drives update() itself (see autoLoop)
+  // normal play and auto-view-ON update here (belt in real time); auto-view-OFF batches in autoLoop
+  if(!(G.auto&&G.auto.on&&!G.auto.view)) update(dt);
   if(!(G.auto&&G.auto.on&&!G.auto.view)){ drawTop(); drawBot(); }  // skip draw only when auto + view off
-  if(G.on||G.dying||G.beltRunners.length||G.bullets.length||G.clears.length||G.particles.length||G.hitFx.length) requestAnimationFrame(tick);
+  if(G.on||G.dying||G.beltRunners.length||G.bullets.length||G.clears.length||G.particles.length||G.hitFx.length||(G.auto&&G.auto.on&&G.auto.view)) requestAnimationFrame(tick);
   else running=false;
 }
 
@@ -3870,9 +3874,18 @@ function drawIce(ctx,x,y,sz,ck,num){
 function drawBomb(ctx,x,y,sz){
   ctx.fillStyle='#3a2a55';ctx.beginPath();ctx.roundRect(x,y,sz,sz,4);ctx.fill();
   ctx.fillStyle='rgba(255,255,255,0.12)';ctx.fillRect(x+2,y+1,sz-4,Math.max(1,sz*0.18));
-  ctx.strokeStyle='rgba(255,90,90,0.75)';ctx.lineWidth=Math.max(1.5,sz*0.08);ctx.strokeRect(x+1.5,y+1.5,sz-3,sz-3);
-  ctx.font=`${Math.floor(sz*0.66)}px serif`;ctx.textAlign='center';ctx.textBaseline='middle';
-  ctx.fillText('💣',x+sz/2,y+sz/2+1);
+  ctx.strokeStyle='rgba(255,90,90,0.85)';ctx.lineWidth=Math.max(1.5,sz*0.08);ctx.strokeRect(x+1.5,y+1.5,sz-3,sz-3);
+  // bomb drawn as a shape (visible even where the 💣 emoji font is missing)
+  const cx=x+sz/2, cy=y+sz*0.6, R=sz*0.27;
+  ctx.save();
+  ctx.fillStyle='#14141e'; ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,0.5)'; ctx.beginPath(); ctx.ellipse(cx-R*0.35,cy-R*0.32,R*0.3,R*0.17,-0.6,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle='#9a9ab0'; ctx.fillRect(cx-R*0.3,cy-R*1.25,R*0.6,R*0.4);          // cap
+  ctx.strokeStyle='#c98a3a'; ctx.lineWidth=Math.max(1.2,sz*0.06); ctx.lineCap='round';
+  ctx.beginPath(); ctx.moveTo(cx,cy-R*1.2); ctx.quadraticCurveTo(cx+R*0.8,cy-R*1.7,cx+R*0.5,cy-R*2.1); ctx.stroke(); // fuse
+  ctx.fillStyle='#ffd54a'; ctx.beginPath(); ctx.arc(cx+R*0.5,cy-R*2.1,R*0.3,0,Math.PI*2); ctx.fill();              // spark
+  ctx.fillStyle='#ff7a00'; ctx.beginPath(); ctx.arc(cx+R*0.5,cy-R*2.1,R*0.15,0,Math.PI*2); ctx.fill();
+  ctx.restore();
 }
 function drawCell(ctx,x,y,sz,cell){
   if(cell.wood) return drawWood(ctx,x,y,sz);
@@ -4436,27 +4449,76 @@ function autoStatus(){
 }
 function autoBeginAttempt(){
   const a=G.auto; if(!a||!a.on) return;
-  a.curDrags=0; a.iter=0; a.result=null; G.slowmo=1;
+  a.curDrags=0; a.iter=0; a.result=null; a.dragging=false;
+  G.slowmo = a.view ? a.speed : 1;       // view ON: belt runs at x speed via tick; view OFF: batch controls speed
   autoStatus();
   try{ G.start(a.lv, true); }            // auto-skips dialogue -> G.on=true
   catch(e){ console.error('auto level '+a.lv+' start error',e); a.result={win:false,reason:'error'}; autoFinishAttempt(); return; }
+  G.slowmo = a.view ? a.speed : 1;       // G.start resets slowmo to 1; re-apply
   a.timer=setTimeout(autoLoop, 0);
+}
+// commit a placement (no drag visual) — used by both modes
+function autoCommit(mv){
+  const p=G.pieces[mv.pi]; if(!p) return;
+  place(p,mv.br,mv.bc); G.pieces[mv.pi]=null; G.auto.curDrags++;
+  const cleared=checkLines(); if(cleared>0) onCombo(); else onComboMiss();
+  if(G.pieces.every(x=>!x)) genPcs();
+  renderTray(); checkDeadlock();
+}
+// animate a piece gliding tray -> board (best-effort visual; setTimeout guarantees the commit)
+function autoDragAnim(mv, dur, done){
+  const p=G.pieces[mv.pi]; if(!p){ done(); return; }
+  const cs=G.bkSz; let mr=0,mc=0; for(const[r,c]of p.shape){mr=Math.max(mr,r);mc=Math.max(mc,c);}
+  const slot=$('tray').querySelector('.tp[data-pi="'+mv.pi+'"]');
+  const src = slot? elCenter(slot) : {x:window.innerWidth/2,y:window.innerHeight-50};
+  const rect=bcv.getBoundingClientRect(), sX=rect.width/G.bW, sY=rect.height/G.bH;
+  const tx = rect.left+(G.bOX+(mv.bc+(mc+1)/2)*cs)*sX, ty = rect.top+(G.bOY+(mv.br+(mr+1)/2)*cs)*sY;
+  const cv=document.createElement('canvas'); cv.width=(mc+1)*cs; cv.height=(mr+1)*cs;
+  const c2=cv.getContext('2d'); for(const[r,c]of p.shape) drawPieceCell(c2,c*cs,r*cs,cs-2,p);
+  cv.style.cssText='position:fixed;left:0;top:0;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))';
+  $('drag-layer').appendChild(cv);
+  if(slot) slot.style.visibility='hidden';
+  const t0=performance.now();
+  (function step(t){
+    if(!cv.parentNode) return;
+    let pr=Math.min(1,(t-t0)/dur), e=pr<.5?2*pr*pr:1-Math.pow(-2*pr+2,2)/2;
+    cv.style.transform='translate('+((src.x+(tx-src.x)*e)-cv.width/2)+'px,'+((src.y+(ty-src.y)*e)-cv.height/2-G.bkSz*0.6)+'px)';
+    if(pr<1 && G.auto&&G.auto.on) requestAnimationFrame(step);
+  })(t0);
+  setTimeout(()=>{ try{cv.remove();}catch(e){} done(); }, dur);  // reliable completion
 }
 function autoLoop(){
   const a=G.auto; if(!a||!a.on) return;
+  if(a.view){
+    // human-paced single drag-and-drop; belt advances in real time via tick (slowmo=speed)
+    if(a.dragging) return;
+    if(!G.on || a.result!==null){ if(a.result!==null) autoFinishAttempt(); else a.timer=setTimeout(autoLoop,60); return; }
+    if(a.iter>a.maxIter){ a.result={win:false,reason:'timeout'}; autoFinishAttempt(); return; }
+    let mv; try{ mv=autoBestMove(); }catch(e){ console.error('auto run error',e); a.result={win:false,reason:'error'}; autoFinishAttempt(); return; }
+    if(!mv){ gameOver('space'); autoFinishAttempt(); return; }
+    a.iter++;
+    const interval=Math.max(70, Math.round(700/a.speed));   // 1x ~ human pace; higher = faster
+    a.dragging=true;
+    autoDragAnim(mv, Math.round(interval*0.7), ()=>{
+      a.dragging=false;
+      try{ autoCommit(mv); }catch(e){ console.error('auto run error',e); a.result={win:false,reason:'error'}; }
+      drawTop(); drawBot(); renderBelt();
+      if(a.result!==null){ autoFinishAttempt(); return; }
+      a.timer=setTimeout(autoLoop, Math.round(interval*0.3));
+    });
+    return;
+  }
+  // view OFF: fast batch (no rendering)
   try{
-    const batches=a.view?1:30;               // view off: many cycles per tick (fast)
-    for(let b=0;b<batches && G.on && a.result===null;b++){
-      const steps=a.speed*(a.view?4:22);
-      for(let k=0;k<steps && G.on;k++) update(16);
+    for(let b=0;b<30 && G.on && a.result===null;b++){
+      for(let k=0;k<a.speed*22 && G.on;k++) update(16);
       if(G.on){ const mv=autoBestMove(); if(mv) autoPlace(mv); else gameOver('space'); }
       a.iter++;
       if(a.iter>a.maxIter && a.result===null){ a.result={win:false,reason:'timeout'}; }
     }
-    if(a.view){ drawTop(); drawBot(); renderBelt(); }
   }catch(e){ console.error('auto level '+a.lv+' run error',e); a.result={win:false,reason:'error'}; }
   if(a.result!==null){ autoFinishAttempt(); return; }
-  a.timer=setTimeout(autoLoop, a.view?Math.max(8,Math.round(70/a.speed)):0);
+  a.timer=setTimeout(autoLoop, 0);
 }
 function autoFinishAttempt(){
   const a=G.auto; if(!a) return;
