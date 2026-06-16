@@ -432,7 +432,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v6.2</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v6.3</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -4908,36 +4908,45 @@ const HOME=(()=>{
     $('art-preview-name').textContent=a.n+' 완성 미리보기';
     $('art-preview').classList.remove('hide'); vibe(8);
   }
+  // tap on a tool button (reset/undo/preview). returns true if a button was hit.
   function handleTap(cx,cy){
     const rect=cv.getBoundingClientRect();
     const wx=view.x+(cx-rect.left)/view.s, wy=view.y+(cy-rect.top)/view.s;
-    for(const L of layouts) for(const b of L.btns){               // tool buttons first
+    for(const L of layouts) for(const b of L.btns){
       if(wx>=b.x&&wy>=b.y&&wx<b.x+b.w&&wy<b.y+b.h){
         if(b.k==='reset') resetArt(L.i); else if(b.k==='undo') undoArt(L.i); else previewArt(L.i);
-        return;
+        return true;
       } }
-    if(sel==null) return;
+    return false;
+  }
+  // paint/erase the cell under a screen point. returns true if the point is over a coloring board
+  // (so a single-finger drag there is treated as painting, not panning).
+  function paintAt(cx,cy){
+    if(sel==null) return false;
+    const rect=cv.getBoundingClientRect();
+    const wx=view.x+(cx-rect.left)/view.s, wy=view.y+(cy-rect.top)/view.s;
     for(const L of layouts){
       if(wx<L.x||wy<L.y||wx>=L.x+L.w||wy>=L.y+L.h) continue;
       const c=((wx-L.x)/CELL)|0, r=((wy-L.y)/CELL)|0;
-      const d=L.a.g[r]&&L.a.g[r][c]; if(!d||d==='0') return;
-      if(applyPaint(L.i,r,c, sel==='ERASE'?null:sel)){ SFX.init();SFX.resume();SFX.place();vibe(10); renderBar(); }
-      return;
+      const d=L.a.g[r]&&L.a.g[r][c]; if(!d||d==='0') return true;   // over board, blank cell — still a paint gesture
+      if(applyPaint(L.i,r,c, sel==='ERASE'?null:sel)){ SFX.init();SFX.resume();SFX.place();vibe(8); renderBar(); }
+      return true;
     }
+    return false;
   }
   // ---- gesture idle hints ----
   function clearHint(){ if(hintT){clearTimeout(hintT);hintT=null;} const h=$('pal-hint'); if(h)h.classList.add('hide'); }
   function scheduleHints(){ clearHint(); if(mode!=='pal') return;
     hintT=setTimeout(()=>{ if(mode!=='pal')return; const h=$('pal-hint');
-      h.innerHTML='<span class="hint-ico">🤏 ↔</span>두 손가락으로 확대·축소'; h.classList.remove('hide');
+      h.innerHTML='<span class="hint-ico">🤏 ↔</span>두 손가락으로 확대·축소·이동'; h.classList.remove('hide');
       hintT=setTimeout(()=>{ if(mode!=='pal')return;
-        h.innerHTML='<span class="hint-ico">👆 ↔</span>드래그해서 화면 이동';
+        h.innerHTML='<span class="hint-ico">👆 ↔</span>한 손가락으로 드래그해서 색칠';
       },1000);
     },1000);
   }
 
   // ---- pan / zoom / pinch ----
-  const ptrs=new Map(); let panRef=null,pinchRef=null,moved=0;
+  const ptrs=new Map(); let panRef=null,pinchRef=null,moved=0,painting=false;
   function pinchStart(){
     const [p1,p2]=[...ptrs.values()];
     pinchRef={d:Math.hypot(p1.x-p2.x,p1.y-p2.y),s:view.s,
@@ -4949,8 +4958,11 @@ const HOME=(()=>{
     try{ cv.setPointerCapture(e.pointerId); }catch(err){}
     ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
     moved=0;
-    if(ptrs.size===1) panRef={px:e.clientX,py:e.clientY,vx:view.x,vy:view.y};
-    else if(ptrs.size===2) pinchStart();
+    if(ptrs.size===1){
+      // pal: one finger paints over a board, pans elsewhere. home: one finger pans.
+      painting = (mode==='pal') && paintAt(e.clientX,e.clientY);
+      panRef = painting ? null : {px:e.clientX,py:e.clientY,vx:view.x,vy:view.y};
+    } else if(ptrs.size===2){ pinchStart(); painting=false; }
   });
   cv.addEventListener('pointermove',e=>{
     if(!ptrs.has(e.pointerId)) return;
@@ -4964,6 +4976,8 @@ const HOME=(()=>{
       const ncx=(p1.x+p2.x)/2, ncy=(p1.y+p2.y)/2;
       const wx=pinchRef.vx+pinchRef.cx/pinchRef.s, wy=pinchRef.vy+pinchRef.cy/pinchRef.s;
       view.s=ns; view.x=wx-ncx/ns; view.y=wy-ncy/ns;
+    } else if(painting){
+      paintAt(e.clientX,e.clientY);   // drag-to-paint
     } else if(panRef){
       view.x=panRef.vx-(e.clientX-panRef.px)/view.s;
       view.y=panRef.vy-(e.clientY-panRef.py)/view.s;
@@ -4973,11 +4987,13 @@ const HOME=(()=>{
   function ptrEnd(e){
     if(!ptrs.has(e.pointerId)) return;
     const wasTap=(ptrs.size===1&&moved<8&&e.type==='pointerup');
+    const wasPainting=painting;
     ptrs.delete(e.pointerId);
-    pinchRef=null;
+    pinchRef=null; painting=false;
     if(ptrs.size===1){ const p=[...ptrs.values()][0]; panRef={px:p.x,py:p.y,vx:view.x,vy:view.y}; }
     else panRef=null;
-    if(wasTap&&mode==='pal') handleTap(e.clientX,e.clientY);
+    // a tap that wasn't a paint stroke (tool button / blank area) → tool buttons
+    if(wasTap&&mode==='pal'&&!wasPainting) handleTap(e.clientX,e.clientY);
     if(mode==='pal') scheduleHints();
   }
   cv.addEventListener('pointerup',ptrEnd);
@@ -5029,6 +5045,7 @@ const HOME=(()=>{
   function onResize(){ if(!$('start-ov').classList.contains('hide')){ fitView(); draw(); } }
 
   loadArt(); build(); fitView(); draw();
+  window.__PBP={get view(){return view},get layouts(){return layouts},get mode(){return mode},get sel(){return sel},paintAt,fitView,cv};
   return {refresh,exit,onResize};
 })();
 
