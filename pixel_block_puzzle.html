@@ -215,6 +215,42 @@ canvas{display:block}
 @keyframes fx4{0%{opacity:0}25%{opacity:1;box-shadow:inset 0 0 50px 10px rgba(255,120,20,.95);border-color:#ff7a00}60%{box-shadow:inset 0 0 30px 6px rgba(255,200,0,.8);border-color:#ffd000}100%{opacity:0}}
 #combo-fx.fx5{animation:fx5 .9s steps(3)}
 @keyframes fx5{0%{opacity:0}20%{opacity:1;box-shadow:inset 0 0 50px 10px rgba(180,120,255,1);border-color:#b388ff}50%{opacity:1;box-shadow:inset 0 0 60px 14px rgba(255,255,255,.95);border-color:#ffe600}80%{opacity:1;box-shadow:inset 0 0 40px 8px rgba(125,249,255,.9);border-color:#7df9ff}100%{opacity:0}}
+
+/* ===== AUTO TEST ===== */
+#auto-btn{font-size:16px;padding:9px 30px;background:linear-gradient(135deg,#11998e,#38ef7d);
+  box-shadow:0 4px 14px rgba(17,153,142,.5),0 3px 10px rgba(0,0,0,.5)}
+#auto-btn small{font-size:11px;opacity:.85;font-family:'Noto Sans KR'}
+#auto-ov,#autorun-ov{justify-content:flex-start;padding-top:50px;background:rgba(10,8,24,.96)}
+#auto-close{position:absolute;top:12px;right:12px;width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.14);color:#fff;font-size:18px;font-family:sans-serif;cursor:pointer;padding:0;margin:0;box-shadow:none}
+.auto-row{display:flex;align-items:center;justify-content:space-between;width:88%;max-width:360px;margin:7px 0;color:#fff;font-size:14px}
+.auto-row label{font-family:'Noto Sans KR'}
+.auto-row input{width:90px;padding:7px 9px;border-radius:9px;border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.1);color:#fff;font-size:15px;text-align:center;font-family:'Lilita One'}
+.seg{display:flex;gap:5px}
+.seg button{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;
+  border-radius:8px;padding:6px 11px;font-family:'Lilita One';font-size:13px;cursor:pointer}
+.seg button.on{background:linear-gradient(135deg,#00c6ff,#0072ff);border-color:#fff}
+#a-go,#ar-btns button{font-family:'Lilita One';font-size:17px;padding:10px 30px;border:none;border-radius:22px;
+  background:linear-gradient(135deg,#11998e,#38ef7d);color:#fff;cursor:pointer;margin:14px 5px 0;box-shadow:0 3px 12px rgba(0,0,0,.4)}
+#ar-btns button#ar-stop{background:linear-gradient(135deg,#ff6b6b,#ee5a24)}
+#ar-btns button#ar-save{background:linear-gradient(135deg,#f7b733,#fc4a1a)}
+#ar-status{color:#9be7ff;font-size:14px;margin:6px 0;font-family:'Lilita One';min-height:20px}
+#ar-mini{margin:8px 0;display:flex;justify-content:center}
+#ar-mini canvas{image-rendering:pixelated;border:1px solid rgba(255,255,255,.15);border-radius:6px}
+#ar-results{width:94%;max-width:460px;max-height:46vh;overflow-y:auto;margin-top:10px}
+#ar-results table{width:100%;border-collapse:collapse;font-size:11px;color:#fff}
+#ar-results th,#ar-results td{border:1px solid rgba(255,255,255,.15);padding:3px 4px;text-align:center;white-space:nowrap}
+#ar-results th{background:rgba(255,255,255,.1);position:sticky;top:0;font-family:'Lilita One'}
+#ar-results td.diff{font-family:'Lilita One'}
+.d-easy{color:#7dff9b}.d-normal{color:#ffe066}.d-hard{color:#ff9f43}.d-super{color:#ff5a5a;font-weight:900}
+#ar-btns{display:flex;flex-wrap:wrap;justify-content:center}
+/* peek mode: view ON -> show live game, only a small status+stop on top */
+#autorun-ov.peek{background:transparent;pointer-events:none;justify-content:flex-start;padding-top:6px}
+#autorun-ov.peek #ar-title,#autorun-ov.peek #ar-results,#autorun-ov.peek #ar-mini{display:none}
+#autorun-ov.peek #ar-status{background:rgba(0,0,0,.6);padding:4px 14px;border-radius:12px;pointer-events:auto;margin-top:0}
+#autorun-ov.peek #ar-btns{pointer-events:auto;margin-top:6px}
+#autorun-ov.peek #ar-btns button{padding:5px 18px;font-size:13px;margin-top:4px}
 @keyframes shake{
   0%,100%{transform:translate(0,0) rotate(0)}
   15%{transform:translate(-7px,4px) rotate(-0.7deg)}
@@ -353,10 +389,11 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v5.2</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v5.3</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
+        <button id="auto-btn" onclick="G.openAuto()">AUTO ⚙ <small>자동 테스트</small></button>
       </div>
     </div>
     <button id="pal-btn" title="픽셀 컬러링"><canvas id="pal-icon" width="48" height="36"></canvas></button>
@@ -396,6 +433,31 @@ canvas{display:block}
   <button id="sel-close" onclick="G.closeSelect()">✕</button>
   <h2 id="sel-title">맵 골라하기</h2>
   <div id="sel-grid"></div>
+</div>
+<div class="ov hide" id="auto-ov">
+  <button id="auto-close" onclick="G.closeAuto()">✕</button>
+  <h2>⚙ 자동 테스트</h2>
+  <div class="auto-row"><label>시작 레벨</label><input id="a-start" type="number" min="1" value="1"></div>
+  <div class="auto-row"><label>종료 레벨</label><input id="a-end" type="number" min="1" value="10"></div>
+  <div class="auto-row"><label>반복 횟수</label><input id="a-rep" type="number" min="1" value="5"></div>
+  <div class="auto-row"><label>배속</label>
+    <div id="a-speed" class="seg"><button class="on" data-v="1">1x</button><button data-v="2">2x</button><button data-v="4">4x</button><button data-v="16">16x</button></div>
+  </div>
+  <div class="auto-row"><label>화면 보기</label>
+    <div id="a-view" class="seg"><button class="on" data-v="1">ON</button><button data-v="0">OFF</button></div>
+  </div>
+  <button id="a-go" onclick="G.startAuto()">테스트 시작 ▶</button>
+</div>
+<div class="ov hide" id="autorun-ov">
+  <h2 id="ar-title">자동 테스트 중…</h2>
+  <div id="ar-status">준비 중</div>
+  <div id="ar-mini"></div>
+  <div id="ar-results" class="hide"></div>
+  <div id="ar-btns">
+    <button id="ar-stop" onclick="G.stopAuto()">중단</button>
+    <button id="ar-save" class="hide" onclick="G.saveAutoLog()">📊 로그 저장(엑셀)</button>
+    <button id="ar-home" class="hide" onclick="G.autoToHome()">홈으로</button>
+  </div>
 </div>
 <div class="ov hide" id="go-ov">
   <h2>GAME OVER</h2><p id="go-m">벨트가 가득 찼습니다!</p>
@@ -2393,6 +2455,7 @@ function stopVoice(){ if(VOICE.cur){ try{VOICE.cur.pause();}catch(e){} VOICE.cur
 
 // ---- dialogue ----
 function showDialogue(lines,onDone,key){
+  if(G.auto&&G.auto.on){ onDone&&onDone(); return; }   // auto-test: skip all dialogue
   if(!lines||!lines.length){ onDone&&onDone(); return; }
   G.dlg={lines,i:0,onDone,key};
   show('dlg-ov'); renderDlg();
@@ -2529,8 +2592,8 @@ let prevT=0, running=false;
 function raf(){if(!running){running=true;prevT=performance.now();requestAnimationFrame(tick);}}
 function tick(t){
   const dt=Math.min(t-prevT,50); prevT=t;
-  update(dt);
-  drawTop(); drawBot();
+  if(!(G.auto&&G.auto.on)) update(dt);          // auto-test drives update() itself (see autoLoop)
+  if(!(G.auto&&G.auto.on&&!G.auto.view)){ drawTop(); drawBot(); }  // skip draw only when auto + view off
   if(G.on||G.dying||G.beltRunners.length||G.bullets.length||G.clears.length||G.particles.length||G.hitFx.length) requestAnimationFrame(tick);
   else running=false;
 }
@@ -3282,10 +3345,143 @@ function resetCombo(){
   const w=$('wrap'); if(w) w.classList.remove('cb3','cb4','cb5','cbCycle');
 }
 
+// ========== AUTO TEST ==========
+// segment pickers
+function segInit(id){ const seg=$(id); if(!seg) return; seg.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{
+  seg.querySelectorAll('button').forEach(x=>x.classList.remove('on')); b.classList.add('on'); })); }
+function segVal(id){ const on=$(id).querySelector('button.on'); return on?parseInt(on.dataset.v,10):1; }
+G.openAuto=function(){ segInit('a-speed'); segInit('a-view');
+  $('a-end').value=Math.min(LV_MAX, parseInt($('a-end').value)||10);
+  show('auto-ov'); };
+G.closeAuto=function(){ hide('auto-ov'); };
+
+// --- AI placement heuristic ---
+function evalPlacement(p,br,bc){
+  const bk=G.bk.map(r=>r.slice());
+  for(const [dr,dc] of p.shape){ const r=br+dr,c=bc+dc; bk[r][c]=p.wood?{wood:1}:(p.bomb?{bomb:1}:{color:p.color,num:p.num}); }
+  let lines=0,rowsF=[],colsF=[];
+  for(let r=0;r<BR;r++){let f=true;for(let c=0;c<BC;c++)if(!bk[r][c]){f=false;break;}if(f){lines++;rowsF.push(r);}}
+  for(let c=0;c<BC;c++){let f=true;for(let r=0;r<BR;r++)if(!bk[r][c]){f=false;break;}if(f){lines++;colsF.push(c);}}
+  let needBonus=0;
+  if(lines){ const need=colorTopCount(), cc=new Set();
+    rowsF.forEach(r=>{for(let c=0;c<BC;c++){const cl=bk[r][c];if(cl&&cl.color)cc.add(cl.color);}});
+    colsF.forEach(c=>{for(let r=0;r<BR;r++){const cl=bk[r][c];if(cl&&cl.color)cc.add(cl.color);}});
+    cc.forEach(col=>{ if(need[col]) needBonus+=2; }); }
+  let holes=0,aggH=0,heights=[];
+  for(let c=0;c<BC;c++){ let h=0,seen=false; for(let r=0;r<BR;r++){ if(bk[r][c]){ if(!seen){h=BR-r;seen=true;} } else if(seen) holes++; } heights.push(h); aggH+=h; }
+  let bump=0; for(let c=1;c<BC;c++) bump+=Math.abs(heights[c]-heights[c-1]);
+  return lines*6000 + needBonus*400 - holes*45 - aggH*3 - bump*3 - Math.max(...heights)*8;
+}
+function autoBestMove(){
+  let best=null;
+  for(let pi=0;pi<G.pieces.length;pi++){ const p=G.pieces[pi]; if(!p) continue;
+    for(let br=0;br<BR;br++)for(let bc=0;bc<BC;bc++){ if(canPlace(p,br,bc)){ const sc=evalPlacement(p,br,bc); if(!best||sc>best.sc) best={pi,br,bc,sc}; } } }
+  return best;
+}
+function autoPlace(mv){
+  const p=G.pieces[mv.pi]; if(!p) return;
+  place(p,mv.br,mv.bc); G.pieces[mv.pi]=null; G.auto.curDrags++;
+  const cleared=checkLines(); if(cleared>0) onCombo(); else resetCombo();
+  if(G.pieces.every(x=>!x)) genPcs();
+  checkDeadlock();
+}
+
+G.startAuto=function(){
+  const s=Math.max(1,parseInt($('a-start').value)||1), e=Math.min(LV_MAX,Math.max(s,parseInt($('a-end').value)||s));
+  const rep=Math.max(1,parseInt($('a-rep').value)||1);
+  G.auto={on:true,startLv:s,endLv:e,speed:segVal('a-speed'),view:!!segVal('a-view'),rep:rep,
+    lv:s,repi:0,results:{},curDrags:0,iter:0,maxIter:2500,result:null};
+  hide('auto-ov');
+  $('ar-results').classList.add('hide'); $('ar-save').classList.add('hide'); $('ar-home').classList.add('hide'); $('ar-stop').classList.remove('hide');
+  $('ar-title').textContent='자동 테스트 중…';
+  show('autorun-ov'); $('autorun-ov').classList.toggle('peek', G.auto.view);
+  autoBeginAttempt();
+};
+function autoStatus(){
+  const a=G.auto; if(!a) return;
+  $('ar-status').textContent='레벨 '+a.lv+' / '+a.endLv+'  ·  반복 '+(a.repi+1)+'/'+a.rep;
+}
+function autoBeginAttempt(){
+  const a=G.auto; if(!a||!a.on) return;
+  a.curDrags=0; a.iter=0; a.result=null; G.slowmo=1;
+  autoStatus();
+  G.start(a.lv, true);     // auto-skips dialogue -> G.on=true
+  a.timer=setTimeout(autoLoop, 0);
+}
+function autoLoop(){
+  const a=G.auto; if(!a||!a.on) return;
+  const batches=a.view?1:30;                 // view off: many cycles per tick (fast)
+  for(let b=0;b<batches && G.on && a.result===null;b++){
+    const steps=a.speed*(a.view?4:22);
+    for(let k=0;k<steps && G.on;k++) update(16);
+    if(G.on){ const mv=autoBestMove(); if(mv) autoPlace(mv); else gameOver('space'); }
+    a.iter++;
+    if(a.iter>a.maxIter && a.result===null){ a.result={win:false,reason:'timeout'}; }
+  }
+  if(a.view){ drawTop(); drawBot(); renderBelt(); }
+  if(a.result!==null){ autoFinishAttempt(); return; }
+  a.timer=setTimeout(autoLoop, a.view?Math.max(8,Math.round(70/a.speed)):0);
+}
+function autoFinishAttempt(){
+  const a=G.auto; if(!a) return;
+  const lv=a.lv, res=a.result;
+  const R=a.results[lv]||(a.results[lv]={att:0,succ:0,fail:0,belt:0,space:0,timeout:0,drags:0});
+  R.att++; R.drags+=a.curDrags;
+  if(res.win) R.succ++; else { R.fail++; if(res.reason==='belt')R.belt++; else if(res.reason==='space')R.space++; else R.timeout++; }
+  a.repi++;
+  if(a.repi>=a.rep){ a.repi=0; a.lv++; }
+  if(!a.on) return;
+  if(a.lv>a.endLv){ autoAllDone(); return; }
+  autoStatus();
+  a.timer=setTimeout(autoBeginAttempt, a.view?40:0);
+}
+G.stopAuto=function(){ const a=G.auto; if(!a)return; a.on=false; if(a.timer)clearTimeout(a.timer); G.on=false; autoAllDone(); };
+function difficultyOf(R){
+  if(!R.att) return {n:0,label:'-',cls:''};
+  const sr=R.succ/R.att, avg=R.drags/R.att;
+  let d=1+(1-sr)*6+Math.min(3,Math.max(0,(avg-8)/12));
+  d=Math.max(1,Math.min(10,Math.round(d)));
+  const label = d<=3?'이지':(d<=6?'노말':(d<=9?'하드':'슈퍼하드'));
+  const cls = d<=3?'d-easy':(d<=6?'d-normal':(d<=9?'d-hard':'d-super'));
+  return {n:d,label,cls,sr,avg};
+}
+function autoAllDone(){
+  const a=G.auto; a.on=false; if(a.timer)clearTimeout(a.timer);
+  G.slowmo=1;
+  $('ar-title').textContent='✅ 테스트 완료';
+  $('ar-status').textContent='레벨 '+a.startLv+'~'+a.endLv+' · 반복 '+a.rep+'회';
+  $('autorun-ov').classList.remove('peek');
+  // build results table
+  const lvs=Object.keys(a.results).map(Number).sort((x,y)=>x-y);
+  let h='<table><tr><th>레벨</th><th>시도</th><th>성공</th><th>실패</th><th>대기열오버</th><th>하단풀</th><th>드래그</th><th>난이도</th><th>등급</th></tr>';
+  for(const lv of lvs){ const R=a.results[lv], d=difficultyOf(R);
+    h+='<tr><td>'+lv+'</td><td>'+R.att+'</td><td>'+R.succ+'</td><td>'+R.fail+'</td><td>'+R.belt+'</td><td>'+R.space+'</td><td>'+R.drags+'</td><td class="diff '+d.cls+'">'+d.n+'</td><td class="'+d.cls+'">'+d.label+'</td></tr>'; }
+  h+='</table>';
+  const el=$('ar-results'); el.innerHTML=h; el.classList.remove('hide');
+  $('ar-stop').classList.add('hide'); $('ar-save').classList.remove('hide'); $('ar-home').classList.remove('hide');
+}
+G.saveAutoLog=function(){
+  const a=G.auto; if(!a) return;
+  const lvs=Object.keys(a.results).map(Number).sort((x,y)=>x-y);
+  const head=['레벨','시도횟수','성공횟수','실패횟수','대기열오버','하단블럭풀','시간초과','드래그횟수','평균드래그','성공률(%)','난이도(1-10)','등급'];
+  let rows='<tr>'+head.map(x=>'<th>'+x+'</th>').join('')+'</tr>';
+  for(const lv of lvs){ const R=a.results[lv], d=difficultyOf(R);
+    rows+='<tr>'+[lv,R.att,R.succ,R.fail,R.belt,R.space,R.timeout,R.drags,(R.drags/R.att).toFixed(1),(R.succ/R.att*100).toFixed(0),d.n,d.label].map(x=>'<td>'+x+'</td>').join('')+'</tr>'; }
+  const html='﻿<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="utf-8"></head><body><table border="1">'+rows+'</table></body></html>';
+  const blob=new Blob([html],{type:'application/vnd.ms-excel'});
+  const url=URL.createObjectURL(blob), link=document.createElement('a');
+  const ts=$('cont-lv')?'':''; // (no Date.now needed)
+  link.href=url; link.download='pbp_autotest_L'+a.startLv+'-'+a.endLv+'.xls';
+  document.body.appendChild(link); link.click(); link.remove(); setTimeout(()=>URL.revokeObjectURL(url),2000);
+};
+G.autoToHome=function(){ const a=G.auto; if(a){a.on=false; if(a.timer)clearTimeout(a.timer);} G.auto=null;
+  hide('autorun-ov'); quitToOverlays(); show('start-ov'); HOME.refresh(); };
+
 // ========== WIN/LOSE ==========
 function checkWin(){
   for(let r=0;r<G.pxR;r++)for(let c=0;c<G.pxC;c++){const v=G.px[r][c];if(v&&v!=='!') return;}
   if(!G.on) return;
+  if(G.auto&&G.auto.on){ G.on=false; G.beltRunners=[];G.waiting=[];G.bullets=[]; G.auto.result={win:true}; return; }
   G.on=false;
   G.beltRunners=[]; G.waiting=[]; G.bullets=[]; renderBelt();
   SFX.win();
@@ -3323,6 +3519,7 @@ function checkDeadlock(){
 function checkWaitingFull(){ if(G.waiting.length>=(G.waitCap||10)) gameOver('belt'); }
 function gameOver(reason){
   if(!G.on) return;
+  if(G.auto&&G.auto.on){ G.on=false; G.dying=false; cancelBomb(); resetCombo(); G.auto.result={win:false,reason:reason}; return; }
   G.on=false; G.dying=true; G.slowmo=0.1; cancelBomb(); resetCombo();
   $('go-m').textContent = reason==='space' ? '블럭을 놓을 곳이 없습니다!' : '대기열이 가득 찼습니다!';
   if(reason!=='space') $('belt-col').classList.add('belt-full-flash');
