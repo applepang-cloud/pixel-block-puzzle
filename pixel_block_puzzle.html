@@ -129,6 +129,13 @@ canvas{display:block}
 
 /* ---- dialogue (visual-novel) ---- */
 #dlg-ov{justify-content:flex-end;background:rgba(0,0,0,.5);cursor:pointer}
+/* tutorial overlay bits */
+#tut-cap{position:fixed;top:88px;left:50%;transform:translateX(-50%);z-index:60;background:rgba(20,10,40,.82);
+  color:#fff;font-weight:700;font-size:14px;padding:8px 16px;border-radius:14px;white-space:nowrap;
+  box-shadow:0 3px 12px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.18);pointer-events:none;text-align:center}
+#tut-finger{position:fixed;left:0;top:0;z-index:61;font-size:36px;pointer-events:none;
+  filter:drop-shadow(0 3px 5px rgba(0,0,0,.6));will-change:transform}
+#tut-cap.hide,#tut-finger.hide{display:none}
 #dlg-panel{width:92%;max-width:460px;margin:0 auto 26px;background:linear-gradient(180deg,#2a1f4d,#1b1436);
   border:2px solid rgba(255,255,255,.18);border-radius:18px;padding:14px 16px 14px;position:relative;
   box-shadow:0 8px 30px rgba(0,0,0,.5)}
@@ -440,7 +447,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v6.5</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v6.6</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -473,6 +480,8 @@ canvas{display:block}
 <div id="pal-hint" class="hide"></div>
 <div id="drag-layer"></div>
 <div id="fly-layer"></div>
+<div id="tut-cap" class="hide"></div>
+<div id="tut-finger" class="hide">👆</div>
 <div class="ov hide" id="clr-ov">
   <h2 id="clr-t">CLEAR!</h2><p id="clr-m"></p><button id="nxt">NEXT</button>
 </div>
@@ -3306,6 +3315,7 @@ G.newGame=function(){ saveProgress(1); G.start(1); };
 // home reset (top-right ↺): wipe play progress back to level 1 and start it
 G.resetPlay=function(){
   if((G.savedLevel||1)>1 && !confirm('플레이 진행도를 레벨 1부터 다시 시작할까요?')) return;
+  try{ localStorage.removeItem('pbp_tut1'); }catch(e){}   // show the tutorial again on a fresh start
   saveProgress(1); vibe(14); G.start(1);
 };
 
@@ -3322,6 +3332,7 @@ function quitToOverlays(){
   G.dlg=null;
   G.bombArmed=false; G.bombDown=false; G.bombCell=null; hide('bomb-guide');
   G.on=false; G.dying=false; G.slowmo=1;
+  if(typeof tutCleanup==='function') tutCleanup();
   G.beltRunners=[]; G.bullets=[]; G.waiting=[]; G.clears=[]; G.particles=[]; G.hitFx=[]; G.drag=null;
   $('drag-layer').innerHTML='';
   $('wrap').classList.remove('shake'); $('death-fx').classList.remove('on');
@@ -3610,7 +3621,7 @@ G.start=function(lv,free){
   if(G.dlg&&G.dlg.timer) clearInterval(G.dlg.timer); G.dlg=null; stopVoice();
   G.dying=false; G.slowmo=1;
   G.waitCap=10; G.bombArmed=false; G.bombDown=false; G.bombCell=null; hide('bomb-guide');
-  resetCombo();
+  resetCombo(); tutCleanup();
   G.woodQuota = lv>=3 ? (3+(Math.random()<0.5?1:0)) : (lv===2 ? 2 : 0); G.sinceWood=0;
   $('belt-col').classList.remove('belt-full-flash');
   $('wrap').classList.remove('shake');
@@ -3631,11 +3642,91 @@ G.start=function(lv,free){
   genPcs();
   renderBelt();
   drawTop(); drawBot();
-  // intro dialogue -> then play
-  const dl=DIALOGALL[lv]||{};
-  showDialogue(dl.intro||[], ()=>{ G.on=true; raf(); renderItemBar(); }, 'L'+lv+'i');
+  // level 1: run the interactive tutorial first (once; resettable via home ↺), then normal intro+play
+  if(lv===1 && !G.free && !(G.auto&&G.auto.on) && !tutDone()){
+    // run the tutorial, then re-enter G.start for a clean normal setup (flag now set -> no recursion)
+    runTutorial(lv, ()=>{ markTutDone(); G.start(lv); });
+    renderItemBar();
+    return;
+  }
+  startLevelIntro(lv);
   renderItemBar();
 };
+// normal intro dialogue -> begin play (also used as the tutorial's continuation)
+function startLevelIntro(lv){
+  const dl=DIALOGALL[lv]||{};
+  showDialogue(dl.intro||[], ()=>{ G.on=true; raf(); renderItemBar(); }, 'L'+lv+'i');
+}
+
+// ========== LEVEL 1 TUTORIAL ==========
+function tutDone(){ try{ return localStorage.getItem('pbp_tut1')==='1'; }catch(e){ return false; } }
+function markTutDone(){ try{ localStorage.setItem('pbp_tut1','1'); }catch(e){} }
+let tutFingerRAF=0;
+function tutCleanup(){
+  if(G.tut&&G.tut.timer) clearTimeout(G.tut.timer);
+  G.tut=null; stopTutFinger(); hideTutCap();
+}
+function showTutCap(t){ const e=$('tut-cap'); if(e){ e.textContent=t; e.classList.remove('hide'); } }
+function hideTutCap(){ const e=$('tut-cap'); if(e) e.classList.add('hide'); }
+function stopTutFinger(){ if(tutFingerRAF) cancelAnimationFrame(tutFingerRAF); tutFingerRAF=0; const f=$('tut-finger'); if(f) f.classList.add('hide'); }
+function tutFinger(){
+  stopTutFinger();
+  const f=$('tut-finger'); if(!f||!G.tut) return;
+  const slot=$('tray').querySelector('.tp[data-pi="0"]'); if(!slot) return;
+  const a=elCenter(slot);
+  const b=cellViewport(bcv,G.bOX,G.bOY,G.bkSz,G.tut.cell.r,G.tut.cell.c);
+  f.classList.remove('hide');
+  const t0=performance.now();
+  (function step(t){
+    if(!G.tut||G.tut.phase!=='place'){ stopTutFinger(); return; }
+    const ph=((t-t0)%1500)/1500;             // 0..1, repeat: glide tray -> target then jump back
+    const k=ph<0.82 ? ph/0.82 : 1;           // hold briefly at the target
+    const x=a.x+(b.x-a.x)*k, y=a.y+(b.y-a.y)*k;
+    const pop=1-0.12*Math.sin(Math.min(1,k)*Math.PI);
+    f.style.transform='translate('+(x-10)+'px,'+(y-4)+'px) scale('+pop+')';
+    tutFingerRAF=requestAnimationFrame(step);
+  })(t0);
+}
+function runTutorial(lv, onComplete){
+  G.on=false; tutCleanup(); G.tut={phase:'intro', onComplete};
+  showDialogue([
+    {who:'H',face:'😊',name:'유리',text:'안녕! 가로나 세로로 한 줄을 꽉 채우면 블록이 펑 터져요.'},
+    {who:'H',face:'🙂',name:'유리',text:'아래 블록 한 개를 가운데 빈 칸으로 옮겨서 한 줄을 완성해 볼까요?'}
+  ], ()=>{ if(G.tut) tutPlacePhase(); }, 'TUTa');
+}
+function tutPlacePhase(){
+  const color='R';                            // 레벨1(하트)의 주 색상
+  const row=BR-1, gap=Math.floor(BC/2);
+  for(let r=0;r<BR;r++)for(let c=0;c<BC;c++) G.bk[r][c]=null;
+  for(let c=0;c<BC;c++){ if(c!==gap) G.bk[row][c]={color,num:1}; }   // 한 칸만 비움
+  G.pieces=[{shape:[[0,0]],color,num:1},null,null];
+  G.tut.phase='place'; G.tut.cell={r:row,c:gap}; G.tut.color=color;
+  G.on=true;
+  renderTray(); drawBot();
+  showTutCap('👆 아래 블록을 가운데 빈 칸으로 옮겨요!');
+  tutFinger();
+}
+function tutWrong(){
+  G.tut.phase='wrong'; stopTutFinger();
+  showDialogue([{who:'H',face:'🙂',name:'유리',text:'가운데 빈 칸에 두어야 해요!'}],
+    ()=>{ if(!G.tut) return; G.tut.phase='place'; renderTray(); drawBot(); showTutCap('👆 아래 블록을 가운데 빈 칸으로 옮겨요!'); tutFinger(); }, 'TUTw');
+}
+function tutDemo(){
+  hideTutCap();
+  const cleared=checkLines();                 // 줄 완성 -> 해당 색이 벨트로 올라감
+  // 데모용으로 살짝 빠른 러너 + 슬로우모션으로 또렷하게 보여줌
+  const rn=G.beltRunners[G.beltRunners.length-1]; if(rn) rn.spd=16;
+  G.slowmo=0.4; raf();
+  showTutCap('✨ 같은 색 블록이 위로 올라가 빙글빙글 돌며 그림을 지워요!');
+  G.tut.timer=setTimeout(()=>{
+    if(!G.tut) return;
+    G.slowmo=1; hideTutCap();
+    showDialogue([
+      {who:'H',face:'😄',name:'유리',text:'봤죠? 같은 색 블록을 위로 던지면 빙글빙글 돌면서 그림을 지워줘요!'},
+      {who:'H',face:'😊',name:'유리',text:'이제 진짜 시작이에요. 함께 그림을 완성해 봐요!'}
+    ], ()=>{ const cb=G.tut?G.tut.onComplete:null; tutCleanup(); cb&&cb(); }, 'TUTb');
+  }, 5200);
+}
 
 // Load & play a single-level JSON (see levels/ folder). Lets a level file be
 // played or edited externally: G.loadLevelJSON(obj) or ?play=<url-to-json>.
@@ -4020,7 +4111,8 @@ function offBoardColors(){
 // Piece color: sometimes a decoy (wrong) color for difficulty, else a weighted needed color
 function pickPieceColor(){
   const others=offBoardColors();
-  if(others.length && Math.random()<0.25) return others[Math.floor(Math.random()*others.length)];
+  // level 1 is the tutorial level: no decoy (wrong-color) blocks -> easier
+  if(G.lv>1 && others.length && Math.random()<0.25) return others[Math.floor(Math.random()*others.length)];
   return pickWeightedColor();
 }
 
@@ -4136,6 +4228,17 @@ function onMove(ex,ey){
 }
 function endDrag(){
   if(!G.drag) return;
+  // tutorial: only the target cell is accepted; anything else snaps back with a hint
+  if(G.tut && G.tut.phase==='place'){
+    const{piece,pi,bp}=G.drag;
+    const ok = bp && bp.br===G.tut.cell.r && bp.bc===G.tut.cell.c && canPlace(piece,bp.br,bp.bc);
+    G.drag=null; $('drag-layer').innerHTML=''; dragCanvas=null;
+    if(!ok){ renderTray(); drawBot(); tutWrong(); return; }
+    place(piece,bp.br,bp.bc); G.pieces[pi]=null; SFX.place(); vibe(12);
+    G.tut.phase='clearing'; renderTray(); drawBot();
+    tutDemo();
+    return;
+  }
   const{piece,pi,bp}=G.drag;
   let placed=false;
   if(bp&&canPlace(piece,bp.br,bp.bc)){
