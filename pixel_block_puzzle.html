@@ -385,7 +385,9 @@ canvas{display:block}
 #start-ov.pal #color-bar{display:flex}
 #color-scroll{display:flex;gap:6px;overflow-x:auto}
 #eraser-chip{flex:0 0 auto;width:46px;height:54px;border-radius:10px;border:2px solid rgba(255,255,255,.25);
-  background:rgba(255,255,255,.08);font-size:24px;cursor:pointer;padding:0}
+  background:rgba(255,255,255,.08);font-size:22px;cursor:pointer;padding:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:1px;line-height:1}
+#eraser-chip .er-l{font-size:9px;font-family:'Noto Sans KR';color:#fff;line-height:1}
 #eraser-chip.selc{border-color:#fff;background:rgba(255,90,90,.3);box-shadow:0 0 10px rgba(255,120,120,.6)}
 /* room list */
 #roomlist-close{position:absolute;top:12px;right:12px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:18px;cursor:pointer;padding:0;border:none}
@@ -411,6 +413,16 @@ canvas{display:block}
 .rl-tile.locked{opacity:.5;cursor:default}
 .rl-tile.locked::after{content:'🔒';position:absolute;font-size:26px}
 .rl-tile.locked .rl-em{opacity:.25}
+/* per-room mini gauge + reward tag inside each tile */
+.rl-bar{width:80%;height:6px;border-radius:4px;background:rgba(255,255,255,.16);overflow:hidden;margin-top:1px}
+.rl-bar i{display:block;height:100%;background:linear-gradient(90deg,#ffd24a,#ff8fc7);width:0}
+.rl-tag{font-size:9px;font-family:'Noto Sans KR';color:#ffd24a;line-height:1}
+.rl-tile.done .rl-tag{color:#7CFC9B}
+/* overall milestone gauge */
+#furn-miles{display:flex;justify-content:space-between;width:90%;max-width:440px;margin:-6px 0 12px;gap:2px}
+.fm-chip{flex:1;text-align:center;font-size:9px;font-family:'Noto Sans KR';font-weight:700;color:rgba(255,255,255,.4);
+  padding:3px 0;border-radius:8px;background:rgba(255,255,255,.06)}
+.fm-chip.hit{color:#1a1330;background:linear-gradient(90deg,#ffd24a,#ffb14a)}
 /* art preview */
 #art-preview{justify-content:center}
 #art-preview canvas{image-rendering:pixelated;background:rgba(255,255,255,.06);border-radius:10px;max-width:86%;max-height:60vh}
@@ -462,7 +474,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v6.7</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v6.8</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -479,13 +491,14 @@ canvas{display:block}
     <div id="pal-top">🎨 픽셀을 컬러로 채워보세요!</div>
     <button id="home-close">✕</button>
     <div id="pal-bottom">플레이로 획득한 색상만큼 색칠 할 수 있어요.</div>
-    <div id="color-bar"><button id="eraser-chip" title="지우개">🧽</button><div id="color-scroll"></div></div>
+    <div id="color-bar"><button id="eraser-chip" title="지우개">🧽<span class="er-l">지우개</span></button><div id="color-scroll"></div></div>
   </div>
 </div>
 <div class="ov hide" id="roomlist-ov">
   <button id="roomlist-close" onclick="G.closeRoomList()">✕</button>
   <h2>🏠 방 꾸미기</h2>
-  <div id="furn-gauge"><div id="furn-fill"></div><span id="furn-label"></span><span id="furn-goal">🪙500</span></div>
+  <div id="furn-gauge"><div id="furn-fill"></div><span id="furn-label"></span><span id="furn-goal">🪙10000</span></div>
+  <div id="furn-miles"></div>
   <div id="roomlist-grid"></div>
 </div>
 <div class="ov hide" id="furn-reward" onclick="G.claimFurnReward()">
@@ -3369,27 +3382,46 @@ G.toSelect=function(){ G.free=false; quitToOverlays();   // pause menu: back to 
 };
 G.viewRoom=function(){ hide('start-ov'); openRoom(0, ()=>{ show('start-ov'); }); };
 G.closeArtPreview=function(){ const e=$('art-preview'); if(e) e.classList.add('hide'); };
+// ---- room-decoration rewards ----
+const ROOM_REWARD=500;                       // coins per fully-decorated room
+const MILE_REWARDS=[1000,2000,3000,5000,10000];   // milestone coins at each 1/5 of all rooms
+function mileThresholds(){ const N=ROOMS.length; return MILE_REWARDS.map((_,k)=>Math.round(N*(k+1)/5)); }
+function roomFill(ri){ const n=ROOMS[ri].items.length; const got=Math.max(0,Math.min(n,(G.unlocked||0)-ri*10)); return {got,n}; }
+function roomDone(ri){ const f=roomFill(ri); return f.got>=f.n; }
+function roomsCompleted(){ let n=0; for(let ri=0;ri<ROOMS.length;ri++) if(roomDone(ri)) n++; return n; }
+function getClaimRooms(){ try{return parseInt(localStorage.getItem('pbp_claim_rooms'))||0;}catch(e){return 0;} }
+function setClaimRooms(n){ try{localStorage.setItem('pbp_claim_rooms',String(n));}catch(e){} }
+function getClaimMiles(){ try{return parseInt(localStorage.getItem('pbp_claim_miles'))||0;}catch(e){return 0;} }
+function setClaimMiles(n){ try{localStorage.setItem('pbp_claim_miles',String(n));}catch(e){} }
+// coins owed for newly-completed rooms (500 each) + newly-passed milestones
+function furnOwed(){
+  const rc=roomsCompleted();
+  const newRooms=Math.max(0, rc-getClaimRooms());
+  const th=mileThresholds(); let mileOwed=0, newM=getClaimMiles();
+  for(let k=getClaimMiles();k<MILE_REWARDS.length;k++){ if(rc>=th[k]){ mileOwed+=MILE_REWARDS[k]; newM=k+1; } else break; }
+  return {rc, newRooms, roomOwed:newRooms*ROOM_REWARD, mileOwed, newMiles:newM, total:newRooms*ROOM_REWARD+mileOwed};
+}
+function renderFurnGauge(){
+  const N=ROOMS.length, rc=roomsCompleted();
+  const f=$('furn-fill'); if(f) f.style.width=(N?Math.min(100,rc/N*100):0)+'%';
+  const l=$('furn-label'); if(l) l.textContent=rc+' / '+N+' 방';
+  const th=mileThresholds(), wrap=$('furn-miles');
+  if(wrap){ wrap.innerHTML=''; for(let k=0;k<MILE_REWARDS.length;k++){
+    const c=document.createElement('div'); c.className='fm-chip'+(rc>=th[k]?' hit':'');
+    c.innerHTML='🪙'+MILE_REWARDS[k].toLocaleString(); wrap.appendChild(c); } }
+}
+function showFurnReward(o){
+  $('fr-amt').textContent=o.total.toLocaleString();
+  $('fr-top').textContent = (roomsCompleted()>=ROOMS.length) ? '🎉 방을 모두 꾸몄습니다!' : '🎉 방 꾸미기 보상!';
+  $('furn-reward').classList.remove('hide'); if(SFX&&SFX.line)SFX.line(); vibe([0,60,40,80]);
+}
 G.openRoomList=function(){ buildRoomList(); show('roomlist-ov');
-  const s=furnStats();
-  if(s.collected>=s.total && !furnRewardClaimed()) setTimeout(()=>showFurnReward(),350);
+  const o=furnOwed(); if(o.total>0) setTimeout(()=>showFurnReward(o),350);
 };
 G.closeRoomList=function(){ hide('roomlist-ov'); };
-// total furniture across all rooms vs. how much is collected (unlocked by clearing levels)
-function furnStats(){
-  let collected=0,total=0;
-  for(let ri=0;ri<ROOMS.length;ri++){ const n=ROOMS[ri].items.length; total+=n;
-    collected+=Math.max(0,Math.min(n,(G.unlocked||0)-ri*10)); }
-  return {collected,total};
-}
-function furnRewardClaimed(){ try{ return localStorage.getItem('pbp_furn_reward')==='1'; }catch(e){ return false; } }
-function renderFurnGauge(){
-  const s=furnStats(); const pct=s.total?Math.min(100,s.collected/s.total*100):0;
-  const f=$('furn-fill'); if(f) f.style.width=pct+'%';
-  const l=$('furn-label'); if(l) l.textContent=s.collected+' / '+s.total;
-}
-function showFurnReward(){ const e=$('furn-reward'); if(e) e.classList.remove('hide'); SFX&&SFX.line&&SFX.line(); vibe([0,60,40,80]); }
 G.claimFurnReward=function(){
-  if(!furnRewardClaimed()){ addCoins(500); try{ localStorage.setItem('pbp_furn_reward','1'); }catch(e){} }
+  const o=furnOwed();
+  if(o.total>0){ addCoins(o.total); setClaimRooms(o.rc); setClaimMiles(o.newMiles); }
   hide('furn-reward'); renderFurnGauge();
 };
 function buildRoomList(){
@@ -3399,8 +3431,12 @@ function buildRoomList(){
     const unlocked=(G.unlocked||0)>=ri*10+1;
     const parts=rm.title.split(' '); const em=parts[0]||'🏠';
     const nm=rm.title.replace(' 꾸미기','').replace(/^\S+\s*/,'');
-    const t=document.createElement('div'); t.className='rl-tile'+(unlocked?'':' locked');
-    t.innerHTML='<span class="rl-em">'+em+'</span><span class="rl-n">'+nm+'</span>';
+    const f=roomFill(ri), done=f.got>=f.n;
+    const t=document.createElement('div'); t.className='rl-tile'+(unlocked?'':' locked')+(done?' done':'');
+    const tag = done ? '✓ 완료 🪙500' : (unlocked ? f.got+'/'+f.n+' · 🪙500' : '🪙500');
+    t.innerHTML='<span class="rl-em">'+em+'</span><span class="rl-n">'+nm+'</span>'+
+      '<div class="rl-bar"><i style="width:'+(f.n?f.got/f.n*100:0)+'%"></i></div>'+
+      '<span class="rl-tag">'+tag+'</span>';
     if(unlocked) t.onclick=()=>{ hide('roomlist-ov'); viewRoomIdx(ri); };
     grid.appendChild(t);
   });
