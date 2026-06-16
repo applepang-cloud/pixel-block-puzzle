@@ -53,10 +53,13 @@ canvas{display:block}
 #bot-wrap{flex:0 0 auto;position:relative;display:flex;justify-content:center}
 #bot-cv{display:block}
 #tray{display:flex;justify-content:center;align-items:center;gap:10px;flex:0 0 auto;background:rgba(0,0,0,.2)}
-.tp{background:rgba(255,255,255,.06);border-radius:8px;padding:4px;
+.tp{position:relative;background:rgba(255,255,255,.06);border-radius:8px;padding:4px;
   border:1px solid rgba(255,255,255,.1);cursor:grab;touch-action:none;
   display:flex;align-items:center;justify-content:center}
+/* extend the touch target upward (2x the block height) so a slightly-off tap still grabs */
+.tp::before{content:'';position:absolute;left:-6px;right:-6px;bottom:0;top:-200%}
 .tp.used{background:transparent;border:1px dashed rgba(255,255,255,.06);pointer-events:none}
+.tp.used::before{display:none}
 .sc.coin span{color:#ffd54a}
 .sc .cdot{font-size:13px}
 /* ---- item bar ---- */
@@ -203,14 +206,15 @@ canvas{display:block}
 #combo-tag.c4 #combo-lbl::before{content:'🔥';margin-right:2px}
 
 /* floating COMBO! popup */
-.combopop{position:fixed;left:50%;transform:translateX(-50%);z-index:95;font-family:'Lilita One';
-  font-size:34px;font-weight:900;pointer-events:none;
+.combopop{position:fixed;left:50%;transform:translate(-50%,-50%);z-index:95;font-family:'Lilita One';
+  font-size:34px;font-weight:900;pointer-events:none;white-space:nowrap;
   background:linear-gradient(90deg,#ff4757,#ffd93d,#2ed573,#1e90ff,#c44dff);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   text-shadow:0 2px 8px rgba(0,0,0,.4);animation:comboPop 1s ease-out forwards}
-@keyframes comboPop{0%{opacity:0;transform:translateX(-50%) scale(.4)}
-  20%{opacity:1;transform:translateX(-50%) scale(1.25)}
-  35%{transform:translateX(-50%) scale(1)}100%{opacity:0;transform:translateX(-50%) scale(1.1) translateY(-30px)}}
+@keyframes comboPop{0%{opacity:0;transform:translate(-50%,-50%) scale(.4)}
+  20%{opacity:1;transform:translate(-50%,-50%) scale(1.25)}
+  35%{transform:translate(-50%,-50%) scale(1)}
+  100%{opacity:0;transform:translate(-50%,calc(-50% - 34px)) scale(1.1)}}
 
 /* full-screen flash on combo>=3 */
 #screen-flash{position:absolute;inset:0;pointer-events:none;z-index:70;opacity:0;background:#fff;border-radius:inherit}
@@ -511,7 +515,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v7.3</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v7.4</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -1091,6 +1095,20 @@ const SFX=(()=>{
   return {
     init,resume,
     place(){ tone(420,0.07,'square',0.22); tone(640,0.06,'square',0.16,0.04); },
+    // crisp "tak" like a Go stone — short filtered noise burst + quick tonal tok
+    stone(vol=0.5){
+      if(!ctx||muted||autoMute) return;
+      const t0=ctx.currentTime;
+      const dur=0.045, sr=ctx.sampleRate, buf=ctx.createBuffer(1,Math.max(1,Math.floor(sr*dur)),sr), d=buf.getChannelData(0);
+      for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,3);
+      const src=ctx.createBufferSource(); src.buffer=buf;
+      const bp=ctx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=2600; bp.Q.value=1.1;
+      const ng=ctx.createGain(); ng.gain.value=vol; src.connect(bp); bp.connect(ng); ng.connect(master); src.start(t0);
+      const o=ctx.createOscillator(), g=ctx.createGain();
+      o.type='triangle'; o.frequency.setValueAtTime(1500,t0); o.frequency.exponentialRampToValueAtTime(680,t0+0.04);
+      g.gain.setValueAtTime(vol*0.9,t0); g.gain.exponentialRampToValueAtTime(0.0001,t0+0.05);
+      o.connect(g); g.connect(master); o.start(t0); o.stop(t0+0.06);
+    },
     line(){ [523,659,784,1047].forEach((f,i)=>tone(f,0.16,'triangle',0.28,i*0.05)); },
     shoot(){ tone(900,0.05,'sawtooth',0.10); tone(1500,0.04,'sine',0.07,0.015); },
     hit(){ tone(1300,0.05,'square',0.10); },
@@ -3461,7 +3479,7 @@ function resize(){
 
   const hudH=44;
   const storyH=22;
-  const trayH=Math.max(52,Math.min(Math.round(H*0.095),72));
+  const trayH=Math.max(78,Math.min(Math.round(H*0.14),108));   // 하단 블록 트레이 1.5배
   const itemH=64;
   const dvH=7;
 
@@ -4486,7 +4504,7 @@ function genPcs(){
 
 function renderTray(){
   const tray=$('tray');tray.innerHTML='';
-  const cs=Math.max(15,Math.floor(G.bkSz*0.58));
+  const cs=Math.max(22,Math.floor(G.bkSz*0.87));   // 트레이 블록 1.5배
   G.pieces.forEach((p,i)=>{
     const d=document.createElement('div');d.className='tp';d.dataset.pi=i;
     if(!p){ d.classList.add('used'); d.style.width=(cs*2)+'px'; d.style.height=(cs*2)+'px'; tray.appendChild(d); return; }
@@ -4505,8 +4523,9 @@ function renderTray(){
 }
 
 // ========== DRAG (pointer + touch/mouse fallback) ==========
-let dragCanvas=null;
+let dragCanvas=null, dragWrap=null;
 const hasPointer = !!window.PointerEvent;
+function clearDrag(){ $('drag-layer').innerHTML=''; dragCanvas=null; dragWrap=null; }
 
 function bindGrab(el,piece,pi){
   const down=(cx,cy,evt)=>{
@@ -4529,25 +4548,33 @@ function startDrag(piece,pi,ex,ey){
   const cs=G.bkSz;
   G.drag={piece,pi,bp:null,pw:(mc+1)*cs,ph:(mr+1)*cs,mc,mr};
   const layer=$('drag-layer');layer.innerHTML='';
+  dragWrap=document.createElement('div');
+  dragWrap.style.cssText='position:fixed;left:0;top:0;pointer-events:none;will-change:transform';
   dragCanvas=document.createElement('canvas');
   dragCanvas.width=G.drag.pw; dragCanvas.height=G.drag.ph;
   dragCanvas.style.width=G.drag.pw+'px'; dragCanvas.style.height=G.drag.ph+'px';
+  dragCanvas.style.transformOrigin='center center';
+  dragCanvas.style.transition='transform .12s ease-out, opacity .12s';
+  dragCanvas.style.transform='scale(1)';
+  dragCanvas.style.filter='drop-shadow(0 7px 11px rgba(0,0,0,.5))';
   const c2=dragCanvas.getContext('2d');
   for(const[r,c] of piece.shape) drawPieceCell(c2,c*cs+1,r*cs+1,cs-2,piece);
-  layer.appendChild(dragCanvas);
+  dragWrap.appendChild(dragCanvas); layer.appendChild(dragWrap);
   const slot=$('tray').querySelector(`.tp[data-pi="${pi}"]`);
   if(slot) slot.style.visibility='hidden';
+  SFX.init(); SFX.resume(); SFX.stone(0.42);   // 바둑알 선택음
   moveDrag(ex,ey);
+  requestAnimationFrame(()=>{ if(dragCanvas) dragCanvas.style.transform='scale(2)'; });   // 선택하면 2배로 확대
 }
 
-const LIFT=()=>G.bkSz*1.7;
+const LIFT=()=>G.bkSz*2.0;
 
 function moveDrag(ex,ey){
-  if(!G.drag||!dragCanvas) return;
+  if(!G.drag||!dragWrap) return;
   const lift=LIFT();
   const left=ex-G.drag.pw/2;
   const top=ey-G.drag.ph/2-lift;
-  dragCanvas.style.transform=`translate(${left}px,${top}px)`;
+  dragWrap.style.transform=`translate(${left}px,${top}px)`;
   // Map preview-center to board cell
   const rect=bcv.getBoundingClientRect();
   const scaleX=G.bW/rect.width, scaleY=G.bH/rect.height;
@@ -4563,6 +4590,21 @@ function onMove(ex,ey){
   if(!G.drag) return;
   moveDrag(ex,ey);
 }
+// animate the lifted 2x preview shrinking down onto the placed board cell, then remove it
+function shrinkDragToCell(bp,pw,ph,mc,mr){
+  const wrap=dragWrap, cv=dragCanvas; dragWrap=null; dragCanvas=null;
+  if(!wrap){ return; }
+  try{
+    const cs=G.bkSz, rect=bcv.getBoundingClientRect(), sX=rect.width/G.bW, sY=rect.height/G.bH;
+    const cx=rect.left+(G.bOX+(bp.bc+(mc+1)/2)*cs)*sX;
+    const cy=rect.top +(G.bOY+(bp.br+(mr+1)/2)*cs)*sY;
+    wrap.style.transition='transform .15s ease-in';
+    wrap.style.transform='translate('+(cx-pw/2)+'px,'+(cy-ph/2)+'px)';
+    if(cv){ cv.style.transition='transform .15s ease-in, opacity .15s ease-in';
+      cv.style.transform='scale('+(sX||1)+')'; cv.style.opacity='0'; }
+  }catch(e){}
+  setTimeout(()=>{ try{ if(wrap.parentNode) wrap.remove(); }catch(e){} }, 170);
+}
 function endDrag(){
   if(!G.drag) return;
   // tutorial: only the target cell is accepted; anything else snaps back with a hint
@@ -4570,24 +4612,26 @@ function endDrag(){
     const cur=G.tut.phase;
     const{piece,pi,bp}=G.drag;
     const ok = bp && bp.br===G.tut.cell.r && bp.bc===G.tut.cell.c && canPlace(piece,bp.br,bp.bc);
-    G.drag=null; $('drag-layer').innerHTML=''; dragCanvas=null;
-    if(!ok){ renderTray(); drawBot(); tutWrong(cur); return; }
-    place(piece,bp.br,bp.bc); G.pieces[pi]=null; SFX.place(); vibe(12);
+    const {pw,ph,mc,mr}=G.drag; G.drag=null;
+    if(!ok){ clearDrag(); renderTray(); drawBot(); tutWrong(cur); return; }
+    place(piece,bp.br,bp.bc); G.pieces[pi]=null; SFX.stone(0.6); vibe(12);
+    shrinkDragToCell(bp,pw,ph,mc,mr);
     renderTray(); drawBot();
     if(cur==='placeH'){ G.tut.phase='clearH'; tutAfterH(); }
     else { G.tut.phase='clearing'; tutDemo(); }
     return;
   }
-  const{piece,pi,bp}=G.drag;
+  const{piece,pi,bp,pw,ph,mc,mr}=G.drag;
   let placed=false;
   if(bp&&canPlace(piece,bp.br,bp.bc)){
     place(piece,bp.br,bp.bc);
     G.pieces[pi]=null;
-    SFX.place(); vibe(12);
+    SFX.stone(0.6); vibe(12);                 // 바둑알 놓는음
     placed=true;
   }
   G.drag=null;
-  $('drag-layer').innerHTML=''; dragCanvas=null;
+  if(placed) shrinkDragToCell(bp,pw,ph,mc,mr);  // 2배에서 보드 칸 크기로 축소되며 배치
+  else clearDrag();
   if(placed){
     const cleared=checkLines();
     if(cleared>0) onCombo(); else onComboMiss();
@@ -4879,8 +4923,8 @@ function onCombo(){
   comboTagUpdate();
   const pop=document.createElement('div'); pop.className='combopop';
   pop.textContent=(G.combo>=3?'COMBO! ':'콤보 ')+G.combo;
-  const wr=$('wrap').getBoundingClientRect();
-  pop.style.left=(wr.left+wr.width/2)+'px'; pop.style.top=(wr.top+wr.height*0.30)+'px';
+  const bw=($('bot-wrap')||$('wrap')).getBoundingClientRect();   // 하단 블록 보드판 중앙
+  pop.style.left=(bw.left+bw.width/2)+'px'; pop.style.top=(bw.top+bw.height/2)+'px';
   $('fly-layer').appendChild(pop); setTimeout(()=>pop.remove(),1000);
   vibe(18);
   const c=G.combo;
