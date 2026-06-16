@@ -394,7 +394,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v5.8</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v5.9</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -683,7 +683,7 @@ const ROOMS=[
   ['🎪 신나는 축제',[['🎪','서커스'],['🎡','대관람차'],['🎢','롤러코스터'],['🎠','회전목마'],['🍿','팝콘'],['🎈','풍선'],['🎉','폭죽'],['🎁','선물'],['🤹','저글링'],['🎭','가면']]],
   ['🏝️ 휴양지',[['🏝️','섬'],['🌴','야자수'],['🍹','칵테일'],['🏄','서핑'],['🐠','물고기'],['🐬','돌고래'],['⛵','요트'],['🌅','노을'],['🦩','플라밍고'],['🐚','조개']]],
   ['🏆 명예의 전당',[['🏆','우승컵'],['🥇','금메달'],['👑','왕관'],['💎','다이아'],['🌟','별'],['🎖️','훈장'],['📯','나팔'],['🎆','불꽃'],['💯','만점'],['❤️','사랑']]]
-].forEach(rm=>ROOMS.push({title:rm[0]+' 꾸미기', items:rm[1].map(a=>({e:a[0],n:a[1]})), pos:ROOM_POS}));
+].forEach(rm=>ROOMS.push({title:rm[0]+' 꾸미기', items:rm[1].map(a=>Array.isArray(a)?{e:a[0],n:a[1]}:{e:a,n:''}), pos:ROOM_POS}));
 // 추가 테마 방 (레벨 201~500): 이모지 10개씩
 [
   ['🍕 분식점',['🍕','🍟','🌭','🍔','🥨','🧀','🥪','🌯','🍿','🥤']],
@@ -716,7 +716,7 @@ const ROOMS=[
   ['🍰 디저트2',['🍰','🍦','🍨','🍧','🍮','🍭','🍬','🫖','🧋','🍫']],
   ['🏕️ 캠핑',['🏕️','🔥','🪵','🎣','🧺','🥾','🔦','🧭','⛺','🌄']],
   ['🎁 파티룸',['🎁','🎂','🎈','🎉','🎊','🪅','🧸','🍰','🥳','🎀']]
-].forEach(rm=>ROOMS.push({title:rm[0]+' 꾸미기', items:rm[1].map(a=>({e:a[0],n:a[1]})), pos:ROOM_POS}));
+].forEach(rm=>ROOMS.push({title:rm[0]+' 꾸미기', items:rm[1].map(a=>Array.isArray(a)?{e:a[0],n:a[1]}:{e:a,n:''}), pos:ROOM_POS}));
 const LV_MAX=2000;
 
 // ========== PIXEL COLORING DESIGNS (from number-coloring PDFs) ==========
@@ -3521,7 +3521,7 @@ function openRoom(clearedLv,onDone){
   show('room-ov');
   $('room-title').textContent=room.title;
   renderRoom(roomIdx,newIdx);
-  if(newIdx>=0) $('room-msg').textContent='새 가구를 얻었어요: '+room.items[newIdx].e+' '+room.items[newIdx].n+'!';
+  if(newIdx>=0){ const it=room.items[newIdx]||{e:'🎁',n:''}; $('room-msg').textContent='새 가구를 얻었어요: '+(it.e||'🎁')+(it.n?(' '+it.n):'')+'!'; }
   else $('room-msg').textContent=(G.unlocked? '지금까지 '+G.unlocked+'개의 가구를 모았어요.' : '레벨을 깨서 방을 꾸며보세요!');
   const nb=$('room-next'); nb.textContent=(clearedLv>=1&&G.lv>=LV_MAX)?'완료 ▸':'다음 ▸';
   nb.onclick=()=>{ hide('room-ov'); onDone&&onDone(); };
