@@ -1,0 +1,54 @@
+{
+  "level": 1770,
+  "hard": true,
+  "rows": 17,
+  "cols": 17,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "........B........",
+    ".......YYY.......",
+    "......OOOOO......",
+    ".....OORRROO.....",
+    "....ORRRRRRRO....",
+    "...ORRNNNNNRRO...",
+    "..OORNNPPPNNROO..",
+    ".YORRNPPBPPNRROY.",
+    "BYORRNPBBBPNRROYB",
+    ".YORRNPPBPPNRROY.",
+    "..OORNNPPPNNROO..",
+    "...ORRNNNNNRRO...",
+    "....ORRRRRRRO....",
+    ".....OORRROO.....",
+    "......OOOOO......",
+    ".......YYY.......",
+    "........B........"
+  ],
+  "story": "💥 보스! 스타 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🔥",
+        "who": "M",
+        "text": "아직도 신난다."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "💪",
+        "who": "H",
+        "text": "끝까지!"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "level": 1850,
+  "hard": true,
+  "rows": 14,
+  "cols": 14,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "..............",
+    "...PB....BP...",
+    "...BCG..GCB...",
+    "...CGRNNRGC...",
+    "....RNPPNR....",
+    "...RNPBBPNR...",
+    "CGRNPBCCBPNRGC",
+    "CGRNPBCCBPNRGC",
+    "...RNPBBPNR...",
+    "....RNPPNR....",
+    "...CGRNNRGC...",
+    "...BCG..GCB...",
+    "...PB....BP...",
+    ".............."
+  ],
+  "story": "💥 보스! 갤럭시 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🏆",
+        "who": "H",
+        "text": "거의 다 왔어."
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "👏",
+        "who": "M",
+        "text": "최고!"
+      }
+    ]
+  }
+}

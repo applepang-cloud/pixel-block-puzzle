@@ -1,0 +1,32 @@
+{
+  "level": 1685,
+  "hard": true,
+  "rows": 14,
+  "cols": 14,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "..............",
+    "...PB....BP...",
+    "...BCG..GCB...",
+    "...CGRNNRGC...",
+    "....RNPPNR....",
+    "...RNPBBPNR...",
+    "CGRNPBCCBPNRGC",
+    "CGRNPBCCBPNRGC",
+    "...RNPBBPNR...",
+    "....RNPPNR....",
+    "...CGRNNRGC...",
+    "...BCG..GCB...",
+    "...PB....BP...",
+    ".............."
+  ],
+  "story": "💥 보스! 젬 보스",
+  "dialogue": null
+}

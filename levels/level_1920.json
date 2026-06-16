@@ -1,0 +1,53 @@
+{
+  "level": 1920,
+  "hard": true,
+  "rows": 16,
+  "cols": 16,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".......GG.......",
+    ".......GG.......",
+    "..YY...GG...CC..",
+    "..YYY..GG..CCC..",
+    "...YYYGGGGCCC...",
+    "....YYYGGCCC....",
+    "....YYYGGCCC....",
+    "YYYYYYYYCCCCCCCC",
+    "NNNNNNNNBBBBBBBB",
+    "....NNNPPBBB....",
+    "....NNNPPBBB....",
+    "...NNNPPPPBBB...",
+    "..NNN..PP..BBB..",
+    "..NN...PP...BB..",
+    ".......PP.......",
+    ".......PP......."
+  ],
+  "story": "💥 보스! 갤럭시 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🔥",
+        "who": "M",
+        "text": "아직도 신난다."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "💪",
+        "who": "H",
+        "text": "끝까지!"
+      }
+    ]
+  }
+}

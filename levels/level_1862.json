@@ -1,0 +1,21 @@
+{
+  "level": 1862,
+  "hard": false,
+  "rows": 7,
+  "cols": 11,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7"
+  },
+  "grid": [
+    ".KKKKKKK...",
+    "KNNNNNNNK..",
+    "KNNKNKNNK..",
+    "KNNNKNNNK..",
+    ".KNNNNNK...",
+    "..KNNNK....",
+    "...KNK....."
+  ],
+  "story": "✨ 픽셀 아트",
+  "dialogue": null
+}

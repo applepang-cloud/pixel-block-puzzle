@@ -1,0 +1,22 @@
+{
+  "level": 1616,
+  "hard": false,
+  "rows": 8,
+  "cols": 9,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3"
+  },
+  "grid": [
+    "..CBC....",
+    ".CBBBC...",
+    "CBBBBBC..",
+    "BBBBBBB..",
+    "BBBBBBB..",
+    "CBBBBBC..",
+    ".CBBBC...",
+    "..CBC...."
+  ],
+  "story": "✨ 픽셀 아트",
+  "dialogue": null
+}

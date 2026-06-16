@@ -1,0 +1,55 @@
+{
+  "level": 1640,
+  "hard": true,
+  "rows": 18,
+  "cols": 18,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".....PBBBBBBP.....",
+    "....BBBYYYYBBB....",
+    "..PBBYYYYYYYYBBP..",
+    "..BYYYOOOOOOYYYB..",
+    ".BBYOORRRRRROOYBB.",
+    "PBYYORRNNNNRROYYBP",
+    "BBYORRNNPPNNRROYBB",
+    "BYYORNNPPPPNNROYYB",
+    "BYYORNPPBBPPNROYYB",
+    "BYYORNPPBBPPNROYYB",
+    "BYYORNNPPPPNNROYYB",
+    "BBYORRNNPPNNRROYBB",
+    "PBYYORRNNNNRROYYBP",
+    ".BBYOORRRRRROOYBB.",
+    "..BYYYOOOOOOYYYB..",
+    "..PBBYYYYYYYYBBP..",
+    "....BBBYYYYBBB....",
+    ".....PBBBBBBP....."
+  ],
+  "story": "💥 보스! 갤럭시 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🍀",
+        "who": "M",
+        "text": "행운을!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "✨",
+        "who": "H",
+        "text": "가자!"
+      }
+    ]
+  }
+}

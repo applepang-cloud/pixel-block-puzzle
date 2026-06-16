@@ -1,0 +1,20 @@
+{
+  "level": 1654,
+  "hard": false,
+  "rows": 7,
+  "cols": 11,
+  "palette": {
+    "O": "#ff9f43"
+  },
+  "grid": [
+    "....O......",
+    "....O......",
+    ".OOOOOOO...",
+    "..OOOOO....",
+    ".OOOOOOO...",
+    ".OO.O.OO...",
+    ".O..O..O..."
+  ],
+  "story": "✨ 픽셀 아트",
+  "dialogue": null
+}

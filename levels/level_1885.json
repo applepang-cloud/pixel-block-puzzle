@@ -1,0 +1,33 @@
+{
+  "level": 1885,
+  "hard": true,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    ".......C.......",
+    ".......G.......",
+    "..NP..GRG..PN..",
+    "..PBC.RNR.CBP..",
+    "...CGRNPNRGC...",
+    "....RNPBPNR....",
+    "..GRNPBCBPNRG..",
+    "CGRNPBCGCBPNRGC",
+    "..GRNPBCBPNRG..",
+    "....RNPBPNR....",
+    "...CGRNPNRGC...",
+    "..PBC.RNR.CBP..",
+    "..NP..GRG..PN..",
+    ".......G.......",
+    ".......C......."
+  ],
+  "story": "💥 보스! 갤럭시 보스",
+  "dialogue": null
+}

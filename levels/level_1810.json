@@ -1,0 +1,55 @@
+{
+  "level": 1810,
+  "hard": true,
+  "rows": 18,
+  "cols": 18,
+  "palette": {
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....NNNNNNNNNN....",
+    "...PPNNNNNNNNRR...",
+    "..PPPNNNNNNNNRRR..",
+    ".PPPPPNNNNNNRRRRR.",
+    "PPPPPPNNNNNNRRRRRR",
+    "PPPPPPPNNNNRRRRRRR",
+    "PPPPPPPPNNRRRRRRRR",
+    "PPPPPPPPNNRRRRRRRR",
+    "PPPPPPPPPRRRRRRRRR",
+    "GGGGGGGGGOOOOOOOOO",
+    "GGGGGGGGYYOOOOOOOO",
+    "GGGGGGGGYYOOOOOOOO",
+    "GGGGGGGYYYYOOOOOOO",
+    "GGGGGGYYYYYYOOOOOO",
+    ".GGGGGYYYYYYOOOOO.",
+    "..GGGYYYYYYYYOOO..",
+    "...GGYYYYYYYYOO...",
+    "....YYYYYYYYYY...."
+  ],
+  "story": "💥 보스! 레인보우 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😊",
+        "who": "H",
+        "text": "2천 단계가 코앞이야!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😎",
+        "who": "M",
+        "text": "전설이 되자."
+      }
+    ]
+  }
+}
