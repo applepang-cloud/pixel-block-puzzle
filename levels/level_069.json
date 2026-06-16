@@ -1,0 +1,23 @@
+{
+  "level": 69,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "N": "#ff8fc7",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "..NNNNNNN....",
+    ".NNNNNNNNNN..",
+    "NNNNNNNNNNNNN",
+    ".NNNNNNNNNN..",
+    "....RR.......",
+    "...RR........",
+    "..RRRRR......",
+    "....RR.......",
+    "...RR........"
+  ],
+  "story": "⚡ 번개구름",
+  "dialogue": null
+}

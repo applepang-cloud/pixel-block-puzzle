@@ -1,0 +1,57 @@
+{
+  "level": 20,
+  "hard": true,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....GGGGG....",
+    "...YGGGGGC...",
+    "..YYGGGGGCC..",
+    ".YYYYGGGCCCC.",
+    "YYYYYGGGCCCCC",
+    "YYYYYYGCCCCCC",
+    "YYYYYYBBBBBBB",
+    "NNNNNNPBBBBBB",
+    "NNNNNPPPBBBBB",
+    ".NNNNPPPBBBB.",
+    "..NNPPPPPBB..",
+    "...NPPPPPB...",
+    "....PPPPP...."
+  ],
+  "story": "둘이 만든 따뜻한 보금자리, 사랑은 계속된다 ♥",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🏡",
+        "who": "H",
+        "text": "우리 둘만의 공간이 생겼어!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥰",
+        "who": "H",
+        "text": "사랑하는 사람과 함께라서 행복해."
+      },
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😊",
+        "who": "M",
+        "text": "앞으로도 쭉 함께해요 ♥"
+      }
+    ]
+  }
+}

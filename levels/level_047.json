@@ -1,0 +1,41 @@
+{
+  "level": 47,
+  "hard": false,
+  "rows": 8,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "BBBB.....BBBB",
+    "BBBBBB.BBBBBB",
+    "BBBBBBBBBBBBB",
+    "BWWWBBBBBWWWB",
+    "BWWWBBBBBWWWB",
+    "BBBBBBBBBBBBB",
+    ".BBBBBBBBBBB.",
+    "..BBBBBBBBB.."
+  ],
+  "story": "가면을 써도 너인 걸 난 알아 🦸",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🦸",
+        "who": "M",
+        "text": "내가 네 히어로가 되어줄게."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥰",
+        "who": "H",
+        "text": "가면 써도 딱 알아보겠어."
+      }
+    ]
+  }
+}

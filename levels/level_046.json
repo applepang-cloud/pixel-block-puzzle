@@ -1,0 +1,43 @@
+{
+  "level": 46,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "K": "#39395a",
+    "R": "#ff4757"
+  },
+  "grid": [
+    ".KKKKKKKKKKK.",
+    "KRRRRRKBBBBBK",
+    "KRRRRRKBBBBBK",
+    "KRRRRRKBBBBBK",
+    "KRRRRRKBBBBBK",
+    "KRRRRRKBBBBBK",
+    ".KKKKKKKKKKK.",
+    "K...........K",
+    ".K.........K."
+  ],
+  "story": "3D 영화 속으로 함께 빠져들었어 🥽",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥽",
+        "who": "H",
+        "text": "3D 안경 써! 튀어나온다!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😆",
+        "who": "H",
+        "text": "나도 모르게 손 뻗었어."
+      }
+    ]
+  }
+}

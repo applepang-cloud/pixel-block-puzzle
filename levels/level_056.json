@@ -1,0 +1,25 @@
+{
+  "level": 56,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "K": "#39395a",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "CCCCCCCCCCCCC",
+    "BBBBBBBBBBBBB",
+    "PPPPPPPPPPPPP",
+    "PPKPPPKPPKPPP",
+    "PPPPPPPPPPPPP",
+    "PPPKPPPPPKPPP",
+    ".PPPPPPPPPPP.",
+    "..PPPPPPPPP..",
+    "...PPPPPPP..."
+  ],
+  "story": "🍉 한여름 수박",
+  "dialogue": null
+}

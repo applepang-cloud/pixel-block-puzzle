@@ -1,0 +1,29 @@
+{
+  "level": 357,
+  "hard": false,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "N": "#ff8fc7",
+    "P": "#c44dff"
+  },
+  "grid": [
+    ".............",
+    ".....PNN.....",
+    "...PNNCCBB...",
+    "..PPNNCCBBP..",
+    "..NNCCBBPPN..",
+    "..NNCCBBPPN..",
+    ".NCCBBPPNNCC.",
+    "..CCBBPPNNC..",
+    "..BBPPNNCCB..",
+    "..BBPPNNCCB..",
+    "...PNNCCBB...",
+    ".....NCC.....",
+    "............."
+  ],
+  "story": "🔷 보석",
+  "dialogue": null
+}

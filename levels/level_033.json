@@ -1,0 +1,44 @@
+{
+  "level": 33,
+  "hard": false,
+  "rows": 11,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "KKK.......KKK",
+    "KKKK.....KKKK",
+    ".WWWWWWWWWWW.",
+    "WWWKWWWWWWWWW",
+    "WWWWWWWWKWWWW",
+    "WWKWWWWWWWWWW",
+    "WWWKWWWWWKWWW",
+    "WWWWWWWWWWWKW",
+    "WWWWWKKKWWWWW",
+    ".WWWKWWWWWWW.",
+    "..WWWWWWWWW.."
+  ],
+  "story": "점박이 강아지와 공원 한 바퀴 🐾",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🐾",
+        "who": "H",
+        "text": "점박이 따라 뛰자!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😊",
+        "who": "H",
+        "text": "강아지 덕에 매일이 산책이야."
+      }
+    ]
+  }
+}

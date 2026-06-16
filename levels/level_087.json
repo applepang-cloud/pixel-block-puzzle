@@ -1,0 +1,24 @@
+{
+  "level": 87,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "...PPPPPPP...",
+    "..PPPPPPPPP..",
+    ".PPNPPPNPPNP.",
+    "PPPPPPPPPPPPP",
+    "PPPPPPPPPPPPP",
+    ".PP.NNNNN.PP.",
+    "....NNNNN....",
+    "....NKNKN....",
+    "....NNNNN...."
+  ],
+  "story": "🍄 버섯",
+  "dialogue": null
+}

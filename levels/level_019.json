@@ -1,0 +1,52 @@
+{
+  "level": 19,
+  "hard": false,
+  "rows": 12,
+  "cols": 12,
+  "palette": {
+    "C": "#00d2d3",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....CCCC....",
+    "...CCCCCC...",
+    "....CCCC....",
+    ".....CC.....",
+    "....YYYY....",
+    "..YYYYYYYY..",
+    ".YYY....YYY.",
+    "YYY......YYY",
+    "YYY......YYY",
+    ".YYY....YYY.",
+    "..YYYYYYYY..",
+    "...YYYYYY..."
+  ],
+  "story": "\"우리 오래 함께하자\" — 약속의 반지 💍",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😳",
+        "who": "M",
+        "text": "잠깐… 할 말이 있어요."
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "💍",
+        "who": "M",
+        "text": "우리 오래 함께해요."
+      },
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥹",
+        "who": "H",
+        "text": "응, 당연하지!"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "level": 104,
+  "hard": false,
+  "rows": 8,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43"
+  },
+  "grid": [
+    "..OOO........",
+    ".OOKOO.......",
+    ".OOKOO.......",
+    ".OOOOO.......",
+    "..OOO........",
+    "..OOO........",
+    "..OOOO.O.O...",
+    "..OOOO.O.O..."
+  ],
+  "story": "🗝️ 열쇠",
+  "dialogue": null
+}

@@ -1,0 +1,50 @@
+{
+  "level": 35,
+  "hard": true,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".....GY......",
+    "...PGYYYGPN..",
+    "..PGYYOYYGP..",
+    ".PGYYOROYYGP.",
+    ".GYYORNROYYG.",
+    ".YYORNPNROYYG",
+    ".YORNPPPNROYY",
+    ".YYORNPNROYYG",
+    ".GYYORNROYYG.",
+    ".PGYYOROYYGP.",
+    "..PGYYOYYGP..",
+    "...PGYYYGPN..",
+    ".....GY......"
+  ],
+  "story": "까만 고양이가 행운을 물고 왔어 🐱",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🐱",
+        "who": "H",
+        "text": "까만 고양이다, 행운일까?"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😊",
+        "who": "M",
+        "text": "너를 만난 게 내 행운이야."
+      }
+    ]
+  }
+}

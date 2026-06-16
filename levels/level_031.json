@@ -1,0 +1,46 @@
+{
+  "level": 31,
+  "hard": false,
+  "rows": 12,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "OO.........OO",
+    "OOO.......OOO",
+    "OOOO.....OOOO",
+    "OOOOOOOOOOOOO",
+    "OOKKOOOOOKKOO",
+    "OOOOOOOOOOOOO",
+    "OWWWWWWWWWWWO",
+    "OWWWWWKWWWWWO",
+    "OWWWWWWWWWWWO",
+    "OOWWWWWWWWWOO",
+    ".OOWWWWWWWOO.",
+    "..OOOOOOOOO.."
+  ],
+  "story": "산책길의 새 친구, 시바견 콩이 🐕",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🐕",
+        "who": "M",
+        "text": "콩이가 너만 보면 꼬리 흔들어."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😆",
+        "who": "H",
+        "text": "내가 더 좋은가 봐!"
+      }
+    ]
+  }
+}

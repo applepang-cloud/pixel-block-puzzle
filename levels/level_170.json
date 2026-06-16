@@ -1,0 +1,49 @@
+{
+  "level": 170,
+  "hard": true,
+  "rows": 14,
+  "cols": 14,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "......RR......",
+    "...RN.NN.NR...",
+    "....P.PP.P....",
+    ".R..PBBBBP..R.",
+    ".NPP.BCCB.PPN.",
+    "...BBCCCCBB...",
+    "RNPBCCGGCCBPNR",
+    "RNPBCCGGCCBPNR",
+    "...BBCCCCBB...",
+    ".NPP.BCCB.PPN.",
+    ".R..PBBBBP..R.",
+    "....P.PP.P....",
+    "...RN.NN.NR...",
+    "......RR......"
+  ],
+  "story": "💥 보스! 오로라 젬",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "face": "😎",
+        "text": "이건 좀 어려운데?",
+        "who": "M"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "face": "💪",
+        "text": "우리 둘이면 문제없어!",
+        "who": "H"
+      }
+    ]
+  }
+}

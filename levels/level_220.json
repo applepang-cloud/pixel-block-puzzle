@@ -1,0 +1,50 @@
+{
+  "level": 220,
+  "hard": true,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".......G.......",
+    "......GYG......",
+    ".....GYYYG.....",
+    "....GYYOYYG....",
+    "...GYYOROYYG...",
+    "..GYYORNROYYG..",
+    ".GYYORNPNROYYG.",
+    "GYYORNPPPNROYYG",
+    ".GYYORNPNROYYG.",
+    "..GYYORNROYYG..",
+    "...GYYOROYYG...",
+    "....GYYOYYG....",
+    ".....GYYYG.....",
+    "......GYG......",
+    ".......G......."
+  ],
+  "story": "💥 보스! 오로라 젬",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "face": "💖",
+        "text": "너랑 하면 시간 가는 줄 몰라.",
+        "who": "H"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "face": "😊",
+        "text": "계속 함께하자.",
+        "who": "M"
+      }
+    ]
+  }
+}

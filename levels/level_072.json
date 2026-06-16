@@ -1,0 +1,24 @@
+{
+  "level": 72,
+  "hard": false,
+  "rows": 9,
+  "cols": 11,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...OOOOO...",
+    "..OOOOOOO..",
+    ".OOKOOOKOO.",
+    ".OOOYOYOOO.",
+    ".OOOYYYOOO.",
+    "OOOOOOOOOOO",
+    "OOOOOOOOOOO",
+    ".OOOOOOOOO.",
+    "..Y.....Y.."
+  ],
+  "story": "🐤 아기새",
+  "dialogue": null
+}

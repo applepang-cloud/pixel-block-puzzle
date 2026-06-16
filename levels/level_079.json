@@ -1,0 +1,23 @@
+{
+  "level": 79,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7"
+  },
+  "grid": [
+    ".....NN...NN.",
+    "...NNNNN.NNNN",
+    ".NNNNNNNNNNNN",
+    "NNNNKNNNNNNN.",
+    "NNNNNNNNNNNNN",
+    "NNNNKNNNNNNN.",
+    ".NNNNNNNNNNNN",
+    "...NNNNN.NNNN",
+    ".....NN...NN."
+  ],
+  "story": "🐟 물고기",
+  "dialogue": null
+}

@@ -1,0 +1,23 @@
+{
+  "level": 88,
+  "hard": false,
+  "rows": 9,
+  "cols": 11,
+  "palette": {
+    "N": "#ff8fc7",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "...NNNNN...",
+    "..NNNNNNN..",
+    ".NNNNNNNNN.",
+    "NNNNNNNNNNN",
+    ".NNNNNNNNN.",
+    "..NNNNNNN..",
+    "....RRR....",
+    "....RRR....",
+    "....RRR...."
+  ],
+  "story": "🌳 나무",
+  "dialogue": null
+}

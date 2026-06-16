@@ -1,0 +1,22 @@
+{
+  "level": 82,
+  "hard": false,
+  "rows": 8,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43"
+  },
+  "grid": [
+    "O..O.....O..O",
+    ".O.O.OOO.O.O.",
+    "..OOOOOOOOO..",
+    ".OOKOOOOOKOO.",
+    "OOOOOOOOOOOOO",
+    "OOOOOOOOOOOOO",
+    ".OO.OOOOO.OO.",
+    ".O..O...O..O."
+  ],
+  "story": "🦀 게",
+  "dialogue": null
+}

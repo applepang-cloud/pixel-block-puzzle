@@ -1,0 +1,49 @@
+{
+  "level": 6,
+  "hard": false,
+  "rows": 14,
+  "cols": 14,
+  "palette": {
+    "B": "#1e90ff",
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "....BBBBBB....",
+    "...BBBBBBBB...",
+    "..BBBBBBBBBB..",
+    "..NNNNNNNNNN..",
+    ".NNNNNNNNNNNN.",
+    ".NKNNNNNNNNKN.",
+    ".NNNNNNNNNNNN.",
+    ".NNNNPPPPNNNN.",
+    ".NNNNPKKPNNNN.",
+    ".NNNNPPPPNNNN.",
+    ".NNNNNNNNNNNN.",
+    "..NNNNNNNNNN..",
+    "...N......N...",
+    "...N......N..."
+  ],
+  "story": "나란히 걷는 길, 마음이 따뜻해진다.",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥰",
+        "who": "H",
+        "text": "나란히 걷는 이 길이 참 좋다."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😊",
+        "who": "H",
+        "text": "시간이 너무 빨리 가…"
+      }
+    ]
+  }
+}

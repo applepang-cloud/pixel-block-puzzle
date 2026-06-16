@@ -1,0 +1,22 @@
+{
+  "level": 83,
+  "hard": false,
+  "rows": 8,
+  "cols": 13,
+  "palette": {
+    "G": "#2ed573",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....Y...Y....",
+    "...YYYYYYY...",
+    "..YYYYYYYYY..",
+    ".YGYGYGYGYGY.",
+    ".YYGYGYGYGYY.",
+    ".YYYYYYYYYYY.",
+    "..YY.....YY..",
+    "..Y.......Y.."
+  ],
+  "story": "🐢 거북이",
+  "dialogue": null
+}

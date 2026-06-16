@@ -1,0 +1,23 @@
+{
+  "level": 67,
+  "hard": false,
+  "rows": 8,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "....BBBBB....",
+    "...BBBBBBB...",
+    "..B.B.B.B.B..",
+    ".PPPPPPPPPPP.",
+    "PPPPPPPPPPPPP",
+    ".P.NN.NN.NN.P",
+    "..PPPPPPPPP..",
+    "...N..N..N..."
+  ],
+  "story": "🛸 미확인 비행물체",
+  "dialogue": null
+}

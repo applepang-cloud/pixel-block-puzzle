@@ -1,0 +1,24 @@
+{
+  "level": 52,
+  "hard": false,
+  "rows": 9,
+  "cols": 11,
+  "palette": {
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...OOOOO...",
+    "..OOOOOOO..",
+    "..OYOYOYO..",
+    "..OOOOOOO..",
+    "...GGGGG...",
+    "...GGGGG...",
+    "....GGG....",
+    "....GGG....",
+    ".....G....."
+  ],
+  "story": "🍦 시원한 아이스크림",
+  "dialogue": null
+}

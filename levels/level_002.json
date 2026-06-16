@@ -1,0 +1,45 @@
+{
+  "level": 2,
+  "hard": false,
+  "rows": 12,
+  "cols": 13,
+  "palette": {
+    "O": "#ff9f43",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "......Y......",
+    "......Y......",
+    ".....YYY.....",
+    "....YYYYY....",
+    "OYYYYYYYYYYYO",
+    ".YYYYYYYYYYY.",
+    "..YYYYYYYYY..",
+    "..YYYYYYYYY..",
+    ".YYYY.O.YYYY.",
+    ".YYY.....YYY.",
+    ".YY.......YY.",
+    "OO.........OO"
+  ],
+  "story": "자꾸 떠오르는 얼굴, 설렘세포가 두근거린다.",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😶",
+        "who": "H",
+        "text": "또 생각났어. 별것도 아닌데."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😳",
+        "who": "H",
+        "text": "이름이라도 알고 싶다…"
+      }
+    ]
+  }
+}

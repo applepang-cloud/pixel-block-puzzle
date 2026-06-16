@@ -1,0 +1,33 @@
+{
+  "level": 299,
+  "hard": false,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...............",
+    ".......PN......",
+    "....RN.GP......",
+    "....NPGYGP.R...",
+    "....PGYOYGPNR..",
+    "..NPGYOROYGP...",
+    "..PGYORNROYG.N.",
+    "...YORNPNROYGP.",
+    "..PGYORNROYG.N.",
+    "..NPGYOROYGP...",
+    "....PGYOYGPNR..",
+    "....NPGYGP.R...",
+    "....RN.GP......",
+    ".......PN......",
+    "..............."
+  ],
+  "story": "⚙️ 톱니바퀴",
+  "dialogue": null
+}

@@ -1,0 +1,40 @@
+{
+  "level": 12,
+  "hard": false,
+  "rows": 7,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7"
+  },
+  "grid": [
+    ".............",
+    "..N.N...B.B..",
+    ".NNNNN.BBBBB.",
+    ".NNNNN.BBBBB.",
+    "..NNN...BBB..",
+    "...N.....B...",
+    "............."
+  ],
+  "story": "그의 집에 처음 초대받았다 — 긴장세포 비상!",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😳",
+        "who": "H",
+        "text": "그의 집에 초대받았어… 떨려!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😅",
+        "who": "H",
+        "text": "어디 앉지? 어색해 죽겠어."
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "level": 266,
+  "hard": false,
+  "rows": 9,
+  "cols": 9,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "..CCCCC..",
+    "..GCCCB..",
+    "GGGCCCBBB",
+    "GGGGCBBBB",
+    "GGGGPPPPP",
+    "RRRRNPPPP",
+    "RRRNNNPPP",
+    "..RNNNP..",
+    "..NNNNN.."
+  ],
+  "story": "➕ 십자",
+  "dialogue": null
+}

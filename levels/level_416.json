@@ -1,0 +1,32 @@
+{
+  "level": 416,
+  "hard": false,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "BPNROBPNROBPNRO",
+    "BPNROBPNROBPNRO",
+    "BPNROBPNROBPNRO",
+    "BPN.........NRO",
+    "BPN.........NRO",
+    "BPN.........NRO",
+    "BPN.........NRO",
+    "BPN.........NRO",
+    "BPN.........NRO",
+    "BPN.........NRO",
+    "BPN.........NRO",
+    "BPN.........NRO",
+    "BPNROBPNROBPNRO",
+    "BPNROBPNROBPNRO",
+    "BPNROBPNROBPNRO"
+  ],
+  "story": "🖼️ 액자",
+  "dialogue": null
+}

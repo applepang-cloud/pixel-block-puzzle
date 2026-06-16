@@ -1,0 +1,57 @@
+{
+  "level": 50,
+  "hard": true,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "........B....",
+    ".......BP....",
+    "..N...BPN....",
+    ".NRGC.PNR....",
+    "..GCBPNRG....",
+    "...BPNRGCBPN.",
+    "....NRGCBPNRG",
+    "...NRGCBPNRG.",
+    "..NRGCBPN....",
+    ".NRGC.PNR....",
+    "..G...NRG....",
+    ".......GC....",
+    "........B...."
+  ],
+  "story": "우리 사랑은 영원한 해피엔딩 👑",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "👑",
+        "who": "H",
+        "text": "우리, 오래오래 행복하자."
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😍",
+        "who": "M",
+        "text": "영원히 너의 곁에서."
+      },
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥰",
+        "who": "H",
+        "text": "해피엔딩 ♥"
+      }
+    ]
+  }
+}

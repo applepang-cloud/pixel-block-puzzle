@@ -1,0 +1,25 @@
+{
+  "level": 61,
+  "hard": false,
+  "rows": 10,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "R": "#ff4757"
+  },
+  "grid": [
+    ".....RR......",
+    ".....RR......",
+    "..OOOOOOOOO..",
+    ".OOOOOOOOOOO.",
+    "OOKOOOKOOOKOO",
+    "OOOOOOOOOOOOO",
+    "OKKOKKKOKKKOO",
+    "OOOOOOOOOOOOO",
+    ".OOOOOOOOOOO.",
+    "..OOOOOOOOO.."
+  ],
+  "story": "🎃 호박등",
+  "dialogue": null
+}

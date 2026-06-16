@@ -1,0 +1,35 @@
+{
+  "level": 159,
+  "hard": false,
+  "rows": 19,
+  "cols": 19,
+  "palette": {
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...................",
+    ".........R.........",
+    ".....N...R...R.....",
+    ".....NN..R..RR.....",
+    "......NN.R.RR......",
+    "..NN..NN.R.RR..RR..",
+    "...NNN.NNRRR.RRR...",
+    "....NNNNNRRRRRR....",
+    "......NNNRRRR......",
+    ".NNNNNNNNOOOOOOOOO.",
+    "......YYYYOOO......",
+    "....YYYYYYOOOOO....",
+    "...YYY.YYYOO.OOO...",
+    "..YY..YY.Y.OO..OO..",
+    "......YY.Y.OO......",
+    ".....YY..Y..OO.....",
+    ".....Y...Y...O.....",
+    ".........Y.........",
+    "..................."
+  ],
+  "story": "⭐ 반짝 별",
+  "dialogue": null
+}

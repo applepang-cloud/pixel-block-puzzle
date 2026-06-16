@@ -1,0 +1,49 @@
+{
+  "level": 15,
+  "hard": true,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "......C......",
+    ".....CCC.....",
+    "....CCGCC....",
+    "...CCGYGCC...",
+    "..CCGYOYGCC..",
+    ".CCGYOROYGCC.",
+    "CCGYORRROYGCC",
+    ".CCGYOROYGCC.",
+    "..CCGYOYGCC..",
+    "...CCGYGCC...",
+    "....CCGCC....",
+    ".....CCC.....",
+    "......C......"
+  ],
+  "story": "함께 듣는 노래, 추억세포가 쌓여간다.",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🎶",
+        "who": "H",
+        "text": "이 노래, 우리 노래로 하자."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😌",
+        "who": "H",
+        "text": "이 순간을 오래 기억하고 싶어."
+      }
+    ]
+  }
+}

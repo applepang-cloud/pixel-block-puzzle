@@ -1,0 +1,24 @@
+{
+  "level": 78,
+  "hard": false,
+  "rows": 8,
+  "cols": 13,
+  "palette": {
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    ".PPPPPPPPPPP.",
+    "PPPPPPPPPPPPP",
+    "NNNNNNNNNNNNN",
+    "RRRRRRRRRRRRR",
+    ".ROROROROROR.",
+    "NNNNNNNNNNNNN",
+    "PPPPPPPPPPPPP",
+    ".PPPPPPPPPPP."
+  ],
+  "story": "🌭 핫도그",
+  "dialogue": null
+}

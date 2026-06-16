@@ -1,0 +1,51 @@
+{
+  "level": 410,
+  "hard": true,
+  "rows": 16,
+  "cols": 16,
+  "palette": {
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".......PP.......",
+    "...R...GG...R...",
+    "..RRNPGYYGPNRR..",
+    ".RRNPGYYYYGPNRR.",
+    "..NPGYYOOYYGPN..",
+    "..PGYYORROYYGP..",
+    "..GYYORNNROYYG..",
+    "PGYYORNPPNROYYGP",
+    "PGYYORNPPNROYYGP",
+    "..GYYORNNROYYG..",
+    "..PGYYORROYYGP..",
+    "..NPGYYOOYYGPN..",
+    ".RRNPGYYYYGPNRR.",
+    "..RRNPGYYGPNRR..",
+    "...R...GG...R...",
+    ".......PP......."
+  ],
+  "story": "💥 보스! 네뷸라 코어",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "face": "🔥",
+        "text": "집중! 거의 다 왔어.",
+        "who": "M"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "face": "😤",
+        "text": "끝까지 해보자!",
+        "who": "H"
+      }
+    ]
+  }
+}

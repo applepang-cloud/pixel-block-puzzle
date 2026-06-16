@@ -1,0 +1,23 @@
+{
+  "level": 74,
+  "hard": false,
+  "rows": 9,
+  "cols": 11,
+  "palette": {
+    "C": "#00d2d3",
+    "G": "#2ed573"
+  },
+  "grid": [
+    "...GGGGG...",
+    "..GGGGGGG..",
+    ".GGGGGGGGG.",
+    "GGGCGGGCGGG",
+    "GGGGGGGGGGG",
+    "GGCGGGGGCGG",
+    "GGGGGGGGGGG",
+    ".GGGGGGGGG.",
+    "..GGGGGGG.."
+  ],
+  "story": "🥚 신비한 알",
+  "dialogue": null
+}

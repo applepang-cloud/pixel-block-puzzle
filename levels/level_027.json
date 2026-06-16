@@ -1,0 +1,46 @@
+{
+  "level": 27,
+  "hard": false,
+  "rows": 12,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "..WW.....WW..",
+    "..WNW...WNW..",
+    "..WNW...WNW..",
+    "..WNW...WNW..",
+    "..WWW...WWW..",
+    "..WWWWWWWWW..",
+    ".WWWWWWWWWWW.",
+    ".WWKWWWWWKWW.",
+    ".WWWWWNWWWWW.",
+    ".WWWWWWWWWWW.",
+    "..WWWWWWWWW..",
+    "...WWWWWWW..."
+  ],
+  "story": "토끼처럼 폴짝, 봄나들이 가는 길 🐰",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🐰",
+        "who": "H",
+        "text": "토끼 보러 가자, 빨리빨리!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😊",
+        "who": "M",
+        "text": "너 진짜 토끼 같아, 깡총깡총."
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "level": 44,
+  "hard": false,
+  "rows": 11,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "...KKKKKKK...",
+    ".KKKKKKKKKKK.",
+    "KKKWWKKKWWKKK",
+    "KKWWWKKKWWWKK",
+    "KKKKKWWWKKKKK",
+    "KKKKWWWWWKKKK",
+    "KKKKKWWWKKKKK",
+    "KKWWWKKKWWWKK",
+    "KKKWWKKKWWKKK",
+    ".KKKKKKKKKKK.",
+    "...KKKKKKK..."
+  ],
+  "story": "우리의 추억을 필름처럼 돌려본다 🎞️",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🎞️",
+        "who": "H",
+        "text": "우리 사진들 영상으로 만들었어."
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🥹",
+        "who": "M",
+        "text": "다 보물 같은 순간이야."
+      }
+    ]
+  }
+}

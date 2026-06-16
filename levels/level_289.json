@@ -1,0 +1,31 @@
+{
+  "level": 289,
+  "hard": false,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "...............",
+    "......O........",
+    ".....OR...P....",
+    ".....RNPNROP...",
+    "..PORNPOPNR....",
+    "..ORNPOROPNR...",
+    "...NPORNROPNRO.",
+    "...PORNPNROPNR.",
+    "...NPORNROPNRO.",
+    "..ORNPOROPNR...",
+    "..PORNPOPNR....",
+    ".....RNPNROP...",
+    ".....OR...P....",
+    "......O........",
+    "..............."
+  ],
+  "story": "⚙️ 톱니바퀴",
+  "dialogue": null
+}

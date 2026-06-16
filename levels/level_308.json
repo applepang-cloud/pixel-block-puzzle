@@ -1,0 +1,29 @@
+{
+  "level": 308,
+  "hard": false,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    ".............",
+    ".....P.......",
+    "...R.PNRB....",
+    "...RBPNRB.N..",
+    "...RBPNRBPN..",
+    ".PNRBPNRBPN..",
+    "..NRBPNRBPNR.",
+    ".PNRBPNRBPN..",
+    "...RBPNRBPN..",
+    "...RBPNRB.N..",
+    "...R.PNRB....",
+    ".....P.......",
+    "............."
+  ],
+  "story": "⚙️ 톱니바퀴",
+  "dialogue": null
+}

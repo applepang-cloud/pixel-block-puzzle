@@ -1,0 +1,47 @@
+{
+  "level": 22,
+  "hard": false,
+  "rows": 12,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "OOO.......OOO",
+    "OOOO.....OOOO",
+    "OOOOO...OOOOO",
+    "OOOWWWWWWWOOO",
+    "OOWWWWWWWWWOO",
+    "OWWKWWWWWKWWO",
+    "OWWKWWWWWKWWO",
+    "OWWWWWKWWWWWO",
+    "OWWWWKKKWWWWO",
+    "OOWWWNNNWWWOO",
+    ".OOWWWWWWWOO.",
+    "..OOOOOOOOO.."
+  ],
+  "story": "보호소에서 강아지를 입양했어 🐶",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🐶",
+        "who": "M",
+        "text": "이 강아지… 우리가 키울까요?"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥰",
+        "who": "H",
+        "text": "우리 가족이 한 명 더 늘었어!"
+      }
+    ]
+  }
+}

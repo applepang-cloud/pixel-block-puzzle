@@ -1,0 +1,20 @@
+{
+  "level": 68,
+  "hard": false,
+  "rows": 6,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "P": "#c44dff"
+  },
+  "grid": [
+    ".............",
+    "KKKKKKKKKKKKK",
+    "KPPPKKKPPPKK.",
+    "KPPPKKKPPPKK.",
+    "KPPPKKKPPPKK.",
+    ".KKK.K.KKK..."
+  ],
+  "story": "🕶️ 멋쟁이 선글라스",
+  "dialogue": null
+}

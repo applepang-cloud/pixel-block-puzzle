@@ -1,0 +1,47 @@
+{
+  "level": 49,
+  "hard": false,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "R": "#ff4757",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "RRRRRRRRRRRRR",
+    "RBBBBBWBBBBBR",
+    "RBBBBBWBBBBBR",
+    "RBBBBBWBBBBBR",
+    "RBBBBBWBBBBBR",
+    "RWWWWWWWWWWWR",
+    "RBBBBBWBBBBBR",
+    "RBBBBBWBBBBBR",
+    ".RBBBWBWBBBR.",
+    "..RBBBWBBBR..",
+    "...RBBWBBR...",
+    "....RBBBR....",
+    ".....RRR....."
+  ],
+  "story": "무슨 일이 와도 내가 널 지킬게 🛡️",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🛡️",
+        "who": "M",
+        "text": "무슨 일이 와도 내가 막을게."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥹",
+        "who": "H",
+        "text": "네 곁이 제일 안전해."
+      }
+    ]
+  }
+}

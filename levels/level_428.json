@@ -1,0 +1,20 @@
+{
+  "level": 428,
+  "hard": false,
+  "rows": 4,
+  "cols": 4,
+  "palette": {
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    ".NR.",
+    ".NR.",
+    "PNRO",
+    "PNRO"
+  ],
+  "story": "📊 블록탑",
+  "dialogue": null
+}

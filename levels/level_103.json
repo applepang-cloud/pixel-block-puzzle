@@ -1,0 +1,23 @@
+{
+  "level": 103,
+  "hard": false,
+  "rows": 9,
+  "cols": 11,
+  "palette": {
+    "O": "#ff9f43",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "...RR.RR...",
+    "...O.O.O...",
+    "..OOOOOOO..",
+    "..OOOOOOO..",
+    "...OOOOO...",
+    "...OOOOO...",
+    "....OOO....",
+    "....OOO....",
+    ".....O....."
+  ],
+  "story": "🍇 포도",
+  "dialogue": null
+}

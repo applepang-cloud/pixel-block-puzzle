@@ -1,0 +1,32 @@
+{
+  "level": 185,
+  "hard": true,
+  "rows": 14,
+  "cols": 14,
+  "palette": {
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....GC..OY....",
+    "....CN..YG....",
+    ".Y..NROYGC..O.",
+    ".GCN.OYGC.ROY.",
+    "..NROYGCNROY..",
+    "...OYGCNROY...",
+    "NROYGCNROYGCNR",
+    "ROYGCNROYGCNRO",
+    "...CNROYGCN...",
+    "..CNROYGCNRO..",
+    ".CNR.YGCN.OYG.",
+    ".N..YGCNRO..C.",
+    "....GC..OY....",
+    "....CN..YG...."
+  ],
+  "story": "💥 보스! 스펙트럼 휠",
+  "dialogue": null
+}

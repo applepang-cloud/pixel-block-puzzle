@@ -1,0 +1,47 @@
+{
+  "level": 23,
+  "hard": false,
+  "rows": 12,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "W": "#f5f5fa",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "YY.........YY",
+    "YYY.......YYY",
+    "YYYYY...YYYYY",
+    "YYYYYYYYYYYYY",
+    "YYYYYYYYYYYYY",
+    "YYKKYYYYYKKYY",
+    "YYKKYYYYYKKYY",
+    "YYYYYYNYYYYYY",
+    "YYYYWWWWWYYYY",
+    "YYYWWWWWWWYYY",
+    ".YYYYYYYYYYY.",
+    "..YYYYYYYYY.."
+  ],
+  "story": "길고양이도 우리 가족이 됐다 🐱",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🐱",
+        "who": "H",
+        "text": "앗, 길고양이가 따라와!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😊",
+        "who": "H",
+        "text": "너도 이제 우리 식구야."
+      }
+    ]
+  }
+}

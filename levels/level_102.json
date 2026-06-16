@@ -1,0 +1,22 @@
+{
+  "level": 102,
+  "hard": false,
+  "rows": 8,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7"
+  },
+  "grid": [
+    "..........K..",
+    ".........NN..",
+    "........NNN..",
+    ".N.....NNN...",
+    ".NN...NNN....",
+    "..NNNNNNN....",
+    "...NNNNN.....",
+    "....NNN......"
+  ],
+  "story": "🍌 바나나",
+  "dialogue": null
+}

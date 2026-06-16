@@ -1,0 +1,21 @@
+{
+  "level": 422,
+  "hard": false,
+  "rows": 5,
+  "cols": 4,
+  "palette": {
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "O...",
+    "OY..",
+    "OYG.",
+    "OYGC",
+    "OYGC"
+  ],
+  "story": "📊 블록탑",
+  "dialogue": null
+}

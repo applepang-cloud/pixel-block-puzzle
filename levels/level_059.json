@@ -1,0 +1,24 @@
+{
+  "level": 59,
+  "hard": false,
+  "rows": 10,
+  "cols": 12,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7"
+  },
+  "grid": [
+    "..NNNNNNNN..",
+    ".NNNNNNNNNN.",
+    "NNNNNNNNNNNN",
+    "NNKKNNNNKKNN",
+    "NNKKNNNNKKNN",
+    "NNNNNNNNNNNN",
+    "NKNNNNNNNNKN",
+    "NNKKKKKKKKNN",
+    ".NNKKKKKKNN.",
+    "..NNNNNNNN.."
+  ],
+  "story": "😄 웃는 얼굴",
+  "dialogue": null
+}

@@ -1,0 +1,23 @@
+{
+  "level": 63,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "KK.........KK",
+    "KKK.K...K.KKK",
+    "KKKKKK.KKKKKK",
+    "KKKKKKKKKKKKK",
+    "KKYKKKKKYKKKK",
+    "KKKKKKKKKKKKK",
+    ".KKKKKKKKKKK.",
+    "..KK.KKK.KK..",
+    "...K..K..K..."
+  ],
+  "story": "🦇 박쥐",
+  "dialogue": null
+}

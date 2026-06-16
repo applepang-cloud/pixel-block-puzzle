@@ -1,0 +1,54 @@
+{
+  "level": 26,
+  "hard": false,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "RRRRRRRRRRRRR",
+    "RBBBBBBBBBBBR",
+    "RBBBBBYBBBBBR",
+    "RBBBBYYYBBBBR",
+    "RBBBYYYYYBBBR",
+    "RBYYYYYYYYYBR",
+    "RBBYYYYYYYBBR",
+    "RBBBYYYYYBBBR",
+    "RBBBYYYYYBBBR",
+    "RBBYYYBYYYBBR",
+    ".RBYYBBBYYBR.",
+    "..RBBBBBBBR..",
+    "...RRRRRRR..."
+  ],
+  "story": "너는 언제나 나의 영웅이야 🦸",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🦸",
+        "who": "H",
+        "text": "넌 나의 슈퍼히어로야."
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😊",
+        "who": "M",
+        "text": "네 곁이라면 난 늘 강해져요."
+      },
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥹",
+        "who": "H",
+        "text": "앞으로도 함께야 ♥"
+      }
+    ]
+  }
+}

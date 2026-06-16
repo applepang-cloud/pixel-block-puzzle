@@ -1,0 +1,46 @@
+{
+  "level": 11,
+  "hard": false,
+  "rows": 11,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "......R......",
+    ".....RRR.....",
+    "....RRRRR....",
+    "...RRRRRRR...",
+    "..RRRRRRRRR..",
+    "..OOOOOOOOO..",
+    "..OOYYOOYYO..",
+    "..OOYYOOYYO..",
+    "..OOOOKKOOO..",
+    "..OOOOKKOOO..",
+    "..OOOOKKOOO.."
+  ],
+  "story": "첫 데이트 성공! 행복세포가 춤을 춘다.",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥰",
+        "who": "H",
+        "text": "드디어 첫 데이트! 뭐 입지?"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😊",
+        "who": "M",
+        "text": "오늘 정말 즐거웠어요."
+      }
+    ]
+  }
+}

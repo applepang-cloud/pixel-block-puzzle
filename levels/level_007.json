@@ -1,0 +1,49 @@
+{
+  "level": 7,
+  "hard": false,
+  "rows": 13,
+  "cols": 12,
+  "palette": {
+    "C": "#00d2d3",
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    ".O.WWWWWW.C.",
+    "..WWWWWWWW..",
+    ".WWWWWWWWWW.",
+    ".WWWWWWWWWW.",
+    ".WKKWWWWKKW.",
+    ".WKKWWWWKKW.",
+    ".WWWWWWWWWW.",
+    ".WWWWNNWWWW.",
+    ".WWWWWWWWWW.",
+    ".WWWWWWWWWW.",
+    "C.WWWWWWWW.O",
+    ".WW.WW.WW.W.",
+    ".W..W..W..W."
+  ],
+  "story": "혹시 그도 나를…? 불안세포가 서성인다.",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😟",
+        "who": "H",
+        "text": "혹시 나만 좋아하는 걸까?"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😔",
+        "who": "H",
+        "text": "그의 마음을 모르겠어."
+      }
+    ]
+  }
+}

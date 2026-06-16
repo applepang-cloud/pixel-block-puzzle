@@ -1,0 +1,50 @@
+{
+  "level": 230,
+  "hard": true,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....OOOOOOO....",
+    "...ROOOOOOOY...",
+    "..RRROOOOOYYY..",
+    ".RRRROOOOOYYYY.",
+    "RRRRRROOOYYYYYY",
+    "RRRRRROOOYYYYYY",
+    "RRRRRRROYYYYYYY",
+    "RRRRRRRGGGGGGGG",
+    "BBBBBBBCGGGGGGG",
+    "BBBBBBCCCGGGGGG",
+    "BBBBBBCCCGGGGGG",
+    ".BBBBCCCCCGGGG.",
+    "..BBBCCCCCGGG..",
+    "...BCCCCCCCG...",
+    "....CCCCCCC...."
+  ],
+  "story": "💥 보스! 크리스탈 만다라",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "face": "🌟",
+        "text": "보스가 나타났다!",
+        "who": "M"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "face": "⚔️",
+        "text": "겁먹지 말고 도전!",
+        "who": "H"
+      }
+    ]
+  }
+}

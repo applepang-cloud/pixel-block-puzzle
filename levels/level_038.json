@@ -1,0 +1,46 @@
+{
+  "level": 38,
+  "hard": false,
+  "rows": 11,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "OO.........OO",
+    "OOO.......OOO",
+    "OOKOOKOKOOKOO",
+    "OOOOOOOOOOOOO",
+    "OOKKOOOOOKKOO",
+    "OOOOOOOOOOOOO",
+    "OOOOWWWWWOOOO",
+    "OOOWWWNWWWOOO",
+    "OOOWWWWWWWOOO",
+    ".OOOOOOOOOOO.",
+    "..OOOOOOOOO.."
+  ],
+  "story": "호랑이 무늬 고양이는 사실 겁쟁이 🐯",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🐯",
+        "who": "H",
+        "text": "호랑이 무늬인데 겁쟁이래."
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😄",
+        "who": "M",
+        "text": "너 닮았네, 무서운 척만."
+      }
+    ]
+  }
+}

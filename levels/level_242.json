@@ -1,0 +1,29 @@
+{
+  "level": 242,
+  "hard": false,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".............",
+    ".....N.R.....",
+    "...N.N.R.R...",
+    "...NNN.RRR...",
+    "..NNNN.RRRR..",
+    "...NNNRRRR...",
+    ".NNNNNOOOOOO.",
+    "...YYYYOOO...",
+    "..YYYY.OOOO..",
+    "...YYY.OOO...",
+    "...Y.Y.O.O...",
+    ".....Y.O.....",
+    "............."
+  ],
+  "story": "🌸 예쁜 꽃",
+  "dialogue": null
+}

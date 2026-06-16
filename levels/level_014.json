@@ -1,0 +1,46 @@
+{
+  "level": 14,
+  "hard": false,
+  "rows": 12,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    ".OO.......OO.",
+    "OOOO.....OOOO",
+    "OOOOOOOOOOOOO",
+    "OOKKOOOOOKKOO",
+    "OOKKOOOOOKKOO",
+    "OOOOOOOOOOOOO",
+    "OOOWWWWWWWOOO",
+    "OOOWWKKKWWOOO",
+    "OOOWWWWWWWOOO",
+    ".OOOWWWWWOOO.",
+    "..OOOOOOOOO..",
+    "...OOOOOOO..."
+  ],
+  "story": "그가 키우는 강아지와도 친해졌어 🐶",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🐶",
+        "who": "H",
+        "text": "강아지가 너무 귀여워!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😊",
+        "who": "M",
+        "text": "얘도 누나 좋아하나 봐요."
+      }
+    ]
+  }
+}

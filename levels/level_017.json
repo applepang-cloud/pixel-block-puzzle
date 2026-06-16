@@ -1,0 +1,46 @@
+{
+  "level": 17,
+  "hard": false,
+  "rows": 11,
+  "cols": 13,
+  "palette": {
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "W": "#f5f5fa",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....O.O.O....",
+    "....Y.Y.Y....",
+    "..NNNNNNNNN..",
+    ".NNNNNNNNNNN.",
+    ".OOOOOOOOOOO.",
+    ".OOOOOOOOOOO.",
+    ".NNNNNNNNNNN.",
+    ".OOOOOOOOOOO.",
+    ".OOOOOOOOOOO.",
+    "WWWWWWWWWWWWW",
+    "............."
+  ],
+  "story": "그를 위한 깜짝 케이크, 설렘이 가득.",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🎂",
+        "who": "H",
+        "text": "깜짝 케이크 준비 완료!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🥹",
+        "who": "M",
+        "text": "이런 거 처음 받아봐요…"
+      }
+    ]
+  }
+}

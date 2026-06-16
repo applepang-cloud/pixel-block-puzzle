@@ -1,0 +1,22 @@
+{
+  "level": 92,
+  "hard": false,
+  "rows": 8,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "....B..B.....",
+    "...BB..BB....",
+    ".PPPPBBPPPP..",
+    ".PPPPBBPPPP..",
+    ".PPPPPPPPPP..",
+    ".PPPPBBPPPP..",
+    ".PPPPBBPPPP..",
+    ".PPPPBBPPPP.."
+  ],
+  "story": "🎁 선물",
+  "dialogue": null
+}

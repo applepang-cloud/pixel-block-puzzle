@@ -1,0 +1,44 @@
+{
+  "level": 37,
+  "hard": false,
+  "rows": 10,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    ".WW.NNNNN.WW.",
+    ".WWW.NNN.WWW.",
+    ".WWWWWWWWWWW.",
+    "WWWWWWWWWWWWW",
+    "WWKKWWWWWKKWW",
+    "WWWWWWWWWWWWW",
+    "WWWWWWNWWWWWW",
+    "WWWWKWWWKWWWW",
+    ".WWWWWWWWWWW.",
+    "..WWWWWWWWW.."
+  ],
+  "story": "리본 단 아기고양이가 우리 집에 🎀",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🎀",
+        "who": "M",
+        "text": "리본 달아줬어, 공주님 고양이."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥹",
+        "who": "H",
+        "text": "너무 귀여워서 눈물 나."
+      }
+    ]
+  }
+}

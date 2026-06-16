@@ -1,0 +1,25 @@
+{
+  "level": 101,
+  "hard": false,
+  "rows": 10,
+  "cols": 11,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "....P......",
+    "....K......",
+    "..NNNNNNN..",
+    ".NNNNNNNNN.",
+    "NNNNNNNNNNN",
+    "NNNNNNNNNNN",
+    "NNNNNNNNNNN",
+    ".NNNNNNNNN.",
+    "..NNNNNNN..",
+    "...NN.NN..."
+  ],
+  "story": "🍎 사과",
+  "dialogue": null
+}

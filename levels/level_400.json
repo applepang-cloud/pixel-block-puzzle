@@ -1,0 +1,51 @@
+{
+  "level": 400,
+  "hard": true,
+  "rows": 16,
+  "cols": 16,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    ".......PP.......",
+    ".......BB.......",
+    "..OR...CC...RO..",
+    "..RNPB.OO.BPNR..",
+    "...PBC.RR.CBP...",
+    "...BCORNNROCB...",
+    ".....RNPPNR.....",
+    "PBCORNPBBPNROCBP",
+    "PBCORNPBBPNROCBP",
+    ".....RNPPNR.....",
+    "...BCORNNROCB...",
+    "...PBC.RR.CBP...",
+    "..RNPB.OO.BPNR..",
+    "..OR...CC...RO..",
+    ".......BB.......",
+    ".......PP......."
+  ],
+  "story": "💥 보스! 오팔 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "face": "🥳",
+        "text": "벌써 여기까지 왔네.",
+        "who": "H"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "face": "👏",
+        "text": "우리 정말 잘한다.",
+        "who": "M"
+      }
+    ]
+  }
+}

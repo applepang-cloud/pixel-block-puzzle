@@ -1,0 +1,46 @@
+{
+  "level": 21,
+  "hard": false,
+  "rows": 12,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "KKK.......KKK",
+    "KKKK.....KKKK",
+    ".WWWWWWWWWWW.",
+    "WWWWWWWWWWWWW",
+    "WWKKWWWWWKKWW",
+    "WWKKWWWWWKKWW",
+    "WWWWWWWWWWWWW",
+    "WNWWWKWWWWNWW",
+    "WWWWKKKWWWWWW",
+    "WWWWWKWWWWWWW",
+    ".WWWWWWWWWWW.",
+    "..WWWWWWWWW.."
+  ],
+  "story": "둘이 동물원 데이트! 판다 앞에서 찰칵 📷",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🐼",
+        "who": "H",
+        "text": "우와, 판다다! 같이 사진 찍자!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "📷",
+        "who": "M",
+        "text": "오늘 사진 진짜 잘 나왔어요."
+      }
+    ]
+  }
+}

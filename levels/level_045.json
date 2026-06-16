@@ -1,0 +1,50 @@
+{
+  "level": 45,
+  "hard": true,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....GGCCB....",
+    "...YGGCCBB...",
+    ".YGGCCBBPPOO.",
+    ".YGGCCBBPPOO.",
+    ".GCCBBPPOOYY.",
+    "GGCCBBPPOOYYG",
+    "CCBBPPOOYYGGC",
+    "CCBBPPOOYYGGC",
+    ".BPPOOYYGGCC.",
+    ".BPPOOYYGGCC.",
+    ".POOYYGGCCBB.",
+    "...OYYGGCC...",
+    "....GGCCB...."
+  ],
+  "story": "소파에 붙어 드라마 정주행하는 밤 📺",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "📺",
+        "who": "M",
+        "text": "오늘 밤도 정주행 각이다."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😴",
+        "who": "H",
+        "text": "한 편만… 하다 밤샜네."
+      }
+    ]
+  }
+}

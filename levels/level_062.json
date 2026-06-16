@@ -1,0 +1,24 @@
+{
+  "level": 62,
+  "hard": false,
+  "rows": 9,
+  "cols": 11,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "..OOOOO....",
+    ".OOOOOOO...",
+    "OOKOOOKOO..",
+    "OOKOOOKOO..",
+    "OOOOOOOOO..",
+    "OOOYOOOOO..",
+    "OOOOOOOOO..",
+    "OOOOOOOOO..",
+    "O.OO.OO.O.."
+  ],
+  "story": "👻 유령",
+  "dialogue": null
+}

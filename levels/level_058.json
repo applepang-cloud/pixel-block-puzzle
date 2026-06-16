@@ -1,0 +1,23 @@
+{
+  "level": 58,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "N": "#ff8fc7",
+    "P": "#c44dff"
+  },
+  "grid": [
+    ".P.........P.",
+    "PPP.......PPP",
+    ".PPP.NNN.PPP.",
+    "..PPNNNNNPP..",
+    "...PNNNNNP...",
+    "..PPNNNNNPP..",
+    ".PPP.NNN.PPP.",
+    "PPP.......PPP",
+    ".P.........P."
+  ],
+  "story": "🍬 알록달록 사탕",
+  "dialogue": null
+}

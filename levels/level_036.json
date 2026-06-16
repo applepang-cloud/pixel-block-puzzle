@@ -1,0 +1,44 @@
+{
+  "level": 36,
+  "hard": false,
+  "rows": 10,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "O": "#ff9f43"
+  },
+  "grid": [
+    ".OO.....OO...",
+    ".OOO...OOO...",
+    "..OOOOOOOOO..",
+    ".OOOOOOOOOOO.",
+    "OOKKOOOOOKKOO",
+    "OOOOOONOOOOOO",
+    "OOOOOOOOOOOOO",
+    "OOOOOOOOOOOOO",
+    ".OOOOOOOOOOO.",
+    "..OOOOOOOOO.."
+  ],
+  "story": "낮잠 자는 고양이 옆에서 함께 졸기 😴",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😴",
+        "who": "H",
+        "text": "쉿, 고양이 잔다…"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😌",
+        "who": "H",
+        "text": "우리도 같이 졸자."
+      }
+    ]
+  }
+}

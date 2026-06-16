@@ -1,0 +1,48 @@
+{
+  "level": 60,
+  "hard": true,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "......N......",
+    "......N......",
+    "..PP..N..RR..",
+    "..PPPNNNRRR..",
+    "...PPNNNRR...",
+    "...PPPNRRR...",
+    "PPPPPPOOOOOOO",
+    "...GGGYOOO...",
+    "...GGYYYOO...",
+    "..GGGYYYOOO..",
+    "..GG..Y..OO..",
+    "......Y......",
+    "......Y......"
+  ],
+  "story": "💥 보스! 네뷸라 코어",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "face": "😊",
+        "text": "오늘도 너랑 같이라 좋아.",
+        "who": "H"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "face": "🥰",
+        "text": "나도. 다음 판도 가보자!",
+        "who": "M"
+      }
+    ]
+  }
+}

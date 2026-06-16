@@ -1,0 +1,51 @@
+{
+  "level": 340,
+  "hard": true,
+  "rows": 16,
+  "cols": 16,
+  "palette": {
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "................",
+    "...PNNNNNNNNR...",
+    "...PPNNNNNNRR...",
+    "..PPPNNNNNNRRR..",
+    ".PPPPPNNNNRRRRR.",
+    ".PPPPPPNNRRRRRR.",
+    "PPPPPPPNNRRRRRRR",
+    "PPPPPPPPRRRRRRRR",
+    "GGGGGGGGOOOOOOOO",
+    "GGGGGGGYYOOOOOOO",
+    ".GGGGGGYYOOOOOO.",
+    ".GGGGGYYYYOOOOO.",
+    "..GGGYYYYYYOOO..",
+    "...GGYYYYYYOO...",
+    "...GYYYYYYYYO...",
+    "................"
+  ],
+  "story": "💥 보스! 레인보우 다이아",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "face": "🎉",
+        "text": "또 하나 깼어!",
+        "who": "H"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "face": "🥹",
+        "text": "우리 추억이 쌓여간다.",
+        "who": "M"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "level": 426,
+  "hard": false,
+  "rows": 5,
+  "cols": 4,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "N": "#ff8fc7",
+    "P": "#c44dff"
+  },
+  "grid": [
+    ".B.N",
+    ".B.N",
+    ".B.N",
+    "CBPN",
+    "CBPN"
+  ],
+  "story": "📊 블록탑",
+  "dialogue": null
+}

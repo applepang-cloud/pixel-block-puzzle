@@ -1,0 +1,28 @@
+{
+  "level": 268,
+  "hard": false,
+  "rows": 11,
+  "cols": 11,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "....OBP....",
+    "....OBP....",
+    "....OBP....",
+    "....OBP....",
+    "BPNROBPNROB",
+    "BPNROBPNROB",
+    "BPNROBPNROB",
+    "....OBP....",
+    "....OBP....",
+    "....OBP....",
+    "....OBP...."
+  ],
+  "story": "➕ 십자",
+  "dialogue": null
+}

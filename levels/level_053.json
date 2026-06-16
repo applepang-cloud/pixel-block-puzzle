@@ -1,0 +1,23 @@
+{
+  "level": 53,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "G": "#2ed573",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...YYYYYYY...",
+    "..YYYYYYYYY..",
+    ".YYY.....YYY.",
+    "YYY..GGG..YYY",
+    "YYY..GGG..YYY",
+    "YYY..GGG..YYY",
+    ".YYY.....YYY.",
+    "..YYYYYYYYY..",
+    "...YYYYYYY..."
+  ],
+  "story": "🍩 달콤한 도넛",
+  "dialogue": null
+}

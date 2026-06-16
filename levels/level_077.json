@@ -1,0 +1,25 @@
+{
+  "level": 77,
+  "hard": false,
+  "rows": 10,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "BBBBBBBBBBBBB",
+    "PBPBPBPBPBPBP",
+    ".PPPPPPPPPPP.",
+    ".PNPPPNPPPP..",
+    "..PPPPPPPPP..",
+    "..PPNPPPNPP..",
+    "...PPPPPPP...",
+    "....PPPPP....",
+    ".....PPP.....",
+    "......P......"
+  ],
+  "story": "🍕 치즈 피자",
+  "dialogue": null
+}

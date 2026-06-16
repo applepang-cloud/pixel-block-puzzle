@@ -1,0 +1,27 @@
+{
+  "level": 64,
+  "hard": false,
+  "rows": 11,
+  "cols": 11,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "....G......",
+    "...GGG.....",
+    "..GGGGG....",
+    "..GCCCG....",
+    "..GGGGG....",
+    "..GGGGG....",
+    "..BGGGB....",
+    ".BBGGGBB...",
+    ".B.PPP.B...",
+    "...PPP.....",
+    "...P.P....."
+  ],
+  "story": "🚀 우주로 발사",
+  "dialogue": null
+}

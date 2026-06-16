@@ -1,0 +1,23 @@
+{
+  "level": 99,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "K": "#39395a"
+  },
+  "grid": [
+    ".BB.....BB...",
+    "BBBB...BBBB..",
+    "BBBBB.BBBBB..",
+    "BBBBBKBBBBB..",
+    "...BBKBB.....",
+    "BBBBBKBBBBB..",
+    "BBBBB.BBBBB..",
+    "BBBB...BBBB..",
+    ".BB.....BB..."
+  ],
+  "story": "🦋 나비",
+  "dialogue": null
+}

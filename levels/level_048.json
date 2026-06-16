@@ -1,0 +1,43 @@
+{
+  "level": 48,
+  "hard": false,
+  "rows": 10,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "BBBBBBBBYYYBB",
+    "BBBBBBBYYYBBB",
+    "BBBBBBYYYBBBB",
+    "BBBBBYYYBBBBB",
+    "BBBBYYYYYYBBB",
+    "BBBBBBBYYYBBB",
+    "BBBBBBYYYBBBB",
+    "BBBBBYYYBBBBB",
+    "BBBBYYYBBBBBB",
+    "BBBYYYBBBBBBB"
+  ],
+  "story": "번개처럼 빠르게 네게 달려갈게 ⚡",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "⚡",
+        "who": "H",
+        "text": "부르면 번개처럼 달려와 줘."
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😊",
+        "who": "M",
+        "text": "어디든 0.1초 만에 갈게."
+      }
+    ]
+  }
+}

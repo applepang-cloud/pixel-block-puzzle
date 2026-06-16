@@ -1,0 +1,21 @@
+{
+  "level": 66,
+  "hard": false,
+  "rows": 7,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3"
+  },
+  "grid": [
+    "...CCCCC.....",
+    "..CCCCCCC....",
+    ".CCCCCCCCC...",
+    "BBBBBBBBBBBBB",
+    ".CCCCCCCCC.B.",
+    "..CCCCCCC....",
+    "...CCCCC....."
+  ],
+  "story": "🪐 신비한 행성",
+  "dialogue": null
+}

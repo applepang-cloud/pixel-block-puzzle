@@ -1,0 +1,44 @@
+{
+  "level": 43,
+  "hard": false,
+  "rows": 10,
+  "cols": 13,
+  "palette": {
+    "R": "#ff4757",
+    "W": "#f5f5fa",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "..Y.YY.YY....",
+    ".YYYYYYYYYYY.",
+    "YYYYYYYYYYYYY",
+    ".RWRWRWRWRWR.",
+    ".RWRWRWRWRWR.",
+    ".RWRWRWRWRWR.",
+    ".RWRWRWRWRWR.",
+    ".RWRWRWRWRWR.",
+    "..RWRWRWRWR..",
+    "...RRRRRRR..."
+  ],
+  "story": "팝콘 가득 안고 영화관 맨 앞줄 🍿",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🍿",
+        "who": "H",
+        "text": "팝콘은 큰 사이즈지!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😆",
+        "who": "M",
+        "text": "맨 앞줄은 목 아파…"
+      }
+    ]
+  }
+}

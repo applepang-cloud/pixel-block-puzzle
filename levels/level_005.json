@@ -1,0 +1,47 @@
+{
+  "level": 5,
+  "hard": false,
+  "rows": 11,
+  "cols": 12,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "R": "#ff4757",
+    "W": "#f5f5fa",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".N........N.",
+    "NWWN....NWWN",
+    ".WWWWWWWWWW.",
+    ".WKWWWWWWKW.",
+    ".WWWWWWWWWW.",
+    ".WWWNNNNWWW.",
+    ".WWWWWWWWWW.",
+    "..WWWWWWWW..",
+    "...RRRRRR...",
+    "....RYYR....",
+    "............"
+  ],
+  "story": "첫 대화, 감성세포들이 폭죽을 터뜨렸다.",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😆",
+        "who": "H",
+        "text": "대화가 이렇게 즐거울 일이야?"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😄",
+        "who": "M",
+        "text": "다음에 커피라도 같이 마실래요?"
+      }
+    ]
+  }
+}

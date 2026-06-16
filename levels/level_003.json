@@ -1,0 +1,46 @@
+{
+  "level": 3,
+  "hard": false,
+  "rows": 12,
+  "cols": 14,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "..............",
+    ".....OOOO.....",
+    "...OOOOOOOO...",
+    "..OOWWOOWWOO..",
+    ".OOWWWOOWWWOO.",
+    "OOKWWWOOWWWOOO",
+    "OOKWWWOOWWWOOO",
+    ".OOWWWOOWWWOO.",
+    "..OOWWOOWWOO..",
+    "...OOOOOOOO...",
+    ".....OOOO.....",
+    ".............."
+  ],
+  "story": "눈이 마주쳤어! 부끄럼세포가 빨개졌다.",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😯",
+        "who": "H",
+        "text": "헉, 눈 마주쳤어!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🙂",
+        "who": "M",
+        "text": "저기… 혹시 우리 본 적 있죠?"
+      }
+    ]
+  }
+}

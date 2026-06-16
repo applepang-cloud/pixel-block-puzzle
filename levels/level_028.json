@@ -1,0 +1,46 @@
+{
+  "level": 28,
+  "hard": false,
+  "rows": 12,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "..OOO...OOO..",
+    ".OOOO...OOOO.",
+    ".OOOOOOOOOOO.",
+    "OOOOOOOOOOOOO",
+    "OOKKOOOOOKKOO",
+    "OOOOOOOOOOOOO",
+    "OOOOWWWWWOOOO",
+    "OOOWWWKWWWOOO",
+    "OOOOWWWWWOOOO",
+    "OOOOOOOOOOOOO",
+    ".OOOOOOOOOOO.",
+    "..OOOOOOOOO.."
+  ],
+  "story": "곰 인형을 닮은 그가 날 꼭 안아줬다 🐻",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🐻",
+        "who": "M",
+        "text": "곰돌이 인형, 너 닮아서 샀어."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥰",
+        "who": "H",
+        "text": "그럼 매일 안고 잘래."
+      }
+    ]
+  }
+}

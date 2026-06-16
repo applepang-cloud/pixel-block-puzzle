@@ -1,0 +1,49 @@
+{
+  "level": 180,
+  "hard": true,
+  "rows": 14,
+  "cols": 14,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "..............",
+    "...PNN..OOY...",
+    "...NRR..YYB...",
+    "...NRROOYYB...",
+    "....OOYYBB....",
+    ".NRROOYYBBPPN.",
+    "RROOYYBBPPNNRR",
+    "RROOYYBBPPNNRR",
+    ".OYYBBPPNNRRO.",
+    "....BBPPNN....",
+    "...BPPNNRRO...",
+    "...BPP..RRO...",
+    "...PNN..OOY...",
+    ".............."
+  ],
+  "story": "💥 보스! 크리스탈 만다라",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "face": "🤩",
+        "text": "색이 정말 다양하다!",
+        "who": "H"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "face": "😄",
+        "text": "하나씩 맞춰보자.",
+        "who": "M"
+      }
+    ]
+  }
+}

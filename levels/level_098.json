@@ -1,0 +1,23 @@
+{
+  "level": 98,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "C": "#00d2d3",
+    "K": "#39395a"
+  },
+  "grid": [
+    "...K..K......",
+    "....KK.......",
+    "..CCCCCCCCC..",
+    ".CCKCCCCCKCC.",
+    "CCCCCKCCCCCCC",
+    "CCKCCCCCKCCCC",
+    "CCCCCKCCCCCCC",
+    ".CCCCCCCCCCC.",
+    "..CCCCCCCCC.."
+  ],
+  "story": "🐞 무당벌레",
+  "dialogue": null
+}

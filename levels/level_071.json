@@ -1,0 +1,25 @@
+{
+  "level": 71,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "RR.........RR",
+    "RRR.......RRR",
+    "RRRRRRRRRRRRR",
+    "RRKKRRRRRKKRR",
+    "RRKKRRRRRKKRR",
+    "RRRRRORRRRRRR",
+    "RRYRYRYRYRYRR",
+    ".RRRRRRRRRRR.",
+    "..RRRRRRRRR.."
+  ],
+  "story": "🐱 귀여운 고양이",
+  "dialogue": null
+}

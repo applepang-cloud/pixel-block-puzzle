@@ -1,0 +1,30 @@
+{
+  "level": 55,
+  "hard": true,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    ".....O.......",
+    "....OR.......",
+    "....RRR.RRO..",
+    ".OR..NNNNR...",
+    ".ORNNPPPNN...",
+    "..RNPPBPPNR..",
+    "....PBBBPNRRO",
+    "..RNPPBPPNR..",
+    ".ORNNPPPNN...",
+    ".OR..NNNNR...",
+    "....RRR.RRO..",
+    "....OR.......",
+    ".....O......."
+  ],
+  "story": "💥 보스! 갤럭시 젬",
+  "dialogue": null
+}

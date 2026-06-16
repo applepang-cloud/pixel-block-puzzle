@@ -1,0 +1,46 @@
+{
+  "level": 39,
+  "hard": false,
+  "rows": 12,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....YYYYY....",
+    "...YYYYYYY...",
+    "..YYYYYYYYY..",
+    "..YYKYYYKYY..",
+    "..YYYOOOYYY..",
+    "..YYYYYYYYY..",
+    ".YYYYYYYYYYY.",
+    "YYYYYYYYYYYYY",
+    "YYYYYYYYYYYYY",
+    ".YYYYYYYYYYY.",
+    "..YYYYYYYYY..",
+    "...O.....O..."
+  ],
+  "story": "삐악삐악, 마당에 병아리가 태어났어 🐤",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🐤",
+        "who": "H",
+        "text": "삐악! 병아리가 태어났어!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😊",
+        "who": "M",
+        "text": "우리가 키워보자."
+      }
+    ]
+  }
+}

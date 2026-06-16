@@ -1,0 +1,22 @@
+{
+  "level": 94,
+  "hard": false,
+  "rows": 7,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "...NNNNNN....",
+    "..NNNNNNNN...",
+    ".NNRRNNRRNN..",
+    "NNNNNNNNNNNN.",
+    "NNNNNNNNNNNN.",
+    "NKN.....NKN..",
+    "NKN.....NKN.."
+  ],
+  "story": "🚗 자동차",
+  "dialogue": null
+}

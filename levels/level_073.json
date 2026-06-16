@@ -1,0 +1,24 @@
+{
+  "level": 73,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "G": "#2ed573",
+    "K": "#39395a",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....YYYYY....",
+    "..YYYYYYYYY..",
+    ".YYYYYYYYYYY.",
+    "YYYYYYYYYYYYY",
+    "YYKKYYYYYKKYY",
+    "YYKKYYYYYKKYY",
+    "YYYYYYYYYYYYY",
+    "YYYGGYYYGGYYY",
+    "YYYYYYYYYYYYY"
+  ],
+  "story": "🟢 말랑 슬라임",
+  "dialogue": null
+}

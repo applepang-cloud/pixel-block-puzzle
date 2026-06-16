@@ -1,0 +1,25 @@
+{
+  "level": 458,
+  "hard": false,
+  "rows": 5,
+  "cols": 8,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...OY...",
+    "..ROYG..",
+    ".NROYGC.",
+    "PNROYGCB",
+    "PNROYGCB"
+  ],
+  "story": "📊 블록탑",
+  "dialogue": null
+}

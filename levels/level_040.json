@@ -1,0 +1,50 @@
+{
+  "level": 40,
+  "hard": true,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".....OOO.....",
+    "...ROOOOOY...",
+    "..RROOOOOYYY.",
+    ".RRRROOOYYYY.",
+    "RRRRROOOYYYY.",
+    "RRRRRROYYYYYY",
+    "RRRRRRGGGGGGG",
+    "BBBBBBCGGGGGG",
+    "BBBBBCCCGGGG.",
+    ".BBBBCCCGGGG.",
+    "..BBCCCCCGGG.",
+    "...BCCCCCG...",
+    ".....CCC....."
+  ],
+  "story": "밤을 지키는 부엉이처럼 깊은 대화 🦉",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🦉",
+        "who": "M",
+        "text": "밤새 얘기해도 안 질려."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥰",
+        "who": "H",
+        "text": "네 목소리가 자장가 같아."
+      }
+    ]
+  }
+}

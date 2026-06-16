@@ -1,0 +1,25 @@
+{
+  "level": 57,
+  "hard": false,
+  "rows": 9,
+  "cols": 11,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "....B......",
+    "...BBB.....",
+    "..BBBBB.PP.",
+    ".BBBBBBB...",
+    "..NNNNN....",
+    "..RNRNR....",
+    "..RRRRR....",
+    "..RRRRR....",
+    "...RRR....."
+  ],
+  "story": "🧁 깜찍한 컵케이크",
+  "dialogue": null
+}

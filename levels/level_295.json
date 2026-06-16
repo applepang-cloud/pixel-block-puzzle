@@ -1,0 +1,33 @@
+{
+  "level": 295,
+  "hard": true,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...............",
+    "...YOR...ROY...",
+    "...ORBC.CBRO...",
+    "...RBCC.CCBR...",
+    "....CCG.GCC....",
+    "....CGYOYGC....",
+    ".BCCGYOROYGCCB.",
+    "BCCGYORRROYGCCB",
+    ".BCCGYOROYGCCB.",
+    "....CGYOYGC....",
+    "....CCG.GCC....",
+    "...RBCC.CCBR...",
+    "...ORBC.CBRO...",
+    "...YOR...ROY...",
+    "..............."
+  ],
+  "story": "💥 보스! 컬러 모자이크",
+  "dialogue": null
+}

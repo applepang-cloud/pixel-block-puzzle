@@ -1,0 +1,27 @@
+{
+  "level": 349,
+  "hard": false,
+  "rows": 11,
+  "cols": 11,
+  "palette": {
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "...........",
+    ".....PN....",
+    "...NPOPN...",
+    "..NPOROPN..",
+    ".NPORNROP..",
+    ".PORNPNROP.",
+    ".NPORNROP..",
+    "..NPOROPN..",
+    "...NPOPN...",
+    ".....PN....",
+    "..........."
+  ],
+  "story": "🔷 보석",
+  "dialogue": null
+}

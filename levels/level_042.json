@@ -1,0 +1,47 @@
+{
+  "level": 42,
+  "hard": false,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "W": "#f5f5fa"
+  },
+  "grid": [
+    "...KKKKKKK...",
+    "..KKKKKKKKK..",
+    "..KKKKKKKKK..",
+    "..KKWWWWWKK..",
+    "..KWKWWWKWK..",
+    "..KWWWOWWWK..",
+    ".KKWWWWWWWKK.",
+    "KKKWWWWWWWKKK",
+    "KKKWWWWWWWKKK",
+    "KKKWWWWWWWKKK",
+    ".KKWWWWWWWKK.",
+    "..KK.....KK..",
+    ".OOO.....OOO."
+  ],
+  "story": "아쿠아리움 펭귄 앞에서 손 잡고 🐧",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🐧",
+        "who": "M",
+        "text": "펭귄은 평생 한 짝만 사랑한대."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥹",
+        "who": "H",
+        "text": "우리처럼?"
+      }
+    ]
+  }
+}

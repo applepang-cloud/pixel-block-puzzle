@@ -1,0 +1,35 @@
+{
+  "level": 465,
+  "hard": true,
+  "rows": 17,
+  "cols": 17,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "......CG.........",
+    ".....CGYNYGC.....",
+    "....CGYNPNYGCC...",
+    "..CCGYNPPPNYGCC..",
+    ".CCGYNPPBPPNYGC..",
+    ".CGYNPPBCBPPNYGC.",
+    ".GYNPPBCGCBPPNYG.",
+    ".YNPPBCGYGCBPPNYG",
+    ".NPPBCGYYYGCBPPNY",
+    ".YNPPBCGYGCBPPNYG",
+    ".GYNPPBCGCBPPNYG.",
+    ".CGYNPPBCBPPNYGC.",
+    ".CCGYNPPBPPNYGC..",
+    "..CCGYNPPPNYGCC..",
+    "....CGYNPNYGCC...",
+    ".....CGYNYGC.....",
+    "......CG........."
+  ],
+  "story": "💥 보스! 무지개 보석",
+  "dialogue": null
+}

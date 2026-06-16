@@ -1,0 +1,46 @@
+{
+  "level": 41,
+  "hard": false,
+  "rows": 12,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....YYYY.....",
+    "...YYYYYY....",
+    "..YYKYYYYY...",
+    ".OOYYYYYYY...",
+    "OOOOYYYYYY...",
+    ".OOYYYYYYYY..",
+    "..YYYYYYYYYY.",
+    "..YYYYYYYYYY.",
+    ".YYYYYYYYYYYY",
+    ".YYYYYYYYYYY.",
+    "..YYYYYYYYY..",
+    "...OO...OO..."
+  ],
+  "story": "연못의 오리 가족을 구경하는 오후 🦆",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🦆",
+        "who": "H",
+        "text": "오리 가족 좀 봐, 줄 맞춰 가!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😊",
+        "who": "H",
+        "text": "우리도 저렇게 나란히."
+      }
+    ]
+  }
+}

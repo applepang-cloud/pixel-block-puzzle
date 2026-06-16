@@ -1,0 +1,23 @@
+{
+  "level": 81,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "...RRRRRRR...",
+    "..RRRRRRRRR..",
+    ".RRRRRRRRRRR.",
+    ".RRKRRRRRKRR.",
+    ".RRRRRRRRRRR.",
+    ".RRRRRRRRRRR.",
+    ".RRRRRRRRRRR.",
+    "R.R.R.R.R.R.R",
+    "R.R.R.R.R.R.R"
+  ],
+  "story": "🐙 문어",
+  "dialogue": null
+}

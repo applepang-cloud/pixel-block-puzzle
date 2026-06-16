@@ -1,0 +1,24 @@
+{
+  "level": 109,
+  "hard": false,
+  "rows": 9,
+  "cols": 13,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "P": "#c44dff"
+  },
+  "grid": [
+    ".......P.....",
+    "......PP.....",
+    ".....NN......",
+    "...NNNNN.....",
+    "..NNNNNNN....",
+    ".NNNNNNNN....",
+    "NNKNNNNNN....",
+    ".NNNNNNNN....",
+    "..N.N..N.N..."
+  ],
+  "story": "🦄 유니콘",
+  "dialogue": null
+}

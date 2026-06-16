@@ -1,0 +1,47 @@
+{
+  "level": 4,
+  "hard": false,
+  "rows": 13,
+  "cols": 14,
+  "palette": {
+    "C": "#00d2d3",
+    "O": "#ff9f43",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....YYYY......",
+    "...YYYYYY.CC..",
+    "..YYYY...Y.CC.",
+    ".YYYY.........",
+    ".YYY.......OO.",
+    "YYYY.......OO.",
+    "YYYY..........",
+    "YYYY.....CC...",
+    ".YYY.....CC...",
+    ".YYYY.....OO..",
+    "..YYYY....OO..",
+    "...YYYYYY.....",
+    "....YYYY......"
+  ],
+  "story": "용기세포가 외친다 — 먼저 인사해 볼까?",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😤",
+        "who": "H",
+        "text": "좋아, 오늘은 먼저 인사하는 거야!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😊",
+        "who": "H",
+        "text": "말 걸었어… 나 해냈어!"
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "level": 30,
+  "hard": true,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "........P....",
+    ".....COCB....",
+    "..PBCOROCB...",
+    ".PBCORNROCB..",
+    ".BCORNPNROCB.",
+    ".CORNPBPNROC.",
+    ".ORNPBCBPNROC",
+    ".CORNPBPNROC.",
+    ".BCORNPNROCB.",
+    ".PBCORNROCB..",
+    "..PBCOROCB...",
+    ".....COCB....",
+    "........P...."
+  ],
+  "story": "여우비 내리던 날의 첫 우산 데이트 🦊",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🌂",
+        "who": "H",
+        "text": "우산 같이 쓸래? 비 와."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😳",
+        "who": "H",
+        "text": "어깨가… 자꾸 닿네."
+      }
+    ]
+  }
+}

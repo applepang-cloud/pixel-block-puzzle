@@ -1,0 +1,22 @@
+{
+  "level": 76,
+  "hard": false,
+  "rows": 8,
+  "cols": 13,
+  "palette": {
+    "C": "#00d2d3",
+    "K": "#39395a"
+  },
+  "grid": [
+    "C.C.C.C.C.C.C",
+    "CCCCCCCCCCCCC",
+    "CCCCCCCCCCCCC",
+    "CCKCCCKCCCKCC",
+    "CCCCCCCCCCCCC",
+    "CCCCCKKCCCCCC",
+    "CCCCCKKCCCCCC",
+    "CCCCCKKCCCCCC"
+  ],
+  "story": "🏰 멋진 성",
+  "dialogue": null
+}

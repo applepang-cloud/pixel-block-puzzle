@@ -1,0 +1,23 @@
+{
+  "level": 96,
+  "hard": false,
+  "rows": 8,
+  "cols": 13,
+  "palette": {
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "......R......",
+    "....RRRRR....",
+    "..RRRRRRRRR..",
+    "RRRRRRRRRRRRR",
+    ".OOOO.Y.OOO..",
+    ".OOOO.Y.OOO..",
+    ".OOOOOY.OOO..",
+    ".OOOOOY.OOO.."
+  ],
+  "story": "🏠 우리집",
+  "dialogue": null
+}
