@@ -1,37 +1,22 @@
 {
   "level": 348,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 7,
+  "cols": 12,
   "palette": {
-    "B": "#1e90ff",
-    "N": "#ff8fc7",
+    "K": "#39395a",
     "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "R": "#ff4757"
   },
   "grid": [
-    "...................",
-    ".........R.........",
-    "......BPNROYB......",
-    "....OYBPNROYBPN....",
-    "...ROYBPNROYBPNR...",
-    "...ROYBPNROYBPNR...",
-    "..NROYBPNROYBPNRO..",
-    "..NROYBPNROYBPNRO..",
-    "..NROYBPNROYBPNRO..",
-    ".PNROYBPNROYBPNROY.",
-    "..NROYBPNROYBPNRO..",
-    "..NROYBPNROYBPNRO..",
-    "..NROYBPNROYBPNRO..",
-    "...ROYBPNROYBPNR...",
-    "...ROYBPNROYBPNR...",
-    "....OYBPNROYBPN....",
-    "......BPNROYB......",
-    ".........R.........",
-    "..................."
+    "KK........KK",
+    ".RRKKRRRRKKR",
+    "RRRRKKRRKKRR",
+    "RRKKKKKKKKKR",
+    "RRRRKRRRRKRR",
+    "RRRRRRORRRRR",
+    ".RRRRRRRRRR."
   ],
-  "story": "🔷 보석",
+  "story": "✨ 너구리↔",
   "dialogue": null
 }

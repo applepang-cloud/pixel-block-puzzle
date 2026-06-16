@@ -1,28 +1,24 @@
 {
   "level": 408,
   "hard": false,
-  "rows": 11,
-  "cols": 11,
+  "rows": 8,
+  "cols": 13,
   "palette": {
-    "G": "#2ed573",
+    "B": "#1e90ff",
+    "K": "#39395a",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "P": "#c44dff"
   },
   "grid": [
-    "NNNNNRRRRRR",
-    "NNNNNRRRRRR",
-    "NNNNNRRRRRR",
-    "NNN.....RRR",
-    "NNN.....RRR",
-    "GGG.....OOO",
-    "YYY.....OOO",
-    "YYY.....OOO",
-    "YYYYYYOOOOO",
-    "YYYYYYOOOOO",
-    "YYYYYYOOOOO"
+    "BB.........BB",
+    "BPB.......BPB",
+    "BPKB.....BKPB",
+    "BBBBBBBBBBBBB",
+    "BBBBBBBBBBBBB",
+    "NNBBBBBBBBBNN",
+    ".NNBBBBBBBNN.",
+    "..N.......N.."
   ],
-  "story": "🖼️ 액자",
+  "story": "✨ 개구리2",
   "dialogue": null
 }

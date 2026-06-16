@@ -1,0 +1,23 @@
+{
+  "level": 662,
+  "hard": false,
+  "rows": 7,
+  "cols": 7,
+  "palette": {
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".GGYGG.",
+    "GGYOYGG",
+    "GYOROYG",
+    "YORRROY",
+    "GYOROYG",
+    "GGYOYGG",
+    ".GGYGG."
+  ],
+  "story": "➕ 십자",
+  "dialogue": null
+}

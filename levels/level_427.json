@@ -1,19 +1,20 @@
 {
   "level": 427,
   "hard": false,
-  "rows": 3,
-  "cols": 4,
+  "rows": 7,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "N": "#ff8fc7"
   },
   "grid": [
-    "..NR",
-    "BPNR",
-    "BPNR"
+    "....N......",
+    "....N......",
+    ".NNNNNNN...",
+    "..NNNNN....",
+    ".NNNNNNN...",
+    ".NN.N.NN...",
+    ".N..N..N..."
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 불가사리",
   "dialogue": null
 }

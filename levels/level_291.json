@@ -1,34 +1,22 @@
 {
   "level": 291,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 7,
+  "cols": 9,
   "palette": {
-    "G": "#2ed573",
-    "N": "#ff8fc7",
+    "K": "#39395a",
     "O": "#ff9f43",
-    "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    ".................",
-    ".......N.........",
-    "......NN...RR....",
-    "......NNRRRRRR...",
-    "..N.NNNNRRRRRR...",
-    "..NNNNNNRRRRR....",
-    "..NNNNNNRRRRRR...",
-    "...NNNNNRRRRRRRR.",
-    "...GGGGGOOOOOOOO.",
-    "...YYYYYYOOOOOOO.",
-    "..YYYYYYYOOOOO...",
-    "..YYYYYYYOOOO....",
-    "..Y.YYYYYOOOOO...",
-    "......YYYOOOOO...",
-    "......YY...OO....",
-    ".......Y.........",
-    "................."
+    "..OOOOOO.",
+    "..OOOOOO.",
+    ".YYYYYYYY",
+    ".KYOOOOOY",
+    ".KYOOOOOY",
+    "..YOOOOOY",
+    ".YYYYYYYY"
   ],
-  "story": "⚙️ 톱니바퀴",
+  "story": "✨ 주스↔",
   "dialogue": null
 }

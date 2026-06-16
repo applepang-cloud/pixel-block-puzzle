@@ -1,36 +1,23 @@
 {
   "level": 336,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 6,
+  "cols": 13,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
-    "N": "#ff8fc7",
-    "P": "#c44dff"
+    "P": "#c44dff",
+    "Y": "#ffd700"
   },
   "grid": [
-    "...................",
-    "...................",
-    ".....CCCCCCCCC.....",
-    ".....GCCCCCCCB.....",
-    "....GGGCCCCCBBB....",
-    "...GGGGCCCCCBBBB...",
-    "...GGGGGCCCBBBBB...",
-    "..GGGGGGCCCBBBBBB..",
-    "..GGGGGGGCBBBBBBB..",
-    ".CCCCCCCCPPPPPPPPP.",
-    "..GGGGGGGNPPPPPPP..",
-    "..GGGGGGNNNPPPPPP..",
-    "...GGGGGNNNPPPPP...",
-    "...GGGGNNNNNPPPP...",
-    "....GGGNNNNNPPP....",
-    ".....GNNNNNNNP.....",
-    ".....NNNNNNNNN.....",
-    "...................",
-    "..................."
+    "...Y..Y..Y..Y",
+    "..Y.YY.YYY.YY",
+    "..YYYYYYYYYYY",
+    "..YYGYYCYYBYY",
+    "..YYYYYYYYYYY",
+    "..PPPPPPPPPPP"
   ],
-  "story": "🔷 보석",
+  "story": "✨ 왕관3↔",
   "dialogue": null
 }

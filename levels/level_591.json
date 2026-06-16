@@ -1,0 +1,36 @@
+{
+  "level": 591,
+  "hard": false,
+  "rows": 19,
+  "cols": 19,
+  "palette": {
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...................",
+    ".........O.........",
+    ".......OOROO.......",
+    ".......ORCRO.......",
+    ".......RCGCR.......",
+    ".......CGGGC.......",
+    ".......GGYGG.......",
+    "..OORCGGYOYGGCROO..",
+    "..ORCGGYOROYGGCRO..",
+    ".ORCGGYORRROYGGCRO.",
+    "..ORCGGYOROYGGCRO..",
+    "..OORCGGYOYGGCROO..",
+    ".......GGYGG.......",
+    ".......CGGGC.......",
+    ".......RCGCR.......",
+    ".......ORCRO.......",
+    ".......OOROO.......",
+    ".........O.........",
+    "..................."
+  ],
+  "story": "🌸 예쁜 꽃",
+  "dialogue": null
+}

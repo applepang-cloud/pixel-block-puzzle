@@ -1,35 +1,22 @@
 {
   "level": 258,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 7,
+  "cols": 12,
   "palette": {
-    "B": "#1e90ff",
+    "K": "#39395a",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "P": "#c44dff"
   },
   "grid": [
-    "........N........",
-    ".....YBPNR.......",
-    "...ROYBPN........",
-    "..NROYBP.........",
-    "..NROYB..........",
-    ".PNROY...........",
-    ".PNROY...........",
-    ".PNROY...........",
-    "BPNROY...........",
-    ".PNROY...........",
-    ".PNROY...........",
-    ".PNROY...........",
-    "..NROYB..........",
-    "..NROYBP.........",
-    "...ROYBPN........",
-    ".....YBPNR.......",
-    "........N........"
+    ".....PPPP...",
+    "....PPPPPP..",
+    "...PPKPPP.N.",
+    "PPPPPPPPPP..",
+    ".PPPPPPPP...",
+    "..PPPPPP....",
+    "...PP.PP...."
   ],
-  "story": "🌙 초승달",
+  "story": "✨ 비둘기",
   "dialogue": null
 }

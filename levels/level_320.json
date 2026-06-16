@@ -1,8 +1,8 @@
 {
   "level": 320,
   "hard": true,
-  "rows": 16,
-  "cols": 16,
+  "rows": 22,
+  "cols": 22,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
@@ -12,39 +12,47 @@
     "Y": "#ffd700"
   },
   "grid": [
-    ".....PBCCBP.....",
-    "...NPBCGGCBPN...",
-    "..NPBCGYYGCBPN..",
-    ".NPBCGYNNYGCBPN.",
-    ".PBCGYNPPNYGCBP.",
-    "PBCGYNPBBPNYGCBP",
-    "BCGYNPBCCBPNYGCB",
-    "CGYNPBCGGCBPNYGC",
-    "CGYNPBCGGCBPNYGC",
-    "BCGYNPBCCBPNYGCB",
-    "PBCGYNPBBPNYGCBP",
-    ".PBCGYNPPNYGCBP.",
-    ".NPBCGYNNYGCBPN.",
-    "..NPBCGYYGCBPN..",
-    "...NPBCGGCBPN...",
-    ".....PBCCBP....."
+    "..........CC..........",
+    ".........CCCC.........",
+    "........CCGGCC........",
+    ".......CCGYYGCC.......",
+    "......CCGYNNYGCC......",
+    ".....CCGYNPPNYGCC.....",
+    "....CCGYNPPPPNYGCC....",
+    "...CCGYNPPBBPPNYGCC...",
+    "..CCGYNPPBCCBPPNYGCC..",
+    ".CCGYNPPBCGGCBPPNYGCC.",
+    "CCGYNPPBCGYYGCBPPNYGCC",
+    "CCGYNPPBCGYYGCBPPNYGCC",
+    ".CCGYNPPBCGGCBPPNYGCC.",
+    "..CCGYNPPBCCBPPNYGCC..",
+    "...CCGYNPPBBPPNYGCC...",
+    "....CCGYNPPPPNYGCC....",
+    ".....CCGYNPPNYGCC.....",
+    "......CCGYNNYGCC......",
+    ".......CCGYYGCC.......",
+    "........CCGGCC........",
+    ".........CCCC.........",
+    "..........CC.........."
   ],
   "story": "💥 보스! 오로라 젬",
   "dialogue": {
     "intro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "💖",
-        "text": "너랑 하면 시간 가는 줄 몰라.",
-        "who": "H"
+        "who": "H",
+        "text": "너랑 하면 시간 가는 줄 몰라."
       }
     ],
     "outro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "😊",
-        "text": "계속 함께하자.",
-        "who": "M"
+        "who": "M",
+        "text": "계속 함께하자."
       }
     ]
   }

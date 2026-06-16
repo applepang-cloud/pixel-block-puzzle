@@ -1,32 +1,22 @@
 {
   "level": 368,
   "hard": false,
-  "rows": 15,
-  "cols": 15,
+  "rows": 7,
+  "cols": 13,
   "palette": {
-    "G": "#2ed573",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "P": "#c44dff"
   },
   "grid": [
-    "...............",
-    "......NRR......",
-    "....NNNRRRR....",
-    "...NNNNRRRRR...",
-    "..NNNNNRRRRRR..",
-    "..NNNNNRRRRRR..",
-    ".NNNNNNRRRRRRR.",
-    ".GGGGGGOOOOOOO.",
-    ".YYYYYYYOOOOOO.",
-    "..YYYYYYOOOOO..",
-    "..YYYYYYOOOOO..",
-    "...YYYYYOOOO...",
-    "....YYYYOOO....",
-    "......YYO......",
-    "..............."
+    "......C......",
+    ".....CCC.....",
+    "....CCCCC....",
+    "....CBBBBC...",
+    "...CCCBBBCC..",
+    "...PP.CCC.PP.",
+    "..PPP.....PPP"
   ],
-  "story": "🔷 보석",
+  "story": "✨ 우주선↔",
   "dialogue": null
 }

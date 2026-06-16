@@ -1,0 +1,20 @@
+{
+  "level": 824,
+  "hard": false,
+  "rows": 4,
+  "cols": 4,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "G..P",
+    "GCBP",
+    "GCBP",
+    "GCBP"
+  ],
+  "story": "📊 블록탑",
+  "dialogue": null
+}

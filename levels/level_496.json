@@ -1,25 +1,22 @@
 {
   "level": 496,
   "hard": false,
-  "rows": 5,
-  "cols": 12,
+  "rows": 8,
+  "cols": 9,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
     "G": "#2ed573",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "K": "#39395a"
   },
   "grid": [
-    ".B.N.O.G.B.N",
-    ".B.N.O.G.B.N",
-    ".B.N.O.G.B.N",
-    "CBPNROYGCBPN",
-    "CBPNROYGCBPN"
+    ".GGGGG...",
+    "GGGGGGG..",
+    "GGGGGGG..",
+    "GGGGGGG..",
+    "GGGGGGG..",
+    ".GKKKG...",
+    "..KKK....",
+    "..KKK...."
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 아이스바",
   "dialogue": null
 }

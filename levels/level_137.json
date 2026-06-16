@@ -1,29 +1,22 @@
 {
   "level": 137,
   "hard": false,
-  "rows": 13,
-  "cols": 13,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "C": "#00d2d3",
+    "K": "#39395a"
   },
   "grid": [
-    ".............",
-    ".......R.....",
-    "....B..R.....",
-    "....BPNR.PN..",
-    "..N.BPNRBP...",
-    "..NRBPNRB....",
-    "....BPNRBPNR.",
-    "..NRBPNRB....",
-    "..N.BPNRBP...",
-    "....BPNR.PN..",
-    "....B..R.....",
-    ".......R.....",
-    "............."
+    ".....KKK...",
+    "....K...K..",
+    "...K.CC.K..",
+    "..CC.CCC...",
+    ".CCCCCCCC..",
+    "CCCCCCCCCC.",
+    ".CCCCCCCC..",
+    "..CCCCCC..."
   ],
-  "story": "⭐ 반짝 별",
+  "story": "✨ 체리2",
   "dialogue": null
 }

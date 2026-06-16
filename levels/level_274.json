@@ -1,29 +1,21 @@
 {
   "level": 274,
   "hard": false,
-  "rows": 13,
-  "cols": 13,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
-    "Y": "#ffd700"
+    "G": "#2ed573"
   },
   "grid": [
-    "...BYGCBYG...",
-    "...YGCBYGC...",
-    "...GCBYGCB...",
-    "BYGCBYGCBYGCB",
-    "YGCBYGCBYGCBY",
-    "GCBYGCBYGCBYG",
-    "CBYGCBYGCBYGC",
-    "BYGCBYGCBYGCB",
-    "YGCBYGCBYGCBY",
-    "GCBYGCBYGCBYG",
-    "...GCBYGCB...",
-    "...CBYGCBY...",
-    "...BYGCBYG..."
+    "G..........",
+    "GG.G.......",
+    "GGGG.G.....",
+    ".GGGGG.G...",
+    "..GGGGGG...",
+    "...GGGGG...",
+    "....GGG....",
+    ".....G....."
   ],
-  "story": "➕ 십자",
+  "story": "✨ 고사리",
   "dialogue": null
 }

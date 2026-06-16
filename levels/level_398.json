@@ -1,38 +1,24 @@
 {
   "level": 398,
   "hard": false,
-  "rows": 21,
-  "cols": 21,
+  "rows": 8,
+  "cols": 12,
   "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
     "G": "#2ed573",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "K": "#39395a"
   },
   "grid": [
-    ".....................",
-    "........NNRRR........",
-    "......NNNNRRRRR......",
-    "....NNNNNNRRRRRRR....",
-    "...NNNNNNNRRRRRRRR...",
-    "...NNNNNNNRRRRRRRR...",
-    "..NNNNNNNNRRRRRRRRR..",
-    "..NNNNNNNNRRRRRRRRR..",
-    ".NNNNNNNN...RRRRRRRR.",
-    ".NNNNNNN.....RRRRRRR.",
-    ".GGGGGGG.....OOOOOOO.",
-    ".YYYYYYY.....OOOOOOO.",
-    ".YYYYYYYY...OOOOOOOO.",
-    "..YYYYYYYYYOOOOOOOO..",
-    "..YYYYYYYYYOOOOOOOO..",
-    "...YYYYYYYYOOOOOOO...",
-    "...YYYYYYYYOOOOOOO...",
-    "....YYYYYYYOOOOOO....",
-    "......YYYYYOOOO......",
-    "........YYYOO........",
-    "....................."
+    "G..........G",
+    "GG........GG",
+    "GGGGGGGGGGGG",
+    "GCKCGGGCKCGG",
+    "GGGGGGGGGGGG",
+    ".GCCCBCCCG..",
+    "..CCCCCCC...",
+    "...CCCCC...."
   ],
-  "story": "💍 고리",
+  "story": "✨ 여우2",
   "dialogue": null
 }

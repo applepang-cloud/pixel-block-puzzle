@@ -1,0 +1,29 @@
+{
+  "level": 806,
+  "hard": false,
+  "rows": 11,
+  "cols": 11,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "BPNROYBPNRO",
+    "B.........O",
+    "B.........O",
+    "B.........O",
+    "B.........O",
+    "B.........O",
+    "B.........O",
+    "B.........O",
+    "B.........O",
+    "B.........O",
+    "BPNROYBPNRO"
+  ],
+  "story": "🖼️ 액자",
+  "dialogue": null
+}

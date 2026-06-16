@@ -2,26 +2,23 @@
   "level": 488,
   "hard": false,
   "rows": 7,
-  "cols": 11,
+  "cols": 13,
   "palette": {
     "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
     "N": "#ff8fc7",
     "O": "#ff9f43",
     "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "R": "#ff4757"
   },
   "grid": [
-    "..........R",
-    "........PNR",
-    "......CBPNR",
-    "....YGCBPNR",
-    "..ROYGCBPNR",
-    "PNROYGCBPNR",
-    "PNROYGCBPNR"
+    "..BBBBBBB....",
+    ".BPPPPPPPB...",
+    "BPNNNNNNNPB..",
+    "PNRRRRRRRNP..",
+    "NROOOOOOORN..",
+    "RO.......OR..",
+    "O.........O.."
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 무지개2",
   "dialogue": null
 }

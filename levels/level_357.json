@@ -1,29 +1,21 @@
 {
   "level": 357,
   "hard": false,
-  "rows": 13,
-  "cols": 13,
+  "rows": 7,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "N": "#ff8fc7",
-    "P": "#c44dff"
+    "K": "#39395a",
+    "R": "#ff4757"
   },
   "grid": [
-    ".............",
-    ".....PNN.....",
-    "...PNNCCBB...",
-    "..PPNNCCBBP..",
-    "..NNCCBBPPN..",
-    "..NNCCBBPPN..",
-    ".NCCBBPPNNCC.",
-    "..CCBBPPNNC..",
-    "..BBPPNNCCB..",
-    "..BBPPNNCCB..",
-    "...PNNCCBB...",
-    ".....NCC.....",
-    "............."
+    ".....KKKKK.",
+    ".....KKKKK.",
+    ".....KKKKK.",
+    "......RR...",
+    "......RR...",
+    "......RR...",
+    "......RR..."
   ],
-  "story": "🔷 보석",
+  "story": "✨ 망치↔",
   "dialogue": null
 }

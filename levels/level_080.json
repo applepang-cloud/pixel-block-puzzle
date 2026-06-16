@@ -31,17 +31,19 @@
     "intro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "🤩",
-        "text": "색이 정말 다양하다!",
-        "who": "H"
+        "who": "H",
+        "text": "색이 정말 다양하다!"
       }
     ],
     "outro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "😄",
-        "text": "하나씩 맞춰보자.",
-        "who": "M"
+        "who": "M",
+        "text": "하나씩 맞춰보자."
       }
     ]
   }

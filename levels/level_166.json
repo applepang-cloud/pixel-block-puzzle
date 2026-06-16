@@ -1,37 +1,24 @@
 {
   "level": 166,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 7,
+  "cols": 13,
   "palette": {
-    "B": "#1e90ff",
     "C": "#00d2d3",
-    "N": "#ff8fc7",
+    "G": "#2ed573",
     "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "R": "#ff4757",
+    "Y": "#ffd700"
   },
   "grid": [
-    "...................",
-    "..........O........",
-    "......R...C........",
-    ".......R..C..B.....",
-    "...NR..O.CB.PP.....",
-    "....RR.OCCBBP......",
-    ".....OCCBBPPN.RR...",
-    "..RRO.CCBBPPNNR....",
-    "...OCCBBPPNNR......",
-    "......BBPPNNRROOCC.",
-    "...CBBPPNNRRO......",
-    "..CCB.PPNNRROOC....",
-    ".....PNNRROOC.BB...",
-    "....PP.NRROOC......",
-    "...PN..R.OC.BB.....",
-    ".......R..C..B.....",
-    "......O...B........",
-    "..........B........",
-    "..................."
+    ".R.O.R.O.R...",
+    "ROROROROROR..",
+    ".OYOYOYOYO...",
+    "..RGR.RGR....",
+    "...CCCCC.....",
+    "....CCC......",
+    "...C.C.C....."
   ],
-  "story": "⭐ 반짝 별",
+  "story": "✨ 공작",
   "dialogue": null
 }

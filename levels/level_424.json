@@ -1,20 +1,21 @@
 {
   "level": 424,
   "hard": false,
-  "rows": 4,
-  "cols": 4,
+  "rows": 7,
+  "cols": 13,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
-    "P": "#c44dff"
+    "K": "#39395a",
+    "Y": "#ffd700"
   },
   "grid": [
-    "G..P",
-    "GCBP",
-    "GCBP",
-    "GCBP"
+    ".......YYY...",
+    "......YYYYY..",
+    "YY...YYYYY...",
+    ".YYYYYYYKY...",
+    "..YYYYYYYY...",
+    "...YYYYYY....",
+    "....YY.YY...."
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 돌고래",
   "dialogue": null
 }

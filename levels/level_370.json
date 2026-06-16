@@ -1,10 +1,10 @@
 {
   "level": 370,
   "hard": true,
-  "rows": 16,
-  "cols": 16,
+  "rows": 22,
+  "cols": 22,
   "palette": {
-    "G": "#2ed573",
+    "B": "#1e90ff",
     "N": "#ff8fc7",
     "O": "#ff9f43",
     "P": "#c44dff",
@@ -12,39 +12,47 @@
     "Y": "#ffd700"
   },
   "grid": [
-    "......O.........",
-    ".....ORN....G...",
-    ".....RNP...OY...",
-    ".....NPGG.NRO...",
-    "GYOR..GYYGPNR...",
-    ".ORNPGYOOYGP....",
-    "..NPGYORROYG....",
-    "...GYORNNROYGPNR",
-    "...GYORNNROYGPNR",
-    "..NPGYORROYG....",
-    ".ORNPGYOOYGP....",
-    "GYOR..GYYGPNR...",
-    ".....NPGG.NRO...",
-    ".....RNP...OY...",
-    ".....ORN....G...",
-    "......O........."
+    ".............PN.......",
+    "............PNRO......",
+    "...........PNROY......",
+    "...........NROYB......",
+    "..BPNRO...NROYBP......",
+    ".BPNROYB..ROYBPN......",
+    "..NROYBPNROYBPN.......",
+    "..ROYBPNROYBPNR.......",
+    "...YBPNROYBPNROYBPN...",
+    "....PNROYBPNROYBPNROYB",
+    ".....ROYBPNROYBPNROYBP",
+    ".....OYBPNROYBPNROYBPN",
+    "....OYBPNROYBPNROYBPNR",
+    "...OYBPNROYBPNROYBP...",
+    "..OYBPNROYBPNRO.......",
+    "..YBPNROYBPNROY.......",
+    ".YBPNROY..NROYBP......",
+    "..PNROY...ROYBPN......",
+    "...........YBPNR......",
+    "...........BPNRO......",
+    "............NROY......",
+    ".............OY......."
   ],
   "story": "💥 보스! 오로라 젬",
   "dialogue": {
     "intro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "😎",
-        "text": "이건 좀 어려운데?",
-        "who": "M"
+        "who": "M",
+        "text": "이건 좀 어려운데?"
       }
     ],
     "outro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "💪",
-        "text": "우리 둘이면 문제없어!",
-        "who": "H"
+        "who": "H",
+        "text": "우리 둘이면 문제없어!"
       }
     ]
   }

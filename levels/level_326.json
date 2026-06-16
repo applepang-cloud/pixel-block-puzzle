@@ -1,31 +1,24 @@
 {
   "level": 326,
   "hard": false,
-  "rows": 13,
-  "cols": 13,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
   },
   "grid": [
-    ".............",
-    ".............",
-    ".....CCCC....",
-    "..GGGCCCBB...",
-    "..GGGCCCBB...",
-    "..GGGGCBBBB..",
-    "..GGGGPPPPPP.",
-    "..RRRRNPPPP..",
-    "..RRRNNNPP...",
-    "..RRRNNNPP...",
-    ".....NNNN....",
-    ".............",
-    "............."
+    "....ROROR..",
+    "...RRRRRRR.",
+    "...RKKKKKRR",
+    "...RKKKKKRR",
+    "...RKKKKKRR",
+    "....RRRRRR.",
+    ".....YYY...",
+    "......Y...."
   ],
-  "story": "🔷 보석",
+  "story": "✨ 해바라기↔",
   "dialogue": null
 }

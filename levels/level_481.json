@@ -1,30 +1,20 @@
 {
   "level": 481,
   "hard": false,
-  "rows": 10,
-  "cols": 10,
+  "rows": 6,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
-    "N": "#ff8fc7",
     "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "R": "#ff4757"
   },
   "grid": [
-    "....CB....",
-    "....CB....",
-    "...GCBP...",
-    "...GCBP...",
-    "..YGCBPN..",
-    "..YGCBPN..",
-    ".OYGCBPNR.",
-    ".OYGCBPNR.",
-    "ROYGCBPNRO",
-    "ROYGCBPNRO"
+    ".RRRRRRR...",
+    "RRORRRORR..",
+    ".RRRRRRR...",
+    "..RRRRR....",
+    "...RRR.....",
+    "....R......"
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 다이아2",
   "dialogue": null
 }

@@ -1,33 +1,22 @@
 {
   "level": 133,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 8,
+  "cols": 11,
   "palette": {
     "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
-    "Y": "#ffd700"
+    "P": "#c44dff"
   },
   "grid": [
-    ".................",
-    "........G........",
-    "........C........",
-    "...CB..CBY..BY...",
-    "...BYG.BYG.BYG...",
-    "....GCBYGCBYG....",
-    ".....BYGCBYG.....",
-    "...CBYGCBYGCBY...",
-    ".GCBYGCBYGCBYGCB.",
-    "...YGCBYGCBYGC...",
-    ".....BYGCBYG.....",
-    "....BYGCBYGCB....",
-    "...BYG.BYG.BYG...",
-    "...YG..YGC..GC...",
-    "........C........",
-    "........B........",
-    "................."
+    ".....BB....",
+    "....BB.....",
+    "...PPPP....",
+    "..PPPPPP...",
+    "..PPPPPP...",
+    "..PPPPPP...",
+    "...PPPP....",
+    "....PP....."
   ],
-  "story": "⭐ 반짝 별",
+  "story": "✨ 가지",
   "dialogue": null
 }

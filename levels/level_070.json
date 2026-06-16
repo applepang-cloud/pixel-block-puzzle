@@ -31,17 +31,19 @@
     "intro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "😎",
-        "text": "이건 좀 어려운데?",
-        "who": "M"
+        "who": "M",
+        "text": "이건 좀 어려운데?"
       }
     ],
     "outro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "💪",
-        "text": "우리 둘이면 문제없어!",
-        "who": "H"
+        "who": "H",
+        "text": "우리 둘이면 문제없어!"
       }
     ]
   }

@@ -1,8 +1,8 @@
 {
   "level": 160,
   "hard": true,
-  "rows": 14,
-  "cols": 14,
+  "rows": 20,
+  "cols": 20,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
@@ -12,37 +12,45 @@
     "Y": "#ffd700"
   },
   "grid": [
-    "......OY......",
-    "......YG......",
-    "..BP..GC..OY..",
-    "..POY.CB.OYG..",
-    "...YGCBPOYG...",
-    "....CBPOYG....",
-    "OYGCBPOYGCBPOY",
-    "YGCBPOYGCBPOYG",
-    "....OYGCBP....",
-    "...OYGCBPOY...",
-    "..OYG.BP.YGC..",
-    "..YG..PO..CB..",
-    "......OY......",
-    "......YG......"
+    "......CCBBPPOO......",
+    ".....GCCBBPPOOY.....",
+    "...GCCBBPPOOYYGGC...",
+    "..GGCCBBPPOOYYGGCC..",
+    ".GCCBBPPOOYYGGCCBBP.",
+    ".GCCBBPPOOYYGGCCBBP.",
+    ".CBBPPOOYYGGCCBBPPO.",
+    "CCBBPPOOYYGGCCBBPPOO",
+    "BBPPOOYYGGCCBBPPOOYY",
+    "BBPPOOYYGGCCBBPPOOYY",
+    "PPOOYYGGCCBBPPOOYYGG",
+    "PPOOYYGGCCBBPPOOYYGG",
+    "OOYYGGCCBBPPOOYYGGCC",
+    ".OYYGGCCBBPPOOYYGGC.",
+    ".YGGCCBBPPOOYYGGCCB.",
+    ".YGGCCBBPPOOYYGGCCB.",
+    "..CCBBPPOOYYGGCCBB..",
+    "...CBBPPOOYYGGCCB...",
+    ".....POOYYGGCCB.....",
+    "......OOYYGGCC......"
   ],
   "story": "💥 보스! 네뷸라 코어",
   "dialogue": {
     "intro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "😊",
-        "text": "오늘도 너랑 같이라 좋아.",
-        "who": "H"
+        "who": "H",
+        "text": "오늘도 너랑 같이라 좋아."
       }
     ],
     "outro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "🥰",
-        "text": "나도. 다음 판도 가보자!",
-        "who": "M"
+        "who": "M",
+        "text": "나도. 다음 판도 가보자!"
       }
     ]
   }

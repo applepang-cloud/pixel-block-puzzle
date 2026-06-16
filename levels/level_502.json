@@ -1,0 +1,21 @@
+{
+  "level": 502,
+  "hard": false,
+  "rows": 7,
+  "cols": 11,
+  "palette": {
+    "K": "#39395a",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "..PPPPP....",
+    ".PPPPPPP...",
+    "PPKPPKPPP..",
+    "PPPPPPPPP..",
+    "PPKPPKPPP..",
+    ".PPPPPPP...",
+    "..PPPPP...."
+  ],
+  "story": "✨ 빵",
+  "dialogue": null
+}

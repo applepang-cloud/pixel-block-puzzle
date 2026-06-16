@@ -1,0 +1,53 @@
+{
+  "level": 790,
+  "hard": true,
+  "rows": 16,
+  "cols": 16,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".........GG.....",
+    "........GGGG....",
+    "..YY...GGGGC....",
+    ".YYYYG.GGGGC....",
+    ".YYYYYGGGGCC....",
+    ".YYYYYYGGCC.....",
+    "..YYYYYGGCCCCCCC",
+    "....YYYYCCCCCCCC",
+    "....NNNNBBBBBBBB",
+    "..NNNNNPPBBBBBBB",
+    ".NNNNNNPPBB.....",
+    ".NNNNNPPPPBB....",
+    ".NNNNP.PPPPB....",
+    "..NN...PPPPB....",
+    "........PPPP....",
+    ".........PP....."
+  ],
+  "story": "💥 보스! 레인보우 다이아",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🍀",
+        "who": "M",
+        "text": "왠지 오늘 운이 좋아."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "✨",
+        "who": "H",
+        "text": "행운이 함께하길!"
+      }
+    ]
+  }
+}

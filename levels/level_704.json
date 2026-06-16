@@ -1,0 +1,31 @@
+{
+  "level": 704,
+  "hard": false,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...............",
+    "......B.G......",
+    ".....BY.CB.....",
+    ".....YGCBY.C...",
+    "..CBYGCBYGCBY..",
+    "...YGCBYGCBY...",
+    "...GCBYGCBYG...",
+    ".YGCBYGCBYGCBY.",
+    "...BYGCBYGCB...",
+    "...YGCBYGCBY...",
+    "..YGCBYGCBYGC..",
+    ".....YGCBY.C...",
+    ".....GC.YG.....",
+    "......B.G......",
+    "..............."
+  ],
+  "story": "⚙️ 톱니바퀴",
+  "dialogue": null
+}

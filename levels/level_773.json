@@ -1,0 +1,27 @@
+{
+  "level": 773,
+  "hard": false,
+  "rows": 11,
+  "cols": 11,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "...........",
+    "....CCC....",
+    "..GGCCCBB..",
+    "..GGCCCBB..",
+    ".GGG...BBB.",
+    ".BBB...PPP.",
+    ".CCC...PPP.",
+    "..CCGGGPP..",
+    "..CCGGGPP..",
+    "....GGG....",
+    "..........."
+  ],
+  "story": "💍 고리",
+  "dialogue": null
+}

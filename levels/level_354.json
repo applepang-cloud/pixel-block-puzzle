@@ -1,36 +1,22 @@
 {
   "level": 354,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 7,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
-    "P": "#c44dff",
-    "Y": "#ffd700"
+    "K": "#39395a"
   },
   "grid": [
-    "...................",
-    "..........G........",
-    ".....CBPYGCBP......",
-    "....CBPYGCBPYGC....",
-    "...CBPYGCBPYGCBP...",
-    "...BPYGCBPYGCBPY...",
-    "..BPYGCBPYGCBPYGC..",
-    "..PYGCBPYGCBPYGCB..",
-    "..YGCBPYGCBPYGCBP..",
-    "..GCBPYGCBPYGCBPYG.",
-    "..CBPYGCBPYGCBPYG..",
-    "..BPYGCBPYGCBPYGC..",
-    "..PYGCBPYGCBPYGCB..",
-    "...GCBPYGCBPYGCB...",
-    "...CBPYGCBPYGCBP...",
-    "....PYGCBPYGCBP....",
-    ".....GCBPYGCB......",
-    "..........C........",
-    "..................."
+    "...G.....G.",
+    "...G.....G.",
+    "....CCCCC..",
+    "...CCCCCCC.",
+    "...CKCCCKCC",
+    "...CCCCCCC.",
+    "....CCCCC.."
   ],
-  "story": "🔷 보석",
+  "story": "✨ 메달↔",
   "dialogue": null
 }

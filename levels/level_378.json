@@ -1,32 +1,22 @@
 {
   "level": 378,
   "hard": false,
-  "rows": 15,
-  "cols": 15,
+  "rows": 8,
+  "cols": 13,
   "palette": {
-    "G": "#2ed573",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "K": "#39395a",
+    "N": "#ff8fc7"
   },
   "grid": [
-    "...............",
-    ".....NNRRR.....",
-    "....NNNRRRR....",
-    "...NNNNRRRRR...",
-    "..NNNNNRRRRRR..",
-    ".NNNNNNRRRRRRR.",
-    ".NNNNNNRRRRRRR.",
-    ".GGGGGG.OOOOOO.",
-    ".YYYYYYYOOOOOO.",
-    ".YYYYYYYOOOOOO.",
-    "..YYYYYYOOOOO..",
-    "...YYYYYOOOO...",
-    "....YYYYOOO....",
-    ".....YYYOO.....",
-    "..............."
+    "KKKKKKKKKKKKK",
+    "KNNNNNNNNNNNK",
+    "KNNKNNNNKNNNK",
+    "KNNNNNKNNNNNK",
+    "KNNNNNNNNNKNK",
+    "KNNKNNNNNNNNK",
+    ".KKKKKKKKKKK.",
+    "..KKKKKKKKK.."
   ],
-  "story": "💍 고리",
+  "story": "✨ 치즈",
   "dialogue": null
 }

@@ -1,32 +1,23 @@
 {
   "level": 483,
   "hard": false,
-  "rows": 12,
-  "cols": 11,
+  "rows": 7,
+  "cols": 13,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
-    "G": "#2ed573",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "P": "#c44dff"
   },
   "grid": [
-    "Y..........",
-    "YG.........",
-    "YGC........",
-    "YGCB.......",
-    "YGCBP......",
-    "YGCBPN.....",
-    "YGCBPNR....",
-    "YGCBPNRO...",
-    "YGCBPNROY..",
-    "YGCBPNROYG.",
-    "YGCBPNROYGC",
-    "YGCBPNROYGC"
+    "......C......",
+    "......C......",
+    ".....CCC.....",
+    "BBBBBBBBBBBB.",
+    ".BBBBBBBBBB..",
+    "..PPPPPPPP...",
+    "...NNNNNN...."
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 배",
   "dialogue": null
 }

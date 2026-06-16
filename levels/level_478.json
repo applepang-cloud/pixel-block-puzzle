@@ -1,25 +1,22 @@
 {
   "level": 478,
   "hard": false,
-  "rows": 5,
-  "cols": 10,
+  "rows": 9,
+  "cols": 13,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "G": "#2ed573"
   },
   "grid": [
-    ".N.O.G.B.N",
-    ".N.O.G.B.N",
-    ".N.O.G.B.N",
-    "PNROYGCBPN",
-    "PNROYGCBPN"
+    ".GG.....GG...",
+    "GGGGG.GGGGG..",
+    "GGGGGGGGGGG..",
+    "GGGGGGGGGGG..",
+    ".GGGGGGGGG...",
+    "..GGGGGGG....",
+    "...GGGGG.....",
+    "....GGG......",
+    ".....G......."
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 하트2",
   "dialogue": null
 }

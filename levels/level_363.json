@@ -1,29 +1,23 @@
 {
   "level": 363,
   "hard": false,
-  "rows": 13,
+  "rows": 7,
   "cols": 13,
   "palette": {
+    "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
-    "O": "#ff9f43",
-    "Y": "#ffd700"
+    "P": "#c44dff"
   },
   "grid": [
-    ".............",
-    ".....CCC.....",
-    "...CCGGGCC...",
-    "..CCGGGGGCC..",
-    "..CGGYYYGGC..",
-    ".CGGYYOYYGGC.",
-    ".CGGYOOOYGGC.",
-    ".CGGYYOYYGGC.",
-    "..CGGYYYGGC..",
-    "..CCGGGGGCC..",
-    "...CCGGGCC...",
-    ".....CCC.....",
-    "............."
+    ".........G...",
+    "....GGGGGGGGG",
+    "..CGGGGGGGGC.",
+    ".CCGGBGGBGGCC",
+    "..CGGGGGGGGC.",
+    "....GGGGGGG..",
+    ".....P...P..."
   ],
-  "story": "🔷 보석",
+  "story": "✨ 잠수함↔",
   "dialogue": null
 }

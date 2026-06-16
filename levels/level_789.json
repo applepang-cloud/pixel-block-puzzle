@@ -1,0 +1,36 @@
+{
+  "level": 789,
+  "hard": false,
+  "rows": 19,
+  "cols": 19,
+  "palette": {
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...................",
+    ".......YOOOY.......",
+    ".....GYOOROOYG.....",
+    "....GYOORCROOYG....",
+    "...GYOORCGCROOYG...",
+    "..GYOORCGGGCROOYG..",
+    "..YOORCGGYGGCROOY..",
+    ".YOORCGGYOYGGCROOY.",
+    ".OORCGGYOROYGGCROO.",
+    ".ORCGGYOR.ROYGGCRO.",
+    ".OORCGGYOROYGGCROO.",
+    ".YOORCGGYOYGGCROOY.",
+    "..YOORCGGYGGCROOY..",
+    "..GYOORCGGGCROOYG..",
+    "...GYOORCGCROOYG...",
+    "....GYOORCROOYG....",
+    ".....GYOOROOYG.....",
+    ".......YOOOY.......",
+    "..................."
+  ],
+  "story": "💍 고리",
+  "dialogue": null
+}

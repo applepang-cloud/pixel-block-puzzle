@@ -1,0 +1,33 @@
+{
+  "level": 818,
+  "hard": false,
+  "rows": 17,
+  "cols": 17,
+  "palette": {
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "NNNNNNNNRRRRRRRRR",
+    "NNNNNNNNRRRRRRRRR",
+    "NN.............RR",
+    "NN.............RR",
+    "NN.............RR",
+    "NN.............RR",
+    "NN.............RR",
+    "NN.............RR",
+    "NN.............OO",
+    "YY.............OO",
+    "YY.............OO",
+    "YY.............OO",
+    "YY.............OO",
+    "YY.............OO",
+    "YY.............OO",
+    "YYYYYYYYYOOOOOOOO",
+    "YYYYYYYYYOOOOOOOO"
+  ],
+  "story": "🖼️ 액자",
+  "dialogue": null
+}

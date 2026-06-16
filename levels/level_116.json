@@ -1,36 +1,22 @@
 {
   "level": 116,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 7,
+  "cols": 12,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
+    "K": "#39395a",
     "N": "#ff8fc7",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "P": "#c44dff"
   },
   "grid": [
-    "...................",
-    "...................",
-    "..........BBP......",
-    ".........CBBP......",
-    "...NRR...BPPN......",
-    "...NRRC..BPPN......",
-    "...RCCBBPPNNR......",
-    "....CCBBPPNNRR.....",
-    ".....BPPNNRRCCBBP..",
-    "......PPNNRRCCBBPP.",
-    ".....PNNRRCCBBPPN..",
-    "....PPNNRRCCBB.....",
-    "...PNNRRCCBBP......",
-    "...PNNR..CBBP......",
-    "...NRR...BPPN......",
-    ".........BPPN......",
-    "..........NNR......",
-    "...................",
-    "..................."
+    "............",
+    "...KKKKKK...",
+    "..KPPPPPPK..",
+    "..KPPPPPPK..",
+    ".KNNNNNNNNK.",
+    ".KNNNNNNNNK.",
+    ".KKKKKKKKKK."
   ],
-  "story": "⭐ 반짝 별",
+  "story": "✨ 초밥",
   "dialogue": null
 }

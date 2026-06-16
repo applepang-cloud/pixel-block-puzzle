@@ -1,30 +1,21 @@
 {
   "level": 351,
   "hard": false,
-  "rows": 13,
+  "rows": 7,
   "cols": 13,
   "palette": {
-    "G": "#2ed573",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "B": "#1e90ff",
+    "P": "#c44dff"
   },
   "grid": [
-    ".............",
-    "......RR.....",
-    "...NNNRRRR...",
-    "..NNNNRRRRR..",
-    "..NNNNRRRRR..",
-    "..NNNNRRRRR..",
-    "..GGGGOOOOOO.",
-    "..YYYYYOOOO..",
-    "..YYYYYOOOO..",
-    "..YYYYYOOOO..",
-    "...YYYYOOO...",
-    "......YO.....",
-    "............."
+    ".B.B.....B..B",
+    ".BBBB....BBBB",
+    "..BBBBBBBBBB.",
+    ".BBPBBBBBBPBB",
+    ".BBBBBBBBBBBB",
+    ".PPBBBBBBBBPP",
+    "..BB.BBBB.BB."
   ],
-  "story": "🔷 보석",
+  "story": "✨ 용↔",
   "dialogue": null
 }

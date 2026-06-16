@@ -1,35 +1,22 @@
 {
   "level": 312,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "G": "#2ed573",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "K": "#39395a",
+    "N": "#ff8fc7"
   },
   "grid": [
-    "...................",
-    ".......GY..........",
-    ".......YY...GR.....",
-    "....RG.YOROYY......",
-    "....GYYORGROYY.R...",
-    "....YYORGGGROYYGR..",
-    "..G.YORGGYGGROYY...",
-    ".GYYORGGYOYGGROY...",
-    "...ORGGYOROYGGROYY.",
-    "...RGGYORRROYGGROY.",
-    "...ORGGYOROYGGROYY.",
-    ".GYYORGGYOYGGROY...",
-    "..G.YORGGYGGROYY...",
-    "....YYORGGGROYYGR..",
-    "....GYYORGROYY.R...",
-    "....RG.YOROYY......",
-    ".......YY...GR.....",
-    ".......GY..........",
-    "..................."
+    "...NNN.....",
+    "...NKNN....",
+    "....NNN....",
+    ".....N.....",
+    ".....NNN...",
+    "....NNNNN..",
+    ".....NNNNN.",
+    ".....N.N..."
   ],
-  "story": "⚙️ 톱니바퀴",
+  "story": "✨ 플라밍고↔",
   "dialogue": null
 }

@@ -1,0 +1,41 @@
+{
+  "level": 505,
+  "hard": true,
+  "rows": 23,
+  "cols": 23,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".......................",
+    "............OOOO.......",
+    "...........OOOOOO......",
+    "...........OOOOOY......",
+    "...RRRR...OOOOOOY......",
+    "..RRRRRRO.OOOOOYY......",
+    "..RRRRRRR.OOOOYY.......",
+    "..RRRRRRROOOOOYY.......",
+    "...RRRRRRROOOYY..YYY...",
+    "...RRRRRRROOOYYYYYYYYY.",
+    ".....RRRRRROYYYYYYYYYYY",
+    ".......RRRRGGGGGGGGGGGG",
+    ".....BBBBBBCGGGGGGGGGGG",
+    "...BBBBBBBCCCGGGGGGGGG.",
+    "...BBBBBBBCCCGG..GGG...",
+    "..BBBBBBBCCCCCGG.......",
+    "..BBBBBBB.CCCCGG.......",
+    "..BBBBBBC.CCCCCGG......",
+    "...BBBB...CCCCCCG......",
+    "...........CCCCCG......",
+    "...........CCCCCC......",
+    "............CCCC.......",
+    "......................."
+  ],
+  "story": "💥 보스! 갤럭시 젬",
+  "dialogue": null
+}

@@ -1,0 +1,22 @@
+{
+  "level": 507,
+  "hard": false,
+  "rows": 7,
+  "cols": 12,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "K.K......K.K",
+    "KNKK....KKNK",
+    "NKNKNKNKNKNK",
+    "KNKNKNKNKNKN",
+    "NKNRKRNKNKNK",
+    "KNKNKNKNKNKN",
+    ".NKNKNKNKNK."
+  ],
+  "story": "✨ 얼룩말",
+  "dialogue": null
+}

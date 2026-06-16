@@ -1,26 +1,21 @@
 {
   "level": 246,
   "hard": false,
-  "rows": 9,
-  "cols": 9,
+  "rows": 7,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
-    "N": "#ff8fc7",
-    "P": "#c44dff"
+    "K": "#39395a",
+    "R": "#ff4757"
   },
   "grid": [
-    ".........",
-    ".GGC.CBB.",
-    "GGGCCCBBB",
-    "GGGGCBBBB",
-    ".CCCPPPP.",
-    ".GGGNPPP.",
-    "..GNNNP..",
-    "...NNN...",
-    "....N...."
+    "..RRRRR....",
+    ".RRRRRRR...",
+    "RRKRRKRRR..",
+    "RRRRRRRRR..",
+    "RRKRRKRRR..",
+    ".RRRRRRR...",
+    "..RRRRR...."
   ],
-  "story": "💗 하트",
+  "story": "✨ 빵",
   "dialogue": null
 }

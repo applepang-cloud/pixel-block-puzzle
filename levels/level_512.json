@@ -1,0 +1,21 @@
+{
+  "level": 512,
+  "hard": false,
+  "rows": 7,
+  "cols": 13,
+  "palette": {
+    "O": "#ff9f43",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "R..R.....R.R.",
+    "RRRR....RRRR.",
+    ".RRRRRRRRRR..",
+    "RRORRRRRRORR.",
+    "RRRRRRRRRRRR.",
+    "OORRRRRRRROO.",
+    ".RR.RRRR.RR.."
+  ],
+  "story": "✨ 용",
+  "dialogue": null
+}

@@ -1,8 +1,8 @@
 {
   "level": 330,
   "hard": true,
-  "rows": 16,
-  "cols": 16,
+  "rows": 22,
+  "cols": 22,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
@@ -12,39 +12,47 @@
     "R": "#ff4757"
   },
   "grid": [
-    "CORNPPBCCBPPNROC",
-    "ORNPPBCOOCBPPNRO",
-    "RNPPBCORROCBPPNR",
-    "NPPBCORRRROCBPPN",
-    "PPBCORRNNRROCBPP",
-    "PBCORRNPPNRROCBP",
-    "BCORRNPBBPNRROCB",
-    "CORRNPBCCBPNRROC",
-    "CORRNPBCCBPNRROC",
-    "BCORRNPBBPNRROCB",
-    "PBCORRNPPNRROCBP",
-    "PPBCORRNNRROCBPP",
-    "NPPBCORRRROCBPPN",
-    "RNPPBCORROCBPPNR",
-    "ORNPPBCOOCBPPNRO",
-    "CORNPPBCCBPPNROC"
+    ".....BBBBBBBBBBBB.....",
+    "....CCBBBBBBBBBBPP....",
+    "...CCCBBBBBBBBBBPPP...",
+    "..CCCCCBBBBBBBBPPPPP..",
+    ".CCCCCCBBBBBBBBPPPPPP.",
+    "CCCCCCCCBBBBBBPPPPPPPP",
+    "CCCCCCCCBBBBBBPPPPPPPP",
+    "CCCCCCCCCBBBBPPPPPPPPP",
+    "CCCCCCCCCCBBPPPPPPPPPP",
+    "CCCCCCCCCCBBPPPPPPPPPP",
+    "CCCCCCCCCCCPPPPPPPPPPP",
+    "OOOOOOOOOOONNNNNNNNNNN",
+    "OOOOOOOOOORRNNNNNNNNNN",
+    "OOOOOOOOOORRNNNNNNNNNN",
+    "OOOOOOOOORRRRNNNNNNNNN",
+    "OOOOOOOORRRRRRNNNNNNNN",
+    "OOOOOOOORRRRRRNNNNNNNN",
+    ".OOOOOORRRRRRRRNNNNNN.",
+    "..OOOOORRRRRRRRNNNNN..",
+    "...OOORRRRRRRRRRNNN...",
+    "....OORRRRRRRRRRNN....",
+    ".....RRRRRRRRRRRR....."
   ],
   "story": "💥 보스! 크리스탈 만다라",
   "dialogue": {
     "intro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "🌟",
-        "text": "보스가 나타났다!",
-        "who": "M"
+        "who": "M",
+        "text": "보스가 나타났다!"
       }
     ],
     "outro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "⚔️",
-        "text": "겁먹지 말고 도전!",
-        "who": "H"
+        "who": "H",
+        "text": "겁먹지 말고 도전!"
       }
     ]
   }

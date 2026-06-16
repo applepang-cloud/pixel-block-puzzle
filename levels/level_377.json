@@ -1,29 +1,21 @@
 {
   "level": 377,
   "hard": false,
-  "rows": 13,
-  "cols": 13,
+  "rows": 7,
+  "cols": 9,
   "palette": {
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "B": "#1e90ff",
+    "P": "#c44dff"
   },
   "grid": [
-    ".............",
-    "....ORNRO....",
-    "...ORNPNRO...",
-    "..ORNPOPNRO..",
-    ".ORNP...PNRO.",
-    ".RNP.....PNR.",
-    ".NPO.....OPN.",
-    ".RNP.....PNR.",
-    ".ORNP...PNRO.",
-    "..ORNPOPNRO..",
-    "...ORNPNRO...",
-    "....ORNRO....",
-    "............."
+    ".BBBBBBB.",
+    ".BPPPPPB.",
+    "BBBBBBBBB",
+    "BPBPPPBPB",
+    "BPPPPPPPB",
+    "BPPPPPPPB",
+    "BBBBBBBBB"
   ],
-  "story": "💍 고리",
+  "story": "✨ 우유팩",
   "dialogue": null
 }

@@ -1,0 +1,32 @@
+{
+  "level": 782,
+  "hard": false,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...............",
+    ".....GCBPY.....",
+    "....GCBPYGC....",
+    "...GCBPYGCBP...",
+    "..GCBP...BPYG..",
+    ".GCBP.....YGCB.",
+    ".CBP.......CBP.",
+    ".BPY.......BPY.",
+    ".PYG.......PYG.",
+    ".YGCB.....PYGC.",
+    "..CBPY...PYGC..",
+    "...PYGCBPYGC...",
+    "....GCBPYGC....",
+    ".....BPYGC.....",
+    "..............."
+  ],
+  "story": "💍 고리",
+  "dialogue": null
+}

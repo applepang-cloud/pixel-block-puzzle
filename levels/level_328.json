@@ -1,34 +1,23 @@
 {
   "level": 328,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 7,
+  "cols": 11,
   "palette": {
     "B": "#1e90ff",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "C": "#00d2d3",
+    "K": "#39395a",
+    "P": "#c44dff"
   },
   "grid": [
-    ".................",
-    ".................",
-    "........ROB......",
-    ".....BPNROBP.....",
-    "...ROBPNROBPN....",
-    "...ROBPNROBPNR...",
-    "...ROBPNROBPNR...",
-    "...ROBPNROBPNRO..",
-    "...ROBPNROBPNROB.",
-    "...ROBPNROBPNRO..",
-    "...ROBPNROBPNR...",
-    "...ROBPNROBPNR...",
-    "...ROBPNROBPN....",
-    ".....BPNROBP.....",
-    "........ROB......",
-    ".................",
-    "................."
+    ".CC........",
+    ".CKC.......",
+    "..CCC......",
+    "...BCC.....",
+    "....BCBBBBB",
+    ".....BPPPPB",
+    "......BBBBB"
   ],
-  "story": "🔷 보석",
+  "story": "✨ 연필↔",
   "dialogue": null
 }

@@ -1,33 +1,24 @@
 {
   "level": 188,
   "hard": false,
-  "rows": 15,
-  "cols": 15,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "G": "#2ed573",
-    "N": "#ff8fc7",
+    "K": "#39395a",
     "O": "#ff9f43",
-    "P": "#c44dff",
     "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    "...............",
-    ".......P.......",
-    "......PGP......",
-    ".....PGYGP.....",
-    ".....GYOYG.....",
-    "...PG.ORO.GP...",
-    "..PGYORNROYGP..",
-    ".PGYORNPNROYGP.",
-    "..PGYORNROYGP..",
-    "...PG.ORO.GP...",
-    ".....GYOYG.....",
-    ".....PGYGP.....",
-    "......PGP......",
-    ".......P.......",
-    "..............."
+    ".K.....K...",
+    ".KKKKKKK...",
+    "KRORORORK..",
+    "KRRRRRRRK..",
+    "KRYRRRYRK..",
+    ".KKKKKKK...",
+    ".K.KKK.K...",
+    ".K.....K..."
   ],
-  "story": "🌸 예쁜 꽃",
+  "story": "✨ 로봇2",
   "dialogue": null
 }

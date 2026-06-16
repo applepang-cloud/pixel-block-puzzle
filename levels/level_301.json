@@ -1,33 +1,24 @@
 {
   "level": 301,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 8,
+  "cols": 12,
   "palette": {
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "K": "#39395a"
   },
   "grid": [
-    ".................",
-    "........RR.......",
-    "....NN..RRR......",
-    "....NNNNRRR..R...",
-    "....NNNNRRRRRRR..",
-    "..N.NNNNRRRRRR...",
-    "..NNNNNNRRRRRR...",
-    "...NNNNNRRRRRRRR.",
-    "...NNNNNOOOOOOOO.",
-    "...YYYYYYOOOOOOO.",
-    "..YYYYYYYOOOOO...",
-    "..Y.YYYYYOOOOO...",
-    "....YYYYYOOOOOO..",
-    "....YYYYYOO..O...",
-    "....YY..YOO......",
-    "........YO.......",
-    "................."
+    "GGGGGGGGGGGG",
+    ".GCCCCCCCCCG",
+    ".GCCKCCCKCCG",
+    ".GCCCCCCCCCG",
+    ".GCCCBKBCCCG",
+    ".GCCCCKCCCCG",
+    ".GGCCCCCCCGG",
+    "GGGGGGGGGGGG"
   ],
-  "story": "⚙️ 톱니바퀴",
+  "story": "✨ 사자↔",
   "dialogue": null
 }

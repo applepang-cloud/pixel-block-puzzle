@@ -1,50 +1,58 @@
 {
   "level": 400,
   "hard": true,
-  "rows": 16,
-  "cols": 16,
+  "rows": 22,
+  "cols": 22,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
+    "G": "#2ed573",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
     "P": "#c44dff",
     "R": "#ff4757"
   },
   "grid": [
-    ".......PP.......",
-    ".......BB.......",
-    "..OR...CC...RO..",
-    "..RNPB.OO.BPNR..",
-    "...PBC.RR.CBP...",
-    "...BCORNNROCB...",
-    ".....RNPPNR.....",
-    "PBCORNPBBPNROCBP",
-    "PBCORNPBBPNROCBP",
-    ".....RNPPNR.....",
-    "...BCORNNROCB...",
-    "...PBC.RR.CBP...",
-    "..RNPB.OO.BPNR..",
-    "..OR...CC...RO..",
-    ".......BB.......",
-    ".......PP......."
+    "............GCB.......",
+    "...........GCBPN......",
+    "...........CBPNR......",
+    "...GCB....CBPNRG......",
+    "..GCBPN...BPNRGC......",
+    ".GCBPNRGC.PNRGCB......",
+    ".CBPNRGCB.NRGCBP......",
+    "..PNRGCBPNRGCBP.......",
+    "..NRGCBPNRGCBP.RGCBPN.",
+    "....CBPNRGCBPNRGCBPNRG",
+    ".....PNRGCBPNRGCBPNRGC",
+    ".....NRGCBPNRGCBPNRGCB",
+    "....NRGCBPNRGCBPNRGCBP",
+    "..PNRGCBPNRGCB.NRGCBP.",
+    "..NRGCBPNRGCBPN.......",
+    ".NRGCBPNR.CBPNRG......",
+    ".RGCBPNRG.BPNRGC......",
+    "..CBPNR...PNRGCB......",
+    "...PNR....NRGCBP......",
+    "...........GCBPN......",
+    "...........CBPNR......",
+    "............PNR......."
   ],
   "story": "💥 보스! 오팔 보스",
   "dialogue": {
     "intro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "🥳",
-        "text": "벌써 여기까지 왔네.",
-        "who": "H"
+        "who": "H",
+        "text": "벌써 여기까지 왔네."
       }
     ],
     "outro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "👏",
-        "text": "우리 정말 잘한다.",
-        "who": "M"
+        "who": "M",
+        "text": "우리 정말 잘한다."
       }
     ]
   }

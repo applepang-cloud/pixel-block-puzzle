@@ -1,27 +1,24 @@
 {
   "level": 402,
   "hard": false,
-  "rows": 9,
-  "cols": 9,
+  "rows": 8,
+  "cols": 12,
   "palette": {
-    "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
+    "K": "#39395a",
     "Y": "#ffd700"
   },
   "grid": [
-    "YGCBPNYGC",
-    "G.......B",
-    "C.......P",
-    "B.......N",
-    "P.......Y",
-    "N.......G",
-    "Y.......C",
-    "G.......B",
-    "CBPNYGCBP"
+    "YYYYYYYYYYYY",
+    "YGGGGGGGGGY.",
+    "YGGKGGGKGGY.",
+    "YGGGGGGGGGY.",
+    "YGGGCKCGGGY.",
+    "YGGGGKGGGGY.",
+    "YYGGGGGGGYY.",
+    "YYYYYYYYYYYY"
   ],
-  "story": "🖼️ 액자",
+  "story": "✨ 사자",
   "dialogue": null
 }

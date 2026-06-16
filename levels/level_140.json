@@ -1,48 +1,56 @@
 {
   "level": 140,
   "hard": true,
-  "rows": 14,
-  "cols": 14,
+  "rows": 20,
+  "cols": 20,
   "palette": {
     "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
     "N": "#ff8fc7",
+    "O": "#ff9f43",
     "P": "#c44dff",
-    "R": "#ff4757"
+    "R": "#ff4757",
+    "Y": "#ffd700"
   },
   "grid": [
-    "...PNRGCBP....",
-    "..PNRGCBPNRG..",
-    "..NRGCBPNRGCB.",
-    ".NRGCBPNRGCBP.",
-    "NRGCBPNRGCBPNR",
-    "RGCBPNRGCBPNRG",
-    "GCBPNRGCBPNRGC",
-    "CBPNRGCBPNRGCB",
-    "BPNRGCBPNRGCBP",
-    "PNRGCBPNRGCBPN",
-    ".RGCBPNRGCBPN.",
-    "..CBPNRGCBPNR.",
-    "..BPNRGCBPNR..",
-    "...NRGCBPN...."
+    "........NROY........",
+    ".....BPNROYBPNR.....",
+    "...YBPNROYBPNROYB...",
+    "..YBPNROYBPNROYBPN..",
+    "..BPNROYBPNROYBPNR..",
+    ".BPNROYBPNROYBPNROY.",
+    ".PNROYBPNROYBPNROYB.",
+    ".NROYBPNROYBPNROYBP.",
+    "NROYBPNROYBPNROYBPNR",
+    "ROYBPNROYBPNROYBPNRO",
+    "OYBPNROYBPNROYBPNROY",
+    "YBPNROYBPNROYBPNROYB",
+    ".PNROYBPNROYBPNROYB.",
+    ".NROYBPNROYBPNROYBP.",
+    ".ROYBPNROYBPNROYBPN.",
+    "..YBPNROYBPNROYBPN..",
+    "..BPNROYBPNROYBPNR..",
+    "...NROYBPNROYBPNR...",
+    ".....YBPNROYBPN.....",
+    "........ROYB........"
   ],
   "story": "💥 보스! 레인보우 다이아",
   "dialogue": {
     "intro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "🎉",
-        "text": "또 하나 깼어!",
-        "who": "H"
+        "who": "H",
+        "text": "또 하나 깼어!"
       }
     ],
     "outro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "🥹",
-        "text": "우리 추억이 쌓여간다.",
-        "who": "M"
+        "who": "M",
+        "text": "우리 추억이 쌓여간다."
       }
     ]
   }

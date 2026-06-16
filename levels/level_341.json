@@ -1,34 +1,20 @@
 {
   "level": 341,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 7,
+  "cols": 11,
   "palette": {
-    "G": "#2ed573",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "G": "#2ed573"
   },
   "grid": [
-    ".................",
-    ".................",
-    ".....NNNRRRR.....",
-    "....NNNNRRRRR....",
-    "...NNNNNRRRRRR...",
-    "..NNNNNNRRRRRR...",
-    "..NNNNNNRRRRRRR..",
-    "..NNNNNNRRRRRRR..",
-    "..GGGGGGOOOOOOOO.",
-    "..YYYYYYYOOOOOO..",
-    "..YYYYYYYOOOOOO..",
-    "..YYYYYYYOOOOO...",
-    "...YYYYYYOOOOO...",
-    "....YYYYYOOOO....",
-    ".....YYYYOOO.....",
-    ".................",
-    "................."
+    "....GG.....",
+    ".....GG....",
+    "......GG...",
+    "....GGGGG..",
+    "....GG.....",
+    ".....GG....",
+    "......GG..."
   ],
-  "story": "🔷 보석",
+  "story": "✨ 번개2↔",
   "dialogue": null
 }

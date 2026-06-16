@@ -1,0 +1,35 @@
+{
+  "level": 742,
+  "hard": false,
+  "rows": 19,
+  "cols": 19,
+  "palette": {
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...................",
+    "...................",
+    "......GYYOYYG......",
+    ".....GYYOROYYGR....",
+    "....GYYORGROYYG....",
+    "...GYYORGGGROYYG...",
+    "..GYYORGGYGGROYY...",
+    "..YYORGGYOYGGROYY..",
+    "..YORGGYOROYGGROY..",
+    "..ORGGYORRROYGGROY.",
+    "..YORGGYOROYGGROY..",
+    "..YYORGGYOYGGROYY..",
+    "..GYYORGGYGGROYY...",
+    "...GYYORGGGROYYG...",
+    "....GYYORGROYYG....",
+    ".....GYYOROYYGR....",
+    "......GYYOYYG......",
+    "...................",
+    "..................."
+  ],
+  "story": "🔷 보석",
+  "dialogue": null
+}

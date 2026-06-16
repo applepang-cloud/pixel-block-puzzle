@@ -1,21 +1,22 @@
 {
   "level": 432,
   "hard": false,
-  "rows": 4,
-  "cols": 5,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
-    "O": "#ff9f43",
-    "Y": "#ffd700"
+    "K": "#39395a",
+    "R": "#ff4757"
   },
   "grid": [
-    "..G..",
-    ".YGC.",
-    "OYGCB",
-    "OYGCB"
+    ".K........K",
+    "..K.KKK.K..",
+    "...RKRKR...",
+    "..RKRKRKR..",
+    "..KRKRKRK..",
+    "..RKRKRKR..",
+    "...KRKRK...",
+    "....KKK...."
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 벌",
   "dialogue": null
 }

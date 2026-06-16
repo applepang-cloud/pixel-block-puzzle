@@ -1,33 +1,21 @@
 {
   "level": 204,
   "hard": false,
-  "rows": 15,
-  "cols": 15,
+  "rows": 7,
+  "cols": 11,
   "palette": {
     "B": "#1e90ff",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "K": "#39395a"
   },
   "grid": [
-    "...............",
-    "......B........",
-    ".....YBP.......",
-    ".....YBP.ROY...",
-    "..NR..BPNRO....",
-    "..NROYBPNRO....",
-    "...ROYBPNROYB..",
-    ".....YBPNROYBP.",
-    "...ROYBPNROYB..",
-    "..NROYBPNRO....",
-    "..NR..BPNRO....",
-    ".....YBP.ROY...",
-    ".....YBP.......",
-    "......B........",
-    "..............."
+    ".BBBBBBB...",
+    "BBBBBBBBB..",
+    "BBKBBBKBB..",
+    "BBBBKBBBB..",
+    "BBBBKKKBB..",
+    "BBBBBBBBB..",
+    ".BBBBBBB..."
   ],
-  "story": "🌸 예쁜 꽃",
+  "story": "✨ 시계",
   "dialogue": null
 }

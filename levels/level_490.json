@@ -1,51 +1,59 @@
 {
   "level": 490,
   "hard": true,
-  "rows": 17,
-  "cols": 17,
+  "rows": 23,
+  "cols": 23,
   "palette": {
     "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
+    "N": "#ff8fc7",
     "O": "#ff9f43",
     "P": "#c44dff",
+    "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    "......O..........",
-    "......PP.........",
-    "......BBB...PO...",
-    "......BCC..BBP...",
-    ".OP...CCC.CCB....",
-    ".PPBCCGGGGGCC....",
-    "..BBCGGYYYGG.....",
-    "...CCGYYOYYGCCBP.",
-    ".....GYOOOYGCCBPO",
-    "...CCGYYOYYGCCBP.",
-    "..BBCGGYYYGG.....",
-    ".PPBCCGGGGGCC....",
-    ".OP...CCC.CCB....",
-    "......BCC..BBP...",
-    "......BBB...PO...",
-    "......PP.........",
-    "......O.........."
+    "...........Y...........",
+    "..........YBP..........",
+    "..........BPN..........",
+    "...BP.....PNR.....RO...",
+    "...PNRO...NRO...NROY...",
+    "....ROYB..ROY..NROY....",
+    "....OYBPN.OYB.NROYB....",
+    ".....BPNROYBPNROYB.....",
+    "......NROYBPNROYB......",
+    ".......OYBPNROYB.......",
+    ".YBPNROYBPNROYBPNROYBP.",
+    "YBPNROYBPNROYBPNROYBPNR",
+    ".PNROYBPNROYBPNROYBPNR.",
+    ".......NROYBPNRO.......",
+    "......NROYBPNROYB......",
+    ".....NROYBPNROYBPN.....",
+    "....NROYB.NRO.BPNRO....",
+    "....ROYB..ROY..NROY....",
+    "...ROYB...OYB...OYBP...",
+    "...OY.....YBP.....PN...",
+    "..........BPN..........",
+    "..........PNR..........",
+    "...........R..........."
   ],
   "story": "💥 보스! 레인보우 다이아",
   "dialogue": {
     "intro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "🍀",
-        "text": "왠지 오늘 운이 좋아.",
-        "who": "M"
+        "who": "M",
+        "text": "왠지 오늘 운이 좋아."
       }
     ],
     "outro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "✨",
-        "text": "행운이 함께하길!",
-        "who": "H"
+        "who": "H",
+        "text": "행운이 함께하길!"
       }
     ]
   }

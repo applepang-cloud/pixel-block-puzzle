@@ -1,0 +1,29 @@
+{
+  "level": 777,
+  "hard": false,
+  "rows": 13,
+  "cols": 13,
+  "palette": {
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    ".............",
+    "....ORNRO....",
+    "...ORNPNRO...",
+    "..ORNPOPNRO..",
+    ".ORNP...PNRO.",
+    ".RNP.....PNR.",
+    ".NPO.....OPN.",
+    ".RNP.....PNR.",
+    ".ORNP...PNRO.",
+    "..ORNPOPNRO..",
+    "...ORNPNRO...",
+    "....ORNRO....",
+    "............."
+  ],
+  "story": "💍 고리",
+  "dialogue": null
+}

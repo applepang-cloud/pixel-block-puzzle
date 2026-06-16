@@ -1,31 +1,21 @@
 {
   "level": 278,
   "hard": false,
-  "rows": 15,
-  "cols": 15,
+  "rows": 7,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "K": "#39395a",
+    "Y": "#ffd700"
   },
   "grid": [
-    "....BPNRBPN....",
-    "....BPNRBPN....",
-    "....BPNRBPN....",
-    "....BPNRBPN....",
-    "BPNRBPNRBPNRBPN",
-    "BPNRBPNRBPNRBPN",
-    "BPNRBPNRBPNRBPN",
-    "BPNRBPNRBPNRBPN",
-    "BPNRBPNRBPNRBPN",
-    "BPNRBPNRBPNRBPN",
-    "BPNRBPNRBPNRBPN",
-    "....BPNRBPN....",
-    "....BPNRBPN....",
-    "....BPNRBPN....",
-    "....BPNRBPN...."
+    "....KKK....",
+    "...KYYYK...",
+    "...KYYYK...",
+    "KKKKK......",
+    "K...KK.....",
+    "KK..KKK....",
+    "KKK..KK...."
   ],
-  "story": "➕ 십자",
+  "story": "✨ 스쿠터",
   "dialogue": null
 }

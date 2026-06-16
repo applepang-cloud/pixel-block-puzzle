@@ -1,37 +1,23 @@
 {
   "level": 394,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 8,
+  "cols": 12,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "K": "#39395a"
   },
   "grid": [
-    "...................",
-    ".......NRROO.......",
-    ".....NRROOCCBB.....",
-    "....NNRROOCCBBP....",
-    "...NRROOCCBBPPNN...",
-    "..NNRRO.....PPNNR..",
-    "..RROO.......NRRO..",
-    ".NRRO.........RROO.",
-    ".ROOC.........OOCC.",
-    ".ROOC.........OOCC.",
-    ".OCCB.........CCBB.",
-    ".OCCB.........CCBB.",
-    "..BBPP.......CBBP..",
-    "..BBPPN.....CCBBP..",
-    "...PNNRROOCCBBPP...",
-    "....NNRROOCCBBP....",
-    ".....ROOCCBBPP.....",
-    ".......OCCBB.......",
-    "..................."
+    "K.K......K.K",
+    "KKK......KKK",
+    "KKKKKKKKKKKK",
+    "KKCKKKKKCKKK",
+    "KKKKKBKKKKKK",
+    "KKCKKKKKCKKK",
+    "KKKKKKKKKKKK",
+    ".KKKKKKKKKK."
   ],
-  "story": "💍 고리",
+  "story": "✨ 고양이2",
   "dialogue": null
 }

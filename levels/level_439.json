@@ -1,25 +1,24 @@
 {
   "level": 439,
   "hard": false,
-  "rows": 7,
-  "cols": 6,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "C": "#00d2d3",
-    "G": "#2ed573",
+    "B": "#1e90ff",
+    "K": "#39395a",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "P": "#c44dff"
   },
   "grid": [
-    "N.....",
-    "NR....",
-    "NRO...",
-    "NROY..",
-    "NROYG.",
-    "NROYGC",
-    "NROYGC"
+    ".BBBBBBB...",
+    "BBBBBBBBB..",
+    "BPPPPPPPB..",
+    "BPKPPPKPB..",
+    "BPPPPPPPB..",
+    ".PPPBPP....",
+    ".NNNNNNN...",
+    "NNNNNNNNN.."
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 소녀",
   "dialogue": null
 }

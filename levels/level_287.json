@@ -1,36 +1,22 @@
 {
   "level": 287,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 7,
+  "cols": 13,
   "palette": {
-    "B": "#1e90ff",
     "C": "#00d2d3",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "G": "#2ed573",
+    "Y": "#ffd700"
   },
   "grid": [
-    "...................",
-    "...................",
-    ".....NRR...BPP.....",
-    "....NNRRCCBBPPN....",
-    "....RRCCBBPPNN.....",
-    "....RRCCBBPPNNR....",
-    "....CCBBPPNNRRC....",
-    ".N.RCCBBPPNNRRCC.B.",
-    ".RCCBBPPNNRRCCBBPP.",
-    ".RCCBBPPNNRRCCBBPP.",
-    ".CBBPPNNRRCCBBPPNN.",
-    ".C.BPPNNRRCCBBPP.N.",
-    "....NNRRCCBBPPN....",
-    "....NNRRCCBBPPN....",
-    "....RRCCBBPPNN.....",
-    "....RRCCBBPPNNR....",
-    ".....CBB...NRR.....",
-    "...................",
-    "..................."
+    "......Y......",
+    ".....YYY.....",
+    "....YYYYY....",
+    "...YGGGGY....",
+    "..YYGGGYYY...",
+    ".CC.YYY.CC...",
+    "CCC.....CCC.."
   ],
-  "story": "⚙️ 톱니바퀴",
+  "story": "✨ 우주선",
   "dialogue": null
 }

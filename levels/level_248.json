@@ -1,29 +1,21 @@
 {
   "level": 248,
   "hard": false,
-  "rows": 13,
-  "cols": 13,
+  "rows": 7,
+  "cols": 12,
   "palette": {
-    "B": "#1e90ff",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "C": "#00d2d3",
+    "K": "#39395a"
   },
   "grid": [
-    ".............",
-    "..NRBP.RBPN..",
-    ".PNRBPNRBPNR.",
-    "BPNRBPNRBPNRB",
-    "BPNRBPNRBPNRB",
-    "BPNRBPNRBPNRB",
-    ".PNRBPNRBPNR.",
-    ".PNRBPNRBPNR.",
-    "..NRBPNRBPN..",
-    "..NRBPNRBPN..",
-    "...RBPNRBP...",
-    ".....PNR.....",
-    "......N......"
+    "CC........CC",
+    "CCCC....CCCC",
+    ".CCCCCCCCCC.",
+    ".CCKCCCCKCC.",
+    ".CCCCKKCCCC.",
+    ".CCCCKKCCCC.",
+    "..CCCCCCCC.."
   ],
-  "story": "💗 하트",
+  "story": "✨ 코알라",
   "dialogue": null
 }

@@ -1,29 +1,23 @@
 {
   "level": 338,
   "hard": false,
-  "rows": 13,
+  "rows": 7,
   "cols": 13,
   "palette": {
-    "B": "#1e90ff",
+    "K": "#39395a",
     "N": "#ff8fc7",
     "P": "#c44dff",
     "R": "#ff4757"
   },
   "grid": [
-    ".............",
-    ".....P.......",
-    "....BPNRBP...",
-    "...RBPNRBP...",
-    "..NRBPNRBPN..",
-    "..NRBPNRBPN..",
-    "..NRBPNRBPNR.",
-    "..NRBPNRBPN..",
-    "..NRBPNRBPN..",
-    "...RBPNRBP...",
-    "....BPNRBP...",
-    ".....P.......",
-    "............."
+    "........KKKK.",
+    "..KKKKKKKKKK.",
+    "..KPPPPPPPPPP",
+    "..KPNNPNNPNNP",
+    "..KPPPPPPPPPP",
+    "..R.RR.RR.RR.",
+    "..R.RR.RR.RR."
   ],
-  "story": "🔷 보석",
+  "story": "✨ 기차↔",
   "dialogue": null
 }

@@ -1,0 +1,34 @@
+{
+  "level": 795,
+  "hard": true,
+  "rows": 16,
+  "cols": 16,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "................",
+    "...CBB....RRG...",
+    "...BPPN..RGGC...",
+    "...BPPNNRRGGC...",
+    "....NNRRGGCC....",
+    "....NNRRGGCC....",
+    ".PNNRRGGCCBBPPN.",
+    "PPNNRRGGCCBBPPNN",
+    "NNRRGGCCBBPPNNRR",
+    ".NRRGGCCBBPPNNR.",
+    "....CCBBPPNN....",
+    "....CCBBPPNN....",
+    "...CBBPPNNRRG...",
+    "...CBBP..NRRG...",
+    "...BPP....GGC...",
+    "................"
+  ],
+  "story": "💥 보스! 컬러 모자이크",
+  "dialogue": null
+}

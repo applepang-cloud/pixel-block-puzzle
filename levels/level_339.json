@@ -1,32 +1,19 @@
 {
   "level": 339,
   "hard": false,
-  "rows": 15,
-  "cols": 15,
+  "rows": 6,
+  "cols": 13,
   "palette": {
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "K": "#39395a"
   },
   "grid": [
-    "...............",
-    "......R........",
-    ".....RNPNRO....",
-    "...ORNPYPNRO...",
-    "..ORNPYOYPNR...",
-    "..RNPYOROYPNR..",
-    "..NPYORNROYPN..",
-    "..PYORNPNROYPN.",
-    "..NPYORNROYPN..",
-    "..RNPYOROYPNR..",
-    "..ORNPYOYPNR...",
-    "...ORNPYPNRO...",
-    ".....RNPNRO....",
-    "......R........",
-    "..............."
+    ".....K.......",
+    "..K.KKK......",
+    ".KKK.K.K..KKK",
+    "K.K.KK..K.K.K",
+    "K.K.K...KKK.K",
+    "..KKK.....KKK"
   ],
-  "story": "🔷 보석",
+  "story": "✨ 자전거↔",
   "dialogue": null
 }

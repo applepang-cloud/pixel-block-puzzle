@@ -1,33 +1,23 @@
 {
   "level": 369,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 8,
+  "cols": 13,
   "palette": {
-    "G": "#2ed573",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "R": "#ff4757"
   },
   "grid": [
-    ".................",
-    ".......YOY.......",
-    ".....YYOROYY.....",
-    "....YYORGROYY....",
-    "...YYORGGGROYY...",
-    "..YYORGGYGGROYY..",
-    "..YORGGYOYGGROY..",
-    ".YORGGYOROYGGROY.",
-    ".ORGGYORRROYGGRO.",
-    ".YORGGYOROYGGROY.",
-    "..YORGGYOYGGROY..",
-    "..YYORGGYGGROYY..",
-    "...YYORGGGROYY...",
-    "....YYORGROYY....",
-    ".....YYOROYY.....",
-    ".......YOY.......",
-    "................."
+    "......K......",
+    ".....KKK.....",
+    "....KNNNK....",
+    "...KNRNRNK...",
+    "..KNNNNNNNK..",
+    ".KNRNNNRNNK..",
+    "KNNNNNNNNNNK.",
+    ".KKKKKKKKKK.."
   ],
-  "story": "🔷 보석",
+  "story": "✨ 피자조각",
   "dialogue": null
 }

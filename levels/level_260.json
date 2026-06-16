@@ -1,8 +1,8 @@
 {
   "level": 260,
   "hard": true,
-  "rows": 15,
-  "cols": 15,
+  "rows": 21,
+  "cols": 21,
   "palette": {
     "G": "#2ed573",
     "N": "#ff8fc7",
@@ -12,38 +12,46 @@
     "Y": "#ffd700"
   },
   "grid": [
-    ".......NN......",
-    "...PNNNNNNN....",
-    "..PPPNNNNNRRR..",
-    "..PPPNNNNNRRRR.",
-    ".PPPPPNNNRRRRR.",
-    "PPPPPPNNNRRRRR.",
-    "PPPPPPPNRRRRRRR",
-    "PPPPPPPOOOOOOOO",
-    "GGGGGGGYOOOOOOO",
-    "GGGGGGYYYOOOOO.",
-    ".GGGGGYYYOOOOO.",
-    "..GGGYYYYYOOOO.",
-    "..GGGYYYYYOOO..",
-    "...GYYYYYYY....",
-    ".......YY......"
+    "..........R..........",
+    "......YORRNRROY......",
+    "....GYORRNPNRROYG....",
+    "...GYORRNPGPNRROYG...",
+    "..GYORRNPGYGPNRROYG..",
+    "..YORRNPGYYYGPNRROY..",
+    ".YORRNPGYYOYYGPNRROY.",
+    ".ORRNPGYYOROYYGPNRRO.",
+    ".RRNPGYYORNROYYGPNRR.",
+    "RRNPGYYORNPNROYYGPNRR",
+    "RNPGYYORNPPPNROYYGPNR",
+    "RRNPGYYORNPNROYYGPNRR",
+    ".RRNPGYYORNROYYGPNRR.",
+    ".ORRNPGYYOROYYGPNRRO.",
+    ".YORRNPGYYOYYGPNRROY.",
+    "..YORRNPGYYYGPNRROY..",
+    "..GYORRNPGYGPNRROYG..",
+    "...GYORRNPGPNRROYG...",
+    "....GYORRNPNRROYG....",
+    "......YORRNRROY......",
+    "..........R.........."
   ],
   "story": "💥 보스! 네뷸라 코어",
   "dialogue": {
     "intro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "😊",
-        "text": "오늘도 너랑 같이라 좋아.",
-        "who": "H"
+        "who": "H",
+        "text": "오늘도 너랑 같이라 좋아."
       }
     ],
     "outro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "🥰",
-        "text": "나도. 다음 판도 가보자!",
-        "who": "M"
+        "who": "M",
+        "text": "나도. 다음 판도 가보자!"
       }
     ]
   }

@@ -2,23 +2,19 @@
   "level": 261,
   "hard": false,
   "rows": 7,
-  "cols": 7,
+  "cols": 11,
   "palette": {
-    "G": "#2ed573",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "G": "#2ed573"
   },
   "grid": [
-    "..NRR..",
-    "..NRR..",
-    "NNNRRRR",
-    "GGGOOOO",
-    "YYYYOOO",
-    "..YYO..",
-    "..YYO.."
+    ".GGGGGGG...",
+    "G.GGGGG.G..",
+    "G.GGGGG.G..",
+    ".GGGGGGG...",
+    "...GGG.....",
+    "..GGGGG....",
+    ".GGGGGGG..."
   ],
-  "story": "➕ 십자",
+  "story": "✨ 트로피",
   "dialogue": null
 }

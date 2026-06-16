@@ -1,48 +1,56 @@
 {
   "level": 170,
   "hard": true,
-  "rows": 14,
-  "cols": 14,
+  "rows": 20,
+  "cols": 20,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
-    "G": "#2ed573",
     "N": "#ff8fc7",
+    "O": "#ff9f43",
     "P": "#c44dff",
     "R": "#ff4757"
   },
   "grid": [
-    "......RR......",
-    "...RN.NN.NR...",
-    "....P.PP.P....",
-    ".R..PBBBBP..R.",
-    ".NPP.BCCB.PPN.",
-    "...BBCCCCBB...",
-    "RNPBCCGGCCBPNR",
-    "RNPBCCGGCCBPNR",
-    "...BBCCCCBB...",
-    ".NPP.BCCB.PPN.",
-    ".R..PBBBBP..R.",
-    "....P.PP.P....",
-    "...RN.NN.NR...",
-    "......RR......"
+    "....................",
+    "....ORN......NRO....",
+    "....RNPP....PPNR....",
+    "....NPPBC..CBPPN....",
+    ".....PBCO..OCBP.....",
+    ".....BCORRRROCB.....",
+    "......ORRNNRRO......",
+    "......RRNPPNRR......",
+    ".PBCORRNPBBPNRROCBP.",
+    "PBCORRNPBCCBPNRROCBP",
+    "PBCORRNPBCCBPNRROCBP",
+    ".PBCORRNPBBPNRROCBP.",
+    "......RRNPPNRR......",
+    "......ORRNNRRO......",
+    ".....BCORRRROCB.....",
+    ".....PBCO..OCBP.....",
+    "....NPPBC..CBPPN....",
+    "....RNPP....PPNR....",
+    "....ORN......NRO....",
+    "...................."
   ],
   "story": "💥 보스! 오로라 젬",
   "dialogue": {
     "intro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "😎",
-        "text": "이건 좀 어려운데?",
-        "who": "M"
+        "who": "M",
+        "text": "이건 좀 어려운데?"
       }
     ],
     "outro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "💪",
-        "text": "우리 둘이면 문제없어!",
-        "who": "H"
+        "who": "H",
+        "text": "우리 둘이면 문제없어!"
       }
     ]
   }

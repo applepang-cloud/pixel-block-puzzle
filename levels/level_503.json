@@ -1,0 +1,21 @@
+{
+  "level": 503,
+  "hard": false,
+  "rows": 7,
+  "cols": 11,
+  "palette": {
+    "K": "#39395a",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "..RRRR.....",
+    ".RRRRRR....",
+    "RRRRRRRR...",
+    ".RRRRRR....",
+    "...KK......",
+    "...KK......",
+    "...KK......"
+  ],
+  "story": "✨ 솜사탕",
+  "dialogue": null
+}

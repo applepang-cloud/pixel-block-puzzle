@@ -1,21 +1,21 @@
 {
   "level": 436,
   "hard": false,
-  "rows": 4,
-  "cols": 5,
+  "rows": 7,
+  "cols": 13,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "K": "#39395a",
+    "N": "#ff8fc7"
   },
   "grid": [
-    "....R",
-    "..PNR",
-    "CBPNR",
-    "CBPNR"
+    "NNN..K..NNN..",
+    ".NNN.K.NNN...",
+    "..NNNKNNN....",
+    ".....K.......",
+    ".....K.......",
+    "....KKK......",
+    ".....K......."
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 잠자리",
   "dialogue": null
 }

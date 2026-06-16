@@ -1,26 +1,22 @@
 {
   "level": 471,
   "hard": false,
-  "rows": 6,
-  "cols": 9,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "K": "#39395a",
+    "P": "#c44dff"
   },
   "grid": [
-    "........R",
-    "......PNR",
-    "....CBPNR",
-    "..YGCBPNR",
-    "ROYGCBPNR",
-    "ROYGCBPNR"
+    "........KK.",
+    ".......KK..",
+    "......KK...",
+    "..PPP.K....",
+    ".PPKPP.....",
+    "PPPKPPP....",
+    ".PPKPP.....",
+    "..PPP......"
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 기타2",
   "dialogue": null
 }

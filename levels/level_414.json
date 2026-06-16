@@ -1,31 +1,24 @@
 {
   "level": 414,
   "hard": false,
-  "rows": 15,
-  "cols": 15,
+  "rows": 8,
+  "cols": 12,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "N": "#ff8fc7",
-    "P": "#c44dff"
+    "K": "#39395a",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
   },
   "grid": [
-    "CCBBPPNNCCBBPPN",
-    "CCBBPPNNCCBBPPN",
-    "BB...........NC",
-    "BB...........NC",
-    "PP...........CB",
-    "PP...........CB",
-    "NN...........BP",
-    "NN...........BP",
-    "CC...........PN",
-    "CC...........PN",
-    "BB...........NC",
-    "BB...........NC",
-    "PP...........CB",
-    "PPNNCCBBPPNNCCB",
-    "NNCCBBPPNNCCBBP"
+    "R.R......R.R",
+    "RRRRRRRRRRRR",
+    "ROORRRRROORR",
+    "ROKRRRRRKORR",
+    "ROORYYYYOORR",
+    "RRRRYYYYRRRR",
+    "RRRRRRRRRRRR",
+    ".RR.RRRR.RR."
   ],
-  "story": "🖼️ 액자",
+  "story": "✨ 부엉이2",
   "dialogue": null
 }

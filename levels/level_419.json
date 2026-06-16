@@ -1,34 +1,22 @@
 {
   "level": 419,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "C": "#00d2d3",
-    "G": "#2ed573",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "K": "#39395a",
+    "O": "#ff9f43"
   },
   "grid": [
-    "YORRCGYOOOYGCRROY",
-    "ORRCGYOOROOYGCRRO",
-    "RRCGYOORCROOYGCRR",
-    "RCG...........GCR",
-    "CGY...........YGC",
-    "GYO...........OYG",
-    "YOO...........OOY",
-    "OOR...........ROO",
-    "ORC...........CRO",
-    "OOR...........ROO",
-    "YOO...........OOY",
-    "GYO...........OYG",
-    "CGY...........YGC",
-    "RCG...........GCR",
-    "RRCGYOORCROOYGCRR",
-    "ORRCGYOOROOYGCRRO",
-    "YORRCGYOOOYGCRROY"
+    ".....OOO...",
+    "....OOKO...",
+    "....OOO....",
+    ".....O.....",
+    "...OOO.....",
+    "..OOOOO....",
+    ".OOOOO.....",
+    "...O.O....."
   ],
-  "story": "🖼️ 액자",
+  "story": "✨ 플라밍고",
   "dialogue": null
 }

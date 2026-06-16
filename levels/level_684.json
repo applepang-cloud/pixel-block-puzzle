@@ -1,0 +1,33 @@
+{
+  "level": 684,
+  "hard": false,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...............",
+    "...............",
+    "....YG...NY....",
+    "...YGCBPNYG....",
+    "....CBPNYGC....",
+    "...CBPNYGCBP...",
+    ".GCBPNYGCBPNYG.",
+    ".CBPNYGCBPNYGC.",
+    ".BPNYGCBPNYGCB.",
+    "...YGCBPNYGC...",
+    "....CBPNYGC....",
+    "...CBPNYGCB....",
+    "....PN...BP....",
+    "...............",
+    "..............."
+  ],
+  "story": "⚙️ 톱니바퀴",
+  "dialogue": null
+}

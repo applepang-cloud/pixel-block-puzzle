@@ -1,51 +1,59 @@
 {
   "level": 480,
   "hard": true,
-  "rows": 17,
-  "cols": 17,
+  "rows": 23,
+  "cols": 23,
   "palette": {
     "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
     "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "R": "#ff4757"
   },
   "grid": [
-    "......RROOY......",
-    "....NNRROOYYB....",
-    "...NRROOYYBBPP...",
-    "..NNRROOYYBBPPN..",
-    ".NRROOYYBBPPNNRR.",
-    ".NRROOYYBBPPNNRR.",
-    ".ROOYYBBPPNNRROO.",
-    "RROOYYBBPPNNRROOY",
-    "OOYYBBPPNNRROOYYB",
-    "OOYYBBPPNNRROOYYB",
-    ".YBBPPNNRROOYYBB.",
-    ".YBBPPNNRROOYYBB.",
-    ".BPPNNRROOYYBBPP.",
-    "..PPNNRROOYYBBP..",
-    "...NRROOYYBBPP...",
-    "....RROOYYBBP....",
-    "......YYBBP......"
+    ".......................",
+    "......P.........B......",
+    ".....PNN.......BPP.....",
+    ".....PNNR.....BBPP.....",
+    ".....NRRGG...BPPNN.....",
+    "......RRGGC.BBPPN......",
+    "......GGCCBBPPNNR......",
+    "......GGCCBBPPNNR......",
+    ".......CBBPPNNRR.......",
+    "...RGGCCBBPPNNRRGGCC...",
+    ".RGGCCBBPPNNRRGGCCBBPP.",
+    "RRGGCCBBPPNNRRGGCCBBPPN",
+    ".GCCBBPPNNRRGGCCBBPPNN.",
+    "...CBBPPNNRRGGCCBBPP...",
+    ".......NRRGGCCBB.......",
+    "......NNRRGGCCBBP......",
+    "......RRGGCCBBPPN......",
+    "......RRGGC.BBPPN......",
+    ".....RGGCC...PNNRR.....",
+    ".....RGGC.....NNRR.....",
+    ".....GCC.......RGG.....",
+    "......C.........G......",
+    "......................."
   ],
   "story": "💥 보스! 크리스탈 만다라",
   "dialogue": {
     "intro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "🤩",
-        "text": "색이 정말 다양하다!",
-        "who": "H"
+        "who": "H",
+        "text": "색이 정말 다양하다!"
       }
     ],
     "outro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "😄",
-        "text": "하나씩 맞춰보자.",
-        "who": "M"
+        "who": "M",
+        "text": "하나씩 맞춰보자."
       }
     ]
   }

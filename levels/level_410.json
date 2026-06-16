@@ -1,10 +1,10 @@
 {
   "level": 410,
   "hard": true,
-  "rows": 16,
-  "cols": 16,
+  "rows": 22,
+  "cols": 22,
   "palette": {
-    "G": "#2ed573",
+    "B": "#1e90ff",
     "N": "#ff8fc7",
     "O": "#ff9f43",
     "P": "#c44dff",
@@ -12,39 +12,47 @@
     "Y": "#ffd700"
   },
   "grid": [
-    ".......PP.......",
-    "...R...GG...R...",
-    "..RRNPGYYGPNRR..",
-    ".RRNPGYYYYGPNRR.",
-    "..NPGYYOOYYGPN..",
-    "..PGYYORROYYGP..",
-    "..GYYORNNROYYG..",
-    "PGYYORNPPNROYYGP",
-    "PGYYORNPPNROYYGP",
-    "..GYYORNNROYYG..",
-    "..PGYYORROYYGP..",
-    "..NPGYYOOYYGPN..",
-    ".RRNPGYYYYGPNRR.",
-    "..RRNPGYYGPNRR..",
-    "...R...GG...R...",
-    ".......PP......."
+    "..........NN..........",
+    ".........PPPP.........",
+    ".........BBBB.........",
+    "...NPP...YYYY...PPN...",
+    "...PPBB..YYYY..BBPP...",
+    "...PBYYY.OOOO.YYYBP...",
+    "....BYOORRRRRROOYB....",
+    ".....YORRNNNNRROY.....",
+    "......RRNNPPNNRR......",
+    ".PBYYORNNPPPPNNROYYBP.",
+    "NPBYYORNPPBBPPNROYYBPN",
+    "NPBYYORNPPBBPPNROYYBPN",
+    ".PBYYORNNPPPPNNROYYBP.",
+    "......RRNNPPNNRR......",
+    ".....YORRNNNNRROY.....",
+    "....BYOORRRRRROOYB....",
+    "...PBYYY.OOOO.YYYBP...",
+    "...PPBB..YYYY..BBPP...",
+    "...NPP...YYYY...PPN...",
+    ".........BBBB.........",
+    ".........PPPP.........",
+    "..........NN.........."
   ],
   "story": "💥 보스! 네뷸라 코어",
   "dialogue": {
     "intro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "🔥",
-        "text": "집중! 거의 다 왔어.",
-        "who": "M"
+        "who": "M",
+        "text": "집중! 거의 다 왔어."
       }
     ],
     "outro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "😤",
-        "text": "끝까지 해보자!",
-        "who": "H"
+        "who": "H",
+        "text": "끝까지 해보자!"
       }
     ]
   }

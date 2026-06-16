@@ -1,0 +1,21 @@
+{
+  "level": 504,
+  "hard": false,
+  "rows": 7,
+  "cols": 12,
+  "palette": {
+    "K": "#39395a",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "YY........YY",
+    "YYYY....YYYY",
+    ".YYYYYYYYYY.",
+    ".YYKYYYYKYY.",
+    ".YYYYKKYYYY.",
+    ".YYYYKKYYYY.",
+    "..YYYYYYYY.."
+  ],
+  "story": "✨ 코알라",
+  "dialogue": null
+}

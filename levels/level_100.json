@@ -32,17 +32,19 @@
     "intro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "🥳",
-        "text": "벌써 여기까지 왔네.",
-        "who": "H"
+        "who": "H",
+        "text": "벌써 여기까지 왔네."
       }
     ],
     "outro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "👏",
-        "text": "우리 정말 잘한다.",
-        "who": "M"
+        "who": "M",
+        "text": "우리 정말 잘한다."
       }
     ]
   }

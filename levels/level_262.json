@@ -2,22 +2,21 @@
   "level": 262,
   "hard": false,
   "rows": 7,
-  "cols": 7,
+  "cols": 11,
   "palette": {
-    "G": "#2ed573",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "B": "#1e90ff",
+    "K": "#39395a",
+    "P": "#c44dff"
   },
   "grid": [
-    ".GGYGG.",
-    "GGYOYGG",
-    "GYOROYG",
-    "YORRROY",
-    "GYOROYG",
-    "GGYOYGG",
-    ".GGYGG."
+    ".B.....B...",
+    ".B.....B...",
+    "..PPPPP....",
+    ".PPPPPPP...",
+    "PPKPPPKP...",
+    ".PPPPPPP...",
+    "..PPPPP...."
   ],
-  "story": "➕ 십자",
+  "story": "✨ 메달",
   "dialogue": null
 }

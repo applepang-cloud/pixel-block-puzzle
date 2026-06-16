@@ -1,8 +1,8 @@
 {
   "level": 190,
   "hard": true,
-  "rows": 14,
-  "cols": 14,
+  "rows": 20,
+  "cols": 20,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
@@ -12,37 +12,45 @@
     "Y": "#ffd700"
   },
   "grid": [
-    "......BB......",
-    "..Y..BCCB..Y..",
-    ".YORBCCCCBROY.",
-    "..RBCCGGCCBR..",
-    "..BCCGYYGCCB..",
-    ".BCCGYOOYGCCB.",
-    "BCCGYORROYGCCB",
-    "BCCGYORROYGCCB",
-    ".BCCGYOOYGCCB.",
-    "..BCCGYYGCCB..",
-    "..RBCCGGCCBR..",
-    ".YORBCCCCBROY.",
-    "..Y..BCCB..Y..",
-    "......BB......"
+    ".........CC.........",
+    ".....O...GG...O.....",
+    ".....RB..YY..BR.....",
+    ".....BC..OO..CB.....",
+    "......GY.RR.YG......",
+    ".ORB..YORBBROY..BRO.",
+    "..BCGY.RBCCBR.YGCB..",
+    "....YORBCGGCBROY....",
+    ".....RBCGYYGCBR.....",
+    "CGYORBCGYOOYGCBROYGC",
+    "CGYORBCGYOOYGCBROYGC",
+    ".....RBCGYYGCBR.....",
+    "....YORBCGGCBROY....",
+    "..BCGY.RBCCBR.YGCB..",
+    ".ORB..YORBBROY..BRO.",
+    "......GY.RR.YG......",
+    ".....BC..OO..CB.....",
+    ".....RB..YY..BR.....",
+    ".....O...GG...O.....",
+    ".........CC........."
   ],
   "story": "💥 보스! 레인보우 다이아",
   "dialogue": {
     "intro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "🍀",
-        "text": "왠지 오늘 운이 좋아.",
-        "who": "M"
+        "who": "M",
+        "text": "왠지 오늘 운이 좋아."
       }
     ],
     "outro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "✨",
-        "text": "행운이 함께하길!",
-        "who": "H"
+        "who": "H",
+        "text": "행운이 함께하길!"
       }
     ]
   }

@@ -1,28 +1,23 @@
 {
   "level": 226,
   "hard": false,
-  "rows": 11,
-  "cols": 11,
+  "rows": 6,
+  "cols": 13,
   "palette": {
-    "G": "#2ed573",
+    "B": "#1e90ff",
+    "C": "#00d2d3",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "P": "#c44dff",
+    "R": "#ff4757"
   },
   "grid": [
-    "...........",
-    "...........",
-    ".....RR....",
-    "...N.RR.R..",
-    ".NNNNRRR...",
-    "....GOOOOO.",
-    ".YYYYYOO...",
-    "...Y.YO.O..",
-    ".....YO....",
-    "...........",
-    "..........."
+    "C..C..C..C...",
+    "CC.CCC.CC.C..",
+    "CCCCCCCCCCC..",
+    "CCBCCPCCNCC..",
+    "CCCCCCCCCCC..",
+    "RRRRRRRRRRR.."
   ],
-  "story": "🌸 예쁜 꽃",
+  "story": "✨ 왕관3",
   "dialogue": null
 }

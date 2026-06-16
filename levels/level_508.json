@@ -1,0 +1,22 @@
+{
+  "level": 508,
+  "hard": false,
+  "rows": 8,
+  "cols": 11,
+  "palette": {
+    "O": "#ff9f43",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...OO......",
+    "...OYO.....",
+    "...OOO.....",
+    "....O......",
+    "..OOOOO....",
+    ".OYOYOYO...",
+    ".OOOOOOO...",
+    "..O...O...."
+  ],
+  "story": "✨ 기린",
+  "dialogue": null
+}

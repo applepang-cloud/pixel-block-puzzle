@@ -1,8 +1,8 @@
 {
   "level": 350,
   "hard": true,
-  "rows": 16,
-  "cols": 16,
+  "rows": 22,
+  "cols": 22,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
@@ -12,39 +12,47 @@
     "Y": "#ffd700"
   },
   "grid": [
-    "......GYYG......",
-    "...BCGYOOYGCB...",
-    "..BCGYORROYGCB..",
-    ".BCGYORBBROYGCB.",
-    ".CGYORBCCBROYGC.",
-    ".GYORBCGGCBROYG.",
-    "GYORBCGYYGCBROYG",
-    "YORBCGYOOYGCBROY",
-    "YORBCGYOOYGCBROY",
-    "GYORBCGYYGCBROYG",
-    ".GYORBCGGCBROYG.",
-    ".CGYORBCCBROYGC.",
-    ".BCGYORBBROYGCB.",
-    "..BCGYORROYGCB..",
-    "...BCGYOOYGCB...",
-    "......GYYG......"
+    ".............CB.......",
+    "..........YYYGCB......",
+    ".......GYYOOYYGC......",
+    "....BCGYYORROYYGC.....",
+    "..RBCGYYORBBROYYGC....",
+    "..BCGYYORBCCBROYYGC...",
+    "..CGYYORBCCCCBROYYG...",
+    "..GYYORBCCGGCCBROYYG..",
+    "..YYORBCCGYYGCCBROYYG.",
+    "..YORBCCGYOOYGCCBROYY.",
+    "..ORBCCGYORROYGCCBROYY",
+    "..ORBCCGYORROYGCCBROYY",
+    "..YORBCCGYOOYGCCBROYY.",
+    "..YYORBCCGYYGCCBROYYG.",
+    "..GYYORBCCGGCCBROYYG..",
+    "..CGYYORBCCCCBROYYG...",
+    "..BCGYYORBCCBROYYGC...",
+    "..RBCGYYORBBROYYGC....",
+    "....BCGYYORROYYGC.....",
+    ".......GYYOOYYGC......",
+    "..........YYYGCB......",
+    ".............CB......."
   ],
   "story": "💥 보스! 오팔 보스",
   "dialogue": {
     "intro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "😌",
-        "text": "잠깐 쉬었다 갈까?",
-        "who": "M"
+        "who": "M",
+        "text": "잠깐 쉬었다 갈까?"
       }
     ],
     "outro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "🙂",
-        "text": "좋아, 천천히 가자.",
-        "who": "H"
+        "who": "H",
+        "text": "좋아, 천천히 가자."
       }
     ]
   }

@@ -1,34 +1,22 @@
 {
   "level": 347,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
     "N": "#ff8fc7",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "P": "#c44dff"
   },
   "grid": [
-    ".................",
-    "........R........",
-    ".....NRRCCBB.....",
-    "...PNNRRCCBBPP...",
-    "...NRRCCBBPPNN...",
-    "..NNRRCCBBPPNNR..",
-    "..RRCCBBPPNNRRC..",
-    "..RRCCBBPPNNRRC..",
-    ".RCCBBPPNNRRCCBB.",
-    "..CCBBPPNNRRCCB..",
-    "..BBPPNNRRCCBBP..",
-    "..BBPPNNRRCCBBP..",
-    "...PNNRRCCBBPP...",
-    "...PNNRRCCBBPP...",
-    ".....RCCBBPP.....",
-    "........B........",
-    "................."
+    "......PP...",
+    ".....PNP...",
+    ".....PPP...",
+    "......P....",
+    "....PPPPP..",
+    "...PNPNPNP.",
+    "...PPPPPPP.",
+    "....P...P.."
   ],
-  "story": "🔷 보석",
+  "story": "✨ 기린↔",
   "dialogue": null
 }

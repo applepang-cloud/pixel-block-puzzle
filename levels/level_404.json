@@ -1,26 +1,22 @@
 {
   "level": 404,
   "hard": false,
-  "rows": 9,
-  "cols": 9,
+  "rows": 8,
+  "cols": 13,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "K": "#39395a",
+    "P": "#c44dff"
   },
   "grid": [
-    "CCBBPPNNR",
-    "CCBBPPNNR",
-    "BBPPNNRRC",
-    "BBP...RRC",
-    "PPN...CCB",
-    "PPN...CCB",
-    "NNRRCCBBP",
-    "NNRRCCBBP",
-    "RRCCBBPPN"
+    ".PPPPPPP.....",
+    "PPPPPPPPPP...",
+    "PPKPPPPKPP...",
+    "PPPPPPPPPP.P.",
+    "PPPPPPPPPPPP.",
+    "PPPPPPPPPP.P.",
+    "PP.PP.PP.PP..",
+    "PP.PP.PP....."
   ],
-  "story": "🖼️ 액자",
+  "story": "✨ 코끼리",
   "dialogue": null
 }

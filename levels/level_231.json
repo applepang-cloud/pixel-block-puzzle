@@ -1,35 +1,19 @@
 {
   "level": 231,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 6,
+  "cols": 13,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
-    "P": "#c44dff"
+    "K": "#39395a"
   },
   "grid": [
-    "...................",
-    "........C..........",
-    "........C...C......",
-    "....G...CC.CC......",
-    "....GGG.CC.CB......",
-    ".....GG.CCCC..BB...",
-    ".....GGGCCCBBBBB...",
-    "..GGGG.GCCCBBBB....",
-    "...GGGGGGCBBBBBB...",
-    "......BBBPPPPPPPPP.",
-    "...CCCCCCGPPPPPP...",
-    "..CCCC.CGGGPPPP....",
-    ".....CCCGGGPPPPP...",
-    ".....CC.GGGG..PP...",
-    "....CCC.GG.GP......",
-    "....C...GG.GG......",
-    "........G...G......",
-    "........G..........",
-    "..................."
+    ".......K.....",
+    "......KKK.K..",
+    "KKK..K.K.KKK.",
+    "K.K.K..KK.K.K",
+    "K.KKK...K.K.K",
+    "KKK.....KKK.."
   ],
-  "story": "🌸 예쁜 꽃",
+  "story": "✨ 자전거",
   "dialogue": null
 }

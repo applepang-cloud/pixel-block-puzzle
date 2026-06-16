@@ -31,17 +31,19 @@
     "intro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "🍀",
-        "text": "왠지 오늘 운이 좋아.",
-        "who": "M"
+        "who": "M",
+        "text": "왠지 오늘 운이 좋아."
       }
     ],
     "outro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "✨",
-        "text": "행운이 함께하길!",
-        "who": "H"
+        "who": "H",
+        "text": "행운이 함께하길!"
       }
     ]
   }

@@ -1,0 +1,23 @@
+{
+  "level": 511,
+  "hard": false,
+  "rows": 8,
+  "cols": 11,
+  "palette": {
+    "K": "#39395a",
+    "N": "#ff8fc7",
+    "P": "#c44dff"
+  },
+  "grid": [
+    ".PP....PPPP",
+    "PPPP..PPPPP",
+    "PPKP.PPPPP.",
+    "PPPPPPPP...",
+    "PPNNNPP....",
+    "PPNNNPP....",
+    ".PPPPP.....",
+    "PP...PP...."
+  ],
+  "story": "✨ 다람쥐",
+  "dialogue": null
+}

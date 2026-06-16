@@ -1,8 +1,8 @@
 {
   "level": 200,
   "hard": true,
-  "rows": 14,
-  "cols": 14,
+  "rows": 20,
+  "cols": 20,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
@@ -12,37 +12,45 @@
     "Y": "#ffd700"
   },
   "grid": [
-    "...G..GG..G...",
-    "...YGGGGGGC...",
-    "...YGGGGGGC...",
-    "YYYYYGGGGCCCCC",
-    ".YYYYYGGCCCCC.",
-    ".YYYYYGGCCCCC.",
-    "YYYYYYYCCCCCCC",
-    "NNNNNNNBBBBBBB",
-    ".NNNNNPPBBBBB.",
-    ".NNNNNPPBBBBB.",
-    "NNNNNPPPPBBBBB",
-    "...NPPPPPPB...",
-    "...NPPPPPPB...",
-    "...P..PP..P..."
+    "....................",
+    "....NPB......BPN....",
+    "....PBCC....CCBP....",
+    "....BCCGY..YGCCB....",
+    "....CCGYNPPNYGCC....",
+    ".....GYNPPPPNYG.....",
+    ".....YNPPBBPPNY.....",
+    "......PPBCCBPP......",
+    "CCGYNPPBCGGCBPPNYGCC",
+    "CGYNPPBCGYYGCBPPNYGC",
+    "CGYNPPBCGYYGCBPPNYGC",
+    "CCGYNPPBCGGCBPPNYGCC",
+    "......PPBCCBPP......",
+    ".....YNPPBBPPNY.....",
+    ".....GYNPPPPNYG.....",
+    "....CCGYNPPNYGCC....",
+    "....BCCGY..YGCCB....",
+    "....PBCC....CCBP....",
+    "....NPB......BPN....",
+    "...................."
   ],
   "story": "💥 보스! 오팔 보스",
   "dialogue": {
     "intro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "🥳",
-        "text": "벌써 여기까지 왔네.",
-        "who": "H"
+        "who": "H",
+        "text": "벌써 여기까지 왔네."
       }
     ],
     "outro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "👏",
-        "text": "우리 정말 잘한다.",
-        "who": "M"
+        "who": "M",
+        "text": "우리 정말 잘한다."
       }
     ]
   }

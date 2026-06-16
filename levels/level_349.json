@@ -1,27 +1,23 @@
 {
   "level": 349,
   "hard": false,
-  "rows": 11,
+  "rows": 8,
   "cols": 11,
   "palette": {
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "G": "#2ed573",
+    "K": "#39395a",
+    "Y": "#ffd700"
   },
   "grid": [
-    "...........",
-    ".....PN....",
-    "...NPOPN...",
-    "..NPOROPN..",
-    ".NPORNROP..",
-    ".PORNPNROP.",
-    ".NPORNROP..",
-    "..NPOROPN..",
-    "...NPOPN...",
-    ".....PN....",
-    "..........."
+    "YYYY....YY.",
+    "YYYYY..YYYY",
+    ".YYYYY.YKYY",
+    "...YYYYYYYY",
+    "....YYGGGYY",
+    "....YYGGGYY",
+    ".....YYYYY.",
+    "....YY...YY"
   ],
-  "story": "🔷 보석",
+  "story": "✨ 다람쥐↔",
   "dialogue": null
 }

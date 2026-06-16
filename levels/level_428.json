@@ -1,20 +1,20 @@
 {
   "level": 428,
   "hard": false,
-  "rows": 4,
-  "cols": 4,
+  "rows": 7,
+  "cols": 11,
   "palette": {
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "O": "#ff9f43"
   },
   "grid": [
-    ".NR.",
-    ".NR.",
-    "PNRO",
-    "PNRO"
+    "..OOOOO....",
+    ".OOOOOOO...",
+    "OOOOOOOOO..",
+    "OOOOOOOOO..",
+    ".O.O.O.O...",
+    "O.O.O.O.O..",
+    ".O.O.O.O..."
   ],
-  "story": "📊 블록탑",
+  "story": "✨ 해파리",
   "dialogue": null
 }

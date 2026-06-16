@@ -1,31 +1,22 @@
 {
   "level": 327,
   "hard": false,
-  "rows": 15,
-  "cols": 15,
+  "rows": 7,
+  "cols": 13,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "N": "#ff8fc7",
-    "P": "#c44dff"
+    "G": "#2ed573",
+    "K": "#39395a",
+    "Y": "#ffd700"
   },
   "grid": [
-    "...............",
-    "...............",
-    "......CCBB.....",
-    "...PNNCCBBP....",
-    "..NNCCBBPPNN...",
-    "..NNCCBBPPNN...",
-    "..CCBBPPNNCCB..",
-    "..CCBBPPNNCCBB.",
-    "..BBPPNNCCBBP..",
-    "..BBPPNNCCBB...",
-    "..PPNNCCBBPP...",
-    "...PNNCCBBP....",
-    "......BBPP.....",
-    "...............",
-    "..............."
+    ".......KKK...",
+    ".KKKKKKKKKKKK",
+    ".KYYYYYYYYYYK",
+    ".KYYYYKKKYYYK",
+    ".KYYYKGGGKYYK",
+    ".KYYYYKKKYYYK",
+    ".KKKKKKKKKKKK"
   ],
-  "story": "🔷 보석",
+  "story": "✨ 카메라↔",
   "dialogue": null
 }

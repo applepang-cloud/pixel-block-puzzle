@@ -1,33 +1,23 @@
 {
   "level": 277,
   "hard": false,
-  "rows": 15,
-  "cols": 15,
+  "rows": 7,
+  "cols": 13,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "N": "#ff8fc7",
+    "G": "#2ed573",
     "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "R": "#ff4757",
+    "Y": "#ffd700"
   },
   "grid": [
-    ".....PNNRR.....",
-    ".....PNNRR.....",
-    ".....NRROO.....",
-    ".....NRROO.....",
-    ".....ROOCC.....",
-    "PPNNRROOCCBBPPN",
-    "NNRROOCCBBPPNNR",
-    "NNRROOCCBBPPNNR",
-    "RROOCCBBPPNNRRO",
-    "RROOCCBBPPNNRRO",
-    ".....BPPNN.....",
-    ".....BPPNN.....",
-    ".....PNNRR.....",
-    ".....PNNRR.....",
-    ".....NRROO....."
+    "...R.........",
+    "RRRRRRRRR....",
+    ".ORRRRRRRRO..",
+    "OORRYRRYRROO.",
+    ".ORRRRRRRRO..",
+    "..RRRRRRR....",
+    "...G...G....."
   ],
-  "story": "➕ 십자",
+  "story": "✨ 잠수함",
   "dialogue": null
 }

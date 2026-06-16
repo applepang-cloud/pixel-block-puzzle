@@ -1,50 +1,58 @@
 {
   "level": 380,
   "hard": true,
-  "rows": 16,
-  "cols": 16,
+  "rows": 22,
+  "cols": 22,
   "palette": {
-    "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
+    "N": "#ff8fc7",
     "O": "#ff9f43",
     "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    ".....Y....Y.....",
-    ".....OR..RO.....",
-    ".....RB..BR.....",
-    ".YY..BCCCCB..YY.",
-    "..ORB.CGGC.BRO..",
-    "...BCCGYYGCCB...",
-    "....CGYOOYGC....",
-    "RBCCGYORROYGCCBR",
-    "RBCCGYORROYGCCBR",
-    "....CGYOOYGC....",
-    "...BCCGYYGCCB...",
-    "..ORB.CGGC.BRO..",
-    ".YY..BCCCCB..YY.",
-    ".....RB..BR.....",
-    ".....OR..RO.....",
-    ".....Y....Y....."
+    "........OO............",
+    ".......RRR............",
+    ".......RNNN.....RO....",
+    ".......NNCC....NRR....",
+    "........CCCC..CNNR....",
+    "..R.....GGGG.GCCCN....",
+    ".ORNNC..YYYYYYGGC.....",
+    ".RRNCCGYYOOOOYYG......",
+    "..NNCGYYOORROOYY......",
+    "...CCGYOORRRROOYGCCNR.",
+    ".....GYORRNNRROYGCCNRO",
+    ".....GYORRNNRROYGCCNRO",
+    "...CCGYOORRRROOYGCCNR.",
+    "..NNCGYYOORROOYY......",
+    ".RRNCCGYYOOOOYYG......",
+    ".ORNNC..YYYYYYGGC.....",
+    "..R.....GGGG.GCCCN....",
+    "........CCCC..CNNR....",
+    ".......NNCC....NRR....",
+    ".......RNNN.....RO....",
+    ".......RRR............",
+    "........OO............"
   ],
   "story": "💥 보스! 크리스탈 만다라",
   "dialogue": {
     "intro": [
       {
         "name": "유리",
+        "color": "#ff8fc7",
         "face": "🤩",
-        "text": "색이 정말 다양하다!",
-        "who": "H"
+        "who": "H",
+        "text": "색이 정말 다양하다!"
       }
     ],
     "outro": [
       {
         "name": "준",
+        "color": "#5aa9ff",
         "face": "😄",
-        "text": "하나씩 맞춰보자.",
-        "who": "M"
+        "who": "M",
+        "text": "하나씩 맞춰보자."
       }
     ]
   }

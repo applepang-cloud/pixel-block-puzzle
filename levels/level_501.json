@@ -1,0 +1,22 @@
+{
+  "level": 501,
+  "hard": false,
+  "rows": 7,
+  "cols": 11,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "CBCBCBC....",
+    "BBBBBBB....",
+    ".PPPPP.....",
+    "PPBPBPP....",
+    "PPPPPPP....",
+    ".PPPPP.....",
+    "..PPP......"
+  ],
+  "story": "✨ 수프",
+  "dialogue": null
+}
