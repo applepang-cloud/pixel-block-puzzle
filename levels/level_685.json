@@ -4,29 +4,29 @@
   "rows": 14,
   "cols": 14,
   "palette": {
+    "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "P": "#c44dff",
+    "R": "#ff4757"
   },
   "grid": [
-    "....GC..OY....",
-    "....CN..YG....",
-    ".Y..NROYGC..O.",
-    ".GCN.OYGC.ROY.",
-    "..NROYGCNROY..",
-    "...OYGCNROY...",
-    "NROYGCNROYGCNR",
-    "ROYGCNROYGCNRO",
-    "...CNROYGCN...",
-    "..CNROYGCNRO..",
-    ".CNR.YGCN.OYG.",
-    ".N..YGCNRO..C.",
-    "....GC..OY....",
-    "....CN..YG...."
+    "..............",
+    "...PB....BP...",
+    "...BCG..GCB...",
+    "...CGRNNRGC...",
+    "....RNPPNR....",
+    "...RNPBBPNR...",
+    "CGRNPBCCBPNRGC",
+    "CGRNPBCCBPNRGC",
+    "...RNPBBPNR...",
+    "....RNPPNR....",
+    "...CGRNNRGC...",
+    "...BCG..GCB...",
+    "...PB....BP...",
+    ".............."
   ],
-  "story": "💥 보스! 스펙트럼 휠",
+  "story": "💥 보스! 젬 보스",
   "dialogue": null
 }

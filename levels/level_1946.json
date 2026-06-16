@@ -1,23 +1,24 @@
 {
   "level": 1946,
   "hard": false,
-  "rows": 8,
-  "cols": 11,
+  "rows": 6,
+  "cols": 6,
   "palette": {
-    "K": "#39395a",
+    "B": "#1e90ff",
+    "C": "#00d2d3",
     "N": "#ff8fc7",
-    "P": "#c44dff"
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
   },
   "grid": [
-    ".PPP...PPP.",
-    "PPPPP.PPPPP",
-    "PPKPPPPPKPP",
-    "PPPPPPPPPPP",
-    "PPNNNNNNNPP",
-    "PPNKNNNKNPP",
-    ".PPNNNNNPP.",
-    "..PPPPPPP.."
+    "..PN..",
+    "..PN..",
+    ".BPNR.",
+    ".BPNR.",
+    "CBPNRO",
+    "CBPNRO"
   ],
-  "story": "✨ 픽셀 아트",
+  "story": "📊 블록탑",
   "dialogue": null
 }

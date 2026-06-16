@@ -1,36 +1,23 @@
 {
   "level": 893,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 8,
+  "cols": 9,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
-    "G": "#2ed573",
+    "K": "#39395a",
     "N": "#ff8fc7",
-    "P": "#c44dff"
+    "R": "#ff4757"
   },
   "grid": [
-    "...................",
-    ".......CCCCC.......",
-    ".....CCCCCCCCC.....",
-    "....GGCCCCCCCBB....",
-    "...GGGGCCCCCBBBB...",
-    "..GGGGGCCCCCBBBBB..",
-    "..GGGGGG...BBBBBB..",
-    ".GGGGGG.....BBBBBB.",
-    ".GGGGG.......BBBBB.",
-    ".CCCCC.......PPPPP.",
-    ".GGGGG.......PPPPP.",
-    ".GGGGGG.....PPPPPP.",
-    "..GGGGGG...PPPPPP..",
-    "..GGGGGNNNNNPPPPP..",
-    "...GGGGNNNNNPPPP...",
-    "....GGNNNNNNNPP....",
-    ".....NNNNNNNNN.....",
-    ".......NNNNN.......",
-    "..................."
+    ".KKKKK...",
+    "KNNNNNK..",
+    "KNKNKNK..",
+    "KNNNNNK..",
+    "KNNRNNK..",
+    "KNNNNNK..",
+    "KNKNKNK..",
+    "K.K.K.K.."
   ],
-  "story": "💍 고리",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

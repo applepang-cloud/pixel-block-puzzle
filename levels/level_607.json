@@ -2,21 +2,21 @@
   "level": 607,
   "hard": false,
   "rows": 8,
-  "cols": 11,
+  "cols": 13,
   "palette": {
     "C": "#00d2d3",
     "K": "#39395a"
   },
   "grid": [
-    "........KKK",
-    ".......KCCK",
-    ".......KCCK",
-    ".......KCCK",
-    "....KKKKCCK",
-    "...KCCCCCCK",
-    "...KCCCCCCK",
-    "....KKKKKK."
+    "KKKKKKKKKKKKK",
+    "KCCCCCCCCCCCK",
+    "KCCKCCCCKCCCK",
+    "KCCCCCKCCCCCK",
+    "KCCCCCCCCCKCK",
+    "KCCKCCCCCCCCK",
+    ".KKKKKKKKKKK.",
+    "..KKKKKKKKK.."
   ],
-  "story": "✨ 장화↔",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

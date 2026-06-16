@@ -1,35 +1,21 @@
 {
   "level": 759,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 7,
+  "cols": 11,
   "palette": {
     "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "P": "#c44dff"
   },
   "grid": [
-    ".........N.........",
-    ".....PORNPNR.......",
-    "....PORNPO.........",
-    "...PORNPO..........",
-    "..PORNPO...........",
-    ".PORNPO............",
-    ".ORNPOR............",
-    ".RNPORN............",
-    ".NPORN.............",
-    "NPORNP.............",
-    ".NPORN.............",
-    ".RNPORN............",
-    ".ORNPOR............",
-    ".PORNPO............",
-    "..PORNPO...........",
-    "...PORNPO..........",
-    "....PORNPO.........",
-    ".....PORNPNR.......",
-    ".........N........."
+    "...P.P.....",
+    "..PPPPP....",
+    "PPPPPPPPP..",
+    "PNNNNNNNP..",
+    "PNNPPPNNP..",
+    "PNNNNNNNP..",
+    "PPPPPPPPP.."
   ],
-  "story": "🌙 초승달",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

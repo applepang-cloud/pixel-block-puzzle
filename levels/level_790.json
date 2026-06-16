@@ -1,34 +1,36 @@
 {
   "level": 790,
   "hard": true,
-  "rows": 15,
-  "cols": 15,
+  "rows": 17,
+  "cols": 17,
   "palette": {
+    "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
-    "N": "#ff8fc7",
     "O": "#ff9f43",
-    "R": "#ff4757",
+    "P": "#c44dff",
     "Y": "#ffd700"
   },
   "grid": [
-    ".........Y.....",
-    ".......OYGC....",
-    ".......YGCN....",
-    ".GCNR..GCNR....",
-    ".CNROY.CNRO....",
-    "..ROYGCNRO.GC..",
-    "...YGCNROYGCNRO",
-    ".....NROYGCNROY",
-    "...CNROYGCNROYG",
-    "..CNROYGCN.OY..",
-    ".CNROY.CNRO....",
-    ".NROY..NROY....",
-    ".......ROYG....",
-    ".......OYGC....",
-    ".........C....."
+    "........O........",
+    ".......PPP.......",
+    "...O...BBB...O...",
+    "..OPB..CCC..BPO..",
+    "...BBC.CCC.CBB...",
+    "....CCGGGGGCC....",
+    ".....GGYYYGG.....",
+    ".PBCCGYYOYYGCCBP.",
+    "OPBCCGYOOOYGCCBPO",
+    ".PBCCGYYOYYGCCBP.",
+    ".....GGYYYGG.....",
+    "....CCGGGGGCC....",
+    "...BBC.CCC.CBB...",
+    "..OPB..CCC..BPO..",
+    "...O...BBB...O...",
+    ".......PPP.......",
+    "........O........"
   ],
-  "story": "💥 보스! 레인보우 다이아",
+  "story": "💥 보스! 젬 보스",
   "dialogue": {
     "intro": [
       {
@@ -36,7 +38,7 @@
         "color": "#5aa9ff",
         "face": "🍀",
         "who": "M",
-        "text": "왠지 오늘 운이 좋아."
+        "text": "행운을!"
       }
     ],
     "outro": [
@@ -45,7 +47,7 @@
         "color": "#ff8fc7",
         "face": "✨",
         "who": "H",
-        "text": "행운이 함께하길!"
+        "text": "가자!"
       }
     ]
   }

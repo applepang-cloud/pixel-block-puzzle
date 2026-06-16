@@ -1,22 +1,36 @@
 {
   "level": 1787,
   "hard": false,
-  "rows": 8,
-  "cols": 11,
+  "rows": 19,
+  "cols": 19,
   "palette": {
-    "K": "#39395a",
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
     "R": "#ff4757"
   },
   "grid": [
-    "...RRR.....",
-    "...RKRR....",
-    "....RRR....",
-    ".....R.....",
-    ".....RRR...",
-    "....RRRRR..",
-    ".....RRRRR.",
-    ".....R.R..."
+    "...................",
+    "...................",
+    ".....NRR...BPP.....",
+    "....NNRRCCBBPPN....",
+    "....RRCCBBPPNN.....",
+    "....RRCCBBPPNNR....",
+    "....CCBBPPNNRRC....",
+    ".N.RCCBBPPNNRRCC.B.",
+    ".RCCBBPPNNRRCCBBPP.",
+    ".RCCBBPPNNRRCCBBPP.",
+    ".CBBPPNNRRCCBBPPNN.",
+    ".C.BPPNNRRCCBBPP.N.",
+    "....NNRRCCBBPPN....",
+    "....NNRRCCBBPPN....",
+    "....RRCCBBPPNN.....",
+    "....RRCCBBPPNNR....",
+    ".....CBB...NRR.....",
+    "...................",
+    "..................."
   ],
-  "story": "✨ 픽셀 아트",
+  "story": "⚙️ 톱니바퀴",
   "dialogue": null
 }

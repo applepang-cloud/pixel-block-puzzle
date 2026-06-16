@@ -5,47 +5,47 @@
   "cols": 15,
   "palette": {
     "B": "#1e90ff",
-    "N": "#ff8fc7",
+    "C": "#00d2d3",
+    "G": "#2ed573",
     "O": "#ff9f43",
-    "P": "#c44dff",
     "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    ".......Y.......",
-    "......OOO......",
-    "..YO..RRR..OY..",
-    "..OOR.RRR.ROO..",
-    "...RRNNNNNRR...",
-    "....NNPPPNN....",
-    ".ORRNPPBPPNRRO.",
-    "YORRNPBBBPNRROY",
-    ".ORRNPPBPPNRRO.",
-    "....NNPPPNN....",
-    "...RRNNNNNRR...",
-    "..OOR.RRR.ROO..",
-    "..YO..RRR..OY..",
-    "......OOO......",
-    ".......Y......."
+    "....OOOOOOO....",
+    "...ROOOOOOOY...",
+    "..RRROOOOOYYY..",
+    ".RRRROOOOOYYYY.",
+    "RRRRRROOOYYYYYY",
+    "RRRRRROOOYYYYYY",
+    "RRRRRRROYYYYYYY",
+    "RRRRRRRGGGGGGGG",
+    "BBBBBBBCGGGGGGG",
+    "BBBBBBCCCGGGGGG",
+    "BBBBBBCCCGGGGGG",
+    ".BBBBCCCCCGGGG.",
+    "..BBBCCCCCGGG..",
+    "...BCCCCCCCG...",
+    "....CCCCCCC...."
   ],
-  "story": "💥 보스! 오로라 보스",
+  "story": "💥 보스! 크리스탈 만다라",
   "dialogue": {
     "intro": [
       {
-        "name": "유리",
-        "color": "#ff8fc7",
+        "name": "준",
+        "color": "#5aa9ff",
         "face": "🌟",
-        "who": "H",
-        "text": "그림이 끝없네."
+        "who": "M",
+        "text": "보스가 나타났다!"
       }
     ],
     "outro": [
       {
-        "name": "준",
-        "color": "#5aa9ff",
-        "face": "🤩",
-        "who": "M",
-        "text": "다음 판!"
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "⚔️",
+        "who": "H",
+        "text": "겁먹지 말고 도전!"
       }
     ]
   }

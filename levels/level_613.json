@@ -1,21 +1,23 @@
 {
   "level": 613,
   "hard": false,
-  "rows": 6,
+  "rows": 8,
   "cols": 11,
   "palette": {
-    "K": "#39395a",
     "N": "#ff8fc7",
+    "O": "#ff9f43",
     "R": "#ff4757"
   },
   "grid": [
-    "KKKKKKK....",
-    "KNRNNNRK...",
-    ".KNNNNNK...",
-    "..KNNNK....",
-    "...KNK.....",
-    "....K......"
+    ".N.N.N.N...",
+    "..NNNNN....",
+    ".ROROROR...",
+    "ROROROROR..",
+    ".ROROROR...",
+    "ROROROROR..",
+    ".ROROROR...",
+    "..RRRRR...."
   ],
-  "story": "✨ 보석",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

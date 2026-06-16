@@ -1,22 +1,31 @@
 {
   "level": 1864,
   "hard": false,
-  "rows": 8,
-  "cols": 11,
+  "rows": 15,
+  "cols": 15,
   "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
     "G": "#2ed573",
-    "K": "#39395a"
+    "Y": "#ffd700"
   },
   "grid": [
-    "..KKK......",
-    ".KGGGK.....",
-    ".KGKGK.....",
-    ".KGGGK.....",
-    "..KGK......",
-    "..KGKKK....",
-    "..KGKGK....",
-    "..KKKKK...."
+    "...............",
+    "......BY.......",
+    "....CBYGCBY....",
+    "...CBYGCBYGC...",
+    "..CBYGCBYGCBY..",
+    "..BYGCBYGCBYG..",
+    ".BYGCBYGCBYGCB.",
+    ".YGCBYGCBYGCBY.",
+    ".GCBYGCBYGCBYG.",
+    "..BYGCBYGCBYG..",
+    "..YGCBYGCBYGC..",
+    "...CBYGCBYGC...",
+    "....YGCBYGC....",
+    "......BY.......",
+    "..............."
   ],
-  "story": "✨ 픽셀 아트",
+  "story": "🔷 보석",
   "dialogue": null
 }

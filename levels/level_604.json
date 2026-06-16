@@ -1,22 +1,21 @@
 {
   "level": 604,
   "hard": false,
-  "rows": 8,
+  "rows": 7,
   "cols": 11,
   "palette": {
     "K": "#39395a",
     "N": "#ff8fc7"
   },
   "grid": [
-    ".......KKK.",
-    ".....KKNNNK",
-    ".....KNNNNK",
-    "....K.KNNK.",
-    "....K.KK...",
-    "....K.K....",
-    "....KKK....",
-    ".....K....."
+    "..NNNNNNN..",
+    ".NNKNNKNNN.",
+    "NNNNNNNNNNN",
+    "NKNNNKNNNKN",
+    "NNNNNNNNNNN",
+    ".NNKNNNKNN.",
+    "..NNNNNNN.."
   ],
-  "story": "✨ 도끼↔",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

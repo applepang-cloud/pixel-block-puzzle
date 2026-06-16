@@ -1,54 +1,52 @@
 {
   "level": 1820,
   "hard": true,
-  "rows": 18,
-  "cols": 18,
+  "rows": 16,
+  "cols": 16,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
-    "O": "#ff9f43",
-    "R": "#ff4757",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
     "Y": "#ffd700"
   },
   "grid": [
-    "........OO........",
-    "........RR........",
-    "..CG....BB....GC..",
-    "..GYY...CC...YYG..",
-    "...YORB.CC.BROY...",
-    "....RBCCGGCCBR....",
-    "....BCCGYYGCCB....",
-    ".....CGYOOYGC.....",
-    "ORBCCGYORROYGCCBRO",
-    "ORBCCGYORROYGCCBRO",
-    ".....CGYOOYGC.....",
-    "....BCCGYYGCCB....",
-    "....RBCCGGCCBR....",
-    "...YORB.CC.BROY...",
-    "..GYY...CC...YYG..",
-    "..CG....BB....GC..",
-    "........RR........",
-    "........OO........"
+    ".....PBCCBP.....",
+    "...NPBCGGCBPN...",
+    "..NPBCGYYGCBPN..",
+    ".NPBCGYNNYGCBPN.",
+    ".PBCGYNPPNYGCBP.",
+    "PBCGYNPBBPNYGCBP",
+    "BCGYNPBCCBPNYGCB",
+    "CGYNPBCGGCBPNYGC",
+    "CGYNPBCGGCBPNYGC",
+    "BCGYNPBCCBPNYGCB",
+    "PBCGYNPBBPNYGCBP",
+    ".PBCGYNPPNYGCBP.",
+    ".NPBCGYNNYGCBPN.",
+    "..NPBCGYYGCBPN..",
+    "...NPBCGGCBPN...",
+    ".....PBCCBP....."
   ],
-  "story": "💥 보스! 크리스탈 보스",
+  "story": "💥 보스! 오로라 젬",
   "dialogue": {
     "intro": [
       {
-        "name": "준",
-        "color": "#5aa9ff",
-        "face": "🔥",
-        "who": "M",
-        "text": "아직도 신난다."
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "💖",
+        "who": "H",
+        "text": "너랑 하면 시간 가는 줄 몰라."
       }
     ],
     "outro": [
       {
-        "name": "유리",
-        "color": "#ff8fc7",
-        "face": "💪",
-        "who": "H",
-        "text": "끝까지!"
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😊",
+        "who": "M",
+        "text": "계속 함께하자."
       }
     ]
   }

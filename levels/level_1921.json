@@ -1,24 +1,21 @@
 {
   "level": 1921,
   "hard": false,
-  "rows": 7,
-  "cols": 11,
+  "rows": 5,
+  "cols": 4,
   "palette": {
-    "C": "#00d2d3",
     "G": "#2ed573",
-    "K": "#39395a",
     "O": "#ff9f43",
+    "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    "....KKKKKKK",
-    "...KOOYOOOK",
-    "...KOYYYOOK",
-    "...KOOYOGOK",
-    "...KCOOGGOK",
-    "...KCCOOOOK",
-    "....KKKKKKK"
+    "...G",
+    "..YG",
+    ".OYG",
+    "ROYG",
+    "ROYG"
   ],
-  "story": "✨ 픽셀 아트",
+  "story": "📊 블록탑",
   "dialogue": null
 }

@@ -1,34 +1,21 @@
 {
   "level": 779,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 7,
+  "cols": 13,
   "palette": {
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
+    "K": "#39395a",
     "Y": "#ffd700"
   },
   "grid": [
-    ".......YOY.......",
-    ".......ORO.......",
-    ".......RNR.......",
-    ".......NPN.......",
-    ".......PYP.......",
-    ".......YOY.......",
-    ".......ORO.......",
-    "YORNPYORNROYPNROY",
-    "ORNPYORNPNROYPNRO",
-    "YORNPYORNROYPNROY",
-    ".......ORO.......",
-    ".......YOY.......",
-    ".......PYP.......",
-    ".......NPN.......",
-    ".......RNR.......",
-    ".......ORO.......",
-    ".......YOY......."
+    "....K.K.K.K.K",
+    "....KKKKKKKK.",
+    "...KKKKKKKKKK",
+    "...KKKKKKKKKY",
+    "...KKKKKKKYYY",
+    "...KYKYYYYKYY",
+    "...YYYYYYYYY."
   ],
-  "story": "➕ 십자",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

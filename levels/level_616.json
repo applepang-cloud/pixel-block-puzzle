@@ -1,22 +1,22 @@
 {
   "level": 616,
   "hard": false,
-  "rows": 7,
-  "cols": 11,
+  "rows": 8,
+  "cols": 9,
   "palette": {
     "B": "#1e90ff",
-    "C": "#00d2d3",
-    "K": "#39395a"
+    "C": "#00d2d3"
   },
   "grid": [
-    ".K.....K...",
-    ".K.....K...",
-    "..KKKKK....",
-    ".KCCCCCK...",
-    "KCCBBBCCK..",
-    ".KCCCCCK...",
-    "..KKKKK...."
+    "..CBC....",
+    ".CBBBC...",
+    "CBBBBBC..",
+    "BBBBBBB..",
+    "BBBBBBB..",
+    "CBBBBBC..",
+    ".CBBBC...",
+    "..CBC...."
   ],
-  "story": "✨ 메달",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

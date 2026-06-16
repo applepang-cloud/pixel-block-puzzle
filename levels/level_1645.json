@@ -1,8 +1,8 @@
 {
   "level": 1645,
   "hard": true,
-  "rows": 18,
-  "cols": 18,
+  "rows": 14,
+  "cols": 14,
   "palette": {
     "G": "#2ed573",
     "N": "#ff8fc7",
@@ -12,25 +12,21 @@
     "Y": "#ffd700"
   },
   "grid": [
-    "....NNNNNNNNNN....",
-    "...PPNNNNNNNNRR...",
-    "..PPPNNNNNNNNRRR..",
-    ".PPPPPNNNNNNRRRRR.",
-    "PPPPPPNNNNNNRRRRRR",
-    "PPPPPPPNNNNRRRRRRR",
-    "PPPPPPPPNNRRRRRRRR",
-    "PPPPPPPPNNRRRRRRRR",
-    "PPPPPPPPPRRRRRRRRR",
-    "GGGGGGGGGOOOOOOOOO",
-    "GGGGGGGGYYOOOOOOOO",
-    "GGGGGGGGYYOOOOOOOO",
-    "GGGGGGGYYYYOOOOOOO",
-    "GGGGGGYYYYYYOOOOOO",
-    ".GGGGGYYYYYYOOOOO.",
-    "..GGGYYYYYYYYOOO..",
-    "...GGYYYYYYYYOO...",
-    "....YYYYYYYYYY...."
+    "........NN....",
+    ".......NNN....",
+    ".PPP...NNN....",
+    ".PPPP.NNNR....",
+    ".PPPPPNNRR....",
+    "..PPPPNNRRRRR.",
+    "...PPPPRRRRRRR",
+    "...GGGGOOOOOOO",
+    "..GGGGYYOOOOO.",
+    ".GGGGGYYOO....",
+    ".GGGG.YYYO....",
+    ".GGG...YYY....",
+    ".......YYY....",
+    "........YY...."
   ],
-  "story": "💥 보스! 크리스탈 보스",
+  "story": "💥 보스! 컬러 모자이크",
   "dialogue": null
 }

@@ -4,19 +4,19 @@
   "rows": 8,
   "cols": 11,
   "palette": {
-    "K": "#39395a",
+    "O": "#ff9f43",
     "R": "#ff4757"
   },
   "grid": [
-    "..RR.RR....",
-    ".RRRRRRR...",
-    ".RKRRKRR...",
-    "..RRRRR....",
-    ".RRRRRRR...",
-    ".RKRRKRR...",
-    "..RRKRR....",
-    "....K......"
+    ".....RR....",
+    "....RR.....",
+    "...OOOO....",
+    "..OOOOOO...",
+    "..OOOOOO...",
+    "..OOOOOO...",
+    "...OOOO....",
+    "....OO....."
   ],
-  "story": "✨ 네잎클로버",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

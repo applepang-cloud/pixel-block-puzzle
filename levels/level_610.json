@@ -1,52 +1,53 @@
 {
   "level": 610,
   "hard": true,
-  "rows": 16,
-  "cols": 16,
+  "rows": 17,
+  "cols": 17,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
     "G": "#2ed573",
     "N": "#ff8fc7",
+    "O": "#ff9f43",
     "P": "#c44dff",
+    "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    ".......GG.......",
-    ".......GG.......",
-    "..YY...GG...CC..",
-    "..YYY..GG..CCC..",
-    "...YYYGGGGCCC...",
-    "....YYYGGCCC....",
-    "....YYYGGCCC....",
-    "YYYYYYYYCCCCCCCC",
-    "NNNNNNNNBBBBBBBB",
-    "....NNNPPBBB....",
-    "....NNNPPBBB....",
-    "...NNNPPPPBBB...",
-    "..NNN..PP..BBB..",
-    "..NN...PP...BB..",
-    ".......PP.......",
-    ".......PP......."
+    ".......NNN.......",
+    "....NNNNNNNNN....",
+    "...PPNNNNNNNRR...",
+    "..PPPPNNNNNRRRR..",
+    ".PPPPPNNNNNRRRRR.",
+    ".PPPPPPNNNRRRRRR.",
+    ".PPPPPPNNNRRRRRR.",
+    "PPPPPPPPNRRRRRRRR",
+    "PPPPPPPPOOOOOOOOO",
+    "GGGGGGGGYOOOOOOOO",
+    ".GGGGGGYYYOOOOOO.",
+    ".GGGGGGYYYOOOOOO.",
+    ".GGGGGYYYYYOOOOO.",
+    "..GGGGYYYYYOOOO..",
+    "...GGYYYYYYYOO...",
+    "....YYYYYYYYY....",
+    ".......YYY......."
   ],
-  "story": "💥 보스! 프리즘 보스",
+  "story": "💥 보스! 크리스탈 보스",
   "dialogue": {
     "intro": [
       {
         "name": "유리",
         "color": "#ff8fc7",
-        "face": "🔥",
+        "face": "😊",
         "who": "H",
-        "text": "불타오른다!"
+        "text": "2천 단계가 코앞이야!"
       }
     ],
     "outro": [
       {
         "name": "준",
         "color": "#5aa9ff",
-        "face": "💪",
+        "face": "😎",
         "who": "M",
-        "text": "가보자!"
+        "text": "전설이 되자."
       }
     ]
   }

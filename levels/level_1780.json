@@ -1,53 +1,51 @@
 {
   "level": 1780,
   "hard": true,
-  "rows": 17,
-  "cols": 17,
+  "rows": 15,
+  "cols": 15,
   "palette": {
+    "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "P": "#c44dff",
+    "R": "#ff4757"
   },
   "grid": [
-    ".....CGYOYGC.....",
-    "....CGYOROYGC....",
-    "...CGYORNROYGC...",
-    "..CGYORNCNROYGC..",
-    ".CGYORNCGCNROYGC.",
-    "CGYORNCGYGCNROYGC",
-    "GYORNCGYOYGCNROYG",
-    "YORNCGYOROYGCNROY",
-    "ORNCGYORNROYGCNRO",
-    "YORNCGYOROYGCNROY",
-    "GYORNCGYOYGCNROYG",
-    "CGYORNCGYGCNROYGC",
-    ".CGYORNCGCNROYGC.",
-    "..CGYORNCNROYGC..",
-    "...CGYORNROYGC...",
-    "....CGYOROYGC....",
-    ".....CGYOYGC....."
+    "......R........",
+    ".....NN........",
+    ".....NPP..NN...",
+    ".....PPP.PPN...",
+    ".RNP.BBBBBPP...",
+    ".NNPBBCCCBB....",
+    "...PBCCGCCBPPN.",
+    "....BCGGGCBPPNR",
+    "...PBCCGCCBPPN.",
+    ".NNPBBCCCBB....",
+    ".RNP.BBBBBPP...",
+    ".....PPP.PPN...",
+    ".....NPP..NN...",
+    ".....NN........",
+    "......R........"
   ],
-  "story": "💥 보스! 갤럭시 보스",
+  "story": "💥 보스! 크리스탈 만다라",
   "dialogue": {
     "intro": [
       {
         "name": "유리",
         "color": "#ff8fc7",
-        "face": "🌟",
+        "face": "🤩",
         "who": "H",
-        "text": "그림이 끝없네."
+        "text": "색이 정말 다양하다!"
       }
     ],
     "outro": [
       {
         "name": "준",
         "color": "#5aa9ff",
-        "face": "🤩",
+        "face": "😄",
         "who": "M",
-        "text": "다음 판!"
+        "text": "하나씩 맞춰보자."
       }
     ]
   }

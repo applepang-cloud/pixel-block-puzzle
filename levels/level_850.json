@@ -1,52 +1,50 @@
 {
   "level": 850,
   "hard": true,
-  "rows": 16,
-  "cols": 16,
+  "rows": 14,
+  "cols": 14,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
   },
   "grid": [
-    "......GYYG......",
-    "...BCGYOOYGCB...",
-    "..BCGYORROYGCB..",
-    ".BCGYORBBROYGCB.",
-    ".CGYORBCCBROYGC.",
-    ".GYORBCGGCBROYG.",
-    "GYORBCGYYGCBROYG",
-    "YORBCGYOOYGCBROY",
-    "YORBCGYOOYGCBROY",
-    "GYORBCGYYGCBROYG",
-    ".GYORBCGGCBROYG.",
-    ".CGYORBCCBROYGC.",
-    ".BCGYORBBROYGCB.",
-    "..BCGYORROYGCB..",
-    "...BCGYOOYGCB...",
-    "......GYYG......"
+    "..............",
+    "...PB....BP...",
+    "...BCG..GCB...",
+    "...CGRNNRGC...",
+    "....RNPPNR....",
+    "...RNPBBPNR...",
+    "CGRNPBCCBPNRGC",
+    "CGRNPBCCBPNRGC",
+    "...RNPBBPNR...",
+    "....RNPPNR....",
+    "...CGRNNRGC...",
+    "...BCG..GCB...",
+    "...PB....BP...",
+    ".............."
   ],
-  "story": "💥 보스! 오팔 보스",
+  "story": "💥 보스! 갤럭시 보스",
   "dialogue": {
     "intro": [
       {
-        "name": "준",
-        "color": "#5aa9ff",
-        "face": "😌",
-        "who": "M",
-        "text": "잠깐 쉬었다 갈까?"
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🏆",
+        "who": "H",
+        "text": "거의 다 왔어."
       }
     ],
     "outro": [
       {
-        "name": "유리",
-        "color": "#ff8fc7",
-        "face": "🙂",
-        "who": "H",
-        "text": "좋아, 천천히 가자."
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "👏",
+        "who": "M",
+        "text": "최고!"
       }
     ]
   }

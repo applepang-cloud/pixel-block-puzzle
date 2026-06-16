@@ -6,27 +6,27 @@
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
-    "N": "#ff8fc7",
+    "G": "#2ed573",
     "O": "#ff9f43",
     "P": "#c44dff",
-    "R": "#ff4757"
+    "Y": "#ffd700"
   },
   "grid": [
-    ".......BBB....",
-    ".......BBB....",
-    ".CCC..BBBBP...",
-    ".CCCC.BBBP....",
-    ".CCCCCBBPP....",
-    "..CCCCBBPPPPP.",
-    "...CCCCPPPPPPP",
-    "...OOOONNNNNNN",
-    "..OOOORRNNNNN.",
-    ".OOOOORRNN....",
-    ".OOOO.RRRN....",
-    ".OOO..RRRRN...",
-    ".......RRR....",
-    ".......RRR...."
+    "....PPPPPP....",
+    "..PPBBBBBBPP..",
+    ".PBBCCCCCCBBP.",
+    ".PBCCGGGGCCBP.",
+    "PBCCGGYYGGCCBP",
+    "PBCGGYYYYGGCBP",
+    "PBCGYYOOYYGCBP",
+    "PBCGYYOOYYGCBP",
+    "PBCGGYYYYGGCBP",
+    "PBCCGGYYGGCCBP",
+    ".PBCCGGGGCCBP.",
+    ".PBBCCCCCCBBP.",
+    "..PPBBBBBBPP..",
+    "....PPPPPP...."
   ],
-  "story": "💥 보스! 프리즘 코어",
+  "story": "💥 보스! 갤럭시 보스",
   "dialogue": null
 }

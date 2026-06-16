@@ -1,52 +1,50 @@
 {
   "level": 840,
   "hard": true,
-  "rows": 16,
-  "cols": 16,
+  "rows": 14,
+  "cols": 14,
   "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
     "G": "#2ed573",
-    "N": "#ff8fc7",
     "O": "#ff9f43",
     "P": "#c44dff",
-    "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    "................",
-    "...PNNNNNNNNR...",
-    "...PPNNNNNNRR...",
-    "..PPPNNNNNNRRR..",
-    ".PPPPPNNNNRRRRR.",
-    ".PPPPPPNNRRRRRR.",
-    "PPPPPPPNNRRRRRRR",
-    "PPPPPPPPRRRRRRRR",
-    "GGGGGGGGOOOOOOOO",
-    "GGGGGGGYYOOOOOOO",
-    ".GGGGGGYYOOOOOO.",
-    ".GGGGGYYYYOOOOO.",
-    "..GGGYYYYYYOOO..",
-    "...GGYYYYYYOO...",
-    "...GYYYYYYYYO...",
-    "................"
+    "....PPPPPP....",
+    "..PPBBBBBBPP..",
+    ".PBBCCCCCCBBP.",
+    ".PBCCGGGGCCBP.",
+    "PBCCGGYYGGCCBP",
+    "PBCGGYYYYGGCBP",
+    "PBCGYYOOYYGCBP",
+    "PBCGYYOOYYGCBP",
+    "PBCGGYYYYGGCBP",
+    "PBCCGGYYGGCCBP",
+    ".PBCCGGGGCCBP.",
+    ".PBBCCCCCCBBP.",
+    "..PPBBBBBBPP..",
+    "....PPPPPP...."
   ],
-  "story": "💥 보스! 레인보우 다이아",
+  "story": "💥 보스! 스타 보스",
   "dialogue": {
     "intro": [
       {
-        "name": "유리",
-        "color": "#ff8fc7",
-        "face": "🎉",
-        "who": "H",
-        "text": "또 하나 깼어!"
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🍀",
+        "who": "M",
+        "text": "행운을!"
       }
     ],
     "outro": [
       {
-        "name": "준",
-        "color": "#5aa9ff",
-        "face": "🥹",
-        "who": "M",
-        "text": "우리 추억이 쌓여간다."
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "✨",
+        "who": "H",
+        "text": "가자!"
       }
     ]
   }

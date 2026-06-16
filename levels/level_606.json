@@ -1,22 +1,21 @@
 {
   "level": 606,
   "hard": false,
-  "rows": 8,
-  "cols": 11,
+  "rows": 7,
+  "cols": 9,
   "palette": {
-    "K": "#39395a",
+    "G": "#2ed573",
     "Y": "#ffd700"
   },
   "grid": [
-    "...KK...KK.",
-    "...KYKKKYYK",
-    "...KYYYYYYK",
-    "...KYYYYYYK",
-    "....KYYYYK.",
-    "....KYYYYK.",
-    ".....KYYK..",
-    ".....KYYK.."
+    ".YYYYYYY.",
+    ".YGGGGGY.",
+    "YYYYYYYYY",
+    "YGYGGGYGY",
+    "YGGGGGGGY",
+    "YGGGGGGGY",
+    "YYYYYYYYY"
   ],
-  "story": "✨ 망토↔",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

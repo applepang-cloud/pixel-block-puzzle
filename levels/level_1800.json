@@ -1,45 +1,42 @@
 {
   "level": 1800,
   "hard": true,
-  "rows": 18,
-  "cols": 18,
+  "rows": 15,
+  "cols": 15,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
+    "G": "#2ed573",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
     "P": "#c44dff",
-    "R": "#ff4757"
+    "Y": "#ffd700"
   },
   "grid": [
-    "........BB........",
-    ".......BCCB.......",
-    "......BCOOCB......",
-    ".....BCORROCB.....",
-    "....BCORRRROCB....",
-    "...BCORRNNRROCB...",
-    "..BCORRNPPNRROCB..",
-    ".BCORRNPBBPNRROCB.",
-    "BCORRNPBCCBPNRROCB",
-    "BCORRNPBCCBPNRROCB",
-    ".BCORRNPBBPNRROCB.",
-    "..BCORRNPPNRROCB..",
-    "...BCORRNNRROCB...",
-    "....BCORRRROCB....",
-    ".....BCORROCB.....",
-    "......BCOOCB......",
-    ".......BCCB.......",
-    "........BB........"
+    ".....G...G.....",
+    ".....GG.GG.....",
+    ".....GG.GG.....",
+    ".YYY.GG.GG.CCC.",
+    "..YYYYG.GCCCC..",
+    "...YYYGGGCCC...",
+    "..YY.YYGCC.CC..",
+    "YYYYYYYBBBBBBBB",
+    "..NN.NNPBB.BB..",
+    "...NNNPPPBBB...",
+    "..NNNNP.PBBBB..",
+    ".NNN.PP.PP.BBB.",
+    ".....PP.PP.....",
+    ".....PP.PP.....",
+    ".....P...P....."
   ],
-  "story": "💥 보스! 오로라 보스",
+  "story": "💥 보스! 오팔 보스",
   "dialogue": {
     "intro": [
       {
         "name": "유리",
         "color": "#ff8fc7",
-        "face": "🏆",
+        "face": "🥳",
         "who": "H",
-        "text": "거의 다 왔어."
+        "text": "벌써 여기까지 왔네."
       }
     ],
     "outro": [
@@ -48,7 +45,7 @@
         "color": "#5aa9ff",
         "face": "👏",
         "who": "M",
-        "text": "최고!"
+        "text": "우리 정말 잘한다."
       }
     ]
   }

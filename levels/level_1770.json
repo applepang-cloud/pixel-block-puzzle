@@ -1,44 +1,42 @@
 {
   "level": 1770,
   "hard": true,
-  "rows": 17,
-  "cols": 17,
+  "rows": 15,
+  "cols": 15,
   "palette": {
     "B": "#1e90ff",
-    "N": "#ff8fc7",
+    "C": "#00d2d3",
+    "G": "#2ed573",
     "O": "#ff9f43",
     "P": "#c44dff",
-    "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    "........B........",
-    ".......YYY.......",
-    "......OOOOO......",
-    ".....OORRROO.....",
-    "....ORRRRRRRO....",
-    "...ORRNNNNNRRO...",
-    "..OORNNPPPNNROO..",
-    ".YORRNPPBPPNRROY.",
-    "BYORRNPBBBPNRROYB",
-    ".YORRNPPBPPNRROY.",
-    "..OORNNPPPNNROO..",
-    "...ORRNNNNNRRO...",
-    "....ORRRRRRRO....",
-    ".....OORRROO.....",
-    "......OOOOO......",
-    ".......YYY.......",
-    "........B........"
+    ".........C.....",
+    "........CBP....",
+    ".......CBPO....",
+    ".BPOY..BPOY....",
+    ".POYGCBPOY.....",
+    "..YGCBPOYG.....",
+    "...CBPOYGCBPOY.",
+    "....POYGCBPOYGC",
+    "...POYGCBPOYGC.",
+    "..POYGCBPO.....",
+    ".POYGCBPOY.....",
+    ".OYGC..OYGC....",
+    ".......YGCB....",
+    "........CBP....",
+    ".........P....."
   ],
-  "story": "💥 보스! 스타 보스",
+  "story": "💥 보스! 오로라 젬",
   "dialogue": {
     "intro": [
       {
         "name": "준",
         "color": "#5aa9ff",
-        "face": "🔥",
+        "face": "😎",
         "who": "M",
-        "text": "아직도 신난다."
+        "text": "이건 좀 어려운데?"
       }
     ],
     "outro": [
@@ -47,7 +45,7 @@
         "color": "#ff8fc7",
         "face": "💪",
         "who": "H",
-        "text": "끝까지!"
+        "text": "우리 둘이면 문제없어!"
       }
     ]
   }

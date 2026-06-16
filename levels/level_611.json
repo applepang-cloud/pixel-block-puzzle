@@ -1,23 +1,23 @@
 {
   "level": 611,
   "hard": false,
-  "rows": 7,
+  "rows": 8,
   "cols": 11,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
-    "G": "#2ed573",
-    "K": "#39395a"
+    "G": "#2ed573"
   },
   "grid": [
-    ".....K.K.K.",
-    ".....KKKKK.",
-    "....KGCGCGK",
-    "....KGGGGGK",
-    "...KGBGGBGK",
-    ".....KKKKK.",
-    ".....K.K.K."
+    "....G......",
+    "..CCCCCCC..",
+    ".CCCCCCCCC.",
+    "CCCBCBCBCCC",
+    "CCBCBCBCBCC",
+    "CCCBCBCBCCC",
+    ".CCCCCCCCC.",
+    "..CCCCCCC.."
   ],
-  "story": "✨ 로봇↔",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

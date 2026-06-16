@@ -7,46 +7,46 @@
     "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
+    "O": "#ff9f43",
+    "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    ".......GG.......",
-    ".......GG.......",
-    "..YY...GG...CC..",
-    "..YYY..GG..CCC..",
-    "...YYYGGGGCCC...",
-    "....YYYGGCCC....",
-    "....YYYGGCCC....",
-    "YYYYYYYYCCCCCCCC",
-    "NNNNNNNNBBBBBBBB",
-    "....NNNPPBBB....",
-    "....NNNPPBBB....",
-    "...NNNPPPPBBB...",
-    "..NNN..PP..BBB..",
-    "..NN...PP...BB..",
-    ".......PP.......",
-    ".......PP......."
+    "....O..OO..O....",
+    "...RO..OO..OY...",
+    "....ROOOOOOY....",
+    ".R.RROOOOOOYY.Y.",
+    "RRRRRROOOOYYYYYY",
+    "..RRRRROOYYYYY..",
+    "..RRRRROOYYYYY..",
+    "RRRRRRRRYYYYYYYY",
+    "BBBBBBBBGGGGGGGG",
+    "..BBBBBCCGGGGG..",
+    "..BBBBBCCGGGGG..",
+    "BBBBBBCCCCGGGGGG",
+    ".B.BBCCCCCCGG.G.",
+    "....BCCCCCCG....",
+    "...BC..CC..CG...",
+    "....C..CC..C...."
   ],
-  "story": "💥 보스! 갤럭시 보스",
+  "story": "💥 보스! 오로라 젬",
   "dialogue": {
     "intro": [
       {
-        "name": "준",
-        "color": "#5aa9ff",
-        "face": "🔥",
-        "who": "M",
-        "text": "아직도 신난다."
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "💖",
+        "who": "H",
+        "text": "너랑 하면 시간 가는 줄 몰라."
       }
     ],
     "outro": [
       {
-        "name": "유리",
-        "color": "#ff8fc7",
-        "face": "💪",
-        "who": "H",
-        "text": "끝까지!"
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😊",
+        "who": "M",
+        "text": "계속 함께하자."
       }
     ]
   }

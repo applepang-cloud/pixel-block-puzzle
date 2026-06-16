@@ -1,21 +1,28 @@
 {
   "level": 1713,
   "hard": false,
-  "rows": 7,
+  "rows": 11,
   "cols": 11,
   "palette": {
-    "C": "#00d2d3",
-    "G": "#2ed573"
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
   },
   "grid": [
-    "G..G.G..G..",
-    ".GGGGGGG...",
-    ".GCGCGCG...",
-    "GGCGCGCGG..",
-    ".GCGCGCG...",
-    ".GGGGGGG...",
-    "G..G.G..G.."
+    "...........",
+    "...........",
+    "...ROBP....",
+    "....OBPNR..",
+    "..NROBPN...",
+    "....OBPNRO.",
+    "..NROBPN...",
+    "....OBPNR..",
+    "...ROBP....",
+    "...........",
+    "..........."
   ],
-  "story": "✨ 픽셀 아트",
+  "story": "🌸 예쁜 꽃",
   "dialogue": null
 }

@@ -1,34 +1,35 @@
 {
   "level": 1890,
   "hard": true,
-  "rows": 15,
-  "cols": 15,
+  "rows": 16,
+  "cols": 16,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
+    "G": "#2ed573",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
     "P": "#c44dff",
-    "R": "#ff4757"
+    "Y": "#ffd700"
   },
   "grid": [
-    "...............",
-    "...PBC...CBP...",
-    "...BCOR.ROCB...",
-    "...CORR.RROC...",
-    "....RRN.NRR....",
-    "....RNPBPNR....",
-    ".ORRNPBCBPNRRO.",
-    "ORRNPBCCCBPNRRO",
-    ".ORRNPBCBPNRRO.",
-    "....RNPBPNR....",
-    "....RRN.NRR....",
-    "...CORR.RROC...",
-    "...BCOR.ROCB...",
-    "...PBC...CBP...",
-    "..............."
+    ".........GG.....",
+    "........GGGG....",
+    "..YY...GGGGC....",
+    ".YYYYG.GGGGC....",
+    ".YYYYYGGGGCC....",
+    ".YYYYYYGGCC.....",
+    "..YYYYYGGCCCCCCC",
+    "....YYYYCCCCCCCC",
+    "....NNNNBBBBBBBB",
+    "..NNNNNPPBBBBBBB",
+    ".NNNNNNPPBB.....",
+    ".NNNNNPPPPBB....",
+    ".NNNNP.PPPPB....",
+    "..NN...PPPPB....",
+    "........PPPP....",
+    ".........PP....."
   ],
-  "story": "💥 보스! 크리스탈 보스",
+  "story": "💥 보스! 레인보우 다이아",
   "dialogue": {
     "intro": [
       {
@@ -36,7 +37,7 @@
         "color": "#5aa9ff",
         "face": "🍀",
         "who": "M",
-        "text": "행운을!"
+        "text": "왠지 오늘 운이 좋아."
       }
     ],
     "outro": [
@@ -45,7 +46,7 @@
         "color": "#ff8fc7",
         "face": "✨",
         "who": "H",
-        "text": "가자!"
+        "text": "행운이 함께하길!"
       }
     ]
   }

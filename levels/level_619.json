@@ -1,23 +1,21 @@
 {
   "level": 619,
   "hard": false,
-  "rows": 8,
+  "rows": 7,
   "cols": 11,
   "palette": {
     "G": "#2ed573",
-    "K": "#39395a",
     "Y": "#ffd700"
   },
   "grid": [
-    "......KYK..",
-    ".....KK....",
-    "..KKK......",
-    ".KKKKK.....",
-    "KKKGKKK....",
-    "KKKKKKK....",
-    "KKKKKKK....",
-    ".KKKKK....."
+    ".Y.YYY.Y...",
+    "YYYYYYYYY..",
+    ".YYYYYYY...",
+    "..YYYYY....",
+    "...GGG.....",
+    "...GGG.....",
+    "..GGGGG...."
   ],
-  "story": "✨ 폭탄",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

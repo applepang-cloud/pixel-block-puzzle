@@ -1,22 +1,22 @@
 {
   "level": 1609,
   "hard": false,
-  "rows": 7,
-  "cols": 9,
+  "rows": 8,
+  "cols": 11,
   "palette": {
     "K": "#39395a",
-    "O": "#ff9f43",
     "R": "#ff4757"
   },
   "grid": [
-    ".RRRRRR..",
-    ".RRRRRR..",
-    "OOOOOOOO.",
-    "ORRRRROK.",
-    "ORRRRROK.",
-    "ORRRRRO..",
-    "OOOOOOOO."
+    ".....RRRR..",
+    "....RRRRRR.",
+    "...RRRRRRRR",
+    "...RRRRRRRR",
+    "....RRRRRR.",
+    ".....RRRR..",
+    "......KK...",
+    ".......K..."
   ],
-  "story": "✨ 픽셀 아트",
+  "story": "✨ 풍선↔",
   "dialogue": null
 }

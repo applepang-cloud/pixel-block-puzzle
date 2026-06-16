@@ -1,8 +1,8 @@
 {
   "level": 1990,
   "hard": true,
-  "rows": 18,
-  "cols": 18,
+  "rows": 17,
+  "cols": 17,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
@@ -12,26 +12,25 @@
     "Y": "#ffd700"
   },
   "grid": [
-    "..................",
-    "....OOO....OOO....",
-    "...OOPPP..PPPOO...",
-    "....PPBB..BBPP....",
-    "....BBCCCCCCBB....",
-    "....BCCGGGGCCB....",
-    ".....CGGYYGGC.....",
-    ".PPBCGGYYYYGGCBPP.",
-    "OPPBCGYYOOYYGCBPPO",
-    "OPPBCGYYOOYYGCBPPO",
-    ".PPBCGGYYYYGGCBPP.",
-    ".....CGGYYGGC.....",
-    "....BCCGGGGCCB....",
-    "....BBCCCCCCBB....",
-    "....PPBB..BBPP....",
-    "...OOPPP..PPPOO...",
-    "....OOO....OOO....",
-    ".................."
+    "......O..........",
+    "......PP.........",
+    "......BBB...PO...",
+    "......BCC..BBP...",
+    ".OP...CCC.CCB....",
+    ".PPBCCGGGGGCC....",
+    "..BBCGGYYYGG.....",
+    "...CCGYYOYYGCCBP.",
+    ".....GYOOOYGCCBPO",
+    "...CCGYYOYYGCCBP.",
+    "..BBCGGYYYGG.....",
+    ".PPBCCGGGGGCC....",
+    ".OP...CCC.CCB....",
+    "......BCC..BBP...",
+    "......BBB...PO...",
+    "......PP.........",
+    "......O.........."
   ],
-  "story": "💥 보스! 갤럭시 보스",
+  "story": "💥 보스! 레인보우 다이아",
   "dialogue": {
     "intro": [
       {
@@ -39,7 +38,7 @@
         "color": "#5aa9ff",
         "face": "🍀",
         "who": "M",
-        "text": "행운을!"
+        "text": "왠지 오늘 운이 좋아."
       }
     ],
     "outro": [
@@ -48,7 +47,7 @@
         "color": "#ff8fc7",
         "face": "✨",
         "who": "H",
-        "text": "가자!"
+        "text": "행운이 함께하길!"
       }
     ]
   }

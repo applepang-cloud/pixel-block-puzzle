@@ -2,22 +2,20 @@
   "level": 762,
   "hard": false,
   "rows": 7,
-  "cols": 7,
+  "cols": 11,
   "palette": {
     "G": "#2ed573",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "K": "#39395a"
   },
   "grid": [
-    ".GGYGG.",
-    "GGYOYGG",
-    "GYOROYG",
-    "YORRROY",
-    "GYOROYG",
-    "GGYOYGG",
-    ".GGYGG."
+    "K..........",
+    "KGGGGG.....",
+    "KGGGGGG....",
+    "KGGGGG.....",
+    "K..........",
+    "K..........",
+    "K.........."
   ],
-  "story": "➕ 십자",
+  "story": "✨ 픽셀 아트",
   "dialogue": null
 }

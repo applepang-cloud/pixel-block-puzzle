@@ -1,35 +1,34 @@
 {
   "level": 1760,
   "hard": true,
-  "rows": 16,
-  "cols": 16,
+  "rows": 15,
+  "cols": 15,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
     "G": "#2ed573",
     "N": "#ff8fc7",
+    "O": "#ff9f43",
     "P": "#c44dff",
-    "R": "#ff4757"
+    "R": "#ff4757",
+    "Y": "#ffd700"
   },
   "grid": [
-    "................",
-    "...RNP....PNR...",
-    "...NPBC..CBPN...",
-    "...PBCGRRGCBP...",
-    "....CGRNNRGC....",
-    "....GRNPPNRG....",
-    ".BCGRNPBBPNRGCB.",
-    "BCGRNPBCCBPNRGCB",
-    "BCGRNPBCCBPNRGCB",
-    ".BCGRNPBBPNRGCB.",
-    "....GRNPPNRG....",
-    "....CGRNNRGC....",
-    "...PBCGRRGCBP...",
-    "...NPBC..CBPN...",
-    "...RNP....PNR...",
-    "................"
+    ".......NN......",
+    "...PNNNNNNN....",
+    "..PPPNNNNNRRR..",
+    "..PPPNNNNNRRRR.",
+    ".PPPPPNNNRRRRR.",
+    "PPPPPPNNNRRRRR.",
+    "PPPPPPPNRRRRRRR",
+    "PPPPPPPOOOOOOOO",
+    "GGGGGGGYOOOOOOO",
+    "GGGGGGYYYOOOOO.",
+    ".GGGGGYYYOOOOO.",
+    "..GGGYYYYYOOOO.",
+    "..GGGYYYYYOOO..",
+    "...GYYYYYYY....",
+    ".......YY......"
   ],
-  "story": "💥 보스! 프리즘 보스",
+  "story": "💥 보스! 네뷸라 코어",
   "dialogue": {
     "intro": [
       {
@@ -37,16 +36,16 @@
         "color": "#ff8fc7",
         "face": "😊",
         "who": "H",
-        "text": "2천 단계가 코앞이야!"
+        "text": "오늘도 너랑 같이라 좋아."
       }
     ],
     "outro": [
       {
         "name": "준",
         "color": "#5aa9ff",
-        "face": "😎",
+        "face": "🥰",
         "who": "M",
-        "text": "전설이 되자."
+        "text": "나도. 다음 판도 가보자!"
       }
     ]
   }
