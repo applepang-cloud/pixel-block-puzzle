@@ -1,0 +1,53 @@
+{
+  "level": 1410,
+  "hard": true,
+  "rows": 16,
+  "cols": 16,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....YYORROYY....",
+    "...YYORBBROYY...",
+    "..YYORBCCBROYY..",
+    ".YYORBCCCCBROYY.",
+    "YYORBCCGGCCBROYY",
+    "YORBCCGYYGCCBROY",
+    "ORBCCGYOOYGCCBRO",
+    "RBCCGYORROYGCCBR",
+    "RBCCGYORROYGCCBR",
+    "ORBCCGYOOYGCCBRO",
+    "YORBCCGYYGCCBROY",
+    "YYORBCCGGCCBROYY",
+    ".YYORBCCCCBROYY.",
+    "..YYORBCCBROYY..",
+    "...YYORBBROYY...",
+    "....YYORROYY...."
+  ],
+  "story": "💥 보스! 오로라 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😊",
+        "who": "H",
+        "text": "벌써 천 단계를 넘었어!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😎",
+        "who": "M",
+        "text": "우리 진짜 고수다."
+      }
+    ]
+  }
+}

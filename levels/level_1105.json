@@ -1,0 +1,35 @@
+{
+  "level": 1105,
+  "hard": true,
+  "rows": 17,
+  "cols": 17,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "........B........",
+    ".......YYY.......",
+    "......OOOOO......",
+    ".....OORRROO.....",
+    "....ORRRRRRRO....",
+    "...ORRNNNNNRRO...",
+    "..OORNNPPPNNROO..",
+    ".YORRNPPBPPNRROY.",
+    "BYORRNPBBBPNRROYB",
+    ".YORRNPPBPPNRROY.",
+    "..OORNNPPPNNROO..",
+    "...ORRNNNNNRRO...",
+    "....ORRRRRRRO....",
+    ".....OORRROO.....",
+    "......OOOOO......",
+    ".......YYY.......",
+    "........B........"
+  ],
+  "story": "💥 보스! 프리즘 보스",
+  "dialogue": null
+}

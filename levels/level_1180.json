@@ -1,0 +1,51 @@
+{
+  "level": 1180,
+  "hard": true,
+  "rows": 14,
+  "cols": 14,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...GGGGGGGG...",
+    "..YYGGGGGGCC..",
+    ".YYYGGGGGGCCC.",
+    "YYYYYGGGGCCCCC",
+    "YYYYYYGGCCCCCC",
+    "YYYYYYGGCCCCCC",
+    "YYYYYYYCCCCCCC",
+    "NNNNNNNBBBBBBB",
+    "NNNNNNPPBBBBBB",
+    "NNNNNNPPBBBBBB",
+    "NNNNNPPPPBBBBB",
+    ".NNNPPPPPPBBB.",
+    "..NNPPPPPPBB..",
+    "...PPPPPPPP..."
+  ],
+  "story": "💥 보스! 레인보우 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🌟",
+        "who": "H",
+        "text": "새 그림이 가득해."
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🤩",
+        "who": "M",
+        "text": "다음은 뭘까?"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "level": 1310,
+  "hard": true,
+  "rows": 18,
+  "cols": 18,
+  "palette": {
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "....NNNNNNNNNN....",
+    "...PPNNNNNNNNRR...",
+    "..PPPNNNNNNNNRRR..",
+    ".PPPPPNNNNNNRRRRR.",
+    "PPPPPPNNNNNNRRRRRR",
+    "PPPPPPPNNNNRRRRRRR",
+    "PPPPPPPPNNRRRRRRRR",
+    "PPPPPPPPNNRRRRRRRR",
+    "PPPPPPPPPRRRRRRRRR",
+    "GGGGGGGGGOOOOOOOOO",
+    "GGGGGGGGYYOOOOOOOO",
+    "GGGGGGGGYYOOOOOOOO",
+    "GGGGGGGYYYYOOOOOOO",
+    "GGGGGGYYYYYYOOOOOO",
+    ".GGGGGYYYYYYOOOOO.",
+    "..GGGYYYYYYYYOOO..",
+    "...GGYYYYYYYYOO...",
+    "....YYYYYYYYYY...."
+  ],
+  "story": "💥 보스! 젬 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "😊",
+        "who": "H",
+        "text": "벌써 천 단계를 넘었어!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😎",
+        "who": "M",
+        "text": "우리 진짜 고수다."
+      }
+    ]
+  }
+}

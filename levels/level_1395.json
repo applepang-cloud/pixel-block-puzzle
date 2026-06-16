@@ -1,0 +1,33 @@
+{
+  "level": 1395,
+  "hard": true,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".......Y.......",
+    "......OOO......",
+    "..YO..RRR..OY..",
+    "..OOR.RRR.ROO..",
+    "...RRNNNNNRR...",
+    "....NNPPPNN....",
+    ".ORRNPPBPPNRRO.",
+    "YORRNPBBBPNRROY",
+    ".ORRNPPBPPNRRO.",
+    "....NNPPPNN....",
+    "...RRNNNNNRR...",
+    "..OOR.RRR.ROO..",
+    "..YO..RRR..OY..",
+    "......OOO......",
+    ".......Y......."
+  ],
+  "story": "💥 보스! 크리스탈 보스",
+  "dialogue": null
+}

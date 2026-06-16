@@ -1,0 +1,32 @@
+{
+  "level": 1353,
+  "hard": false,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff"
+  },
+  "grid": [
+    "...............",
+    "...............",
+    "....GG...CC....",
+    "....GGG.CCC....",
+    "....GGG.CCC....",
+    ".....GGCCC.....",
+    "..GGGGGCCCCCC..",
+    ".BBBBBBPPPPPPP.",
+    "..NNNNNNPPPPP..",
+    ".....NNNPP.....",
+    "....NNN.PPP....",
+    "....NNN.PPP....",
+    "....NN...PP....",
+    "...............",
+    "..............."
+  ],
+  "story": "✨ 픽셀 아트",
+  "dialogue": null
+}

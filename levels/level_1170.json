@@ -1,0 +1,51 @@
+{
+  "level": 1170,
+  "hard": true,
+  "rows": 14,
+  "cols": 14,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "......BB......",
+    ".....BCCB.....",
+    "....BCCCCB....",
+    "...BCCGGCCB...",
+    "..BCCGYYGCCB..",
+    ".BCCGYOOYGCCB.",
+    "BCCGYORROYGCCB",
+    "BCCGYORROYGCCB",
+    ".BCCGYOOYGCCB.",
+    "..BCCGYYGCCB..",
+    "...BCCGGCCB...",
+    "....BCCCCB....",
+    ".....BCCB.....",
+    "......BB......"
+  ],
+  "story": "💥 보스! 오로라 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🔥",
+        "who": "M",
+        "text": "끝이 안 보이네."
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "💪",
+        "who": "H",
+        "text": "그래도 재밌잖아!"
+      }
+    ]
+  }
+}

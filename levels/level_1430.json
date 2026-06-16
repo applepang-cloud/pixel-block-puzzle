@@ -1,0 +1,53 @@
+{
+  "level": 1430,
+  "hard": true,
+  "rows": 16,
+  "cols": 16,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    ".......CC.......",
+    ".......OO.......",
+    "..PP...RR...PP..",
+    "..PBCO.RR.OCBP..",
+    "...COR.NN.ROC...",
+    "...ORRNPPNRRO...",
+    ".....NPBBPN.....",
+    "CORRNPBCCBPNRROC",
+    "CORRNPBCCBPNRROC",
+    ".....NPBBPN.....",
+    "...ORRNPPNRRO...",
+    "...COR.NN.ROC...",
+    "..PBCO.RR.OCBP..",
+    "..PP...RR...PP..",
+    ".......OO.......",
+    ".......CC......."
+  ],
+  "story": "💥 보스! 젬 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🌟",
+        "who": "H",
+        "text": "새 그림이 가득해."
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🤩",
+        "who": "M",
+        "text": "다음은 뭘까?"
+      }
+    ]
+  }
+}

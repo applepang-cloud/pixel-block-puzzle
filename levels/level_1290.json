@@ -1,0 +1,54 @@
+{
+  "level": 1290,
+  "hard": true,
+  "rows": 17,
+  "cols": 17,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "........O........",
+    ".......PPP.......",
+    "...O...BBB...O...",
+    "..OPB..CCC..BPO..",
+    "...BBC.CCC.CBB...",
+    "....CCGGGGGCC....",
+    ".....GGYYYGG.....",
+    ".PBCCGYYOYYGCCBP.",
+    "OPBCCGYOOOYGCCBPO",
+    ".PBCCGYYOYYGCCBP.",
+    ".....GGYYYGG.....",
+    "....CCGGGGGCC....",
+    "...BBC.CCC.CBB...",
+    "..OPB..CCC..BPO..",
+    "...O...BBB...O...",
+    ".......PPP.......",
+    "........O........"
+  ],
+  "story": "💥 보스! 오로라 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🍀",
+        "who": "M",
+        "text": "행운을 빌어!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "✨",
+        "who": "H",
+        "text": "가보자!"
+      }
+    ]
+  }
+}

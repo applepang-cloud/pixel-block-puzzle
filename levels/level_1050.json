@@ -1,0 +1,52 @@
+{
+  "level": 1050,
+  "hard": true,
+  "rows": 15,
+  "cols": 15,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "...............",
+    "...YG.....GC...",
+    "...YYG...GCC...",
+    "....YGG.GGC....",
+    "....YYGGGCC....",
+    ".....YGGGC.....",
+    ".YYYYYYGCCCCCC.",
+    "YYYYYYYBBBBBBBB",
+    ".NNNNNNPBBBBBB.",
+    ".....NPPPB.....",
+    "....NNPPPBB....",
+    "....NPP.PPB....",
+    "...NNP...PBB...",
+    "...NP.....PB...",
+    "..............."
+  ],
+  "story": "💥 보스! 오로라 보스",
+  "dialogue": {
+    "intro": [
+      {
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🎉",
+        "who": "H",
+        "text": "신기록 도전!"
+      }
+    ],
+    "outro": [
+      {
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "👏",
+        "who": "M",
+        "text": "할 수 있어!"
+      }
+    ]
+  }
+}

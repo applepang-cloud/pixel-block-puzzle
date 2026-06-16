@@ -1,0 +1,34 @@
+{
+  "level": 1235,
+  "hard": true,
+  "rows": 16,
+  "cols": 16,
+  "palette": {
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    ".......NN.......",
+    "......NNNN......",
+    ".....NNNNNN.....",
+    "....PNNNNNNR....",
+    "...PPPNNNNRRR...",
+    "..PPPPPNNRRRRR..",
+    ".PPPPPPNNRRRRRR.",
+    "PPPPPPPPRRRRRRRR",
+    "GGGGGGGGOOOOOOOO",
+    ".GGGGGGYYOOOOOO.",
+    "..GGGGGYYOOOOO..",
+    "...GGGYYYYOOO...",
+    "....GYYYYYYO....",
+    ".....YYYYYY.....",
+    "......YYYY......",
+    ".......YY......."
+  ],
+  "story": "💥 보스! 스타 보스",
+  "dialogue": null
+}

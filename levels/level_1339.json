@@ -1,0 +1,21 @@
+{
+  "level": 1339,
+  "hard": false,
+  "rows": 8,
+  "cols": 11,
+  "palette": {
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "..........Y",
+    ".......Y.YY",
+    ".....Y.YYYY",
+    "...Y.YYYYY.",
+    "...YYYYYY..",
+    "...YYYYY...",
+    "....YYY....",
+    ".....Y....."
+  ],
+  "story": "✨ 픽셀 아트",
+  "dialogue": null
+}
