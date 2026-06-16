@@ -1,27 +1,23 @@
 {
   "level": 586,
   "hard": false,
-  "rows": 11,
+  "rows": 8,
   "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
+    "K": "#39395a",
     "N": "#ff8fc7",
     "P": "#c44dff"
   },
   "grid": [
-    "...........",
-    ".....P.....",
-    "....NNC....",
-    "....NNC....",
-    "..NNCCBBP..",
-    ".PNNCCBBPP.",
-    "..CCBBPPN..",
-    "....BBP....",
-    "....PPN....",
-    ".....P.....",
-    "..........."
+    "....KKKKKKK",
+    "....KPPPPK.",
+    ".....KPPK..",
+    "......KK...",
+    "......KK...",
+    ".....KNNK..",
+    "....KNPNPK.",
+    "....KKKKKKK"
   ],
-  "story": "🌸 예쁜 꽃",
+  "story": "✨ 모래시계↔",
   "dialogue": null
 }

@@ -1,35 +1,24 @@
 {
   "level": 761,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 7,
+  "cols": 7,
   "palette": {
+    "G": "#2ed573",
     "N": "#ff8fc7",
     "O": "#ff9f43",
     "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    "...................",
-    "...................",
-    "......NNNRRRR......",
-    "....NNNNNRRRRRR....",
-    "...NNNNNNRRRRRRR...",
-    "..NNNNNNNRRRRRRRR..",
-    "..NNNNNNNRRRRRRRR..",
-    "..NNNNNNNRRRRRRRR..",
-    "..NNNNNNNRRRRRRRR..",
-    ".NNNNNNNNOOOOOOOOO.",
-    "..YYYYYYYYOOOOOOO..",
-    "..YYYYYYYYOOOOOOO..",
-    "..YYYYYYYYOOOOOOO..",
-    "..YYYYYYYYOOOOOOO..",
-    "...YYYYYYYOOOOOO...",
-    "....YYYYYYOOOOO....",
-    "......YYYYOOO......",
-    "...................",
-    "..................."
+    "..NRR..",
+    "..NRR..",
+    "NNNRRRR",
+    "GGGOOOO",
+    "YYYYOOO",
+    "..YYO..",
+    "..YYO.."
   ],
-  "story": "🔷 보석",
+  "story": "➕ 십자",
   "dialogue": null
 }

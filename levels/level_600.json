@@ -1,50 +1,52 @@
 {
   "level": 600,
   "hard": true,
-  "rows": 14,
-  "cols": 14,
+  "rows": 16,
+  "cols": 16,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
+    "O": "#ff9f43",
+    "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    "...G..GG..G...",
-    "...YGGGGGGC...",
-    "...YGGGGGGC...",
-    "YYYYYGGGGCCCCC",
-    ".YYYYYGGCCCCC.",
-    ".YYYYYGGCCCCC.",
-    "YYYYYYYCCCCCCC",
-    "NNNNNNNBBBBBBB",
-    ".NNNNNPPBBBBB.",
-    ".NNNNNPPBBBBB.",
-    "NNNNNPPPPBBBBB",
-    "...NPPPPPPB...",
-    "...NPPPPPPB...",
-    "...P..PP..P..."
+    "....YYORROYY....",
+    "...YYORBBROYY...",
+    "..YYORBCCBROYY..",
+    ".YYORBCCCCBROYY.",
+    "YYORBCCGGCCBROYY",
+    "YORBCCGYYGCCBROY",
+    "ORBCCGYOOYGCCBRO",
+    "RBCCGYORROYGCCBR",
+    "RBCCGYORROYGCCBR",
+    "ORBCCGYOOYGCCBRO",
+    "YORBCCGYYGCCBROY",
+    "YYORBCCGGCCBROYY",
+    ".YYORBCCCCBROYY.",
+    "..YYORBCCBROYY..",
+    "...YYORBBROYY...",
+    "....YYORROYY...."
   ],
-  "story": "💥 보스! 오팔 보스",
+  "story": "💥 보스! 크리스탈 보스",
   "dialogue": {
     "intro": [
       {
-        "name": "유리",
-        "color": "#ff8fc7",
-        "face": "🥳",
-        "who": "H",
-        "text": "벌써 여기까지 왔네."
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🎁",
+        "who": "M",
+        "text": "선물 준비했어."
       }
     ],
     "outro": [
       {
-        "name": "준",
-        "color": "#5aa9ff",
-        "face": "👏",
-        "who": "M",
-        "text": "우리 정말 잘한다."
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🥰",
+        "who": "H",
+        "text": "고마워!"
       }
     ]
   }

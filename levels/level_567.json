@@ -1,27 +1,22 @@
 {
   "level": 567,
   "hard": false,
-  "rows": 11,
+  "rows": 7,
   "cols": 11,
   "palette": {
     "B": "#1e90ff",
-    "N": "#ff8fc7",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "C": "#00d2d3",
+    "K": "#39395a"
   },
   "grid": [
-    "...........",
-    "....B.N....",
-    "....B.N....",
-    "...R.P.R...",
-    "...RBPNR...",
-    ".PNRBPNRBP.",
-    "...RBPNR...",
-    "...R.P.R...",
-    "....B.N....",
-    "....B.N....",
-    "..........."
+    "...KCK.....",
+    "..KKKKK....",
+    ".KBCBCBK...",
+    "KBBCBBCBK..",
+    "KBBCBBBK...",
+    "KBBCBBCK...",
+    "KKKKKKK...."
   ],
-  "story": "⭐ 반짝 별",
+  "story": "✨ 선물",
   "dialogue": null
 }

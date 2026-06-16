@@ -1,25 +1,27 @@
 {
   "level": 862,
   "hard": false,
-  "rows": 5,
-  "cols": 8,
+  "rows": 11,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
     "G": "#2ed573",
-    "N": "#ff8fc7",
     "O": "#ff9f43",
-    "P": "#c44dff",
     "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    "......NR",
-    "....BPNR",
-    "..GCBPNR",
-    "OYGCBPNR",
-    "OYGCBPNR"
+    "...........",
+    "....GGG....",
+    "...GGYGG...",
+    "..GGYOYGG..",
+    ".GGYOROYGG.",
+    ".GYORRROYG.",
+    ".GGYOROYGG.",
+    "..GGYOYGG..",
+    "...GGYGG...",
+    "....GGG....",
+    "..........."
   ],
-  "story": "📊 블록탑",
+  "story": "🔷 보석",
   "dialogue": null
 }

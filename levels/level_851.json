@@ -1,26 +1,30 @@
 {
   "level": 851,
   "hard": false,
-  "rows": 7,
-  "cols": 7,
+  "rows": 13,
+  "cols": 13,
   "palette": {
-    "B": "#1e90ff",
-    "C": "#00d2d3",
     "G": "#2ed573",
+    "N": "#ff8fc7",
     "O": "#ff9f43",
-    "P": "#c44dff",
     "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    "R.....P",
-    "RO...BP",
-    "ROY.CBP",
-    "ROYGCBP",
-    "ROYGCBP",
-    "ROYGCBP",
-    "ROYGCBP"
+    ".............",
+    "......RR.....",
+    "...NNNRRRR...",
+    "..NNNNRRRRR..",
+    "..NNNNRRRRR..",
+    "..NNNNRRRRR..",
+    "..GGGGOOOOOO.",
+    "..YYYYYOOOO..",
+    "..YYYYYOOOO..",
+    "..YYYYYOOOO..",
+    "...YYYYOOO...",
+    "......YO.....",
+    "............."
   ],
-  "story": "📊 블록탑",
+  "story": "🔷 보석",
   "dialogue": null
 }

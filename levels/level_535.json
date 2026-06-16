@@ -12,21 +12,21 @@
     "Y": "#ffd700"
   },
   "grid": [
-    ".....CGGC.....",
-    "..PBCGYYGCBP..",
-    ".PBCGYNNYGCBP.",
-    ".BCGYNPPNYGCB.",
-    ".CGYNPBBPNYGC.",
-    "CGYNPBCCBPNYGC",
-    "GYNPBCGGCBPNYG",
-    "GYNPBCGGCBPNYG",
-    "CGYNPBCCBPNYGC",
-    ".CGYNPBBPNYGC.",
-    ".BCGYNPPNYGCB.",
-    ".PBCGYNNYGCBP.",
-    "..PBCGYYGCBP..",
-    ".....CGGC....."
+    "...GGGGGGGG...",
+    "..YYGGGGGGCC..",
+    ".YYYGGGGGGCCC.",
+    "YYYYYGGGGCCCCC",
+    "YYYYYYGGCCCCCC",
+    "YYYYYYGGCCCCCC",
+    "YYYYYYYCCCCCCC",
+    "NNNNNNNBBBBBBB",
+    "NNNNNNPPBBBBBB",
+    "NNNNNNPPBBBBBB",
+    "NNNNNPPPPBBBBB",
+    ".NNNPPPPPPBBB.",
+    "..NNPPPPPPBB..",
+    "...PPPPPPPP..."
   ],
-  "story": "💥 보스! 스펙트럼 휠",
+  "story": "💥 보스! 프리즘 보스",
   "dialogue": null
 }

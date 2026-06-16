@@ -1,8 +1,8 @@
 {
   "level": 763,
   "hard": false,
-  "rows": 13,
-  "cols": 13,
+  "rows": 7,
+  "cols": 7,
   "palette": {
     "C": "#00d2d3",
     "G": "#2ed573",
@@ -10,20 +10,14 @@
     "Y": "#ffd700"
   },
   "grid": [
-    ".............",
-    ".....CCC.....",
-    "...CCGGGCC...",
-    "..CCGGGGGCC..",
-    "..CGGYYYGGC..",
-    ".CGGYYOYYGGC.",
-    ".CGGYOOOYGGC.",
-    ".CGGYYOYYGGC.",
-    "..CGGYYYGGC..",
-    "..CCGGGGGCC..",
-    "...CCGGGCC...",
-    ".....CCC.....",
-    "............."
+    "CGGGGGC",
+    "GGYYYGG",
+    "GYYOYYG",
+    "GYOOOYG",
+    "GYYOYYG",
+    "GGYYYGG",
+    "CGGGGGC"
   ],
-  "story": "🔷 보석",
+  "story": "➕ 십자",
   "dialogue": null
 }

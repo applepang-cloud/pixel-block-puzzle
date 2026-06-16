@@ -1,27 +1,33 @@
 {
   "level": 884,
   "hard": false,
-  "rows": 7,
-  "cols": 11,
+  "rows": 17,
+  "cols": 17,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
-    "G": "#2ed573",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "P": "#c44dff"
   },
   "grid": [
-    ".....R.....",
-    "....NRO....",
-    "...PNROY...",
-    "..BPNROYG..",
-    ".CBPNROYGC.",
-    "GCBPNROYGCB",
-    "GCBPNROYGCB"
+    ".................",
+    "......NNCCB......",
+    "....NNCCBBPPN....",
+    "...PNNCCBBPPNN...",
+    "..NNCCBBPPNNCCB..",
+    "..NNCCBBPPNNCCB..",
+    ".NCCBBPPNNCCBBPP.",
+    ".NCCBBP...CCBBPP.",
+    ".CBBPPN...BBPPNN.",
+    ".CBBPPN...BBPPNN.",
+    ".BPPNNCCBBPPNNCC.",
+    "..PPNNCCBBPPNNC..",
+    "..NNCCBBPPNNCCB..",
+    "...NCCBBPPNNCC...",
+    "....BBPPNNCCB....",
+    "......PPNNC......",
+    "................."
   ],
-  "story": "📊 블록탑",
+  "story": "💍 고리",
   "dialogue": null
 }

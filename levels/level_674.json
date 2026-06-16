@@ -7,23 +7,23 @@
     "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
-    "Y": "#ffd700"
+    "P": "#c44dff"
   },
   "grid": [
-    "...BYGCBYG...",
-    "...YGCBYGC...",
-    "...GCBYGCB...",
-    "BYGCBYGCBYGCB",
-    "YGCBYGCBYGCBY",
-    "GCBYGCBYGCBYG",
-    "CBYGCBYGCBYGC",
-    "BYGCBYGCBYGCB",
-    "YGCBYGCBYGCBY",
-    "GCBYGCBYGCBYG",
-    "...GCBYGCB...",
-    "...CBYGCBY...",
-    "...BYGCBYG..."
+    ".............",
+    ".............",
+    "....C..C.....",
+    "..G.G.CC.B...",
+    "...GGCCCB.B..",
+    ".GGGGGCBBB...",
+    "....BBPPPPPP.",
+    ".CCCCCGPPP...",
+    "...CCGGGP.P..",
+    "..C.C.GG.P...",
+    "....G..G.....",
+    ".............",
+    "............."
   ],
-  "story": "➕ 십자",
+  "story": "⭐ 반짝 별",
   "dialogue": null
 }

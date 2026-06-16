@@ -1,33 +1,22 @@
 {
   "level": 606,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "K": "#39395a",
+    "Y": "#ffd700"
   },
   "grid": [
-    ".................",
-    ".................",
-    "......PO.........",
-    "......ORN..PN....",
-    "......RNP.ROP....",
-    "..NPORNPOPNRO....",
-    "..PORNPOROPN.....",
-    "...RNPORNROPNRO..",
-    "......RNPNROPNRO.",
-    "...RNPORNROPNRO..",
-    "..PORNPOROPN.....",
-    "..NPORNPOPNRO....",
-    "......RNP.ROP....",
-    "......ORN..PN....",
-    "......PO.........",
-    ".................",
-    "................."
+    "...KK...KK.",
+    "...KYKKKYYK",
+    "...KYYYYYYK",
+    "...KYYYYYYK",
+    "....KYYYYK.",
+    "....KYYYYK.",
+    ".....KYYK..",
+    ".....KYYK.."
   ],
-  "story": "🌸 예쁜 꽃",
+  "story": "✨ 망토↔",
   "dialogue": null
 }

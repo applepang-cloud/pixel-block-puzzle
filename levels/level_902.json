@@ -1,0 +1,27 @@
+{
+  "level": 902,
+  "hard": false,
+  "rows": 9,
+  "cols": 9,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "YGCBPNYGC",
+    "G.......B",
+    "C.......P",
+    "B.......N",
+    "P.......Y",
+    "N.......G",
+    "Y.......C",
+    "G.......B",
+    "CBPNYGCBP"
+  ],
+  "story": "🖼️ 액자",
+  "dialogue": null
+}

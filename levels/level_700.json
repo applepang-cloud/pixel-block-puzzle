@@ -1,8 +1,8 @@
 {
   "level": 700,
   "hard": true,
-  "rows": 15,
-  "cols": 15,
+  "rows": 14,
+  "cols": 14,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
@@ -12,21 +12,20 @@
     "Y": "#ffd700"
   },
   "grid": [
-    ".....G...G.....",
-    ".....GG.GG.....",
-    ".....GG.GG.....",
-    ".YYY.GG.GG.CCC.",
-    "..YYYYG.GCCCC..",
-    "...YYYGGGCCC...",
-    "..YY.YYGCC.CC..",
-    "YYYYYYYBBBBBBBB",
-    "..NN.NNPBB.BB..",
-    "...NNNPPPBBB...",
-    "..NNNNP.PBBBB..",
-    ".NNN.PP.PP.BBB.",
-    ".....PP.PP.....",
-    ".....PP.PP.....",
-    ".....P...P....."
+    "...G..GG..G...",
+    "...YGGGGGGC...",
+    "...YGGGGGGC...",
+    "YYYYYGGGGCCCCC",
+    ".YYYYYGGCCCCC.",
+    ".YYYYYGGCCCCC.",
+    "YYYYYYYCCCCCCC",
+    "NNNNNNNBBBBBBB",
+    ".NNNNNPPBBBBB.",
+    ".NNNNNPPBBBBB.",
+    "NNNNNPPPPBBBBB",
+    "...NPPPPPPB...",
+    "...NPPPPPPB...",
+    "...P..PP..P..."
   ],
   "story": "💥 보스! 오팔 보스",
   "dialogue": {

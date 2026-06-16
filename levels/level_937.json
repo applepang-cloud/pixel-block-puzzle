@@ -1,0 +1,23 @@
+{
+  "level": 937,
+  "hard": false,
+  "rows": 6,
+  "cols": 5,
+  "palette": {
+    "B": "#1e90ff",
+    "N": "#ff8fc7",
+    "O": "#ff9f43",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "..N..",
+    "..N..",
+    ".PNR.",
+    ".PNR.",
+    "BPNRO",
+    "BPNRO"
+  ],
+  "story": "📊 블록탑",
+  "dialogue": null
+}

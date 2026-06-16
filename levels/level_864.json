@@ -1,30 +1,31 @@
 {
   "level": 864,
   "hard": false,
-  "rows": 10,
-  "cols": 9,
+  "rows": 15,
+  "cols": 15,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
     "Y": "#ffd700"
   },
   "grid": [
-    "........G",
-    ".......YG",
-    "......OYG",
-    ".....ROYG",
-    "....NROYG",
-    "...PNROYG",
-    "..BPNROYG",
-    ".CBPNROYG",
-    "GCBPNROYG",
-    "GCBPNROYG"
+    "...............",
+    "......BY.......",
+    "....CBYGCBY....",
+    "...CBYGCBYGC...",
+    "..CBYGCBYGCBY..",
+    "..BYGCBYGCBYG..",
+    ".BYGCBYGCBYGCB.",
+    ".YGCBYGCBYGCBY.",
+    ".GCBYGCBYGCBYG.",
+    "..BYGCBYGCBYG..",
+    "..YGCBYGCBYGC..",
+    "...CBYGCBYGC...",
+    "....YGCBYGC....",
+    "......BY.......",
+    "..............."
   ],
-  "story": "📊 블록탑",
+  "story": "🔷 보석",
   "dialogue": null
 }

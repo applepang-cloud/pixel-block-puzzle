@@ -1,29 +1,34 @@
 {
   "level": 806,
   "hard": false,
-  "rows": 11,
-  "cols": 11,
+  "rows": 17,
+  "cols": 17,
   "palette": {
     "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "P": "#c44dff"
   },
   "grid": [
-    "BPNROYBPNRO",
-    "B.........O",
-    "B.........O",
-    "B.........O",
-    "B.........O",
-    "B.........O",
-    "B.........O",
-    "B.........O",
-    "B.........O",
-    "B.........O",
-    "BPNROYBPNRO"
+    ".................",
+    ".................",
+    ".....CCC.CCC.....",
+    "......CCCCC..B...",
+    "..GGGGCCCCCBBBB..",
+    "...GGGGCCCBBBB...",
+    "...GGGGCCCBBBB...",
+    ".G.GGGGGCBBBBB.B.",
+    ".CCCCCCCPPPPPPPP.",
+    ".G.GGGGGNPPPPP.P.",
+    "...GGGGNNNPPPP...",
+    "...GGGGNNNPPPP...",
+    "..GGGGNNNNNPPPP..",
+    "......NNNNN..P...",
+    ".....NNN.NNN.....",
+    ".................",
+    "................."
   ],
-  "story": "🖼️ 액자",
+  "story": "⚙️ 톱니바퀴",
   "dialogue": null
 }

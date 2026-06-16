@@ -4,29 +4,28 @@
   "rows": 15,
   "cols": 15,
   "palette": {
-    "G": "#2ed573",
+    "B": "#1e90ff",
     "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "P": "#c44dff",
+    "R": "#ff4757"
   },
   "grid": [
-    "...............",
-    ".....NNRRR.....",
-    "....NNNRRRR....",
-    "...NNNNRRRRR...",
-    "..NNNNNRRRRRR..",
-    ".NNNNNNRRRRRRR.",
-    ".NNNNNNRRRRRRR.",
-    ".GGGGGG.OOOOOO.",
-    ".YYYYYYYOOOOOO.",
-    ".YYYYYYYOOOOOO.",
-    "..YYYYYYOOOOO..",
-    "...YYYYYOOOO...",
-    "....YYYYOOO....",
-    ".....YYYOO.....",
-    "..............."
+    "....BPNRBPN....",
+    "....BPNRBPN....",
+    "....BPNRBPN....",
+    "....BPNRBPN....",
+    "BPNRBPNRBPNRBPN",
+    "BPNRBPNRBPNRBPN",
+    "BPNRBPNRBPNRBPN",
+    "BPNRBPNRBPNRBPN",
+    "BPNRBPNRBPNRBPN",
+    "BPNRBPNRBPNRBPN",
+    "BPNRBPNRBPNRBPN",
+    "....BPNRBPN....",
+    "....BPNRBPN....",
+    "....BPNRBPN....",
+    "....BPNRBPN...."
   ],
-  "story": "💍 고리",
+  "story": "➕ 십자",
   "dialogue": null
 }

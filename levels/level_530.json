@@ -12,39 +12,39 @@
     "Y": "#ffd700"
   },
   "grid": [
-    "....GGCCB.....",
-    "...YGGCCBBPP..",
-    "..GGCCBBPPOO..",
-    ".YGGCCBBPPOOY.",
-    "GGCCBBPPOOYYG.",
-    "GGCCBBPPOOYYGG",
-    "CCBBPPOOYYGGCC",
-    "CCBBPPOOYYGGCC",
-    "BBPPOOYYGGCCBB",
-    "BBPPOOYYGGCCB.",
-    ".POOYYGGCCBBP.",
-    "..OOYYGGCCBB..",
-    "...YGGCCBBPP..",
-    "....GGCCB....."
+    "....PPPPPP....",
+    "..PPBBBBBBPP..",
+    ".PBBCCCCCCBBP.",
+    ".PBCCGGGGCCBP.",
+    "PBCCGGYYGGCCBP",
+    "PBCGGYYYYGGCBP",
+    "PBCGYYOOYYGCBP",
+    "PBCGYYOOYYGCBP",
+    "PBCGGYYYYGGCBP",
+    "PBCCGGYYGGCCBP",
+    ".PBCCGGGGCCBP.",
+    ".PBBCCCCCCBBP.",
+    "..PPBBBBBBPP..",
+    "....PPPPPP...."
   ],
-  "story": "💥 보스! 크리스탈 만다라",
+  "story": "💥 보스! 젬 보스",
   "dialogue": {
     "intro": [
       {
-        "name": "준",
-        "color": "#5aa9ff",
-        "face": "🌟",
-        "who": "M",
-        "text": "보스가 나타났다!"
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🏆",
+        "who": "H",
+        "text": "새 보물이다!"
       }
     ],
     "outro": [
       {
-        "name": "유리",
-        "color": "#ff8fc7",
-        "face": "⚔️",
-        "who": "H",
-        "text": "겁먹지 말고 도전!"
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "😎",
+        "who": "M",
+        "text": "멋진데?"
       }
     ]
   }

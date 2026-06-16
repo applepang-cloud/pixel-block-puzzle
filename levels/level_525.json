@@ -12,21 +12,21 @@
     "Y": "#ffd700"
   },
   "grid": [
-    "....OOOOOO....",
-    "...ROOOOOOY...",
-    "..RROOOOOOYY..",
-    ".RRRROOOOYYYY.",
-    ".RRRRROOYYYYY.",
-    "RRRRRROOYYYYYY",
-    "RRRRRRRYYYYYYY",
-    "BBBBBBBGGGGGGG",
-    "BBBBBBCCGGGGGG",
-    ".BBBBBCCGGGGG.",
-    ".BBBBCCCCGGGG.",
-    "..BBCCCCCCGG..",
-    "...BCCCCCCG...",
-    "....CCCCCC...."
+    "......BB......",
+    ".....BCCB.....",
+    "....BCCCCB....",
+    "...BCCGGCCB...",
+    "..BCCGYYGCCB..",
+    ".BCCGYOOYGCCB.",
+    "BCCGYORROYGCCB",
+    "BCCGYORROYGCCB",
+    ".BCCGYOOYGCCB.",
+    "..BCCGYYGCCB..",
+    "...BCCGGCCB...",
+    "....BCCCCB....",
+    ".....BCCB.....",
+    "......BB......"
   ],
-  "story": "💥 보스! 프리즘 코어",
+  "story": "💥 보스! 크리스탈 보스",
   "dialogue": null
 }

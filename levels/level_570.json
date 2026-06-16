@@ -1,50 +1,51 @@
 {
   "level": 570,
   "hard": true,
-  "rows": 14,
-  "cols": 14,
+  "rows": 15,
+  "cols": 15,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
     "G": "#2ed573",
     "N": "#ff8fc7",
     "P": "#c44dff",
-    "R": "#ff4757"
+    "Y": "#ffd700"
   },
   "grid": [
-    "......RR......",
-    "...RN.NN.NR...",
-    "....P.PP.P....",
-    ".R..PBBBBP..R.",
-    ".NPP.BCCB.PPN.",
-    "...BBCCCCBB...",
-    "RNPBCCGGCCBPNR",
-    "RNPBCCGGCCBPNR",
-    "...BBCCCCBB...",
-    ".NPP.BCCB.PPN.",
-    ".R..PBBBBP..R.",
-    "....P.PP.P....",
-    "...RN.NN.NR...",
-    "......RR......"
+    "...............",
+    "...YG.....GC...",
+    "...YYG...GCC...",
+    "....YGG.GGC....",
+    "....YYGGGCC....",
+    ".....YGGGC.....",
+    ".YYYYYYGCCCCCC.",
+    "YYYYYYYBBBBBBBB",
+    ".NNNNNNPBBBBBB.",
+    ".....NPPPB.....",
+    "....NNPPPBB....",
+    "....NPP.PPB....",
+    "...NNP...PBB...",
+    "...NP.....PB...",
+    "..............."
   ],
-  "story": "💥 보스! 오로라 젬",
+  "story": "💥 보스! 스타 보스",
   "dialogue": {
     "intro": [
       {
-        "name": "준",
-        "color": "#5aa9ff",
-        "face": "😎",
-        "who": "M",
-        "text": "이건 좀 어려운데?"
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "🗝️",
+        "who": "H",
+        "text": "비밀의 열쇠!"
       }
     ],
     "outro": [
       {
-        "name": "유리",
-        "color": "#ff8fc7",
-        "face": "💪",
-        "who": "H",
-        "text": "우리 둘이면 문제없어!"
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🚪",
+        "who": "M",
+        "text": "어디 문을 열까?"
       }
     ]
   }

@@ -1,50 +1,51 @@
 {
   "level": 580,
   "hard": true,
-  "rows": 14,
-  "cols": 14,
+  "rows": 15,
+  "cols": 15,
   "palette": {
     "B": "#1e90ff",
+    "C": "#00d2d3",
     "N": "#ff8fc7",
     "O": "#ff9f43",
     "P": "#c44dff",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "R": "#ff4757"
   },
   "grid": [
-    "..............",
-    "...PNN..OOY...",
-    "...NRR..YYB...",
-    "...NRROOYYB...",
-    "....OOYYBB....",
-    ".NRROOYYBBPPN.",
-    "RROOYYBBPPNNRR",
-    "RROOYYBBPPNNRR",
-    ".OYYBBPPNNRRO.",
-    "....BBPPNN....",
-    "...BPPNNRRO...",
-    "...BPP..RRO...",
-    "...PNN..OOY...",
-    ".............."
+    "...............",
+    "...PBC...CBP...",
+    "...BCOR.ROCB...",
+    "...CORR.RROC...",
+    "....RRN.NRR....",
+    "....RNPBPNR....",
+    ".ORRNPBCBPNRRO.",
+    "ORRNPBCCCBPNRRO",
+    ".ORRNPBCBPNRRO.",
+    "....RNPBPNR....",
+    "....RRN.NRR....",
+    "...CORR.RROC...",
+    "...BCOR.ROCB...",
+    "...PBC...CBP...",
+    "..............."
   ],
-  "story": "💥 보스! 크리스탈 만다라",
+  "story": "💥 보스! 젬 보스",
   "dialogue": {
     "intro": [
       {
-        "name": "유리",
-        "color": "#ff8fc7",
-        "face": "🤩",
-        "who": "H",
-        "text": "색이 정말 다양하다!"
+        "name": "준",
+        "color": "#5aa9ff",
+        "face": "🍀",
+        "who": "M",
+        "text": "행운이 가득!"
       }
     ],
     "outro": [
       {
-        "name": "준",
-        "color": "#5aa9ff",
-        "face": "😄",
-        "who": "M",
-        "text": "하나씩 맞춰보자."
+        "name": "유리",
+        "color": "#ff8fc7",
+        "face": "✨",
+        "who": "H",
+        "text": "오늘 운 좋다!"
       }
     ]
   }

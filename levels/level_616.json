@@ -1,31 +1,22 @@
 {
   "level": 616,
   "hard": false,
-  "rows": 15,
-  "cols": 15,
+  "rows": 7,
+  "cols": 11,
   "palette": {
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "K": "#39395a"
   },
   "grid": [
-    "...............",
-    "........R......",
-    "....NN.RR......",
-    "....NN.RR..R...",
-    ".....NNRR.RR...",
-    "..NNNNNRRRR....",
-    "..NNNNNRRR.....",
-    ".....NNOOOOOOO.",
-    "..YYYYYYOO.....",
-    "..YYYYYYOOO....",
-    ".....YYYO.OO...",
-    "....YY.YO..O...",
-    "....YY.YO......",
-    "........O......",
-    "..............."
+    ".K.....K...",
+    ".K.....K...",
+    "..KKKKK....",
+    ".KCCCCCK...",
+    "KCCBBBCCK..",
+    ".KCCCCCK...",
+    "..KKKKK...."
   ],
-  "story": "🌸 예쁜 꽃",
+  "story": "✨ 메달",
   "dialogue": null
 }

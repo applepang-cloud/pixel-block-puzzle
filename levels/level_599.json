@@ -1,30 +1,24 @@
 {
   "level": 599,
   "hard": false,
-  "rows": 13,
-  "cols": 13,
+  "rows": 7,
+  "cols": 11,
   "palette": {
-    "G": "#2ed573",
+    "K": "#39395a",
     "N": "#ff8fc7",
     "O": "#ff9f43",
-    "R": "#ff4757",
-    "Y": "#ffd700"
+    "P": "#c44dff",
+    "R": "#ff4757"
   },
   "grid": [
-    ".............",
-    ".............",
-    "....NN.RR....",
-    "...NNN.RRR...",
-    "....NN.RR....",
-    "..NNNNRRRRR..",
-    ".GGGGGOOOOOO.",
-    "..YYYYYOOOO..",
-    "....YY.OO....",
-    "...YYY.OOO...",
-    "....YY.OO....",
-    ".............",
-    "............."
+    "....K..K..K",
+    "..KK.KKK.KK",
+    "..KPKPKPKPK",
+    "..KPPPPPPPK",
+    "..KPNPRPOPK",
+    "..KPPPPPPPK",
+    "..KKKKKKKKK"
   ],
-  "story": "🌸 예쁜 꽃",
+  "story": "✨ 왕관↔",
   "dialogue": null
 }

@@ -1,8 +1,8 @@
 {
   "level": 710,
   "hard": true,
-  "rows": 15,
-  "cols": 15,
+  "rows": 14,
+  "cols": 14,
   "palette": {
     "B": "#1e90ff",
     "C": "#00d2d3",
@@ -12,21 +12,20 @@
     "R": "#ff4757"
   },
   "grid": [
-    ".....N...N.....",
-    "....NPB.BPN....",
-    "....PBCOCBP.R..",
-    ".RNPBCOROCBPNR.",
-    "..PBCORNROCBP..",
-    "..BCORNPNROCB..",
-    "P.CORNPBPNROC.P",
-    "BCORNPBCBPNROCB",
-    "P.CORNPBPNROC.P",
-    "..BCORNPNROCB..",
-    "..PBCORNROCBP..",
-    ".RNPBCOROCBPNR.",
-    "....PBCOCBP.R..",
-    "....NPB.BPN....",
-    ".....N...N....."
+    "...RNPBBPNR...",
+    "..RNPBCCBPNR..",
+    ".RNPBCOOCBPNR.",
+    "RNPBCO..OCBPNR",
+    "NPBC......CBPN",
+    "PBCO......OCBP",
+    "BCO........OCB",
+    "BCO........OCB",
+    "PBCO......OCBP",
+    "NPBC......CBPN",
+    "RNPBCO..OCBPNR",
+    ".RNPBCOOCBPNR.",
+    "..RNPBCCBPNR..",
+    "...RNPBBPNR..."
   ],
   "story": "💥 보스! 네뷸라 코어",
   "dialogue": {

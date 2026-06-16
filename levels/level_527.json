@@ -1,34 +1,22 @@
 {
   "level": 527,
   "hard": false,
-  "rows": 17,
-  "cols": 17,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "B": "#1e90ff",
-    "N": "#ff8fc7",
-    "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "C": "#00d2d3",
+    "K": "#39395a"
   },
   "grid": [
-    ".................",
-    ".................",
-    "......PN.........",
-    "......PNR..PN....",
-    "......PNR.BPN....",
-    "..NRO.PNROBP.....",
-    "..NROBPNROBP.....",
-    "....OBPNROBPNR...",
-    ".....BPNROBPNROB.",
-    "....OBPNROBPNR...",
-    "..NROBPNROBP.....",
-    "..NRO.PNROBP.....",
-    "......PNR.BPN....",
-    "......PNR..PN....",
-    "......PN.........",
-    ".................",
-    "................."
+    "..CC.CC....",
+    ".CCCCCCC...",
+    ".CKCCKCC...",
+    "..CCCCC....",
+    ".CCCCCCC...",
+    ".CKCCKCC...",
+    "..CCKCC....",
+    "....K......"
   ],
-  "story": "⭐ 반짝 별",
+  "story": "✨ 네잎클로버",
   "dialogue": null
 }

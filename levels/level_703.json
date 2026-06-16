@@ -4,26 +4,27 @@
   "rows": 13,
   "cols": 13,
   "palette": {
+    "B": "#1e90ff",
     "C": "#00d2d3",
-    "G": "#2ed573",
-    "O": "#ff9f43",
-    "Y": "#ffd700"
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
   },
   "grid": [
     ".............",
-    ".....C.C.....",
-    "....CGGGC....",
-    "..C.GGGGGCC..",
-    "...GGYYYGG...",
-    "..GGYYOYYGG..",
-    ".CGGYOOOYGGC.",
-    "..GGYYOYYGG..",
-    "...GGYYYGG...",
-    "..C.GGGGGCC..",
-    "....CGGGC....",
-    ".....C.C.....",
+    ".....P.......",
+    ".....NR..C...",
+    ".....NR.CC...",
+    "..NNRRCCB....",
+    "..NNRRCC.B...",
+    ".....CBBPPNN.",
+    "..RRCCBB.P...",
+    "..CCBBPPN....",
+    ".....BP.NN...",
+    ".....PN..R...",
+    ".....P.......",
     "............."
   ],
-  "story": "⚙️ 톱니바퀴",
+  "story": "🌸 예쁜 꽃",
   "dialogue": null
 }

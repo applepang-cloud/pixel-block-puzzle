@@ -1,0 +1,26 @@
+{
+  "level": 904,
+  "hard": false,
+  "rows": 9,
+  "cols": 9,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "N": "#ff8fc7",
+    "P": "#c44dff",
+    "R": "#ff4757"
+  },
+  "grid": [
+    "CCBBPPNNR",
+    "CCBBPPNNR",
+    "BBPPNNRRC",
+    "BBP...RRC",
+    "PPN...CCB",
+    "PPN...CCB",
+    "NNRRCCBBP",
+    "NNRRCCBBP",
+    "RRCCBBPPN"
+  ],
+  "story": "🖼️ 액자",
+  "dialogue": null
+}

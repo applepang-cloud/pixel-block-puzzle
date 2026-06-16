@@ -1,35 +1,24 @@
 {
   "level": 578,
   "hard": false,
-  "rows": 19,
-  "cols": 19,
+  "rows": 8,
+  "cols": 11,
   "palette": {
-    "N": "#ff8fc7",
+    "K": "#39395a",
     "O": "#ff9f43",
-    "P": "#c44dff",
-    "R": "#ff4757"
+    "R": "#ff4757",
+    "Y": "#ffd700"
   },
   "grid": [
-    "...................",
-    "........N..........",
-    ".....O..P..N.......",
-    ".....RN.O..P..O....",
-    "......P.RNRO.NR....",
-    "...RN.ORNPNROP.....",
-    "....PORNPOPNR..NR..",
-    "......NPOROPNRO....",
-    "..PORNPORNROP......",
-    "......ORNPNROPNROP.",
-    "..PORNPORNROP......",
-    "......NPOROPNRO....",
-    "....PORNPOPNR..NR..",
-    "...RN.ORNPNROP.....",
-    "......P.RNRO.NR....",
-    ".....RN.O..P..O....",
-    ".....O..P..N.......",
-    "........N..........",
-    "..................."
+    "...R.R.....",
+    "..RRRRR....",
+    ".RRRRRRR...",
+    ".ROROROR...",
+    "..KYYYK....",
+    "..KYYYK....",
+    "..KYYYK....",
+    "..KKKKK...."
   ],
-  "story": "⭐ 반짝 별",
+  "story": "✨ 컵케이크",
   "dialogue": null
 }

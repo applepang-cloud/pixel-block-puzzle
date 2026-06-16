@@ -1,0 +1,22 @@
+{
+  "level": 933,
+  "hard": false,
+  "rows": 5,
+  "cols": 5,
+  "palette": {
+    "B": "#1e90ff",
+    "C": "#00d2d3",
+    "G": "#2ed573",
+    "P": "#c44dff",
+    "Y": "#ffd700"
+  },
+  "grid": [
+    "Y...P",
+    "YG.BP",
+    "YGCBP",
+    "YGCBP",
+    "YGCBP"
+  ],
+  "story": "📊 블록탑",
+  "dialogue": null
+}
