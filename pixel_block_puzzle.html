@@ -255,6 +255,8 @@ canvas{display:block}
 #autorun-ov.peek #ar-title,#autorun-ov.peek #ar-results,#autorun-ov.peek #ar-mini{display:none}
 #autorun-ov.peek #ar-status{background:rgba(0,0,0,.6);padding:4px 14px;border-radius:12px;pointer-events:auto;margin-top:0}
 #autorun-ov.peek #ar-btns{pointer-events:auto;margin-top:6px}
+#ar-speed{margin:8px 0}
+#autorun-ov.peek #ar-speed{pointer-events:auto;margin:6px 0;background:rgba(0,0,0,.55);padding:5px 8px;border-radius:12px}
 #autorun-ov.peek #ar-btns button{padding:5px 18px;font-size:13px;margin-top:4px}
 @keyframes shake{
   0%,100%{transform:translate(0,0) rotate(0)}
@@ -324,7 +326,8 @@ canvas{display:block}
 #sel-close:active{transform:scale(.92)}
 #sel-title{font-size:20px;margin-bottom:12px}
 #sel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;width:94%;max-width:460px;
-  overflow-y:auto;padding:4px 4px 24px;align-content:start}
+  max-height:calc(100vh - 92px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+  padding:4px 4px 24px;align-content:start}
 .sel-tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;
   padding:5px 4px 4px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;
   transition:transform .12s,background .15s}
@@ -350,8 +353,9 @@ canvas{display:block}
 #pal-top{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:3;display:none;
   font-family:'Lilita One';font-size:16px;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.6);white-space:nowrap}
 #start-ov.pal #pal-top{display:block}
-#pal-bottom{position:absolute;left:50%;transform:translateX(-50%);bottom:76px;z-index:3;display:none;
-  font-size:11px;color:rgba(255,255,255,.85);background:rgba(0,0,0,.45);padding:3px 12px;border-radius:10px;white-space:nowrap}
+#pal-bottom{position:absolute;left:50%;transform:translateX(-50%);bottom:96px;z-index:4;display:none;
+  font-size:12px;font-weight:700;color:#fff;background:rgba(0,0,0,.62);padding:5px 14px;border-radius:12px;white-space:nowrap;
+  box-shadow:0 2px 8px rgba(0,0,0,.5)}
 #start-ov.pal #pal-bottom{display:block}
 #home-settings{position:absolute;top:12px;left:12px;z-index:3;display:flex;gap:7px}
 #home-settings button{width:40px;height:40px;border:none;border-radius:50%;background:rgba(255,255,255,.12);
@@ -359,6 +363,10 @@ canvas{display:block}
 #home-settings button.off{opacity:.45;background:rgba(255,255,255,.06)}
 #home-settings button:active{transform:scale(.92)}
 #start-ov.pal #home-settings{display:none}
+#home-reset{position:absolute;top:12px;right:12px;z-index:3;width:40px;height:40px;border:none;border-radius:50%;
+  background:rgba(255,255,255,.12);color:#fff;font-size:20px;cursor:pointer;padding:0;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+#home-reset:active{transform:scale(.92)}
+#start-ov.pal #home-reset{display:none}
 #home-close{position:absolute;top:12px;right:12px;z-index:3;width:42px;height:42px;
   border:none;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;
   font-size:19px;font-family:sans-serif;cursor:pointer;display:none;padding:0;margin:0;box-shadow:none}
@@ -432,7 +440,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v6.4</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v6.5</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -445,6 +453,7 @@ canvas{display:block}
       <button id="snd-btn" onclick="G.toggleSound()" title="사운드">🔊</button>
       <button id="vib-btn" onclick="G.toggleVibe()" title="진동">📳</button>
     </div>
+    <button id="home-reset" onclick="G.resetPlay()" title="처음부터 (레벨 1)">↺</button>
     <div id="pal-top">🎨 픽셀을 컬러로 채워보세요!</div>
     <button id="home-close">✕</button>
     <div id="pal-bottom">플레이로 획득한 색상만큼 색칠 할 수 있어요.</div>
@@ -512,6 +521,7 @@ canvas{display:block}
 <div class="ov hide" id="autorun-ov">
   <h2 id="ar-title">자동 테스트 중…</h2>
   <div id="ar-status">준비 중</div>
+  <div id="ar-speed" class="seg"><button data-v="1">1x</button><button data-v="2">2x</button><button data-v="4">4x</button><button data-v="16">16x</button></div>
   <div id="ar-mini"></div>
   <div id="ar-results" class="hide"></div>
   <div id="ar-btns">
@@ -780,6 +790,16 @@ const LV_MAX=2000;
 // ========== PIXEL COLORING DESIGNS (from number-coloring PDFs) ==========
 // digit grids; pal maps each digit to a game palette color key ('0' = background)
 const ART=[
+ {n:'강아지',pal:{'1':'K','2':'O','3':'R'},g:['000110000000000011000','001221000000000122100','012222100000001222210','122222100000001222221','122212211111112212221','122122220000022221221','121222220000022222121','010122220000022221010','000122220000022221000','000122012000210221000','000122112000211221000','000122222000222221000','000012220000022210000','000012200000002210000','000012000111000210000','000001000111000100000','000001000010000100000','000001000030000100000','000000100000001000000','000000011111110000000']},
+ {n:'고양이',pal:{'1':'K','2':'N','3':'C','4':'B'},g:['0000010000000100000','0000131000001310000','0001233111113321000','0001233434343321000','0013333334333333100','0013333333333333100','0133310333331033310','0133301333330133310','1113311300031133111','0133330011100333310','1113300001000033111','0133001001001003310','0010000110110000100','0001100000000011000','0000011111111100000']},
+ {n:'병아리',pal:{'1':'K','2':'R','3':'Y'},g:['00010000000000000','00031011111100000','00313133333310000','00031333333331000','00013333333331000','00013333310332111','00013333311332221','00013333333322211','00001333333222110','00000133333311000','01100013331110000','13311133333100000','13333333333100000','13313313333100000','01331133331000000','01333333331000000','00133333310000000','00011111100000000','00001001000000000','00001101100000000']},
+ {n:'개구리',pal:{'1':'K','2':'N','3':'G'},g:['0000011000001100000','0000133100013310000','0001301311130131000','0001311333331131000','0001333333333331000','0013133333333313100','0013311111111133100','0013333331222133100','0001333333111331000','0001333333333331000','0111333333333331110','1331333333333331331','1331313333333131331','0131331333331331310','0013133111113313100','0133313331333133310','0111111111111111110']},
+ {n:'달팽이',pal:{'1':'K','2':'N','3':'Y','4':'O','5':'P'},g:['0000000000000110000110','0000000000001101001101','0000000000001001001001','0000011111000110000110','0000144444100001001000','0001555554410001010000','0014444455441001110000','0014455445541013221000','0014544545541013222100','0014454545541013222100','0015444545541122221000','0111555545412222210000','1333155455133333100000','0111111111111111000000']},
+ {n:'체리',pal:{'1':'K','2':'R','3':'G'},g:['00000000000000010','00000000010011100','00000000010133100','00000000111333100','00000000101331000','00000001001110000','00000010010000000','00000010010000000','00000100001000000','00001000000111100','00111100001222210','01222210012222221','12220221012222221','12222021012022221','12222021012200221','12222221001222210','01222210000111100','00111100000000000']},
+ {n:'당근',pal:{'1':'K','2':'O','3':'G'},g:['000000000001110','000000000013311','000000011013131','000000122131331','000001212213110','000012221221000','000122222222100','001222222222100','001221222221000','012222122210000','012212212100000','122221211000000','122221100000000','011110000000000']},
+ {n:'버섯',pal:{'1':'K','2':'O','3':'R','4':'N'},g:['00000001110000000','00000113331100000','00011333033311000','00130333333303100','01333333333333310','12033303330333031','12333333333333331','12220333033303221','01122222222222110','00011444444411000','00001444444410000','00001444444410000','00001444444410000','00000144444100000','00000011111000000']},
+ {n:'네잎클로버',pal:{'1':'K','2':'C','3':'G'},g:['000000001110000000','000000112221000000','000011222231000000','000122212231011100','000122231331122210','000012231312222210','000111223312331221','011222123122112221','122233211122222231','122311231113333331','122122331221111110','122222312222210000','012233312322221000','001111122312222100','000001122312223100','000001112221333100','000011013333311000','000110001111110000','011100000000000000','011000000000000000']},
+ {n:'무지개',pal:{'1':'K','2':'R','3':'Y','4':'C'},g:['00000000111111100000000','00000011222222211000000','00000122233333222100000','00001223334443332210000','00012233444444433221000','00012334411111443321000','00122344100000144322100','00111341000000014332100','01000110110000014432100','10000000001000011411100','10000000001000100100110','01001100010001000000001','00110011100001000000001','00000000000001000000010','00000000000000100001100','00000000000000011110000']},
  {n:'곰인형',pal:{'1':'O','2':'N','3':'K','4':'R','5':'W'},g:['000110111011000','001211111112100','001111111111100','000111111111000','000113111311000','000111222111000','000012232210000','000044222440000','000044444440000','000144454441000','001114444411100','001144424441100','111144222441111','122111222111221','012211222112210','001221111122100','000110000011000']},
  {n:'노르딕별',pal:{'1':'G','2':'R','3':'W','4':'Y'},g:['0000010000000200000','0000011000002200000','0000011100022200000','0000013110223200000','0000011310232200000','2222231110222311111','0223223110223113110','0022322310231131100','0002222234311111000','0000000043400000000','0001111134322222000','0011311320132232200','0113113220113223220','1111132220111322222','0000022320131100000','0000023220113100000','0000022200011100000','0000022000001100000','0000020000000100000']},
  {n:'눈사람',pal:{'1':'C','2':'K','3':'R','4':'W','5':'O','6':'G'},g:['0000000001111111000000000','0000000011222221111000000','0000000112333332221100000','0000001123222233332110000','0000001222444422333211110','0000011244222244233322211','0000012422444422423324421','0000012244444444242324421','0000112444444444422212211','0000124424444442442111110','0000124424424442442100000','0000124444252444442100000','0000124442524444442100000','0111124442244424442111100','1121112444422244421112110','1221112244444444221112210','1112123622444422362121110','0011242236222236224211000','0011244422363622444211000','0012444444222232444421000','0012444444444262444421000','0012444444424224444421000','0012444444444444444421000','0011244444424444444211000','0001244444444444444210000','0001124444424444442110000','0000112444444444421100000','0000011224444442211000000','0000001112222221110000000','0000000011111111000000000']},
@@ -3283,6 +3303,11 @@ function saveProgress(lv){
 }
 G.continueGame=function(){ G.start(G.savedLevel||1); };
 G.newGame=function(){ saveProgress(1); G.start(1); };
+// home reset (top-right ↺): wipe play progress back to level 1 and start it
+G.resetPlay=function(){
+  if((G.savedLevel||1)>1 && !confirm('플레이 진행도를 레벨 1부터 다시 시작할까요?')) return;
+  saveProgress(1); vibe(14); G.start(1);
+};
 
 // ---- pause menu ----
 G.pause=function(){ if(!G.on||G.dying||G.paused) return; G.paused=true; cancelBomb(); $('pause-select').classList.toggle('hide',!G.free); show('pause-ov'); renderItemBar(); };
@@ -3343,15 +3368,23 @@ function drawLevelPreview(cv,lv){
   }
 }
 let selBuilt=false;
+let selDown=null;
 function buildSelectGrid(){
   const grid=$('sel-grid'); grid.innerHTML='';
+  // record where a press started so a drag (scroll) doesn't count as a tap (select)
+  grid.onpointerdown=e=>{ selDown={x:e.clientX,y:e.clientY}; };
+  grid.onpointercancel=()=>{ selDown=null; };
   for(let lv=1;lv<=LV_MAX;lv++){
     const t=document.createElement('div'); t.className='sel-tile'+((G.unlocked||0)>=lv?' clr':'');
     const cv=document.createElement('canvas'); drawLevelPreview(cv,lv);
     const lab=document.createElement('div'); lab.className='sl';
     lab.textContent=((G.unlocked||0)>=lv?'✓':'')+lv;
     t.append(cv,lab);
-    t.addEventListener('click',()=>{ G.closeSelect(); G.start(lv,true); });
+    // select only on a tap (release with little movement); a drag scrolls the list instead
+    t.addEventListener('pointerup',e=>{
+      const moved=selDown?Math.hypot(e.clientX-selDown.x,e.clientY-selDown.y):0; selDown=null;
+      if(moved<10){ G.closeSelect(); G.start(lv,true); }
+    });
     grid.appendChild(t);
   }
   selBuilt=true;
@@ -3642,8 +3675,9 @@ let prevT=0, running=false;
 function raf(){if(!running){running=true;prevT=performance.now();requestAnimationFrame(tick);}}
 function tick(t){
   const dt=Math.min(t-prevT,50); prevT=t;
-  // normal play and auto-view-ON update here (belt in real time); auto-view-OFF batches in autoLoop
-  if(!(G.auto&&G.auto.on&&!G.auto.view)) update(dt);
+  // normal play updates here; during AUTO the belt is stepped by a rAF-independent timer
+  // (autoStepBelt for view-ON, autoLoop batch for view-OFF) so it can't desync if rAF is throttled.
+  if(!(G.auto&&G.auto.on)) update(dt);
   if(!(G.auto&&G.auto.on&&!G.auto.view)){ drawTop(); drawBot(); }  // skip draw only when auto + view off
   if(G.on||G.dying||G.beltRunners.length||G.bullets.length||G.clears.length||G.particles.length||G.hitFx.length||(G.auto&&G.auto.on&&G.auto.view)) requestAnimationFrame(tick);
   else running=false;
@@ -4481,8 +4515,28 @@ G.startAuto=function(){
   $('ar-results').classList.add('hide'); $('ar-save').classList.add('hide'); $('ar-home').classList.add('hide'); $('ar-stop').classList.remove('hide');
   $('ar-title').textContent='자동 테스트 중…';
   show('autorun-ov'); $('autorun-ov').classList.toggle('peek', G.auto.view);
+  arSpeedSync();
+  if(G.auto.view){ G.auto.lastStep=performance.now(); G.auto.stepTimer=setInterval(autoStepBelt,16); }
   autoBeginAttempt();
 };
+// advance the top belt by real wall-clock time, independent of rAF (so auto stays in sync
+// even when the tab is backgrounded and requestAnimationFrame is paused). Sub-stepped so
+// high speeds / large catch-up gaps still resolve laps and shots correctly.
+function autoStepBelt(){
+  const a=G.auto; if(!a||!a.on||!a.view){ return; }
+  const now=performance.now();
+  if(G.paused){ a.lastStep=now; return; }
+  let dt=now-(a.lastStep||now); a.lastStep=now;
+  dt=Math.min(dt,2000);                       // cap catch-up after a long pause/throttle
+  let rem=dt;
+  while(rem>0 && (G.on||G.beltRunners.length||G.bullets.length)){ const ch=Math.min(16,rem); update(ch); rem-=ch; }
+}
+// live speed control shown during an auto run
+function arSpeedSync(){ const a=G.auto; if(!a)return; const seg=$('ar-speed'); if(!seg)return;
+  [...seg.children].forEach(b=>b.classList.toggle('on', parseInt(b.dataset.v,10)===a.speed)); }
+(function wireArSpeed(){ const seg=$('ar-speed'); if(!seg)return;
+  [...seg.children].forEach(b=>b.addEventListener('click',()=>{ const a=G.auto; if(!a||!a.on)return;
+    a.speed=parseInt(b.dataset.v,10); if(a.view) G.slowmo=a.speed; arSpeedSync(); vibe(10); })); })();
 function autoStatus(){
   const a=G.auto; if(!a) return;
   $('ar-status').textContent='레벨 '+a.lv+' / '+a.endLv+'  ·  반복 '+(a.repi+1)+'/'+a.rep;
@@ -4495,6 +4549,7 @@ function autoBeginAttempt(){
   try{ G.start(a.lv, true); }            // auto-skips dialogue -> G.on=true
   catch(e){ console.error('auto level '+a.lv+' start error',e); a.result={win:false,reason:'error'}; autoFinishAttempt(); return; }
   G.slowmo = a.view ? a.speed : 1;       // G.start resets slowmo to 1; re-apply
+  if(a.view) a.lastStep=performance.now();   // avoid a big belt jump right after G.start
   a.timer=setTimeout(autoLoop, 0);
 }
 // commit a placement (no drag visual) — used by both modes
@@ -4573,7 +4628,7 @@ function autoFinishAttempt(){
   autoStatus();
   a.timer=setTimeout(autoBeginAttempt, a.view?40:0);
 }
-G.stopAuto=function(){ const a=G.auto; if(!a)return; a.on=false; if(a.timer)clearTimeout(a.timer); G.on=false; autoAllDone(); };
+G.stopAuto=function(){ const a=G.auto; if(!a)return; a.on=false; if(a.timer)clearTimeout(a.timer); if(a.stepTimer)clearInterval(a.stepTimer); G.on=false; autoAllDone(); };
 function difficultyOf(R){
   if(!R.att) return {n:0,label:'-',cls:''};
   const sr=R.succ/R.att, avg=R.drags/R.att;
@@ -4584,7 +4639,7 @@ function difficultyOf(R){
   return {n:d,label,cls,sr,avg};
 }
 function autoAllDone(){
-  const a=G.auto; a.on=false; if(a.timer)clearTimeout(a.timer);
+  const a=G.auto; a.on=false; if(a.timer)clearTimeout(a.timer); if(a.stepTimer)clearInterval(a.stepTimer);
   G.slowmo=1; SFX.setAutoMute(false);
   $('ar-title').textContent='✅ 테스트 완료';
   $('ar-status').textContent='레벨 '+a.startLv+'~'+a.endLv+' · 반복 '+a.rep+'회';
@@ -4860,8 +4915,19 @@ const HOME=(()=>{
       } }
     return false;
   }
-  // paint/erase the cell under a screen point. returns true if the point is over a coloring board
-  // (so a single-finger drag there is treated as painting, not panning).
+  // is the screen point over a paintable (numbered) cell?
+  function overPaintable(cx,cy){
+    const rect=cv.getBoundingClientRect();
+    const wx=view.x+(cx-rect.left)/view.s, wy=view.y+(cy-rect.top)/view.s;
+    for(const L of layouts){
+      if(wx<L.x||wy<L.y||wx>=L.x+L.w||wy>=L.y+L.h) continue;
+      const c=((wx-L.x)/CELL)|0, r=((wy-L.y)/CELL)|0;
+      const d=L.a.g[r]&&L.a.g[r][c]; return !!(d&&d!=='0');
+    }
+    return false;
+  }
+  // paint/erase the cell under a screen point. returns true ONLY when over a numbered cell
+  // (so a single-finger drag on a numbered cell paints; anywhere else it pans the view).
   function paintAt(cx,cy){
     if(sel==null) return false;
     const rect=cv.getBoundingClientRect();
@@ -4869,11 +4935,18 @@ const HOME=(()=>{
     for(const L of layouts){
       if(wx<L.x||wy<L.y||wx>=L.x+L.w||wy>=L.y+L.h) continue;
       const c=((wx-L.x)/CELL)|0, r=((wy-L.y)/CELL)|0;
-      const d=L.a.g[r]&&L.a.g[r][c]; if(!d||d==='0') return true;   // over board, blank cell — still a paint gesture
+      const d=L.a.g[r]&&L.a.g[r][c]; if(!d||d==='0') return false;   // blank cell -> not a paint gesture (pan instead)
       if(applyPaint(L.i,r,c, sel==='ERASE'?null:sel)){ SFX.init();SFX.resume();SFX.place();vibe(8); renderBar(); }
       return true;
     }
     return false;
+  }
+  // pencil cursor for drawing over numbered cells
+  const PENCIL_SVG="<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'><path d='M4 22l3.5-1L20 8.5 17.5 6 5 18.5z' fill='#ffd54a' stroke='#2b2b3a' stroke-width='1.3'/><path d='M17.5 6L20 8.5l1.6-1.6a1.4 1.4 0 0 0 0-2L21 4.3a1.4 1.4 0 0 0-2 0z' fill='#ff7a59' stroke='#2b2b3a' stroke-width='1.3'/><path d='M4 22l1-3.5 2.5 2.5z' fill='#2b2b3a'/></svg>";
+  const PENCIL='url("data:image/svg+xml,'+encodeURIComponent(PENCIL_SVG)+'") 3 23, crosshair';
+  function updateCursor(cx,cy){
+    if(mode!=='pal'){ cv.style.cursor='default'; return; }
+    cv.style.cursor = (sel!=null && overPaintable(cx,cy)) ? PENCIL : 'grab';
   }
   // ---- gesture idle hints ----
   function clearHint(){ if(hintT){clearTimeout(hintT);hintT=null;} const h=$('pal-hint'); if(h)h.classList.add('hide'); }
@@ -4906,7 +4979,7 @@ const HOME=(()=>{
     } else if(ptrs.size===2){ pinchStart(); painting=false; }
   });
   cv.addEventListener('pointermove',e=>{
-    if(!ptrs.has(e.pointerId)) return;
+    if(!ptrs.has(e.pointerId)){ if(mode==='pal') updateCursor(e.clientX,e.clientY); return; } // hover cursor
     const prev=ptrs.get(e.pointerId);
     moved+=Math.hypot(e.clientX-prev.x,e.clientY-prev.y);
     ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
@@ -4919,9 +4992,11 @@ const HOME=(()=>{
       view.s=ns; view.x=wx-ncx/ns; view.y=wy-ncy/ns;
     } else if(painting){
       paintAt(e.clientX,e.clientY);   // drag-to-paint
+      if(mode==='pal') cv.style.cursor=PENCIL;
     } else if(panRef){
       view.x=panRef.vx-(e.clientX-panRef.px)/view.s;
       view.y=panRef.vy-(e.clientY-panRef.py)/view.s;
+      if(mode==='pal') cv.style.cursor='grabbing';
     }
     if(mode!=='pal') draw(); // home mode has no anim loop
   });
@@ -4935,7 +5010,7 @@ const HOME=(()=>{
     else panRef=null;
     // a tap that wasn't a paint stroke (tool button / blank area) → tool buttons
     if(wasTap&&mode==='pal'&&!wasPainting) handleTap(e.clientX,e.clientY);
-    if(mode==='pal') scheduleHints();
+    if(mode==='pal'){ scheduleHints(); updateCursor(e.clientX,e.clientY); }
   }
   cv.addEventListener('pointerup',ptrEnd);
   cv.addEventListener('pointercancel',ptrEnd);
@@ -4956,13 +5031,13 @@ const HOME=(()=>{
     $('start-ov').classList.add('pal');
     renderBar();
     if(!rafId) rafId=requestAnimationFrame(loop);
-    scheduleHints(); vibe(12);
+    scheduleHints(); vibe(12); cv.style.cursor='grab';
   }
   function closePal(){
     mode='home'; sel=null; clearHint(); $('art-preview').classList.add('hide');
     $('start-ov').classList.remove('pal');
     if(rafId){ cancelAnimationFrame(rafId); rafId=0; }
-    draw();
+    cv.style.cursor='default'; draw();
   }
   // eraser chip (fixed, doesn't scroll with colors)
   { const er=$('eraser-chip'); if(er) er.addEventListener('click',()=>{ sel='ERASE'; vibe(10); updateSel(); }); }
