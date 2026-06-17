@@ -517,7 +517,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v7.6</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v7.7</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -4321,27 +4321,18 @@ function drawBot(){
   if(G.drag&&G.drag.bp){
     const{br,bc:bcc}=G.drag.bp, valid=canPlace(G.drag.piece,br,bcc);
     const gp=G.drag.piece;
-    const ghostCol = gp.wood?'#b5793a':(gp.bomb?'#3a2a55':(gp.ice?'#bfeaff':hex[gp.color]));
+    // 외곽선 없는 단색 어두운 그림자 형태의 미리보기
+    ctx.save();
+    ctx.globalAlpha = valid?0.34:0.20;
+    ctx.fillStyle = valid?'#000000':'#6e0e1e';
     for(const[dr,dc] of gp.shape){
       const rr=br+dr,cc=bcc+dc;
       if(rr>=0&&rr<BR&&cc>=0&&cc<BC){
         const x=ox+cc*s,y=oy+rr*s;
-        ctx.save();
-        if(valid){
-          ctx.globalAlpha=0.92; ctx.fillStyle=ghostCol;
-          ctx.beginPath();ctx.roundRect(x+1,y+1,s-2,s-2,3);ctx.fill();
-          ctx.globalAlpha=0.5; ctx.fillStyle='#ffffff';   // 밝게: 윗부분 하이라이트
-          ctx.beginPath();ctx.roundRect(x+1,y+1,s-2,(s-2)*0.5,3);ctx.fill();
-          ctx.globalAlpha=1; ctx.lineWidth=2; ctx.strokeStyle='#ffffff';   // 밝은 테두리
-          ctx.beginPath();ctx.roundRect(x+1.5,y+1.5,s-3,s-3,3);ctx.stroke();
-        }else{
-          ctx.globalAlpha=0.28; ctx.fillStyle='#ff4757';
-          ctx.beginPath();ctx.roundRect(x+1,y+1,s-2,s-2,3);ctx.fill();
-        }
-        ctx.restore();
+        ctx.beginPath();ctx.roundRect(x+1,y+1,s-2,s-2,3);ctx.fill();
       }
     }
-    ctx.globalAlpha=1;
+    ctx.restore();
   }
   // 2x2 bomb placement ghost (drag-to-place guide) — drawn as a bomb shape
   if(G.bombArmed&&G.bombCell){
@@ -4601,7 +4592,7 @@ function moveDrag(ex,ey){
   const cy=(ey-rect.top)*scaleY;
   const s=G.bkSz;
   const bc=Math.round((cx-G.bOX)/s-(G.drag.mc+1)/2+0.0001);
-  const br=Math.round((cy-G.bOY)/s-(G.drag.mr+1)/2+0.0001);
+  const br=Math.round((cy-G.bOY)/s-(G.drag.mr+0.5)+0.0001);   // 터치 지점 = 블록의 가장 하단
   G.drag.bp={br,bc};
   drawBot();   // 고스트가 손가락을 즉시 따라오도록
 }
