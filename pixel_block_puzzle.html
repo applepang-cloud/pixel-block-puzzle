@@ -52,8 +52,10 @@ canvas{display:block}
 
 #bot-wrap{flex:0 0 auto;position:relative;display:flex;justify-content:center}
 #bot-cv{display:block}
-#tray{display:flex;justify-content:center;align-items:center;gap:10px;flex:0 0 auto;background:rgba(0,0,0,.2)}
-.tp{position:relative;background:rgba(255,255,255,.06);border-radius:8px;padding:4px;
+#tray{display:flex;justify-content:center;align-items:center;gap:12px;flex:0 0 auto;
+  background:rgba(150,165,225,.18);border-top:2px solid rgba(255,255,255,.16)}
+.tp{position:relative;background:rgba(255,255,255,.14);border-radius:8px;padding:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.25);
   border:1px solid rgba(255,255,255,.1);cursor:grab;touch-action:none;
   display:flex;align-items:center;justify-content:center}
 /* extend the touch target upward (2x the block height) so a slightly-off tap still grabs */
@@ -515,7 +517,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v7.5</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v7.6</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -3479,7 +3481,7 @@ function resize(){
 
   const hudH=44;
   const storyH=22;
-  const trayH=Math.max(78,Math.min(Math.round(H*0.14),108));   // 하단 블록 트레이 1.5배
+  const trayH=Math.max(62,Math.min(Math.round(H*0.115),92));   // 하단 블록 트레이 패널
   const itemH=64;
   const dvH=7;
 
@@ -4281,6 +4283,13 @@ function drawTop(){
 function drawBot(){
   const ctx=bctx, s=G.bkSz, ox=G.bOX, oy=G.bOY;
   ctx.clearRect(0,0,G.bW,G.bH);
+  // 놓을 수 없는 외곽(보드 둘레)을 더 밝게 — 안쪽 놓는 격자는 그대로 유지
+  const gx=ox,gy=oy,gw=BC*s,gh=BR*s;
+  ctx.fillStyle='rgba(150,170,255,0.15)';
+  ctx.fillRect(0,0,G.bW,G.bH);
+  ctx.clearRect(gx,gy,gw,gh);
+  ctx.save(); ctx.strokeStyle='rgba(185,205,255,0.5)'; ctx.lineWidth=2;
+  ctx.strokeRect(gx-2,gy-2,gw+4,gh+4); ctx.restore();
   for(let r=0;r<BR;r++)for(let c=0;c<BC;c++){
     const x=ox+c*s,y=oy+r*s;
     ctx.fillStyle=(r+c)%2===0?'rgba(255,255,255,0.03)':'rgba(0,0,0,0.06)';
@@ -4514,7 +4523,7 @@ function genPcs(){
 
 function renderTray(){
   const tray=$('tray');tray.innerHTML='';
-  const cs=Math.max(22,Math.floor(G.bkSz*0.87));   // 트레이 블록 1.5배
+  const cs=Math.max(16,Math.floor(G.bkSz*0.66));   // 트레이 블록은 보드 블록보다 작게
   G.pieces.forEach((p,i)=>{
     const d=document.createElement('div');d.className='tp';d.dataset.pi=i;
     if(!p){ d.classList.add('used'); d.style.width=(cs*2)+'px'; d.style.height=(cs*2)+'px'; tray.appendChild(d); return; }
