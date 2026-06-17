@@ -78,6 +78,13 @@ canvas{display:block}
 .item:disabled,.item.off{opacity:.4;cursor:default;pointer-events:none}
 .item.locked::after{content:'🔒';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   font-size:20px;background:rgba(10,8,22,.62);border-radius:inherit;opacity:1}
+.item.qused{opacity:.55}
+.item.qused::after{content:'🔒';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:18px;background:rgba(10,8,22,.5);border-radius:inherit}
+.gtoast{position:fixed;transform:translateX(-50%);z-index:96;background:rgba(20,10,40,.92);color:#fff;
+  font-size:13px;font-weight:700;font-family:'Noto Sans KR';padding:8px 16px;border-radius:14px;white-space:nowrap;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 3px 12px rgba(0,0,0,.55);pointer-events:none;animation:gtoast 1.6s ease-out forwards}
+@keyframes gtoast{0%{opacity:0;transform:translate(-50%,8px)}12%{opacity:1;transform:translate(-50%,0)}80%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-10px)}}
 .item.armed{background:rgba(255,90,90,.3);border-color:#ff5a5a;box-shadow:0 0 10px rgba(255,90,90,.6)}
 .item.flash{animation:itFlash .4s ease}
 @keyframes itFlash{50%{background:rgba(120,220,150,.5);transform:scale(1.06)}}
@@ -526,7 +533,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v8.2</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v8.3</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -3794,8 +3801,10 @@ function renderItemBar(){
   const active=gameActive(), coins=G.coins||0;
   const set=(id,key)=>{ const b=$(id); if(!b) return;
     const locked=!itemUnlocked(key);
+    const used=(key==='queue' && !locked && !!G.queueUsed);   // 대기열+1: 판당 1회 사용 후 잠금(누르면 안내)
     b.classList.toggle('locked', locked);
-    b.classList.toggle('off', locked || !active || coins<ITEM_COST[key]); };
+    b.classList.toggle('qused', used);
+    b.classList.toggle('off', locked || (!used && (!active || coins<ITEM_COST[key]))); };
   set('it-queue','queue'); set('it-single','single'); set('it-refresh','refresh'); set('it-bomb','bomb');
   const bb=$('it-bomb'); if(bb) bb.classList.toggle('armed', !!G.bombArmed);
   updateItemGuide();
@@ -3816,9 +3825,20 @@ function flashItem(id){ const b=$(id); if(!b) return; b.classList.remove('flash'
 function elGlow(id,cls){ const e=$(id); if(!e) return; e.classList.remove(cls); void e.offsetWidth; e.classList.add(cls); setTimeout(()=>e.classList.remove(cls),650); }
 function itemSparkle(el,glyph,label,col){ if(!el) return; const c=elCenter(el);
   burstAt(c.x,c.y,glyph); if(label) scorePop(c.x,c.y-12,label,col||'#aef5c0',16); }
-G.itemQueue=function(){ if(!gameActive()||!itemUnlocked('queue')||!spendCoins(ITEM_COST.queue)) return;
+G.itemQueue=function(){ if(!gameActive()||!itemUnlocked('queue')) return;
+  if(G.queueUsed){ itemToast('레벨 당 대기열 1칸만 추가 가능'); return; }   // 판당 1회
+  if(!spendCoins(ITEM_COST.queue)) return;
+  G.queueUsed=true;
   G.waitCap=(G.waitCap||10)+1; renderBelt(); flashItem('it-queue');
-  elGlow('belt-col','it-glow'); itemSparkle($('belt-col'),'✨','대기 +1','#9be7ff'); SFX.place(); vibe(12); };
+  elGlow('belt-col','it-glow'); itemSparkle($('belt-col'),'✨','대기 +1','#9be7ff'); SFX.place(); vibe(12);
+  renderItemBar(); };
+function itemToast(msg){
+  const bar=$('item-bar'); if(!bar) return; const r=bar.getBoundingClientRect();
+  const t=document.createElement('div'); t.className='gtoast'; t.textContent=msg;
+  t.style.left=Math.round(r.left+r.width/2)+'px'; t.style.top=Math.round(r.top-44)+'px';
+  $('fly-layer').appendChild(t); setTimeout(()=>{ try{t.remove();}catch(e){} },1600);
+  SFX.hit&&SFX.hit(); vibe(18);
+}
 G.itemSingle=function(){ if(!gameActive()||!itemUnlocked('single')) return;
   if(!G.pieces.some(p=>p)) return; if(!spendCoins(ITEM_COST.single)) return;
   G.pieces=G.pieces.map(p=>p?Object.assign({},p,{shape:[[0,0]]}):p);
@@ -4007,6 +4027,7 @@ G.start=function(lv,free){
   if(!G.free) saveProgress(lv);   // free play (map select) doesn't move main progress
   G.lv=lv; G.score=0; G.on=false;
   G.belt=[]; G.beltRunners=[]; G.waiting=[]; G.bullets=[]; G.clears=[]; G.particles=[]; G.hitFx=[]; G.drag=null; G.beltDirty=false;
+  G.placePops=[]; G.queueUsed=false;   // 박힘 팝 효과 / 대기열+1 판당 1회
   if(G.dlg&&G.dlg.timer) clearInterval(G.dlg.timer); G.dlg=null; stopVoice();
   G.dying=false; G.slowmo=1;
   G.waitCap=10; G.bombArmed=false; G.bombDown=false; G.bombCell=null; hide('bomb-guide');
@@ -4251,6 +4272,7 @@ function update(dt){
   for(let i=G.hitFx.length-1;i>=0;i--){ const f=G.hitFx[i]; f.t+=rdt; if(f.t>=f.dur) G.hitFx.splice(i,1); }
   for(let i=G.particles.length-1;i>=0;i--){ const p=G.particles[i]; p.t+=rdt; if(p.t>=p.life){G.particles.splice(i,1);continue;}
     p.x+=p.vx*rdt; p.y+=p.vy*rdt; p.vy+=440*rdt; p.rot+=p.vr*rdt; }
+  if(G.placePops) for(let i=G.placePops.length-1;i>=0;i--){ const e=G.placePops[i]; e.t+=rdt; if(e.t>=e.dur) G.placePops.splice(i,1); }
 }
 
 function tryShoot(runner,tp,rIdx){
@@ -4371,6 +4393,13 @@ function drawBot(){
     ctx.strokeStyle='rgba(255,255,255,0.05)';ctx.strokeRect(x,y,s,s);
     const cell=G.bk[r][c];
     if(cell) drawCell(ctx,x+2,y+2,s-4,cell);
+  }
+  // 박힐 때 잠깐 커졌다 작아지는 팝 연출
+  if(G.placePops) for(const e of G.placePops){
+    const cell=G.bk[e.r]&&G.bk[e.r][e.c]; if(!cell) continue;
+    const p=e.t/e.dur, sc=1+0.18*Math.sin(Math.PI*Math.min(1,p));   // 1 -> ~1.18 -> 1
+    const base=s-4, sz=base*sc, x=ox+e.c*s+2-(sz-base)/2, y=oy+e.r*s+2-(sz-base)/2;
+    drawCell(ctx,x,y,sz,cell);
   }
   // line-clear glow bursts
   for(const e of G.clears){
@@ -4651,12 +4680,12 @@ function startDrag(piece,pi,ex,ey){
   dragWrap.appendChild(dragCanvas); layer.appendChild(dragWrap);
   const slot=$('tray').querySelector(`.tp[data-pi="${pi}"]`);
   if(slot) slot.style.visibility='hidden';
-  SFX.init(); SFX.resume(); SFX.stone(0.42);   // 바둑알 선택음
+  SFX.init(); SFX.resume(); SFX.stone(0.34);   // 바둑알 선택음(볼륨 0.8배)
   moveDrag(ex,ey);
-  requestAnimationFrame(()=>{ if(dragCanvas) dragCanvas.style.transform='scale(1)'; });   // 보드 배치 크기와 동일
+  requestAnimationFrame(()=>{ if(dragCanvas) dragCanvas.style.transform='scale(1.2)'; });   // 잡으면 1.2배
 }
 
-const LIFT=()=>10;   // 그림자(배치 위치)보다 약 10px만 위로
+const LIFT=()=>Math.round(G.bkSz*1.5);   // 손가락에 가리지 않게 위로
 
 function moveDrag(ex,ey){
   if(!G.drag||!dragWrap) return;
@@ -4668,10 +4697,10 @@ function moveDrag(ex,ey){
   const rect=bcv.getBoundingClientRect();
   const scaleX=G.bW/rect.width, scaleY=G.bH/rect.height;
   const cx=(ex-rect.left)*scaleX;
-  const cy=(ey-rect.top)*scaleY;
+  const cy=(ey-lift-rect.top)*scaleY;   // 배치 기준 = 떠 있는 블록(손가락 위)의 중앙
   const s=G.bkSz;
   const bc=Math.round((cx-G.bOX)/s-(G.drag.mc+1)/2+0.0001);
-  const br=Math.round((cy-G.bOY)/s-(G.drag.mr+1)/2+0.0001);   // 터치 지점 = 블록의 중앙
+  const br=Math.round((cy-G.bOY)/s-(G.drag.mr+1)/2+0.0001);   // 블록 중앙 기준
   G.drag.bp={br,bc};
   drawBot();   // 고스트가 손가락을 즉시 따라오도록
 }
@@ -4695,6 +4724,8 @@ function shrinkDragToCell(bp,pw,ph,mc,mr){
   }catch(e){}
   setTimeout(()=>{ try{ if(wrap.parentNode) wrap.remove(); }catch(e){} }, 170);
 }
+function addPlacePop(piece,bp){ if(!piece||!bp) return; G.placePops=G.placePops||[];
+  for(const[dr,dc] of piece.shape) G.placePops.push({r:bp.br+dr,c:bp.bc+dc,t:0,dur:0.18}); }
 function endDrag(){
   if(!G.drag) return;
   // tutorial: only the target cell is accepted; anything else snaps back with a hint
@@ -4705,7 +4736,7 @@ function endDrag(){
     const {pw,ph,mc,mr}=G.drag; G.drag=null;
     if(!ok){ clearDrag(); renderTray(); drawBot(); tutWrong(cur); return; }
     place(piece,bp.br,bp.bc); G.pieces[pi]=null; SFX.stone(0.6); vibe(12);
-    shrinkDragToCell(bp,pw,ph,mc,mr);
+    addPlacePop(piece,bp); shrinkDragToCell(bp,pw,ph,mc,mr);
     renderTray(); drawBot();
     if(cur==='placeH'){ G.tut.phase='clearH'; tutAfterH(); }
     else { G.tut.phase='clearing'; tutDemo(); }
@@ -4720,7 +4751,7 @@ function endDrag(){
     placed=true;
   }
   G.drag=null;
-  if(placed) shrinkDragToCell(bp,pw,ph,mc,mr);  // 2배에서 보드 칸 크기로 축소되며 배치
+  if(placed){ addPlacePop(piece,bp); shrinkDragToCell(bp,pw,ph,mc,mr); }  // 박힘 팝 + 축소 배치
   else clearDrag();
   if(placed){
     const cleared=checkLines();
