@@ -517,7 +517,7 @@ canvas{display:block}
   <div class="ov" id="start-ov">
     <canvas id="map-cv"></canvas>
     <div id="home-ui">
-      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v7.9</h2></div>
+      <div id="home-title"><h1>PIXEL BLOCK</h1><h2>PUZZLE v8.0</h2></div>
       <div id="home-actions">
         <button id="play-btn" onclick="G.continueGame()">PLAY ▶ <small>레벨 <span id="cont-lv">1</span></small></button>
         <button id="free-btn" onclick="G.openSelect()">FREE ▦ <small>맵 골라하기</small></button>
@@ -1115,6 +1115,30 @@ const SFX=(()=>{
     shoot(){ tone(900,0.05,'sawtooth',0.10); tone(1500,0.04,'sine',0.07,0.015); },
     hit(){ tone(1300,0.05,'square',0.10); },
     win(){ [523,659,784,1047,1319,1568].forEach((f,i)=>tone(f,0.28,'triangle',0.3,i*0.1)); },
+    // 룰렛 돌 때 숫자 바뀌는 "띠리릭" 틱
+    tick(){ tone(1280,0.03,'square',0.10); },
+    // 스탑 "팡!"
+    pop(){
+      if(!ctx||muted||autoMute) return;
+      const t0=ctx.currentTime;
+      const o=ctx.createOscillator(), g=ctx.createGain();
+      o.type='triangle'; o.frequency.setValueAtTime(720,t0); o.frequency.exponentialRampToValueAtTime(170,t0+0.18);
+      g.gain.setValueAtTime(0.55,t0); g.gain.exponentialRampToValueAtTime(0.001,t0+0.22);
+      o.connect(g); g.connect(master); o.start(t0); o.stop(t0+0.25);
+      const dur=0.12, sr=ctx.sampleRate, buf=ctx.createBuffer(1,Math.max(1,Math.floor(sr*dur)),sr), d=buf.getChannelData(0);
+      for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,2);
+      const src=ctx.createBufferSource(); src.buffer=buf;
+      const bp=ctx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=1100; bp.Q.value=0.8;
+      const ng=ctx.createGain(); ng.gain.value=0.45; src.connect(bp); bp.connect(ng); ng.connect(master); src.start(t0);
+    },
+    // 코인 획득 "촤르륵" — 밝은 띵 소리 우르르
+    coins(){ for(let i=0;i<14;i++){ tone(1450+Math.random()*900,0.08,'triangle',0.10,i*0.045); } },
+    // 클리어 축하 팡파르
+    clear(){
+      [523,659,784,1047,1319,1568].forEach((f,i)=>tone(f,0.34,'triangle',0.32,i*0.10));
+      [1568,2093,2637].forEach((f,i)=>tone(f,0.5,'sine',0.11,0.62+i*0.08));
+      tone(2093,0.7,'sine',0.06,0.9);
+    },
     over(){ [440,330,247,165].forEach((f,i)=>tone(f,0.38,'sawtooth',0.28,i*0.12)); },
     boom(){
       if(!ctx||muted||autoMute) return;
@@ -3821,13 +3845,14 @@ function openRoulette(onDone){
   G.roul.timer=setInterval(()=>{
     i=(i+1)%ROUL_VALUES.length; G.roul.idx=i;
     $('roul-val').textContent=ROUL_VALUES[i];
+    SFX.tick();   // 띠리릭
   },80);
 }
 G.roulStop=function(){
   if(!G.roul||!G.roul.timer) return;
   clearInterval(G.roul.timer); G.roul.timer=null;
   const reward=ROUL_VALUES[G.roul.idx]; G.roul.reward=reward;
-  SFX.win(); vibe(40);
+  SFX.pop(); vibe(40);   // 스탑 팡!
   hide('roul-stop');
   $('roul-won').textContent='+'+reward+' 🪙';
   show('roul-claim');
@@ -3835,6 +3860,7 @@ G.roulStop=function(){
 function finishRoul(mult){
   const reward=(G.roul?G.roul.reward:0)*mult;
   addCoins(reward);
+  SFX.coins(); vibe(20);   // 코인 촤르륵
   hide('roul-ov');
   const cb=G.roul&&G.roul.done; G.roul=null;
   cb&&cb();
@@ -5181,7 +5207,7 @@ function checkWin(){
   if(G.auto&&G.auto.on){ G.on=false; G.beltRunners=[];G.waiting=[];G.bullets=[]; G.auto.result={win:true}; return; }
   G.on=false;
   G.beltRunners=[]; G.waiting=[]; G.bullets=[]; renderBelt();
-  SFX.win();
+  SFX.clear();   // 클리어 축하 팡파르
   confetti(44);
   { const wr=$('wrap').getBoundingClientRect();
     ['🎉','💖','✨','🎉','💖'].forEach((g,i)=>setTimeout(()=>{
